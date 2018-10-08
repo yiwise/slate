@@ -13,6 +13,10 @@ toc_footers:
 
 includes:
   - errors
+  - company
+  - obtainTask
+  - task
+  - callBack
 
 search: true
 ---
