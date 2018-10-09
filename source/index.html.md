@@ -1,243 +1,289 @@
 ---
-title: API Reference
-
-language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
-  - python
-  - javascript
+title: 一知智能对外API文档（非经销商客户）
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
-  - errors
   - company
-  - obtainTask
   - task
+  - obtainTask
   - callBack
 
 search: true
 ---
 
-# Introduction
+# 简介
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+探意机器人API文档
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+这是探意机器人API文档，具体详情查看每个API接口调用说明；
 
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+如果有问题，欢迎联系我们客服，技术支持
 
-# Authentication
+公司官网地址 ：http://www.yiwise.com/
 
-> To authorize, use this code:
 
-```ruby
-require 'kittn'
+# 开发引导
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+## 调用说明
+
+第一种方式：主动调用 这种调用方式是客户主动调用接口获取数据或实现功能；
+
+主动调用需要传入APP_KEY、APP_SECRET、VERSION（当前版本的VERSION=v1）和COMPANY_SIGN（公司签名，后期提供修改）用于权限校验；
+
+注意：请在开发对接程序前联系百应技术支持进行注册，如果你还未签约，请先签约开通账户。
+
+第二种方式：方法回调 这种调用方式是当达到预设条件如：任务完成或通话结束时，由百应主动向指定地址发送信息；
+
+注意：请在开发前自主配置好回调地址。
+
+探意机器人API是使用HTTP并遵循REST原则设计的Web服务接口；
+
+您可以使用几乎任何客户端和任何编程语言与REST API进行交互。
+
+通过发送简单的HTTP请求就可以轻松接入使用。
+
+调用方式分为两种：主动调用和方法回调。
+
+
+## 权限认证
+
+> 认证密钥样例
+
+```java
+  APP_KEY = "WtSMaXXXXXXXXtvy";
+  APP_SECRET = "aXSFnnZbHXXXXXXXXXXXXXXXMguz1Q";    
+  COMPANY_SIGN = "yiwisexxxx";    
 ```
 
-```python
-import kittn
+API认证采用SHA256加密算法进行机密，使用时间戳、APP_KEY、APP_SECRET、VERSION（当前版本的VERSION=v1）和COMPANY_SIGN（公司签名，后期提供修改）共同生成一个密钥。
 
-api = kittn.authorize('meowmeowmeow')
-```
+目前已有完成JAVA版的样例，具体实现请下载SDK查阅。
 
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
 
-```javascript
-const kittn = require('kittn');
+> 请在API样例`byrobot-openapi-demo`中替换为自己的APP_Key和APP_SECRET.
 
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
+探意为确保您的账户和信息安全，请在开发对接程序前联系百应技术支持注册接口调用专属密钥。
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+您必须替换对接密钥 <code>APP_KEY 、 APP_SECRET 和COMPANY_SIGN </code>在您的对接程序中 
 </aside>
 
-# Kittens
+## 统一请求格式
 
-## Get All Kittens
+URL格式：
 
-```ruby
-require 'kittn'
+<code>/{version}/{resource}/{function}</code>
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
+说明： 
+
+{version}api版本号
+
+{resource}为资源名，通常对应一类API
+
+{function}为该资源提供的操作方法
+
+请求响应的结果为json格式
+
+>比如查询公司列表的url为：
+  
+```请求URL样例  
+<code>http://openapi/v1/company/getCompanies </code> 表示调用company（公司列表）的get方法，并且返回json格式的字符串。
+
+我们目前已经提供的接口，请参考API。 
+
 ```
 
-```python
-import kittn
+HTTP头信息:
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
+<code>Accept:application/json;charset=utf-8</code>
 
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
+说明：
 
-```javascript
-const kittn = require('kittn');
+请求方式(Method)：统一用POST方式
+编码：UTF-8
 
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
+>
 
-> The above command returns JSON structured like this:
+##JAVA SDK DEMO 下载
 
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
+本页面提供Java的SDK下载。
 
-This endpoint retrieves all kittens.
+SDK包内有部分使用说明，各接口的详细使用说明请浏览各API详情页。
 
-### HTTP Request
+如探意未提供您使用语言的SDK，您可以根据API文档开发接口
 
-`GET http://example.com/api/kittens`
+语言 | GitHub地址 
+--------- | ------- 
+JAVA | [GitHub地址](https://github.com/yiwise/openapidemo.git) 
 
-### Query Parameters
+##最佳实践流程图:
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+ ![](images/OMS3.png)
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
+##常见问题解答
 
-## Get a Specific Kitten
+1. 定时任务和手动任务的异同
+- A: 
+-   异：
+    定时任务在设定好启动时间和结束时间时会在到达指定时间时自动启动
+    手动任务则需要导入客户之后手动启动任务
+    同：
+    任务到达12-14点或指定暂停时间会自动暂停，并且会占用AI并发量
+    
+2. isv账号能否操作多个crm账号下的任务
+- A：一个appKey和appSecret目前只能操作一个CRM的账户，CRM暂无子公司这个概念
 
-```ruby
-require 'kittn'
+##流程说明
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
+###第一部分:
 
-```python
-import kittn
+主要是获取公司相关信息，为创建任务提供数据。
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
+这里一共三个接口分别查询到：
+1.公司Id
 
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
+2.公司的主叫电话号码列表
 
-```javascript
-const kittn = require('kittn');
+3.机器人话术相关参数：
+  
+  1）机器人话术id
+  
+  2) 机器人话术场景id
+  
+  3) 机器人话术录音id
 
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
+###第二部分:
 
-> The above command returns JSON structured like this:
+核心业务部分，主要是任务的创建，启动，停止等操作。
 
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
+####1.创建任务
 
-This endpoint retrieves a specific kitten.
+    创建任务过程中需要传入的几个重要的值：场景id,场景录音id,机器人话术id,这三个值不能传入有误，传入出错会导致任务拨打有误
+####2.任务启动和暂停
+    任务创建完成之后，调用启动任务接口就可以启动任务，任务在启动时，可调用暂停任务让任务进入暂停状态（可再次运行）
+####3.停止任务  
+    在任务进行中，每一次通话结束都会调用通话回调接口，将本次通话详情发送到指定回调地址。
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+###第三部分:
 
-### HTTP Request
+任务运行结束，调用任务回调接口，将本次任务信息发送到指定回调地址。
 
-`GET http://example.com/kittens/<ID>`
+###第四部分:
 
-### URL Parameters
+主要是查询任务相关信息。
+ 
+##枚举类型说明
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+### 电话卡类型枚举
+ 
+code    | desc 
+--------- | ------- 
+0 | 手机 
+1 | 阿里云固话 
+2 | 无主叫固话
 
-## Delete a Specific Kitten
+### 任务类型枚举
+ 
+code    | desc 
+--------- | ------- 
+1 | 定时启动任务
+2 | 手动启动任务 
 
-```ruby
-require 'kittn'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
+### 外呼类型枚举
+ 
+code    | desc 
+--------- | ------- 
+0| sim卡(默认)
+1| 固话
+2| 无主叫 
 
-```python
-import kittn
+### 是否发送短信枚举
+ 
+code    | desc 
+--------- | ------- 
+0 | 否
+1 | 是 
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
 
-```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
-```
 
-```javascript
-const kittn = require('kittn');
+### 任务状态枚举
+ 
+code    | desc 
+--------- | ------- 
+0| 未开始
+1| 进行中
+2| 已完成
+3| 可运行
+4| 用户暂停
+5| 系统暂停
+6| 已终止
+7| 排队中
+8| AI到期
 
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
+### 任务实例状态枚举
+ 
+code    | desc 
+--------- | ------- 
+0| 未开始
+1| 进行中
+2| 已完成
+3| 二次拨打调度中
 
-> The above command returns JSON structured like this:
 
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
+### 任务实例已完成状态枚举
+code   | desc
+----|-----
+0| 已接听
+1| 拒接
+2| 无法接通
+3| 主叫号码不可用
+4| 空号
+5| 关机
+6| 占线
+7| 停机
+8| 未接
+9| 主叫欠费
 
-This endpoint deletes a specific kitten.
+### 呼叫类型枚举
+code   | desc
+----|-----
+0|免费试用
+1|任务
+2|用户单独拨打
+3|收费试用
+4|Ope后台拨打
+5|大屏试用
+100|客服人工拨打
 
-### HTTP Request
 
-`DELETE http://example.com/kittens/<ID>`
+## 错误码信息
 
-### URL Parameters
+错误码 | 错误信息
+---------- | -------
+200|执行成功
+401|校验数据错误
+404|资源未找到
+403|权限不足
+412|参数错误
+500|未知错误
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
+
+#最近更新日志
+##2018年10月10日第一版本
+一、公司信息接口
+1. 获取公司列表接口
+2. 获取公司的主叫电话列表接口
+3. 获取公司的机器人话术列表接口
+二、
+1. 修改任务AI坐席数（任务并发数）
+2. 单次电话外呼接口
+1. 开放对外呼任务的AI坐席数（任务并发数）进行修改的接口支持，可更新任务状态为非进行中任务的AI坐席数（任务并发数）
+2. 开放单次电话外呼接口，可以通过该接口进行单次的电话外呼
+1. 获取已经完成任务电话号码接口查询每页不能超过50条
+1. 开放通过客户手机号直接进行电话外呼的接口
+
 
