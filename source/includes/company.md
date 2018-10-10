@@ -12,7 +12,7 @@
 {
 	"code": 200,
 	"data": {
-		"companyId": 1,
+		"tenantId": 1,
 		"companyName": "杭州一知智能科技有限公司"
 	},
 	"requestId": "VCWAHVEJ",
@@ -41,7 +41,7 @@ GET
 --------- | ------- |------
  code|integer | 响应码 |
  companyName|String | 公司名称 |
- companyId| integer | 公司Id |
+ tenantId| integer | 公司Id |
  requestId| String | 请求Id |
  resultMsg| String | 响应说明 |
 
