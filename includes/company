@@ -1,0 +1,239 @@
+<h1 id='2612df31ea'>公司信息接口</h1><h2 id='2a87ad0cc9'>获取公司列表接口</h2><h3 id='7d73d51a26'>功能说明：</h3>
+<p>通过此接口可以获取用户所有的公司信息</p>
+
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "code": 200,
+    "data": {
+        "tenantId": 1,
+        "companyName": "杭州一知智能科技有限公司"
+    },
+    "requestId": "VCWAHVEJ",
+    "resultMsg": "获取成功",
+    "errorStackTrace": null
+}
+
+</code></pre><h3 id='c7811523ac'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/openapi/v1/company/getCompanies</p>
+<h3 id='261d12e31d'>请求方法：</h3>
+<p>GET</p>
+<h3 id='2eb6f47757'>请求参数:</h3>
+<p>无</p>
+<h3 id='d981aa6fd7'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>companyName</td>
+<td>String</td>
+<td>公司名称</td>
+</tr>
+<tr>
+<td>tenantId</td>
+<td>integer</td>
+<td>公司Id</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='4ab023febf'>获取公司的主叫电话列表接口</h2><h3 id='7d73d51a26-2'>功能说明：</h3>
+<p>通过接口可以获取指定公司的所有主叫电话的列表</p>
+
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+  "code": 200,
+  "data": [{
+    "userPhoneId": 276,
+    "phone": "0000000000",
+    "phoneName": "0000000000",
+    "phoneType": "MOBILE",
+    "concurrency": 2
+  }],
+  "requestId": "ILNBEQJF",
+  "resultMsg": "获取成功",
+  "errorStackTrace": null
+}
+
+</code></pre><h3 id='c7811523ac-2'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/openapi/v1/company/getPhones</p>
+<h3 id='261d12e31d-2'>请求方法：</h3>
+<p>GET</p>
+<h3 id='2eb6f47757-2'>请求参数:</h3>
+<p>无</p>
+<h3 id='d981aa6fd7-2'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>userPhoneId</td>
+<td>Integer</td>
+<td>电话id</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>String</td>
+<td>电话号码</td>
+</tr>
+<tr>
+<td>phoneName</td>
+<td>String</td>
+<td>电话号码名称</td>
+</tr>
+<tr>
+<td>phoneType</td>
+<td>Integer</td>
+<td>手机(MOBILE, &quot;手机&quot;),阿里云固话(LANDLINE, &quot;固话&quot;),无主叫(UNFIXED_CALL, &quot;无主叫固话&quot;),训练主叫账号(VERBAL_TRICK_TRAINING_CALLER, &quot;训练主叫账号&quot;),训练被叫账号(VERBAL_TRICK_TRAINING_CALLED, &quot;训练被叫账号&quot;),网关设备(VOIP_DEVICE, &quot;网关设备&quot;),</td>
+</tr>
+<tr>
+<td>usedConcurrencyQuota</td>
+<td>Integer</td>
+<td>已经使用并发数</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='ed9cb485c4'>获取公司的机器人话术列表接口</h2><h3 id='7d73d51a26-3'>功能说明：</h3>
+<p>通过接口可以获取指定公司的所有配置完成的机器人话术 </p>
+
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "code": 200,
+    "data": [{
+        "robotDialogFlowId": 96,
+        "name": "金融理财--行业体验demo",
+        "type": "NORMAL",
+        "industry": {
+            "name": "FINANCE",
+            "desc": "金融类"
+        },
+        "subIndustry": {
+            "name": "FINICING",
+            "desc": "理财"
+        },
+        "familyNameTemplateId": null,
+        "status": "DRAFT"
+    }, {
+        "robotDialogFlowId": 136,
+        "name": "测试变量",
+        "type": "NORMAL",
+        "industry": {
+            "name": "OTHER",
+            "desc": "其他产品推广"
+        },
+        "subIndustry": {
+            "name": "OTHER",
+            "desc": "其他产品推广"
+        },
+        "familyNameTemplateId": null,
+        "status": "APPROVED"
+    }],
+    "requestId": "NSLARYGU",
+    "resultMsg": "获取成功",
+    "errorStackTrace": null
+}
+
+</code></pre><h3 id='c7811523ac-3'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/openapi/v1/company/getRobots</p>
+<h3 id='261d12e31d-3'>请求方法：</h3>
+<p>GET</p>
+<h3 id='2eb6f47757-3'>请求参数:</h3>
+<p>无</p>
+<h3 id='d981aa6fd7-3'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>robotDialogFlowId</td>
+<td>Integer</td>
+<td>机器人话术id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>机器人话术名称</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Integer</td>
+<td>机器人话术场景id TEMPLATE(0, &quot;模板&quot;),DEMO(1, &quot;展示&quot;),NORMAL(2, &quot;普通&quot;)</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Integer</td>
+<td>状态 DRAFT(0, &quot;编辑中&quot;),PENDING_APPROVAL(1, &quot;等待审核&quot;),REJECTED(2, &quot;拒绝&quot;),APPROVED(3, &quot;审核通过&quot;);</td>
+</tr>
+<tr>
+<td>industry</td>
+<td>object</td>
+<td>一级场景</td>
+</tr>
+<tr>
+<td>subIndustry</td>
+<td>String</td>
+<td>二级场景</td>
+</tr>
+<tr>
+<td>familyNameTemplateId</td>
+<td>Long</td>
+<td>百家姓模板id</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>

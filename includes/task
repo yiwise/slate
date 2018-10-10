@@ -1,0 +1,593 @@
+<h1 id='9d439be6a3'>任务操作接口</h1><h2 id='7073b68833'>创建任务接口</h2><h3 id='7d73d51a26'>功能说明：</h3>
+<p>通过此接口可以创建新的任务</p>
+<h3 id='2e118f3054'>更新说明：</h3>
+<p>创建任务,支持使用多个无主叫固话,只需设置总并发数,由系统自动分配每个线路的并发。</p>
+
+<blockquote>
+<p>入参JSON实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "jobPhoneNumberList": [{
+        "key": 348,
+        "value": "test"
+    }],
+    "robotCallJob": {
+        "alertUsers": [],
+        "dailyEndTime": "21:00",
+        "dailyStartTime": "09:00",
+        "description": "gthjoitjdjfdk",
+        "dialogFlowId": 2,
+        "earlyWarningAlertUsers": [],
+        "inactiveEndTime": "13:00",
+        "inactiveStartTime": "12:00",
+        "mode": "AUTO",
+        "name": "测试名称3333",
+        "phoneType": "LANDLINE",
+        "robotCount": 10,
+        "smsAlertLevel": ["A"],
+        "smsTemplateId": 1,
+        "startTime": "2017-11-21 04:32:00",
+        "tenantId": 1,
+        "wechatAlertLevel": [],
+        "wechatSendMethod": "SENDTOALL"
+    }
+}
+</code></pre>
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "code": 200,
+    "data": null,
+    "requestId": "RKXNIQAF",
+    "resultMsg": "修改成功",
+    "errorStackTrace": null
+}
+
+</code></pre><h3 id='c7811523ac'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/openapi/v1/task/createTask</p>
+<h3 id='261d12e31d'>请求方法：</h3>
+<p>POST</p>
+<h3 id='2eb6f47757'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>是</td>
+<td>任务名称</td>
+<td>测试API任务</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>Integer</td>
+<td>是</td>
+<td>任务类型 AUTO(0, &quot;自动任务&quot;),MANUAL(1, &quot;手动任务&quot;);</td>
+<td>AUTO</td>
+</tr>
+<tr>
+<td>startTime</td>
+<td>String</td>
+<td>是</td>
+<td>任务开始日期</td>
+<td>&quot;2017-10-19&quot;</td>
+</tr>
+<tr>
+<td>dailyStartTime</td>
+<td>String</td>
+<td>是</td>
+<td>可拨打开始时间</td>
+<td>08:00</td>
+</tr>
+<tr>
+<td>dailyEndTime</td>
+<td>String</td>
+<td>是</td>
+<td>可拨打结束时间</td>
+<td>22:00</td>
+</tr>
+<tr>
+<td>inactiveStartTime</td>
+<td>String</td>
+<td>是</td>
+<td>暂时停止开始时间</td>
+<td>12:00</td>
+</tr>
+<tr>
+<td>inactiveEndTime</td>
+<td>String</td>
+<td>是</td>
+<td>暂时停止结束时间</td>
+<td>13:00</td>
+</tr>
+<tr>
+<td>dialogFlowId</td>
+<td>String</td>
+<td>是</td>
+<td>话术id</td>
+<td>2</td>
+</tr>
+<tr>
+<td>alertUsers</td>
+<td>String</td>
+<td>否</td>
+<td>提醒的用户的id列表</td>
+<td>[1,2]</td>
+</tr>
+<tr>
+<td>earlyWarningAlertUsers</td>
+<td>String</td>
+<td>否</td>
+<td>行业预警消息推送人</td>
+<td>[1,2]</td>
+</tr>
+<tr>
+<td>phoneType</td>
+<td>String</td>
+<td>是</td>
+<td>号码类型 MOBILE(0, &quot;M&quot;, &quot;手机号码&quot;),LANDLINE(1, &quot;L&quot;, &quot;固话&quot;),UNFIXED_CALL(2, &quot;U&quot;, &quot;无主叫&quot;),VERBAL_TRICK_TRAINING_CALLER(3, &quot;VR&quot;, &quot;训练主叫账号&quot;),VERBAL_TRICK_TRAINING_CALLED(4, &quot;VD&quot;, &quot;训练被叫账号&quot;),VOIP_DEVICE(5, &quot;D&quot;, &quot;网关设备&quot;);</td>
+<td>UNFIXED_CALL</td>
+</tr>
+<tr>
+<td>robotCount</td>
+<td>String</td>
+<td>是</td>
+<td>AI数量</td>
+<td>10</td>
+</tr>
+<tr>
+<td>smsAlertLevel</td>
+<td>String</td>
+<td>否</td>
+<td>短信推送提醒意向等级</td>
+<td>[&quot;A&quot;,&quot;B&quot;]</td>
+</tr>
+<tr>
+<td>smsTemplateId</td>
+<td>String</td>
+<td>否</td>
+<td>短信模板地址</td>
+<td></td>
+</tr>
+<tr>
+<td>wechatAlertLevel</td>
+<td>String</td>
+<td>否</td>
+<td>微信推送提醒意向等级</td>
+<td>[&quot;A&quot;,&quot;B&quot;]</td>
+</tr>
+<tr>
+<td>wechatSendMethod</td>
+<td>String</td>
+<td>否</td>
+<td>微信推送方式（SENDTOALL 全推送/SENDTOONE 单推送/SENDTONONE 不推送）</td>
+<td>SENDTOALL</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>否</td>
+<td>备注</td>
+<td>测试</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>data</td>
+<td>integer</td>
+<td>刚刚创建的任务ID</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='6334004180'>启动任务接口</h2><h3 id='7d73d51a26-2'>功能说明：</h3>
+<p>通过此接口可以启动指定的任务</p>
+
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "code": 200,
+    "data": null,
+    "requestId": "RKXNIQAF",
+    "resultMsg": "修改成功",
+    "errorStackTrace": null
+}
+
+</code></pre><h3 id='c7811523ac-2'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/openapi/v1/task/start</p>
+<h3 id='261d12e31d-2'>请求方法：</h3>
+<p>POST</p>
+<h3 id='2eb6f47757-2'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>robotCallJobId</td>
+<td>Integer</td>
+<td>是</td>
+<td>任务Id</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7-2'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='93a2bc390a'>暂停任务接口</h2><h3 id='7d73d51a26-3'>功能说明：</h3>
+<p>通过此接口可以暂停指定的任务</p>
+
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "code": 200,
+    "data": null,
+    "requestId": "RKXNIQAF",
+    "resultMsg": "修改成功",
+    "errorStackTrace": null
+}
+
+</code></pre><h3 id='c7811523ac-3'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/openapi/v1/task/pause</p>
+<h3 id='261d12e31d-3'>请求方法：</h3>
+<p>POST</p>
+<h3 id='2eb6f47757-3'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>robotCallJobId</td>
+<td>Integer</td>
+<td>是</td>
+<td>任务Id</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7-3'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='15db7fdc1e'>停止任务接口</h2><h3 id='7d73d51a26-4'>功能说明：</h3>
+<p>通过此接口可以停止  指定的任务</p>
+
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code> {
+    "code": 200,
+    "data": null,
+    "requestId": "RKXNIQAF",
+    "resultMsg": "修改成功",
+    "errorStackTrace": null
+ }
+
+</code></pre><h3 id='c7811523ac-4'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/openapi/v1/task/stop</p>
+<h3 id='261d12e31d-4'>请求方法：</h3>
+<p>POST</p>
+<h3 id='2eb6f47757-4'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>robotCallJobId</td>
+<td>Integer</td>
+<td>是</td>
+<td>任务Id</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7-4'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='0705816c68'>删除任务</h2><h3 id='7d73d51a26-5'>功能说明：</h3>
+<p>通过调用此接口可以删除任务信息</p>
+
+<blockquote>
+<p>入参JSON实例</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+  "robotCallJobId": "1"
+}
+</code></pre>
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "code": 200,
+    "data": null,
+    "requestId": "GDFVVSAE",
+    "resultMsg": "删除成功",
+    "errorStackTrace": null
+}
+
+</code></pre><h3 id='c7811523ac-5'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/openapi/v1/task/delete</p>
+<h3 id='261d12e31d-5'>请求方法：</h3>
+<p>POST</p>
+<h3 id='2eb6f47757-5'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>robotCallJobId</td>
+<td>long</td>
+<td>是</td>
+<td>删除任务</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7-5'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>Integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='723af6367b'>向任务中导入客户接口</h2><h3 id='7d73d51a26-6'>功能说明：</h3>
+<p>通过此接口可以向指定的任务导入客户信息，用于拨打电话</p>
+
+<blockquote>
+<p>入参JSON实例:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "robotCallJobId": 28,
+    "customerPersons": [{
+        "name": "test",
+        "phoneNumber": "11111111111",
+        "properties": {
+            "ttt": "jjj"
+        }
+    }]
+}
+
+</code></pre>
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code> {
+    "code": 200,
+    "data": null,
+    "requestId": "RKXNIQAF",
+    "resultMsg": "修改成功",
+    "errorStackTrace": null
+ }
+
+</code></pre><h3 id='c7811523ac-6'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/openapi/v1/task/importTaskCustomer</p>
+<h3 id='261d12e31d-6'>请求方法：</h3>
+<p>POST</p>
+<h3 id='2eb6f47757-6'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>robotCallJobId</td>
+<td>Integer</td>
+<td>是</td>
+<td>任务Id</td>
+<td>1</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>是</td>
+<td>客户名称</td>
+<td>张三</td>
+</tr>
+<tr>
+<td>phoneNumber</td>
+<td>String</td>
+<td>是</td>
+<td>客户电话</td>
+<td>13998987676</td>
+</tr>
+<tr>
+<td>properties</td>
+<td>Map<String,String></td>
+<td>否</td>
+<td>客户额外信息</td>
+<td>请看json入参</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7-6'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='ai'>修改任务并发数（AI坐席数量）</h2><h3 id='7d73d51a26-7'>功能说明：</h3>
+<p>通过接口可以更改AI坐席数量，功能同crm端编辑话术时修改外呼号码的AI坐席数</p>
+
+<blockquote>
+<p>入参JSON实例</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "robotCallJobId": 28,
+    "robotCount": 2
+}
+
+</code></pre>
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "code": 200,
+    "data": null,
+    "requestId": "RKXNIQAF",
+    "resultMsg": "修改成功",
+    "errorStackTrace": null
+}
+
+</code></pre><h3 id='c7811523ac-7'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/openapi/v1/task/update</p>
+<h3 id='261d12e31d-7'>请求方法：</h3>
+<p>POST</p>
+<h3 id='2eb6f47757-7'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>robotCallJobId</td>
+<td>Integer</td>
+<td>是</td>
+<td>任务Id</td>
+<td>1</td>
+</tr>
+<tr>
+<td>robotCount</td>
+<td>Integer</td>
+<td>是</td>
+<td>任务数量</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7-7'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>

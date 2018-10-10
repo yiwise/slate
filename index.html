@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>一知智能对外API文档（非经销商客户）</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -210,39 +210,118 @@
     </a>
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
-        <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
-        </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            <a href="#5ea2e0cde2" class="toc-h1 toc-link" data-title="简介">简介</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#18d1449c7d" class="toc-h1 toc-link" data-title="开发引导">开发引导</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#c2587a41e7" class="toc-h2 toc-link" data-title="调用说明">调用说明</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#352e86fb3a" class="toc-h2 toc-link" data-title="权限认证">权限认证</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#bbf1456045" class="toc-h2 toc-link" data-title="统一请求格式">统一请求格式</a>
+                  </li>
+                  <li>
+                    <a href="#java-sdk-demo" class="toc-h2 toc-link" data-title="JAVA SDK DEMO 下载">JAVA SDK DEMO 下载</a>
+                  </li>
+                  <li>
+                    <a href="#e352b2a3cc" class="toc-h2 toc-link" data-title="最佳实践流程图:">最佳实践流程图:</a>
+                  </li>
+                  <li>
+                    <a href="#966dc24d9e" class="toc-h2 toc-link" data-title="常见问题解答">常见问题解答</a>
+                  </li>
+                  <li>
+                    <a href="#362ce418e7" class="toc-h2 toc-link" data-title="流程说明">流程说明</a>
+                  </li>
+                  <li>
+                    <a href="#6af18eb20f" class="toc-h2 toc-link" data-title="枚举类型说明">枚举类型说明</a>
+                  </li>
+                  <li>
+                    <a href="#42d5497355" class="toc-h2 toc-link" data-title="错误码信息">错误码信息</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#f628cebc7d" class="toc-h1 toc-link" data-title="最近更新日志">最近更新日志</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#2018-10-10" class="toc-h2 toc-link" data-title="2018年10月10日第一版本">2018年10月10日第一版本</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#2612df31ea" class="toc-h1 toc-link" data-title="公司信息接口">公司信息接口</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#2a87ad0cc9" class="toc-h2 toc-link" data-title="获取公司列表接口">获取公司列表接口</a>
+                  </li>
+                  <li>
+                    <a href="#4ab023febf" class="toc-h2 toc-link" data-title="获取公司的主叫电话列表接口">获取公司的主叫电话列表接口</a>
+                  </li>
+                  <li>
+                    <a href="#ed9cb485c4" class="toc-h2 toc-link" data-title="获取公司的机器人话术列表接口">获取公司的机器人话术列表接口</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#9d439be6a3" class="toc-h1 toc-link" data-title="任务操作接口">任务操作接口</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#7073b68833" class="toc-h2 toc-link" data-title="创建任务接口">创建任务接口</a>
+                  </li>
+                  <li>
+                    <a href="#6334004180" class="toc-h2 toc-link" data-title="启动任务接口">启动任务接口</a>
+                  </li>
+                  <li>
+                    <a href="#93a2bc390a" class="toc-h2 toc-link" data-title="暂停任务接口">暂停任务接口</a>
+                  </li>
+                  <li>
+                    <a href="#15db7fdc1e" class="toc-h2 toc-link" data-title="停止任务接口">停止任务接口</a>
+                  </li>
+                  <li>
+                    <a href="#0705816c68" class="toc-h2 toc-link" data-title="删除任务">删除任务</a>
+                  </li>
+                  <li>
+                    <a href="#723af6367b" class="toc-h2 toc-link" data-title="向任务中导入客户接口">向任务中导入客户接口</a>
+                  </li>
+                  <li>
+                    <a href="#ai" class="toc-h2 toc-link" data-title="修改任务并发数（AI坐席数量）">修改任务并发数（AI坐席数量）</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#b8663b3278" class="toc-h1 toc-link" data-title="任务信息查询接口">任务信息查询接口</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#63369839c4" class="toc-h2 toc-link" data-title="获取任务列表接口">获取任务列表接口</a>
+                  </li>
+                  <li>
+                    <a href="#4b97fb63c0" class="toc-h2 toc-link" data-title="获取任务详情接口">获取任务详情接口</a>
+                  </li>
+                  <li>
+                    <a href="#872ca4f7a9" class="toc-h2 toc-link" data-title="获取已经完成任务电话号码接口">获取已经完成任务电话号码接口</a>
+                  </li>
+                  <li>
+                    <a href="#6229f5f8cf" class="toc-h2 toc-link" data-title="获取一个通话的详情接口">获取一个通话的详情接口</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#c2507664e5" class="toc-h1 toc-link" data-title="信息回调接口">信息回调接口</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#8ca3fb2fc3" class="toc-h2 toc-link" data-title="回调地址说明">回调地址说明</a>
+                  </li>
+              </ul>
           </li>
       </ul>
         <ul class="toc-footer">
@@ -253,252 +332,2363 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+        <h1 id='5ea2e0cde2'>简介</h1>
+<p>探意机器人API文档</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>这是探意机器人API文档，具体详情查看每个API接口调用说明；</p>
 
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
+<p>如果有问题，欢迎联系我们客服，技术支持</p>
+
+<p>公司官网地址 ：http://www.yiwise.com/</p>
+<h1 id='18d1449c7d'>开发引导</h1><h2 id='c2587a41e7'>调用说明</h2>
+<p>第一种方式：主动调用 这种调用方式是客户主动调用接口获取数据或实现功能；</p>
+
+<p>主动调用需要传入APP_KEY、APP_SECRET、VERSION（当前版本的VERSION=v1）和COMPANY_SIGN（公司签名，后期提供修改）用于权限校验；</p>
+
+<p>注意：请在开发对接程序前联系探意技术支持进行注册，如果你还未签约，请先签约开通账户。</p>
+
+<p>第二种方式：方法回调 这种调用方式是当达到预设条件如：任务完成或通话结束时，由探意主动向指定地址发送信息；</p>
+
+<p>注意：请在开发前自主配置好回调地址。</p>
+
+<p>探意机器人API是使用HTTP并遵循REST原则设计的Web服务接口；</p>
+
+<p>您可以使用几乎任何客户端和任何编程语言与REST API进行交互。</p>
+
+<p>通过发送简单的HTTP请求就可以轻松接入使用。</p>
+
+<p>调用方式分为两种：主动调用和方法回调。</p>
+<h2 id='352e86fb3a'>权限认证</h2>
 <blockquote>
-<p>To authorize, use this code:</p>
+<p>认证密钥样例</p>
 </blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
+<pre class="highlight java tab-java"><code>  <span class="n">APP_KEY</span> <span class="o">=</span> <span class="s">"WtSMaXXXXXXXXtvy"</span><span class="o">;</span>
+  <span class="n">APP_SECRET</span> <span class="o">=</span> <span class="s">"aXSFnnZbHXXXXXXXXXXXXXXXMguz1Q"</span><span class="o">;</span>    
+  <span class="n">COMPANY_SIGN</span> <span class="o">=</span> <span class="s">"yiwisexxxx"</span><span class="o">;</span>    
 </code></pre>
+<p>API认证采用SHA256加密算法进行加密，使用时间戳、APP_KEY、APP_SECRET、VERSION（当前版本的VERSION=v1）和COMPANY_SIGN（公司签名，后期提供修改）共同生成一个密钥。</p>
+
+<p>目前已有完成JAVA版的样例，具体实现请下载SDK查阅。</p>
+
 <blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+<p>请在API样例<code>openapi-demo</code>中替换为自己的APP_KEY、APP_SECRET和COMPANY_SIGN.</p>
 </blockquote>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
+<p>探意为确保您的账户和信息安全，请在开发对接程序前联系探意技术支持注册接口调用专属密钥。</p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+您必须替换对接密钥 <code>APP_KEY 、 APP_SECRET 和COMPANY_SIGN </code>在您的对接程序中 
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h2 id='bbf1456045'>统一请求格式</h2>
+<p>URL格式：</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p><code>/{version}/{resource}/{function}</code></p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+<p>说明： </p>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
-</code></pre>
+<p>{version}api版本号</p>
+
+<p>{resource}为资源名，通常对应一类API</p>
+
+<p>{function}为该资源提供的操作方法</p>
+
+<p>请求响应的结果为json格式</p>
+
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>比如查询公司列表的url为：</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+<pre class="highlight plaintext"><code>&lt;code&gt;http://openapi/v1/company/getCompanies &lt;/code&gt; 表示调用company（公司列表）的get方法，并且返回json格式的字符串。
+
+我们目前已经提供的接口，请参考API。 
+
+</code></pre>
+<p>HTTP头信息:</p>
+
+<p><code>Accept:application/json;charset=utf-8</code></p>
+
+<p>说明：</p>
+
+<p>请求方式(Method)：统一用GET/POST方式，编码：UTF-8</p>
+
+<blockquote>
+</blockquote>
+<h2 id='java-sdk-demo'>JAVA SDK DEMO 下载</h2>
+<p>本页面提供Java的SDK下载。</p>
+
+<p>SDK包内有部分使用说明，各接口的详细使用说明请浏览各API详情页。</p>
+
+<p>如探意未提供您使用语言的SDK，您可以根据API文档开发接口</p>
+
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
+<th>语言</th>
+<th>GitHub地址</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>JAVA</td>
+<td><a href="https://github.com/yiwise/openapidemo.git">GitHub地址</a></td>
 </tr>
 </tbody></table>
+<h2 id='e352b2a3cc'>最佳实践流程图:</h2>
+<p><img src="images/OMS3.png" alt="Oms3" /></p>
+<h2 id='966dc24d9e'>常见问题解答</h2>
+<ol>
+<li>Q: 定时任务和手动任务的异同</li>
+</ol>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p>A: 异步，定时任务在设定好启动时间和结束时间时会在到达指定时间时自动启动
+    手动任务则需要导入客户之后手动启动任务；</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p>同步，任务到达12-14点或指定暂停时间会自动暂停，并且会占用AI并发量。</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+<ol>
+<li>Q: isv账号能否操作多个crm账号下的任务</li>
+</ol>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
+<p>A: 一个appKey和appSecret目前只能操作一个CRM的账户，CRM暂无子公司这个概念</p>
+<h2 id='362ce418e7'>流程说明</h2><h3 id='c632d650f0'>第一部分:</h3>
+<p>主要是获取公司相关信息，为创建任务提供数据。</p>
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
+<p>这里一共三个接口分别查询到：</p>
+
+<p>1.公司Id</p>
+
+<p>2.公司的主叫电话号码列表</p>
+
+<p>3.机器人话术相关参数：</p>
+
+<p>1）机器人话术id</p>
+
+<p>2) 机器人话术场景id</p>
+
+<p>3) 机器人话术录音id</p>
+<h3 id='4727f1c607'>第二部分:</h3>
+<p>核心业务部分，主要是任务的创建，启动，停止等操作。</p>
+<h4 id='1'>1.创建任务</h4>
+<p>创建任务过程中需要传入的几个重要的值：场景id,场景录音id,机器人话术id,这三个值不能传入有误，传入出错会导致任务拨打有误</p>
+<h4 id='2'>2.任务启动和暂停</h4>
+<p>任务创建完成之后，调用启动任务接口就可以启动任务，任务在启动时，可调用暂停任务让任务进入暂停状态（可再次运行）</p>
+<h4 id='3'>3.停止任务</h4>
+<p>在任务进行中，每一次通话结束都会调用通话回调接口，将本次通话详情发送到指定回调地址。</p>
+<h3 id='3acb0ac2ed'>第三部分:</h3>
+<p>任务运行结束，调用任务回调接口，将本次任务信息发送到指定回调地址。</p>
+<h3 id='46482cd3b1'>第四部分:</h3>
+<p>主要是查询任务相关信息。</p>
+<h2 id='6af18eb20f'>枚举类型说明</h2><h3 id='4db9754bc6'>电话卡类型枚举</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Description</th>
+<th>code</th>
+<th>desc</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>0</td>
+<td>手机</td>
+</tr>
+<tr>
+<td>1</td>
+<td>阿里云固话</td>
+</tr>
+<tr>
+<td>2</td>
+<td>无主叫固话</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<h3 id='ebc5aba134'>任务类型枚举</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Description</th>
+<th>code</th>
+<th>desc</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>1</td>
+<td>定时启动任务</td>
+</tr>
+<tr>
+<td>2</td>
+<td>手动启动任务</td>
 </tr>
 </tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
-<p>The Kittn API uses the following error codes:</p>
-
+<h3 id='2cc460551e'>外呼类型枚举</h3>
 <table><thead>
 <tr>
-<th>Error Code</th>
-<th>Meaning</th>
+<th>code</th>
+<th>desc</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
+<td>0</td>
+<td>sim卡(默认)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>固话</td>
+</tr>
+<tr>
+<td>2</td>
+<td>无主叫</td>
+</tr>
+</tbody></table>
+<h3 id='fde721579a'>是否发送短信枚举</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>desc</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>0</td>
+<td>否</td>
+</tr>
+<tr>
+<td>1</td>
+<td>是</td>
+</tr>
+</tbody></table>
+<h3 id='2ce89782c6'>任务状态枚举</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>desc</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>0</td>
+<td>未开始</td>
+</tr>
+<tr>
+<td>1</td>
+<td>进行中</td>
+</tr>
+<tr>
+<td>2</td>
+<td>已完成</td>
+</tr>
+<tr>
+<td>3</td>
+<td>可运行</td>
+</tr>
+<tr>
+<td>4</td>
+<td>用户暂停</td>
+</tr>
+<tr>
+<td>5</td>
+<td>系统暂停</td>
+</tr>
+<tr>
+<td>6</td>
+<td>已终止</td>
+</tr>
+<tr>
+<td>7</td>
+<td>排队中</td>
+</tr>
+<tr>
+<td>8</td>
+<td>AI到期</td>
+</tr>
+</tbody></table>
+<h3 id='ab2a28ce5f'>任务实例状态枚举</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>desc</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>0</td>
+<td>未开始</td>
+</tr>
+<tr>
+<td>1</td>
+<td>进行中</td>
+</tr>
+<tr>
+<td>2</td>
+<td>已完成</td>
+</tr>
+<tr>
+<td>3</td>
+<td>二次拨打调度中</td>
+</tr>
+</tbody></table>
+<h3 id='2056d5fc46'>任务实例已完成状态枚举</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>desc</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>0</td>
+<td>已接听</td>
+</tr>
+<tr>
+<td>1</td>
+<td>拒接</td>
+</tr>
+<tr>
+<td>2</td>
+<td>无法接通</td>
+</tr>
+<tr>
+<td>3</td>
+<td>主叫号码不可用</td>
+</tr>
+<tr>
+<td>4</td>
+<td>空号</td>
+</tr>
+<tr>
+<td>5</td>
+<td>关机</td>
+</tr>
+<tr>
+<td>6</td>
+<td>占线</td>
+</tr>
+<tr>
+<td>7</td>
+<td>停机</td>
+</tr>
+<tr>
+<td>8</td>
+<td>未接</td>
+</tr>
+<tr>
+<td>9</td>
+<td>主叫欠费</td>
+</tr>
+</tbody></table>
+<h3 id='f7d1eb2c90'>呼叫类型枚举</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>desc</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>0</td>
+<td>免费试用</td>
+</tr>
+<tr>
+<td>1</td>
+<td>任务</td>
+</tr>
+<tr>
+<td>2</td>
+<td>用户单独拨打</td>
+</tr>
+<tr>
+<td>3</td>
+<td>收费试用</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Ope后台拨打</td>
+</tr>
+<tr>
+<td>5</td>
+<td>大屏试用</td>
+</tr>
+<tr>
+<td>100</td>
+<td>客服人工拨打</td>
+</tr>
+</tbody></table>
+<h2 id='42d5497355'>错误码信息</h2>
+<table><thead>
+<tr>
+<th>错误码</th>
+<th>错误信息</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>执行成功</td>
 </tr>
 <tr>
 <td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>校验数据错误</td>
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td>资源未找到</td>
 </tr>
 <tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+<td>403</td>
+<td>权限不足</td>
 </tr>
 <tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td>412</td>
+<td>参数错误</td>
 </tr>
 <tr>
 <td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td>未知错误</td>
 </tr>
 </tbody></table>
+<h1 id='f628cebc7d'>最近更新日志</h1><h2 id='2018-10-10'>2018年10月10日第一版本</h2>
+<p>一、公司信息接口</p>
 
+<ol>
+<li><p>获取公司列表接口</p></li>
+<li><p>获取公司的主叫电话列表接口</p></li>
+<li><p>获取公司的机器人话术列表接口</p></li>
+</ol>
+
+<p>二、任务操作接口</p>
+
+<ol>
+<li><p>创建任务接口</p></li>
+<li><p>启动任务接口</p></li>
+<li><p>暂停任务接口</p></li>
+<li><p>停止任务接口</p></li>
+<li><p>删除任务</p></li>
+<li><p>向任务中导入客户接口</p></li>
+<li><p>修改任务AI坐席数（任务并发数）</p></li>
+</ol>
+
+<p>三、任务信息接口</p>
+
+<ol>
+<li><p>获取任务列表接口</p></li>
+<li><p>获取任务详情接口</p></li>
+<li><p>获取已经完成任务电话号码接口</p></li>
+<li><p>获取一个通话的详情接口</p></li>
+</ol>
+
+<p>四、信息回调接口</p>
+<h1 id='2612df31ea'>公司信息接口</h1><h2 id='2a87ad0cc9'>获取公司列表接口</h2><h3 id='7d73d51a26'>功能说明：</h3>
+<p>通过此接口可以获取用户所有的公司信息</p>
+
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "code": 200,
+    "data": {
+        "tenantId": 1,
+        "companyName": "杭州一知智能科技有限公司"
+    },
+    "requestId": "VCWAHVEJ",
+    "resultMsg": "获取成功",
+    "errorStackTrace": null
+}
+
+</code></pre><h3 id='c7811523ac'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/openapi/v1/company/getCompanies</p>
+<h3 id='261d12e31d'>请求方法：</h3>
+<p>GET</p>
+<h3 id='2eb6f47757'>请求参数:</h3>
+<p>无</p>
+<h3 id='d981aa6fd7'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>companyName</td>
+<td>String</td>
+<td>公司名称</td>
+</tr>
+<tr>
+<td>tenantId</td>
+<td>integer</td>
+<td>公司Id</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='4ab023febf'>获取公司的主叫电话列表接口</h2><h3 id='7d73d51a26-2'>功能说明：</h3>
+<p>通过接口可以获取指定公司的所有主叫电话的列表</p>
+
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+  "code": 200,
+  "data": [{
+    "userPhoneId": 276,
+    "phone": "0000000000",
+    "phoneName": "0000000000",
+    "phoneType": "MOBILE",
+    "concurrency": 2
+  }],
+  "requestId": "ILNBEQJF",
+  "resultMsg": "获取成功",
+  "errorStackTrace": null
+}
+
+</code></pre><h3 id='c7811523ac-2'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/openapi/v1/company/getPhones</p>
+<h3 id='261d12e31d-2'>请求方法：</h3>
+<p>GET</p>
+<h3 id='2eb6f47757-2'>请求参数:</h3>
+<p>无</p>
+<h3 id='d981aa6fd7-2'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>userPhoneId</td>
+<td>Integer</td>
+<td>电话id</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>String</td>
+<td>电话号码</td>
+</tr>
+<tr>
+<td>phoneName</td>
+<td>String</td>
+<td>电话号码名称</td>
+</tr>
+<tr>
+<td>phoneType</td>
+<td>Integer</td>
+<td>手机(MOBILE, &quot;手机&quot;),阿里云固话(LANDLINE, &quot;固话&quot;),无主叫(UNFIXED_CALL, &quot;无主叫固话&quot;),训练主叫账号(VERBAL_TRICK_TRAINING_CALLER, &quot;训练主叫账号&quot;),训练被叫账号(VERBAL_TRICK_TRAINING_CALLED, &quot;训练被叫账号&quot;),网关设备(VOIP_DEVICE, &quot;网关设备&quot;),</td>
+</tr>
+<tr>
+<td>usedConcurrencyQuota</td>
+<td>Integer</td>
+<td>已经使用并发数</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='ed9cb485c4'>获取公司的机器人话术列表接口</h2><h3 id='7d73d51a26-3'>功能说明：</h3>
+<p>通过接口可以获取指定公司的所有配置完成的机器人话术 </p>
+
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "code": 200,
+    "data": [{
+        "robotDialogFlowId": 96,
+        "name": "金融理财--行业体验demo",
+        "type": "NORMAL",
+        "industry": {
+            "name": "FINANCE",
+            "desc": "金融类"
+        },
+        "subIndustry": {
+            "name": "FINICING",
+            "desc": "理财"
+        },
+        "familyNameTemplateId": null,
+        "status": "DRAFT"
+    }, {
+        "robotDialogFlowId": 136,
+        "name": "测试变量",
+        "type": "NORMAL",
+        "industry": {
+            "name": "OTHER",
+            "desc": "其他产品推广"
+        },
+        "subIndustry": {
+            "name": "OTHER",
+            "desc": "其他产品推广"
+        },
+        "familyNameTemplateId": null,
+        "status": "APPROVED"
+    }],
+    "requestId": "NSLARYGU",
+    "resultMsg": "获取成功",
+    "errorStackTrace": null
+}
+
+</code></pre><h3 id='c7811523ac-3'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/openapi/v1/company/getRobots</p>
+<h3 id='261d12e31d-3'>请求方法：</h3>
+<p>GET</p>
+<h3 id='2eb6f47757-3'>请求参数:</h3>
+<p>无</p>
+<h3 id='d981aa6fd7-3'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>robotDialogFlowId</td>
+<td>Integer</td>
+<td>机器人话术id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>机器人话术名称</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Integer</td>
+<td>机器人话术场景id TEMPLATE(0, &quot;模板&quot;),DEMO(1, &quot;展示&quot;),NORMAL(2, &quot;普通&quot;)</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Integer</td>
+<td>状态 DRAFT(0, &quot;编辑中&quot;),PENDING_APPROVAL(1, &quot;等待审核&quot;),REJECTED(2, &quot;拒绝&quot;),APPROVED(3, &quot;审核通过&quot;);</td>
+</tr>
+<tr>
+<td>industry</td>
+<td>object</td>
+<td>一级场景</td>
+</tr>
+<tr>
+<td>subIndustry</td>
+<td>String</td>
+<td>二级场景</td>
+</tr>
+<tr>
+<td>familyNameTemplateId</td>
+<td>Long</td>
+<td>百家姓模板id</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h1 id='9d439be6a3'>任务操作接口</h1><h2 id='7073b68833'>创建任务接口</h2><h3 id='7d73d51a26'>功能说明：</h3>
+<p>通过此接口可以创建新的任务</p>
+<h3 id='2e118f3054'>更新说明：</h3>
+<p>创建任务,支持使用多个无主叫固话,只需设置总并发数,由系统自动分配每个线路的并发。</p>
+
+<blockquote>
+<p>入参JSON实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "jobPhoneNumberList": [{
+        "key": 348,
+        "value": "test"
+    }],
+    "robotCallJob": {
+        "alertUsers": [],
+        "dailyEndTime": "21:00",
+        "dailyStartTime": "09:00",
+        "description": "gthjoitjdjfdk",
+        "dialogFlowId": 2,
+        "earlyWarningAlertUsers": [],
+        "inactiveEndTime": "13:00",
+        "inactiveStartTime": "12:00",
+        "mode": "AUTO",
+        "name": "测试名称3333",
+        "phoneType": "LANDLINE",
+        "robotCount": 10,
+        "smsAlertLevel": ["A"],
+        "smsTemplateId": 1,
+        "startTime": "2017-11-21 04:32:00",
+        "tenantId": 1,
+        "wechatAlertLevel": [],
+        "wechatSendMethod": "SENDTOALL"
+    }
+}
+</code></pre>
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "code": 200,
+    "data": null,
+    "requestId": "RKXNIQAF",
+    "resultMsg": "修改成功",
+    "errorStackTrace": null
+}
+
+</code></pre><h3 id='c7811523ac'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/openapi/v1/task/createTask</p>
+<h3 id='261d12e31d'>请求方法：</h3>
+<p>POST</p>
+<h3 id='2eb6f47757'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>是</td>
+<td>任务名称</td>
+<td>测试API任务</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>Integer</td>
+<td>是</td>
+<td>任务类型 AUTO(0, &quot;自动任务&quot;),MANUAL(1, &quot;手动任务&quot;);</td>
+<td>AUTO</td>
+</tr>
+<tr>
+<td>startTime</td>
+<td>String</td>
+<td>是</td>
+<td>任务开始日期</td>
+<td>&quot;2017-10-19&quot;</td>
+</tr>
+<tr>
+<td>dailyStartTime</td>
+<td>String</td>
+<td>是</td>
+<td>可拨打开始时间</td>
+<td>08:00</td>
+</tr>
+<tr>
+<td>dailyEndTime</td>
+<td>String</td>
+<td>是</td>
+<td>可拨打结束时间</td>
+<td>22:00</td>
+</tr>
+<tr>
+<td>inactiveStartTime</td>
+<td>String</td>
+<td>是</td>
+<td>暂时停止开始时间</td>
+<td>12:00</td>
+</tr>
+<tr>
+<td>inactiveEndTime</td>
+<td>String</td>
+<td>是</td>
+<td>暂时停止结束时间</td>
+<td>13:00</td>
+</tr>
+<tr>
+<td>dialogFlowId</td>
+<td>String</td>
+<td>是</td>
+<td>话术id</td>
+<td>2</td>
+</tr>
+<tr>
+<td>alertUsers</td>
+<td>String</td>
+<td>否</td>
+<td>提醒的用户的id列表</td>
+<td>[1,2]</td>
+</tr>
+<tr>
+<td>earlyWarningAlertUsers</td>
+<td>String</td>
+<td>否</td>
+<td>行业预警消息推送人</td>
+<td>[1,2]</td>
+</tr>
+<tr>
+<td>phoneType</td>
+<td>String</td>
+<td>是</td>
+<td>号码类型 MOBILE(0, &quot;M&quot;, &quot;手机号码&quot;),LANDLINE(1, &quot;L&quot;, &quot;固话&quot;),UNFIXED_CALL(2, &quot;U&quot;, &quot;无主叫&quot;),VERBAL_TRICK_TRAINING_CALLER(3, &quot;VR&quot;, &quot;训练主叫账号&quot;),VERBAL_TRICK_TRAINING_CALLED(4, &quot;VD&quot;, &quot;训练被叫账号&quot;),VOIP_DEVICE(5, &quot;D&quot;, &quot;网关设备&quot;);</td>
+<td>UNFIXED_CALL</td>
+</tr>
+<tr>
+<td>robotCount</td>
+<td>String</td>
+<td>是</td>
+<td>AI数量</td>
+<td>10</td>
+</tr>
+<tr>
+<td>smsAlertLevel</td>
+<td>String</td>
+<td>否</td>
+<td>短信推送提醒意向等级</td>
+<td>[&quot;A&quot;,&quot;B&quot;]</td>
+</tr>
+<tr>
+<td>smsTemplateId</td>
+<td>String</td>
+<td>否</td>
+<td>短信模板地址</td>
+<td></td>
+</tr>
+<tr>
+<td>wechatAlertLevel</td>
+<td>String</td>
+<td>否</td>
+<td>微信推送提醒意向等级</td>
+<td>[&quot;A&quot;,&quot;B&quot;]</td>
+</tr>
+<tr>
+<td>wechatSendMethod</td>
+<td>String</td>
+<td>否</td>
+<td>微信推送方式（SENDTOALL 全推送/SENDTOONE 单推送/SENDTONONE 不推送）</td>
+<td>SENDTOALL</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>否</td>
+<td>备注</td>
+<td>测试</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>data</td>
+<td>integer</td>
+<td>刚刚创建的任务ID</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='6334004180'>启动任务接口</h2><h3 id='7d73d51a26-2'>功能说明：</h3>
+<p>通过此接口可以启动指定的任务</p>
+
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "code": 200,
+    "data": null,
+    "requestId": "RKXNIQAF",
+    "resultMsg": "修改成功",
+    "errorStackTrace": null
+}
+
+</code></pre><h3 id='c7811523ac-2'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/openapi/v1/task/start</p>
+<h3 id='261d12e31d-2'>请求方法：</h3>
+<p>POST</p>
+<h3 id='2eb6f47757-2'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>robotCallJobId</td>
+<td>Integer</td>
+<td>是</td>
+<td>任务Id</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7-2'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='93a2bc390a'>暂停任务接口</h2><h3 id='7d73d51a26-3'>功能说明：</h3>
+<p>通过此接口可以暂停指定的任务</p>
+
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "code": 200,
+    "data": null,
+    "requestId": "RKXNIQAF",
+    "resultMsg": "修改成功",
+    "errorStackTrace": null
+}
+
+</code></pre><h3 id='c7811523ac-3'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/openapi/v1/task/pause</p>
+<h3 id='261d12e31d-3'>请求方法：</h3>
+<p>POST</p>
+<h3 id='2eb6f47757-3'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>robotCallJobId</td>
+<td>Integer</td>
+<td>是</td>
+<td>任务Id</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7-3'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='15db7fdc1e'>停止任务接口</h2><h3 id='7d73d51a26-4'>功能说明：</h3>
+<p>通过此接口可以停止  指定的任务</p>
+
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code> {
+    "code": 200,
+    "data": null,
+    "requestId": "RKXNIQAF",
+    "resultMsg": "修改成功",
+    "errorStackTrace": null
+ }
+
+</code></pre><h3 id='c7811523ac-4'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/openapi/v1/task/stop</p>
+<h3 id='261d12e31d-4'>请求方法：</h3>
+<p>POST</p>
+<h3 id='2eb6f47757-4'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>robotCallJobId</td>
+<td>Integer</td>
+<td>是</td>
+<td>任务Id</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7-4'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='0705816c68'>删除任务</h2><h3 id='7d73d51a26-5'>功能说明：</h3>
+<p>通过调用此接口可以删除任务信息</p>
+
+<blockquote>
+<p>入参JSON实例</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+  "robotCallJobId": "1"
+}
+</code></pre>
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "code": 200,
+    "data": null,
+    "requestId": "GDFVVSAE",
+    "resultMsg": "删除成功",
+    "errorStackTrace": null
+}
+
+</code></pre><h3 id='c7811523ac-5'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/openapi/v1/task/delete</p>
+<h3 id='261d12e31d-5'>请求方法：</h3>
+<p>POST</p>
+<h3 id='2eb6f47757-5'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>robotCallJobId</td>
+<td>long</td>
+<td>是</td>
+<td>删除任务</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7-5'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>Integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='723af6367b'>向任务中导入客户接口</h2><h3 id='7d73d51a26-6'>功能说明：</h3>
+<p>通过此接口可以向指定的任务导入客户信息，用于拨打电话</p>
+
+<blockquote>
+<p>入参JSON实例:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "robotCallJobId": 28,
+    "customerPersons": [{
+        "name": "test",
+        "phoneNumber": "11111111111",
+        "properties": {
+            "ttt": "jjj"
+        }
+    }]
+}
+
+</code></pre>
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code> {
+    "code": 200,
+    "data": null,
+    "requestId": "RKXNIQAF",
+    "resultMsg": "修改成功",
+    "errorStackTrace": null
+ }
+
+</code></pre><h3 id='c7811523ac-6'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/openapi/v1/task/importTaskCustomer</p>
+<h3 id='261d12e31d-6'>请求方法：</h3>
+<p>POST</p>
+<h3 id='2eb6f47757-6'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>robotCallJobId</td>
+<td>Integer</td>
+<td>是</td>
+<td>任务Id</td>
+<td>1</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>是</td>
+<td>客户名称</td>
+<td>张三</td>
+</tr>
+<tr>
+<td>phoneNumber</td>
+<td>String</td>
+<td>是</td>
+<td>客户电话</td>
+<td>13998987676</td>
+</tr>
+<tr>
+<td>properties</td>
+<td>Map<String,String></td>
+<td>否</td>
+<td>客户额外信息</td>
+<td>请看json入参</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7-6'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='ai'>修改任务并发数（AI坐席数量）</h2><h3 id='7d73d51a26-7'>功能说明：</h3>
+<p>通过接口可以更改AI坐席数量，功能同crm端编辑话术时修改外呼号码的AI坐席数</p>
+
+<blockquote>
+<p>入参JSON实例</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "robotCallJobId": 28,
+    "robotCount": 2
+}
+
+</code></pre>
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "code": 200,
+    "data": null,
+    "requestId": "RKXNIQAF",
+    "resultMsg": "修改成功",
+    "errorStackTrace": null
+}
+
+</code></pre><h3 id='c7811523ac-7'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/openapi/v1/task/update</p>
+<h3 id='261d12e31d-7'>请求方法：</h3>
+<p>POST</p>
+<h3 id='2eb6f47757-7'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>robotCallJobId</td>
+<td>Integer</td>
+<td>是</td>
+<td>任务Id</td>
+<td>1</td>
+</tr>
+<tr>
+<td>robotCount</td>
+<td>Integer</td>
+<td>是</td>
+<td>任务数量</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7-7'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h1 id='b8663b3278'>任务信息查询接口</h1><h2 id='63369839c4'>获取任务列表接口</h2><h3 id='7d73d51a26'>功能说明：</h3>
+<p>通过此接口可以获取指定公司的任务列表</p>
+
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+  "code": 200,
+  "data": {
+    "number": 1,
+    "pageSize": 20,
+    "totalElements": 1,
+    "pages": 1,
+    "content": [{
+      "robotCallJobId": 1,
+      "name": "dialog测试",
+      "status": "TERMINATE",
+      "completedTask": 2157,
+      "taskCallTotal": 166,
+      "creationTime": "2018-09-26 18:07",
+      "createdByUserName": null,
+      "organizationName": null
+    }]
+  },
+  "requestId": "OTMAGZFW",
+  "resultMsg": "创建成功",
+  "errorStackTrace": null
+}
+</code></pre><h3 id='c7811523ac'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/openapi/v1/task/getTasks</p>
+<h3 id='261d12e31d'>请求方法：</h3>
+<p>GET</p>
+<h3 id='2eb6f47757'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>taskName</td>
+<td>String</td>
+<td>否</td>
+<td>任务名称</td>
+<td>测试API任务</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Integer</td>
+<td>否</td>
+<td>任务状态,NOT_STARTED(0, &quot;未开始&quot;),IN_PROCESS(1, &quot;进行中&quot;),COMPLETED(2, &quot;已完成&quot;),RUNNABLE(3, &quot;可运行&quot;),USER_PAUSE(4, &quot;用户暂停&quot;),SYSTEM_SUSPENDED(5, &quot;系统暂停&quot;),TERMINATE(6, &quot;已终止&quot;),IN_QUEUE(7, &quot;排队中&quot;);</td>
+<td>1</td>
+</tr>
+<tr>
+<td>pageNum</td>
+<td>Integer</td>
+<td>否</td>
+<td>第几页,默认1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>Integer</td>
+<td>否</td>
+<td>页面大小,选填,默认20</td>
+<td>10</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Integer</td>
+<td>第几页</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>Integer</td>
+<td>每页页面条数</td>
+</tr>
+<tr>
+<td>totalElements</td>
+<td>Integer</td>
+<td>数据总条数</td>
+</tr>
+<tr>
+<td>pages</td>
+<td>Integer</td>
+<td>页面总数</td>
+</tr>
+<tr>
+<td>robotCallJobId</td>
+<td>Integer</td>
+<td>任务id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>任务名称</td>
+</tr>
+<tr>
+<td>completedTask</td>
+<td>Integer</td>
+<td>完成的任务</td>
+</tr>
+<tr>
+<td>taskCallTotal</td>
+<td>Integer</td>
+<td>任务总数</td>
+</tr>
+<tr>
+<td>creationTime</td>
+<td>String</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td>createdByUserName</td>
+<td>String</td>
+<td>创建人</td>
+</tr>
+<tr>
+<td>organizationName</td>
+<td>String</td>
+<td>组织</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Integer</td>
+<td>任务状态, NOT_STARTED(0, &quot;未开始&quot;),IN_PROCESS(1, &quot;进行中&quot;),COMPLETED(2, &quot;已完成&quot;),RUNNABLE(3, &quot;可运行&quot;),USER_PAUSE(4, &quot;用户暂停&quot;),SYSTEM_SUSPENDED(5, &quot;系统暂停&quot;),TERMINATE(6, &quot;已终止&quot;),IN_QUEUE(7, &quot;排队中&quot;);</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='4b97fb63c0'>获取任务详情接口</h2><h3 id='7d73d51a26-2'>功能说明：</h3>
+<p>通过此接口可以获取指定任务的详细信息</p>
+
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "code": 200,
+    "data": {
+        "robotCallJob": {
+            "robotCallJobId": 1,
+            "tenantId": 1,
+            "dialogFlowId": 1,
+            "name": "dialog测试",
+            "mode": "MANUAL",
+            "robotCount": 12,
+            "smsTemplateId": null,
+            "phoneType": "LANDLINE",
+            "dailyStartTime": "15:08:31",
+            "dailyEndTime": "15:08:36",
+            "inactiveStartTime": "00:00:00",
+            "inactiveEndTime": "00:00:00",
+            "description": null,
+            "wechatAlertLevel": [],
+            "smsAlertLevel": [],
+            "alertUsers": [],
+            "wechatSendMethod": "SENDTOALL",
+            "status": "TERMINATE",
+            "startTime": null,
+            "nextStartTime": "00:00:00",
+            "creationTime": "2018-10-09 15:08:54",
+            "lastModifiedTime": "2018-10-09 15:11:20",
+            "earlyWarningAlertUsers": []
+        },
+        "jobPhoneNumberList": null,
+        "completedTask": 3612,
+        "taskCallTotal": 166,
+        "createdByUserName": "超管",
+        "organizationName": "系统内置",
+        "dialogFlowName": "内置",
+        "smsTemplateName": null,
+        "systemPauseNextStart": null,
+        "callJobStatsInfo": {
+            "taskProgress": 2175.9,
+            "answeredRate": 9.47,
+            "intentLevel": {
+                "A": 568,
+                "B": 555,
+                "C": 606,
+                "D": 598,
+                "E": 560,
+                "F": 569
+            },
+            "taskCallTotal": 3612,
+            "answeredTask": 342,
+            "chatDurationTotal": 89659,
+            "completedTask": 0,
+            "customerConcern": ["安全", "地理位置", "健身", "价格", "交通"],
+            "dialResult": {
+                "ANSWERED": 342,
+                "NO_ANSWER": 348,
+                "BUSY": 353,
+                "POWER_OFF": 344,
+                "OUT_OF_SERVICE": 341,
+                "REFUSED": 366,
+                "VACANT_NUMBER": 338,
+                "CAN_NOT_CONNECT": 334,
+                "FROM_PHONE_ERROR": 346,
+                "SYSTEM_ERROR": 344
+            },
+            "chatRound": {
+                "LESS_3": 9,
+                "F3_T6": 1,
+                "F6_T10": 4,
+                "F10_MORE": 336
+            },
+            "chatDuration": {
+                "LESS_10S": 14,
+                "F10S_T1MIN": 28,
+                "F1MIN_T2MIN": 35,
+                "F2MIN_T3MIN": 43,
+                "F3MIN_TMORE": 230
+            },
+            "callJobStatsBrokenLine": {
+                "taskCallCompletedList": [{
+                    "date": "2018-09-27",
+                    "val": 1000
+                }, {
+                    "date": "2018-10-09",
+                    "val": 1455
+                }],
+                "answeredTaskList": [{
+                    "date": "2018-09-27",
+                    "val": 119
+                }, {
+                    "date": "2018-10-09",
+                    "val": 134
+                }],
+                "answeredTaskRateList": [{
+                    "date": "2018-09-27",
+                    "val": 11.90
+                }, {
+                    "date": "2018-10-09",
+                    "val": 9.21
+                }],
+                "chatDurationTotalList": [{
+                    "date": "2018-09-25",
+                    "val": 22547
+                }, {
+                    "date": "2018-09-27",
+                    "val": 31218
+                }, {
+                    "date": "2018-10-09",
+                    "val": 35894
+                }],
+                "averageDurationList": [{
+                    "date": "2018-09-27",
+                    "val": 26233
+                }, {
+                    "date": "2018-10-09",
+                    "val": 26786
+                }]
+            }
+        }
+    },
+    "requestId": "VJDMUZIC",
+    "resultMsg": "获取成功",
+    "errorStackTrace": null
+}
+
+</code></pre><h3 id='c7811523ac-2'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/openapi/v1/task/getTaskDetail</p>
+<h3 id='261d12e31d-2'>请求方法：</h3>
+<p>GET</p>
+<h3 id='2eb6f47757-2'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>robotCallJobId</td>
+<td>Integer</td>
+<td>是</td>
+<td>任务Id</td>
+<td>21</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7-2'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>robotCallJobId</td>
+<td>Integer</td>
+<td>任务id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>任务名称</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>String</td>
+<td>任务类型 AUTO(0, &quot;自动任务&quot;),MANUAL(1, &quot;手动任务&quot;)</td>
+</tr>
+<tr>
+<td>phoneType</td>
+<td>String</td>
+<td>电话类型 MOBILE(0, &quot;M&quot;, &quot;手机号码&quot;),LANDLINE(1, &quot;L&quot;, &quot;固话&quot;),UNFIXED_CALL(2, &quot;U&quot;, &quot;无主叫&quot;),VERBAL_TRICK_TRAINING_CALLER(3, &quot;VR&quot;, &quot;训练主叫账号&quot;),VERBAL_TRICK_TRAINING_CALLED(4, &quot;VD&quot;, &quot;训练被叫账号&quot;),VOIP_DEVICE(5, &quot;D&quot;, &quot;网关设备&quot;)</td>
+</tr>
+<tr>
+<td>robotCount</td>
+<td>Integer</td>
+<td>任务拨打的号码总数</td>
+</tr>
+<tr>
+<td>startDate</td>
+<td>String</td>
+<td>任务开始时间</td>
+</tr>
+<tr>
+<td>dailyStartTime</td>
+<td>String</td>
+<td>可拨打开始时间</td>
+</tr>
+<tr>
+<td>dailyEndTime</td>
+<td>String</td>
+<td>可拨打结束时间</td>
+</tr>
+<tr>
+<td>inactiveStartTime</td>
+<td>String</td>
+<td>暂时停止开始时间</td>
+</tr>
+<tr>
+<td>inactiveEndTime</td>
+<td>String</td>
+<td>暂时停止结束时间</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Integer</td>
+<td>任务状态, NOT_STARTED(0, &quot;未开始&quot;),IN_PROCESS(1, &quot;进行中&quot;),COMPLETED(2, &quot;已完成&quot;),RUNNABLE(3, &quot;可运行&quot;),USER_PAUSE(4, &quot;用户暂停&quot;),SYSTEM_SUSPENDED(5, &quot;系统暂停&quot;),TERMINATE(6, &quot;已终止&quot;),IN_QUEUE(7, &quot;排队中&quot;);</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>任务注释</td>
+</tr>
+<tr>
+<td>createdByUserName</td>
+<td>String</td>
+<td>创建人</td>
+</tr>
+<tr>
+<td>organizationName</td>
+<td>String</td>
+<td>创建组织</td>
+</tr>
+<tr>
+<td>dialogFlowName</td>
+<td>String</td>
+<td>话术名称</td>
+</tr>
+<tr>
+<td>taskProgress</td>
+<td>Double</td>
+<td>任务进度</td>
+</tr>
+<tr>
+<td>answeredRate</td>
+<td>Double</td>
+<td>接听率</td>
+</tr>
+<tr>
+<td>taskCallTotal</td>
+<td>Integer</td>
+<td>任务完成总数</td>
+</tr>
+<tr>
+<td>answeredTask</td>
+<td>Integer</td>
+<td>接听数量</td>
+</tr>
+<tr>
+<td>chatDurationTotal</td>
+<td>Integer</td>
+<td>总接听时间</td>
+</tr>
+<tr>
+<td>intentLevel</td>
+<td>Map</td>
+<td>意向等级</td>
+</tr>
+<tr>
+<td>customerConcern</td>
+<td>Map</td>
+<td>关注点</td>
+</tr>
+<tr>
+<td>dialResult</td>
+<td>Map</td>
+<td>通话结果</td>
+</tr>
+<tr>
+<td>chatRound</td>
+<td>Map</td>
+<td>通话轮次</td>
+</tr>
+<tr>
+<td>chatDuration</td>
+<td>Map</td>
+<td>通话时间</td>
+</tr>
+<tr>
+<td>taskCallCompletedList</td>
+<td>List</td>
+<td>任务完成</td>
+</tr>
+<tr>
+<td>answeredTaskList</td>
+<td>List</td>
+<td>通话结果</td>
+</tr>
+<tr>
+<td>answeredTaskRateList</td>
+<td>List</td>
+<td>通话比例</td>
+</tr>
+<tr>
+<td>chatDurationTotalList</td>
+<td>List</td>
+<td>通话轮次</td>
+</tr>
+<tr>
+<td>averageDurationList</td>
+<td>List</td>
+<td>平均通话时长</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='872ca4f7a9'>获取已经完成任务电话号码接口</h2><h3 id='7d73d51a26-3'>功能说明：</h3>
+<p>通过此接口可以获取指定任务中所有已经完成的电话号码</p>
+
+<blockquote>
+<p>入参JSON实例</p>
+</blockquote>
+<pre class="highlight plaintext"><code>
+{
+    "customerGroupId": 1,
+    "robotCallJobId": 1,
+    "dialogFlowId": 2,
+    "followStatus": "AI_INITIAL_VISIT",
+    "latestCreationTime": "2018-07-25",
+    "resultStatuses": ["ANSWERED"],
+    "searchWords": "测试",
+    "intentLevels": ["A"],
+    "getTrainTaskList": true,
+    "pageSize": 20,
+    "earliestCreationTime": "2018-07-25",
+    "pageNum": 1
+}
+
+</code></pre>
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code> {
+           "code": 200,
+           "data": {
+               "number": 1,
+               "pageSize": 20,
+               "totalElements": 4,
+               "pages": 1,
+               "content": [
+                   {
+                       "callRecordId": 47,
+                       "tenantId": 1,
+                      "robotCallJobId": 50,
+                      "dialogFlowId": 4,
+                      "robotCallTaskId": 4,
+                      "customerPersonId": 5,
+                      "calledPhoneNumber": "18817501728",
+                      "phoneNumberId": 0,
+                      "resultStatus": "ANSWERED",
+                      "intentLevel": "A",
+                      "realIntentLevel": null,
+                      "customerConcern": [
+                       ],
+                       "fullAudioUrl": "https://ai-call-platform.oss-cn-hangzhou.aliyuncs.com/DialogueRecording/TenantId1/CallJobId50/OUZAXBCB__TaskId_4/ai_user.wav",
+                       "customerAudioUrl": "https://ai-call-platform.oss-cn-hangzhou.aliyuncs.com/DialogueRecording/TenantId1/CallJobId50/OUZAXBCB__TaskId_4/user.wav",
+                       "analysisBasis": "",
+                       "startTime": "2018-08-04 11:57:33",
+                       "chatDuration": 93,
+                       "chatRound": 16,
+                       "manualMarked": false,
+                       "readStatus": "NOT_READ",
+                       "customerGroupName": null,
+                       "robotCallJobName": "曹文浩123",
+                       "dialogFlowName": "张三",
+                       "customerPersonInfo": null,
+                       "callDetailList": null
+                   }
+               ]
+           },
+           "requestId": "YXDXFDSC",
+           "resultMsg": "获取成功",
+           "errorStackTrace": null
+       }
+</code></pre><h3 id='c7811523ac-3'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/openapi/v1/task/getCallRecordInfoList</p>
+<h3 id='261d12e31d-3'>请求方法：</h3>
+<p>POST</p>
+<h3 id='2eb6f47757-3'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>robotCallJobId</td>
+<td>Integer</td>
+<td>是</td>
+<td>任务id</td>
+<td>1</td>
+</tr>
+<tr>
+<td>searchWords</td>
+<td>Integer</td>
+<td>否</td>
+<td>关键字搜索</td>
+<td>0</td>
+</tr>
+<tr>
+<td>customerGroupId</td>
+<td>Integer</td>
+<td>否</td>
+<td>分组ID</td>
+<td>100</td>
+</tr>
+<tr>
+<td>resultStatuses</td>
+<td>List</td>
+<td>否</td>
+<td>通话结果 ANSWERED(0, &quot;已接听&quot;, null),NO_ANSWER(1, &quot;未接&quot;, &quot;呼叫号码未接听&quot;),BUSY(2, &quot;占线&quot;, &quot;呼叫号码占线&quot;),POWER_OFF(3, &quot;关机&quot;, &quot;呼叫号码关机&quot;),OUT_OF_SERVICE(4, &quot;被叫停机&quot;, &quot;呼叫号码停机&quot;),REFUSED(5, &quot;拒接&quot;, &quot;呼叫号码拒接&quot;),VACANT_NUMBER(6, &quot;空号&quot;, &quot;呼叫的号码是空号&quot;),CAN_NOT_CONNECT(7, &quot;无法接通&quot;, &quot;呼叫的号码无法接通&quot;),                 // 无法接通，或没拨通，或没能获取到EarlyMediaFROM_PHONE_ERROR(8, &quot;主叫号码不可用&quot;, &quot;主叫号码不可用&quot;),              // 主叫号码不可用，主叫欠费SYSTEM_ERROR(9, &quot;外呼失败&quot;, &quot;外呼失败&quot;)</td>
+<td>[&quot;ANSWERED&quot;, &quot;REFUSED&quot;]</td>
+</tr>
+<tr>
+<td>intentLevels</td>
+<td>List</td>
+<td>否</td>
+<td>客户关注点 A(0, &quot;A级(较强)&quot;),B(1, &quot;B级(一般)&quot;),C(2, &quot;C级(无法判断)&quot;),D(3, &quot;D级(很少)&quot;),E(4, &quot;E级别(需要再次跟进)&quot;),F(5, &quot;F级别(无需再次跟进)&quot;)</td>
+<td>[&quot;B&quot;, &quot;C&quot;]</td>
+</tr>
+<tr>
+<td>followStatus</td>
+<td>String</td>
+<td>否</td>
+<td>跟进状态 AI_INITIAL_VISIT(0, &quot;AI初访&quot;),PEOPLE_INITIAL_VISIT(1, &quot;人工初访&quot;),FOLLOW_UP(2, &quot;持续跟进&quot;);</td>
+<td>1</td>
+</tr>
+<tr>
+<td>dialogFlowId</td>
+<td>Integer</td>
+<td>否</td>
+<td>话术id</td>
+<td>1</td>
+</tr>
+<tr>
+<td>earliestCreationTime</td>
+<td>Integer</td>
+<td>否</td>
+<td>最早创建时间，日期标准格式，请不要包含时间。可以为空</td>
+<td>&quot;2018-07-25&quot;</td>
+</tr>
+<tr>
+<td>latestCreationTime</td>
+<td>Integer</td>
+<td>否</td>
+<td>最晚创建时间，日期标准格式，请不要包含时间。可以为空</td>
+<td>&quot;2018-07-25&quot;</td>
+</tr>
+<tr>
+<td>getTrainTaskList</td>
+<td>Integer</td>
+<td>否</td>
+<td>为true表示获取话术训练列表</td>
+<td>true</td>
+</tr>
+<tr>
+<td>pageNum</td>
+<td>Integer</td>
+<td>否</td>
+<td>第几页(默认为1)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>Integer</td>
+<td>否</td>
+<td>显示数量/页（默认为20）</td>
+<td>10</td>
+</tr>
+<tr>
+<td>resultQueryList</td>
+<td>List</td>
+<td>否</td>
+<td>支持按分析结果作为条件</td>
+<td>10</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7-3'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Integer</td>
+<td>第几页</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>Integer</td>
+<td>每页页面条数</td>
+</tr>
+<tr>
+<td>totalElements</td>
+<td>Integer</td>
+<td>数据总条数</td>
+</tr>
+<tr>
+<td>pages</td>
+<td>Integer</td>
+<td>页面总数</td>
+</tr>
+<tr>
+<td>callRecordId</td>
+<td>Integer</td>
+<td>通话ID</td>
+</tr>
+<tr>
+<td>robotCallTaskId</td>
+<td>Integer</td>
+<td>任务实例id（每个被叫电话为一个实例）</td>
+</tr>
+<tr>
+<td>dialogFlowId</td>
+<td>Integer</td>
+<td>话术id</td>
+</tr>
+<tr>
+<td>dialogFlowName</td>
+<td>Integer</td>
+<td>话术名称</td>
+</tr>
+<tr>
+<td>robotCallJobId</td>
+<td>Integer</td>
+<td>任务id</td>
+</tr>
+<tr>
+<td>robotCallJobName</td>
+<td>Integer</td>
+<td>任务名称</td>
+</tr>
+<tr>
+<td>phoneNumberId</td>
+<td>Integer</td>
+<td>电话线路id</td>
+</tr>
+<tr>
+<td>customerPersonId</td>
+<td>Integer</td>
+<td>接受电话客户id</td>
+</tr>
+<tr>
+<td>calledPhoneNumber</td>
+<td>String</td>
+<td>被叫客户电话号码</td>
+</tr>
+<tr>
+<td>resultStatus</td>
+<td>String</td>
+<td>接听状态,</td>
+</tr>
+<tr>
+<td>intentLevel</td>
+<td>String</td>
+<td>意向等级,</td>
+</tr>
+<tr>
+<td>realIntentLevel</td>
+<td>String</td>
+<td>真是意向等级,</td>
+</tr>
+<tr>
+<td>customerConcern</td>
+<td>List</td>
+<td>客户关注点,</td>
+</tr>
+<tr>
+<td>fullAudioUrl</td>
+<td>String</td>
+<td>完整音频地址</td>
+</tr>
+<tr>
+<td>customerAudioUrl</td>
+<td>String</td>
+<td>客户音频地址</td>
+</tr>
+<tr>
+<td>chatDuration</td>
+<td>Integer</td>
+<td>通话时长</td>
+</tr>
+<tr>
+<td>chatRound</td>
+<td>Integer</td>
+<td>通话轮次</td>
+</tr>
+<tr>
+<td>startTime</td>
+<td>String</td>
+<td>开始拨打时间</td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>String</td>
+<td>结束拨打时间</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='6229f5f8cf'>获取一个通话的详情接口</h2><h3 id='7d73d51a26-4'>功能说明：</h3>
+<p>通过此接口可以获取指定通话的详细信息</p>
+
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code> {
+    "code": 200,
+     "data": {
+        "phoneLog": {
+            "phoneLogs": [ 
+                {
+                    "sceneInstanceLogId": 1321,
+                    "sceneInstanceId": 540, 
+                    "speaker": "AI", 
+                    "content": "哎，您好，等待2s 哎，您好，拱墅区 中大银泰城边上有个首付50万左右的精装公寓你考虑吗？", 
+                    "userMean": null,
+                    "userMeanDetail": null,
+                    "aiUnknown": 1,
+                    "startTime": 0,
+                    "endTime": 0,
+                    "gmtCreate": "2018-01-24 20:51:53",
+                    "gmtModified": "2018-01-24 20:51:53"
+                },
+                {
+                    "sceneInstanceLogId": 1322,
+                    "sceneInstanceId": 540,
+                    "speaker": "ME",
+                    "content": "喂你好",
+                    "userMean": "~",
+                    "userMeanDetail": null,
+                    "aiUnknown": 0,
+                    "startTime": 300,
+                    "endTime": 1145,
+                    "gmtCreate": "2018-01-24 20:51:55",
+                    "gmtModified": "2018-01-24 20:51:55"
+                },
+                {
+                    "sceneInstanceLogId": 1323,
+                    "sceneInstanceId": 540,
+                    "speaker": "ME",
+                    "content": "哦你好",
+                    "userMean": "~",
+                    "userMeanDetail": null,
+                    "aiUnknown": 0,
+                    "startTime": 2330,
+                    "endTime": 3565,
+                    "gmtCreate": "2018-01-24 20:51:57",
+                    "gmtModified": "2018-01-24 20:51:57"
+                }
+          "luyinOssUrl": "https://byrobot-test.oss-cn-hangzhou.aliyuncs.com/RobotPhoneCommunicate/540/JYSYDCCHVFYYTMGJKKHJAMHARNNBWEJQ.wav" 
+         },
+         "sceneInstance": {
+             "callInstanceId": 540, 
+             "companyId": 1, 
+             "callJobId": 31, 
+             "customerId": 55, 
+             "customerTelephone": "17751279857", 
+             "customerName": "不弃", 
+             "status": 2, 
+             "finishStatus": 0,
+             "duration": 87, 
+             "chatRound": 18, 
+             "startTime": "2018-01-24 20:51:53", 
+             "endTime": "2018-01-24 20:53:28", 
+             "callerPhone": "18072749353", 
+             "luyinOssUrl": "https://byrobot-test.oss-cn-hangzhou.aliyuncs.com/RobotPhoneCommunicate/540/JYSYDCCHVFYYTMGJKKHJAMHARNNBWEJQ.wav",
+             "userLuyinOssUrl": "https://byrobot-test.oss-cn-hangzhou.aliyuncs.com/RobotPhoneCommunicate/540_user.wav",
+             "properties": "{}",
+             "handlePerson": "房产电销优化版",
+             "callType": 1,
+             "readStatus": 1,
+             "jobName": "buqi新的测试任务",
+            "robotDefId": 6,
+             "sceneDefId": 11,
+             "sceneRecordId": 1,
+             "trackResult": null,
+             "hangUp": 0,
+             "secondaryCallTime": "1970-01-01 13:00:00",
+             "secondaryCallTimes": 2,
+             "gmtCreate": "2018-01-24 20:51:31",
+             "gmtModified": "2018-02-03 18:27:19"
+         },
+         "taskResult": [ 
+             {
+                 "sceneInstanceResultId": 188,
+                 "companyId": 1,
+                 "sceneInstanceId": 540,
+                 "resultName": "预约时间",
+                 "resultValue": "2018-01-25 08:00",
+                 "resultDesc": null,
+                 "analyzeType": null,
+                 "gmtCreate": "2018-01-24 20:53:01",
+                "gmtModified": "2018-01-24 20:53:01"
+             },
+             {
+                 "sceneInstanceResultId": 189,
+                 "companyId": 1,
+                 "sceneInstanceId": 540,
+                 "resultName": "客户意向等级",
+                 "resultValue": "A级(较强)",
+                 "resultDesc": "该客户在通话过程中主动询问了产品细节，有进一步了解产品的意愿。",
+                 "analyzeType": "BY_ANALYZE_USER_LEVEL",
+                 "gmtCreate": "2018-01-24 20:53:28",
+                 "gmtModified": "2018-01-31 10:34:55"
+             }
+         ]
+     },
+     "resultMsg": "获取成功",
+     "errorStackTrace": null
+ }
+
+</code></pre><h3 id='c7811523ac-4'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/openapi/v1/task/phoneLogInfo</p>
+<h3 id='261d12e31d-4'>请求方法：</h3>
+<p>GET</p>
+<h3 id='2eb6f47757-4'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>callRecordId</td>
+<td>Integer</td>
+<td>是</td>
+<td>任务实例id</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7-4'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>phoneLogs</td>
+<td>List</td>
+<td>对话内容</td>
+</tr>
+<tr>
+<td>sceneInstanceId</td>
+<td>Integer</td>
+<td>任务实例id</td>
+</tr>
+<tr>
+<td>speaker</td>
+<td>String</td>
+<td>角色</td>
+</tr>
+<tr>
+<td>content</td>
+<td>String</td>
+<td>内容</td>
+</tr>
+<tr>
+<td>aiUnknown</td>
+<td>Integer</td>
+<td>是否是ai无法应答的问题，1-是，0-否</td>
+</tr>
+<tr>
+<td>luyinOssUrl</td>
+<td>String</td>
+<td>通话录音</td>
+</tr>
+<tr>
+<td>callInstanceId</td>
+<td>Integer</td>
+<td>任务实例id（每个被叫电话为一个实例）</td>
+</tr>
+<tr>
+<td>companyId</td>
+<td>Integer</td>
+<td>公司id</td>
+</tr>
+<tr>
+<td>callJobId</td>
+<td>Integer</td>
+<td>任务id</td>
+</tr>
+<tr>
+<td>customerId</td>
+<td>Integer</td>
+<td>客户id</td>
+</tr>
+<tr>
+<td>customerTelephone</td>
+<td>String</td>
+<td>客户手机</td>
+</tr>
+<tr>
+<td>customerName</td>
+<td>String</td>
+<td>客户名称</td>
+</tr>
+<tr>
+<td>finishStatus</td>
+<td>String</td>
+<td>任务实例已经完成的状态, 0:已接, 1:拒接, 2:无法接通, 3:主叫号码不可用, 4:空号, 5:关机, 6:占线, 7:停机, 8:未接, 9:主叫欠费</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>duration</td>
+<td>Integer</td>
+<td>通话时长</td>
+</tr>
+<tr>
+<td>chatRound</td>
+<td>Integer</td>
+<td>通话轮次</td>
+</tr>
+<tr>
+<td>startTime</td>
+<td>String</td>
+<td>开始拨打时间</td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>String</td>
+<td>结束拨打时间</td>
+</tr>
+<tr>
+<td>callerPhone</td>
+<td>String</td>
+<td>主叫电话</td>
+</tr>
+<tr>
+<td>luyinOssUrl</td>
+<td>Integer</td>
+<td>通话录音</td>
+</tr>
+<tr>
+<td>callType</td>
+<td>Integer</td>
+<td>拨打类型 0: 免费试用 1: 任务 2: 用户单独拨打</td>
+</tr>
+<tr>
+<td>readStatus</td>
+<td>Integer</td>
+<td>是否已读 0: 未读 1: 已读</td>
+</tr>
+<tr>
+<td>robotDefId</td>
+<td>String</td>
+<td>关联的机器人id</td>
+</tr>
+<tr>
+<td>sceneDefId</td>
+<td>String</td>
+<td>场景ID</td>
+</tr>
+<tr>
+<td>sceneRecordId</td>
+<td>Integer</td>
+<td>关联的录音id</td>
+</tr>
+<tr>
+<td>trackResult</td>
+<td>List</td>
+<td>bug追踪结果</td>
+</tr>
+<tr>
+<td>jobName</td>
+<td>String</td>
+<td>任务名称</td>
+</tr>
+<tr>
+<td>hangUp</td>
+<td>Integer</td>
+<td>挂机人, 0: AI 1: 用户</td>
+</tr>
+<tr>
+<td>taskResult</td>
+<td>String</td>
+<td>任务结果分析</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h1 id='c2507664e5'>信息回调接口</h1><h2 id='8ca3fb2fc3'>回调地址说明</h2>
       </div>
       <div class="dark-box">
-          <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
-          </div>
       </div>
     </div>
   </body>
