@@ -276,27 +276,16 @@ POST
  >入参JSON实例:
  
   ```
- 
 {
-	"taskId":10000,
-	"companyId":2000,
-	"customerInfoList":[
-		{
-			"name":"测试0",
-			"phone":"18311110000",
-			"properties":{  //客户额外信息，如果话术中包含变量，则需要在properties中加上对应字段，map的key和话术中的变量保持一致。如果话术没有变量，则不要properties
-				"real_name":"real"
-			}
-		},
-		{
-			"name":"测试1",
-			"phone":"18311112222",
-			"properties":{  //客户额外信息，如果话术中包含变量，则需要在properties中加上对应字段，map的key和话术中的变量保持一致。如果话术没有变量，则不要properties
-				"real_name":"real"
-			}
+	"robotCallJobId": 28,
+	"customerPersons": [{
+		"name": "test",
+		"phoneNumber": "11111111111",
+		"properties": {
+			"ttt": "jjj"
 		}
-	]
-} 
+	}]
+}
   
   ```
   
@@ -326,10 +315,9 @@ POST
  
  参数名 | 类型 | 是否必须 | 描述 | 实例 
  --------- | ------- |------- | ------ |----------
-  companyId| Integer| 是 | 公司id| 1 |
-  taskId| Integer| 是 | 任务Id| 1 |
+  robotCallJobId| Integer| 是 | 任务Id| 1 |
   name| String| 是 | 客户名称| 张三 |
-  phone| String| 是 | 客户电话| 13998987676 |
+  phoneNumber| String| 是 | 客户电话| 13998987676 |
   properties| Map<String,String>| 否 | 客户额外信息| 请看json入参 |
 
  
@@ -351,20 +339,8 @@ POST
 
 ```
 {
-  //公司Id
-  "companyId": 123,
-  //任务Id
-  "taskId":1669,
-  //任务名称
-  "taskName":"test",
-  //任务类型 详见枚举
-  "taskType":1,
-  //外呼号码列表，当有多个外呼号码时可以用[,]分隔
-  "userPhoneIds":"255,244",
-  //外呼类型 详见枚举
-  "callType":1,
-  //并发数
-  "concurrencyQuota":2
+	"robotCallJobId": 28,
+	"robotCount": 2
 }
 
 ```
@@ -395,13 +371,8 @@ POST
 
 参数名 | 类型 | 是否必须 | 描述 | 实例 
 --------- | ------- |------- | ------ |------
- companyId| Integer| 是 | 公司Id| 1 |
- taskId| Integer| 是 | 任务Id| 1 |
- taskName| String| 是 | 任务名称| 1 |
- taskType| Integer| 是 | 任务类型| 1 |
- userPhoneIds| String| 是 | 外呼号码| 1 |
- callType| Integer| 是 | 外呼类型| 1 |
- concurrencyQuota| Integer| 是 | 公司Id| 1 |
+ robotCallJobId| Integer| 是 | 任务Id| 1 |
+ robotCount| Integer| 是 | 任务数量| 1 |
 
 
 ###响应：
