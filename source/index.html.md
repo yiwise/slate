@@ -31,7 +31,7 @@ search: true
 
 第一种方式：主动调用 这种调用方式是客户主动调用接口获取数据或实现功能；
 
-主动调用需要传入APP_KEY、APP_SECRET、VERSION（当前版本的VERSION=v1）和COMPANY_SIGN（公司签名，后期提供修改）用于权限校验；
+主动调用需在请求头传入APP_KEY、APP_SECRET、VERSION（当前版本的VERSION=v1）、COMPANY_SIGN（公司签名，后期提供修改）和验签用于权限校验；
 
 注意：请在开发对接程序前联系探意技术支持进行注册，如果你还未签约，请先签约开通账户。
 
@@ -58,12 +58,12 @@ search: true
   COMPANY_SIGN = "yiwisexxxx";    
 ```
 
-API认证采用SHA256加密算法进行加密，使用时间戳、APP_KEY、APP_SECRET、VERSION（当前版本的VERSION=v1）和COMPANY_SIGN（公司签名，后期提供修改）共同生成一个密钥。
+API认证采用SHA256加密算法进行加密，使用时间戳、APP_KEY、APP_SECRET、VERSION（当前版本的VERSION=v1）和COMPANY_SIGN（公司签名，后期提供修改）共同生成一个验签字段。
 
 目前已有完成JAVA版的样例，具体实现请下载SDK查阅。
 
 
-> 请在API样例`openapi-demo`中替换为自己的APP_KEY、APP_SECRET和COMPANY_SIGN.
+> 请在API样例`openapidemo`中替换为自己的APP_KEY、APP_SECRET和COMPANY_SIGN.
 
 探意为确保您的账户和信息安全，请在开发对接程序前联系探意技术支持注册接口调用专属密钥。
 
@@ -90,7 +90,7 @@ URL格式：
 >比如查询公司列表的url为：
   
 ```请求URL样例  
-<code>http://openapi/v1/company/getCompanies </code> 表示调用company（公司列表）的get方法，并且返回json格式的字符串。
+<code>http://apiOpen/v1/company/getCompanies </code> 表示调用company（公司列表）的get方法，并且返回json格式的字符串。
 
 我们目前已经提供的接口，请参考API。 
 
