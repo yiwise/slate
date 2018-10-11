@@ -46,7 +46,7 @@
 ```
 {
 	"code": 200,
-	"data": null,
+	"data": 139,
 	"requestId": "RKXNIQAF",
 	"resultMsg": "修改成功",
 	"errorStackTrace": null
@@ -56,7 +56,7 @@
 
 ###请求：
 
-URL：http://robot.yiwise.cn/openapi/v1/task/createTask
+URL：http://robot.yiwise.cn/apiOpen/v1/task/createTask
 
 ###请求方法：
 
@@ -67,14 +67,15 @@ POST
 
 参数名 | 类型 | 是否必须 | 描述 | 实例 
 --------- | ------- |------- | ------ |----------
+ jobPhoneNumberList| List| 是 |任务主叫号码列表 key为tenant_phone_number_id， val是线路号码|  [{"key": 348,"value": "test"}] |
  name| String| 是 |任务名称| 测试API任务 |
  mode| Integer| 是 | 任务类型 AUTO(0, "自动任务"),MANUAL(1, "手动任务"); | AUTO |
- startTime| String| 是 | 任务开始日期| "2017-10-19"  |
+ startTime| String| 是 | 任务开始时间| "2017-11-21 04:32:00"  |
  dailyStartTime| String| 是 | 可拨打开始时间| 08:00 |
  dailyEndTime| String| 是 | 可拨打结束时间| 22:00 |
  inactiveStartTime| String| 是 | 暂时停止开始时间| 12:00 |
  inactiveEndTime| String| 是 | 暂时停止结束时间| 13:00 |
- dialogFlowId| String| 是 | 话术id| 2|
+ dialogFlowId| String| 是 | 话术id| 139|
  alertUsers| String| 否 | 提醒的用户的id列表| [1,2]|
  earlyWarningAlertUsers| String| 否 | 行业预警消息推送人| [1,2]|
  phoneType| String| 是 | 号码类型 MOBILE(0, "M", "手机号码"),LANDLINE(1, "L", "固话"),UNFIXED_CALL(2, "U", "无主叫"),VERBAL_TRICK_TRAINING_CALLER(3, "VR", "训练主叫账号"),VERBAL_TRICK_TRAINING_CALLED(4, "VD", "训练被叫账号"),VOIP_DEVICE(5, "D", "网关设备");| UNFIXED_CALL|
@@ -91,8 +92,9 @@ POST
 
 参数名 | 类型 | 描述 
 --------- | ------- |------
- code|integer | 响应码 |
- data|integer | 刚刚创建的任务ID |
+ code|Integer | 响应码 |
+ data|Long | 刚刚创建的任务ID |
+ requestId| String | 请求Id |
  resultMsg| String | 响应说明 |
 
 ##启动任务接口
@@ -116,7 +118,7 @@ POST
 
 ###请求：
 
-URL：http://robot.yiwise.cn/openapi/v1/task/start
+URL：http://robot.yiwise.cn/apiOpen/v1/task/start
 
 ###请求方法：
 
@@ -135,6 +137,7 @@ POST
 参数名 | 类型 | 描述 
 --------- | ------- |------
  code|integer | 响应码 |
+ requestId| String | 请求Id |
  resultMsg| String | 响应说明 |
  
 ##暂停任务接口
@@ -158,7 +161,7 @@ POST
  
 ###请求：
  
- URL：http://robot.yiwise.cn/openapi/v1/task/pause
+ URL：http://robot.yiwise.cn/apiOpen/v1/task/pause
  
 ###请求方法：
  
@@ -177,6 +180,7 @@ POST
  参数名 | 类型 | 描述 
  --------- | ------- |------
   code|integer | 响应码 |
+ requestId| String | 请求Id |
   resultMsg| String | 响应说明 |
 
 ##停止任务接口
@@ -200,7 +204,7 @@ POST
  
 ###请求：
  
- URL：http://robot.yiwise.cn/openapi/v1/task/stop
+ URL：http://robot.yiwise.cn/apiOpen/v1/task/stop
  
 ###请求方法：
  
@@ -219,6 +223,7 @@ POST
  参数名 | 类型 | 描述 
  --------- | ------- |------
   code|integer | 响应码 |
+ requestId| String | 请求Id |
   resultMsg| String | 响应说明 |
   
 ##删除任务
@@ -248,7 +253,7 @@ POST
   
 ###请求：
  
- URL：http://robot.yiwise.cn/openapi/v1/task/delete
+ URL：http://robot.yiwise.cn/apiOpen/v1/task/delete
  
 ###请求方法：
  
@@ -265,6 +270,7 @@ POST
  参数名 | 类型 | 描述 |
  --------- | ------- |------
   code|Integer | 响应码 |
+ requestId| String | 请求Id |
   resultMsg| String | 响应说明 |
 
 ##向任务中导入客户接口
@@ -304,7 +310,7 @@ POST
  
 ###请求：
  
- URL：http://robot.yiwise.cn/openapi/v1/task/importTaskCustomer
+ URL：http://robot.yiwise.cn/apiOpen/v1/task/importTaskCustomer
 
 ###请求方法：
  
@@ -318,7 +324,7 @@ POST
   robotCallJobId| Integer| 是 | 任务Id| 1 |
   name| String| 是 | 客户名称| 张三 |
   phoneNumber| String| 是 | 客户电话| 13998987676 |
-  properties| Map<String,String>| 否 | 客户额外信息| 请看json入参 |
+  properties| Map<String,String>| 否 | 话术中自定义的语句内容| 请看json入参 |
 
  
  
@@ -327,6 +333,7 @@ POST
  参数名 | 类型 | 描述 
  --------- | ------- |------
   code|integer | 响应码 |
+ requestId| String | 请求Id |
   resultMsg| String | 响应说明 |
 
 ##修改任务并发数（AI坐席数量）
@@ -360,7 +367,7 @@ POST
 
 ###请求：
 
-URL：http://robot.yiwise.cn/openapi/v1/task/update
+URL：http://robot.yiwise.cn/apiOpen/v1/task/update
 
 ###请求方法：
 
@@ -380,6 +387,7 @@ POST
 参数名 | 类型 | 描述 
 --------- | ------- |------
  code|integer | 响应码 |
+ requestId| String | 请求Id |
  resultMsg| String | 响应说明 |
  
   

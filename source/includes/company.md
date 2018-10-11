@@ -24,7 +24,7 @@
 
 ###请求：
 
-URL：http://robot.yiwise.cn/openapi/v1/company/getCompanies
+URL：http://robot.yiwise.cn/apiOpen/v1/company/getCompanies
 
 ###请求方法：
 
@@ -41,7 +41,7 @@ GET
 --------- | ------- |------
  code|integer | 响应码 |
  companyName|String | 公司名称 |
- tenantId| integer | 公司Id |
+ tenantId| Long | 公司Id |
  requestId| String | 请求Id |
  resultMsg| String | 响应说明 |
 
@@ -74,7 +74,7 @@ GET
 
 ###请求：
 
-URL：http://robot.yiwise.cn/openapi/v1/company/getPhones
+URL：http://robot.yiwise.cn/apiOpen/v1/company/getPhones
 
 ###请求方法：
 
@@ -94,7 +94,7 @@ GET
  phone| String | 电话号码 |
  phoneName| String | 电话号码名称 |
  phoneType| Integer | 手机(MOBILE, "手机"),阿里云固话(LANDLINE, "固话"),无主叫(UNFIXED_CALL, "无主叫固话"),训练主叫账号(VERBAL_TRICK_TRAINING_CALLER, "训练主叫账号"),训练被叫账号(VERBAL_TRICK_TRAINING_CALLED, "训练被叫账号"),网关设备(VOIP_DEVICE, "网关设备"), |
- usedConcurrencyQuota| Integer | 已经使用并发数 |
+ concurrency| Integer | 已经使用并发数 |
  requestId| String | 请求Id |
  resultMsg| String | 响应说明 |
 
@@ -147,7 +147,7 @@ GET
 
 ###请求：
 
-URL：http://robot.yiwise.cn/openapi/v1/company/getRobots
+URL：http://robot.yiwise.cn/apiOpen/v1/company/getRobots
 
 ###请求方法：
 
@@ -164,10 +164,10 @@ GET
  code|integer | 响应码 |
  robotDialogFlowId|Integer | 机器人话术id |
  name| String | 机器人话术名称 |
- type| Integer | 机器人话术场景id TEMPLATE(0, "模板"),DEMO(1, "展示"),NORMAL(2, "普通")|
+ type| Integer | 机器人话术类型 TEMPLATE(0, "模板"),DEMO(1, "展示"),NORMAL(2, "普通")|
  status| Integer | 状态 DRAFT(0, "编辑中"),PENDING_APPROVAL(1, "等待审核"),REJECTED(2, "拒绝"),APPROVED(3, "审核通过"); |
- industry| object | 一级场景 |
- subIndustry| String | 二级场景 |
+ industry| object | 一级行业类型 |
+ subIndustry| String | 二级行业类型 |
  familyNameTemplateId| Long | 百家姓模板id |
  requestId| String | 请求Id |
  resultMsg| String | 响应说明 |
