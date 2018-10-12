@@ -38,14 +38,14 @@
 </blockquote>
 <pre class="highlight plaintext"><code>{
     "code": 200,
-    "data": null,
+    "data": 139,
     "requestId": "RKXNIQAF",
     "resultMsg": "修改成功",
     "errorStackTrace": null
 }
 
 </code></pre><h3 id='c7811523ac'>请求：</h3>
-<p>URL：http://robot.yiwise.cn/openapi/v1/task/createTask</p>
+<p>URL：http://robot.yiwise.cn/apiOpen/v1/task/createTask</p>
 <h3 id='261d12e31d'>请求方法：</h3>
 <p>POST</p>
 <h3 id='2eb6f47757'>请求参数:</h3>
@@ -58,6 +58,13 @@
 <th>实例</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>jobPhoneNumberList</td>
+<td>List</td>
+<td>是</td>
+<td>任务主叫号码列表 key为tenant_phone_number_id， val是线路号码</td>
+<td>[{&quot;key&quot;: 348,&quot;value&quot;: &quot;test&quot;}]</td>
+</tr>
 <tr>
 <td>name</td>
 <td>String</td>
@@ -76,8 +83,8 @@
 <td>startTime</td>
 <td>String</td>
 <td>是</td>
-<td>任务开始日期</td>
-<td>&quot;2017-10-19&quot;</td>
+<td>任务开始时间</td>
+<td>&quot;2017-11-21 04:32:00&quot;</td>
 </tr>
 <tr>
 <td>dailyStartTime</td>
@@ -112,7 +119,7 @@
 <td>String</td>
 <td>是</td>
 <td>话术id</td>
-<td>2</td>
+<td>139</td>
 </tr>
 <tr>
 <td>alertUsers</td>
@@ -188,13 +195,18 @@
 </thead><tbody>
 <tr>
 <td>code</td>
-<td>integer</td>
+<td>Integer</td>
 <td>响应码</td>
 </tr>
 <tr>
 <td>data</td>
-<td>integer</td>
+<td>Long</td>
 <td>刚刚创建的任务ID</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
 </tr>
 <tr>
 <td>resultMsg</td>
@@ -217,7 +229,7 @@
 }
 
 </code></pre><h3 id='c7811523ac-2'>请求：</h3>
-<p>URL：http://robot.yiwise.cn/openapi/v1/task/start</p>
+<p>URL：http://robot.yiwise.cn/apiOpen/v1/task/start</p>
 <h3 id='261d12e31d-2'>请求方法：</h3>
 <p>POST</p>
 <h3 id='2eb6f47757-2'>请求参数:</h3>
@@ -252,6 +264,11 @@
 <td>响应码</td>
 </tr>
 <tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
+</tr>
+<tr>
 <td>resultMsg</td>
 <td>String</td>
 <td>响应说明</td>
@@ -272,7 +289,7 @@
 }
 
 </code></pre><h3 id='c7811523ac-3'>请求：</h3>
-<p>URL：http://robot.yiwise.cn/openapi/v1/task/pause</p>
+<p>URL：http://robot.yiwise.cn/apiOpen/v1/task/pause</p>
 <h3 id='261d12e31d-3'>请求方法：</h3>
 <p>POST</p>
 <h3 id='2eb6f47757-3'>请求参数:</h3>
@@ -307,6 +324,11 @@
 <td>响应码</td>
 </tr>
 <tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
+</tr>
+<tr>
 <td>resultMsg</td>
 <td>String</td>
 <td>响应说明</td>
@@ -327,7 +349,7 @@
  }
 
 </code></pre><h3 id='c7811523ac-4'>请求：</h3>
-<p>URL：http://robot.yiwise.cn/openapi/v1/task/stop</p>
+<p>URL：http://robot.yiwise.cn/apiOpen/v1/task/stop</p>
 <h3 id='261d12e31d-4'>请求方法：</h3>
 <p>POST</p>
 <h3 id='2eb6f47757-4'>请求参数:</h3>
@@ -362,6 +384,11 @@
 <td>响应码</td>
 </tr>
 <tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
+</tr>
+<tr>
 <td>resultMsg</td>
 <td>String</td>
 <td>响应说明</td>
@@ -389,7 +416,7 @@
 }
 
 </code></pre><h3 id='c7811523ac-5'>请求：</h3>
-<p>URL：http://robot.yiwise.cn/openapi/v1/task/delete</p>
+<p>URL：http://robot.yiwise.cn/apiOpen/v1/task/delete</p>
 <h3 id='261d12e31d-5'>请求方法：</h3>
 <p>POST</p>
 <h3 id='2eb6f47757-5'>请求参数:</h3>
@@ -422,6 +449,11 @@
 <td>code</td>
 <td>Integer</td>
 <td>响应码</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
 </tr>
 <tr>
 <td>resultMsg</td>
@@ -459,7 +491,7 @@
  }
 
 </code></pre><h3 id='c7811523ac-6'>请求：</h3>
-<p>URL：http://robot.yiwise.cn/openapi/v1/task/importTaskCustomer</p>
+<p>URL：http://robot.yiwise.cn/apiOpen/v1/task/importTaskCustomer</p>
 <h3 id='261d12e31d-6'>请求方法：</h3>
 <p>POST</p>
 <h3 id='2eb6f47757-6'>请求参数:</h3>
@@ -497,7 +529,7 @@
 <td>properties</td>
 <td>Map<String,String></td>
 <td>否</td>
-<td>客户额外信息</td>
+<td>话术中自定义的语句内容</td>
 <td>请看json入参</td>
 </tr>
 </tbody></table>
@@ -513,6 +545,11 @@
 <td>code</td>
 <td>integer</td>
 <td>响应码</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
 </tr>
 <tr>
 <td>resultMsg</td>
@@ -544,7 +581,7 @@
 }
 
 </code></pre><h3 id='c7811523ac-7'>请求：</h3>
-<p>URL：http://robot.yiwise.cn/openapi/v1/task/update</p>
+<p>URL：http://robot.yiwise.cn/apiOpen/v1/task/update</p>
 <h3 id='261d12e31d-7'>请求方法：</h3>
 <p>POST</p>
 <h3 id='2eb6f47757-7'>请求参数:</h3>
@@ -584,6 +621,11 @@
 <td>code</td>
 <td>integer</td>
 <td>响应码</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
 </tr>
 <tr>
 <td>resultMsg</td>

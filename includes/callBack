@@ -1,1 +1,100 @@
-<h1 id='c2507664e5'>信息回调接口</h1><h2 id='8ca3fb2fc3'>回调地址说明</h2>
+<h1 id='5091ae52ef'>任务信息回调接口</h1>
+<p>回调指的是电话任务在运行过程中对单通电话通话结果、通话详情和任务完成事件等对isv用户的回调通知，所有回调事件都使用同一回调地址，请根据回调数据中的
+&quot;dataType&quot;字段区分不同的回调，目前支持两种回调类型，通话记录结果回调和任务完成回调。</p>
+<pre class="highlight plaintext"><code> 通话记录回调dataType:ROBOT_CALL_RECORD
+
+ 任务完成详情回调dataType:ROBOT_CALL_JOB
+</code></pre><h2 id='f27f4cb938'>回调说明</h2>
+<aside class="notice">
+ 请您在对接接口前，务必配置好回调地址,否则回调将无法成功。 
+</aside>
+
+<p>所有回调方法采用POST请求发起</p>
+
+<p>最多回调10次，每次回调时长按1分钟，2分钟，4分钟，8分钟间隔依次递增，总回调时长可达24小时。回调成功后，处理方应当返回字符串success在返回的body体中</p>
+
+<p>## 通话记录回调接口
+当一次通话完成后，探意机器人会自动调用回调程序向用户配置的回调地址发送本次通话详情。</p>
+
+<blockquote>
+<p>入参JSON实例:
+ <code>
+{
+    &quot;dataType&quot;:&quot;ROBOT_CALL_RECORD&quot;,
+    &quot;data&quot;:{
+        &quot;callRecordId&quot;:108,
+        &quot;tenantId&quot;:1,
+        &quot;robotCallJobId&quot;:43,
+        &quot;calledPhoneNumber&quot;:&quot;17751279857&quot;,
+        &quot;resultStatus&quot;:&quot;ANSWERED&quot;,
+        &quot;intentLevel&quot;:null,
+        &quot;customerConcern&quot;:[
+            &quot;价格&quot;
+        ],
+        &quot;fullAudioUrl&quot;:&quot;https://ai-call-platform-daily.oss-cn-hangzhou.aliyuncs.com/DialogueRecording/TenantId1/CallJobId43/YMJGKYVO_TaskId_1305203/ai_user.wav&quot;,
+        &quot;customerAudioUrl&quot;:&quot;https://ai-call-platform-daily.oss-cn-hangzhou.aliyuncs.com/DialogueRecording/TenantId1/CallJobId43/YMJGKYVO_TaskId_1305203/user.wav&quot;,
+        &quot;analysisBasis&quot;:null,
+        &quot;startTime&quot;:&quot;2018-10-12T11:19:03.208&quot;,
+        &quot;endTime&quot;:&quot;2018-10-12T11:19:20.975&quot;,
+        &quot;chatDuration&quot;:6,
+        &quot;chatRound&quot;:0,
+        &quot;attributes&quot;:{
+            &quot;有钱&quot;
+        },
+        &quot;robotCallDetailList&quot;:[
+            {
+                &quot;text&quot;:null,
+                &quot;startOffset&quot;:null,
+                &quot;endOffset&quot;:null,
+                &quot;type&quot;:null
+            }
+        ]
+    }
+}
+</code></p>
+</blockquote>
+<h3 id='2eb6f47757'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>dataType</td>
+<td>String</td>
+<td>回调类型（始终为 ROBOT_CALL_RECORD ）</td>
+</tr>
+</tbody></table>
+<h2 id='0510043503'>任务完成详情回调接口</h2>
+<p>当一次任务完成后，探意机器人会自动调用回调程序向用户配置的回调地址发送本次任务结束的信息。</p>
+
+<blockquote>
+<p>入参JSON实例:
+ <code>
+{
+    &quot;dataType&quot;:&quot;ROBOT_CALL_JOB&quot;,
+    &quot;data&quot;:{
+        &quot;robotCallJobId&quot;:43,
+        &quot;tenantId&quot;:1,
+        &quot;startTime&quot;:null,
+        &quot;status&quot;:&quot;COMPLETED&quot;
+    }
+}
+</code></p>
+</blockquote>
+<h3 id='2eb6f47757-2'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>dataType</td>
+<td>String</td>
+<td>回调类型（始终为 ROBOT_CALL_JOB ）</td>
+</tr>
+</tbody></table>

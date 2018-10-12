@@ -16,7 +16,7 @@
 }
 
 </code></pre><h3 id='c7811523ac'>请求：</h3>
-<p>URL：http://robot.yiwise.cn/openapi/v1/company/getCompanies</p>
+<p>URL：http://robot.yiwise.cn/apiOpen/v1/company/getCompanies</p>
 <h3 id='261d12e31d'>请求方法：</h3>
 <p>GET</p>
 <h3 id='2eb6f47757'>请求参数:</h3>
@@ -41,7 +41,7 @@
 </tr>
 <tr>
 <td>tenantId</td>
-<td>integer</td>
+<td>Long</td>
 <td>公司Id</td>
 </tr>
 <tr>
@@ -76,7 +76,7 @@
 }
 
 </code></pre><h3 id='c7811523ac-2'>请求：</h3>
-<p>URL：http://robot.yiwise.cn/openapi/v1/company/getPhones</p>
+<p>URL：http://robot.yiwise.cn/apiOpen/v1/company/getPhones</p>
 <h3 id='261d12e31d-2'>请求方法：</h3>
 <p>GET</p>
 <h3 id='2eb6f47757-2'>请求参数:</h3>
@@ -115,7 +115,7 @@
 <td>手机(MOBILE, &quot;手机&quot;),阿里云固话(LANDLINE, &quot;固话&quot;),无主叫(UNFIXED_CALL, &quot;无主叫固话&quot;),训练主叫账号(VERBAL_TRICK_TRAINING_CALLER, &quot;训练主叫账号&quot;),训练被叫账号(VERBAL_TRICK_TRAINING_CALLED, &quot;训练被叫账号&quot;),网关设备(VOIP_DEVICE, &quot;网关设备&quot;),</td>
 </tr>
 <tr>
-<td>usedConcurrencyQuota</td>
+<td>concurrency</td>
 <td>Integer</td>
 <td>已经使用并发数</td>
 </tr>
@@ -173,7 +173,7 @@
 }
 
 </code></pre><h3 id='c7811523ac-3'>请求：</h3>
-<p>URL：http://robot.yiwise.cn/openapi/v1/company/getRobots</p>
+<p>URL：http://robot.yiwise.cn/apiOpen/v1/company/getRobots</p>
 <h3 id='261d12e31d-3'>请求方法：</h3>
 <p>GET</p>
 <h3 id='2eb6f47757-3'>请求参数:</h3>
@@ -204,7 +204,7 @@
 <tr>
 <td>type</td>
 <td>Integer</td>
-<td>机器人话术场景id TEMPLATE(0, &quot;模板&quot;),DEMO(1, &quot;展示&quot;),NORMAL(2, &quot;普通&quot;)</td>
+<td>机器人话术类型 TEMPLATE(0, &quot;模板&quot;),DEMO(1, &quot;展示&quot;),NORMAL(2, &quot;普通&quot;)</td>
 </tr>
 <tr>
 <td>status</td>
@@ -214,12 +214,12 @@
 <tr>
 <td>industry</td>
 <td>object</td>
-<td>一级场景</td>
+<td>一级行业类型</td>
 </tr>
 <tr>
 <td>subIndustry</td>
 <td>String</td>
-<td>二级场景</td>
+<td>二级行业类型</td>
 </tr>
 <tr>
 <td>familyNameTemplateId</td>
