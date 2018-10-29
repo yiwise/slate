@@ -6,7 +6,7 @@ toc_footers:
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
-  - company
+  - tenant
   - task
   - obtainTask
   - callBack
@@ -90,7 +90,7 @@ URL格式：
 >比如查询公司列表的url为：
   
 ```请求URL样例  
-<code>http://apiOpen/v1/company/getCompanies </code> 表示调用company（公司列表）的get方法，并且返回json格式的字符串。
+<code>http://apiOpen/v1/tenant/getTenants </code> 表示调用company（公司列表）的get方法，并且返回json格式的字符串。
 
 我们目前已经提供的接口，请参考API。 
 
@@ -151,7 +151,7 @@ JAVA | [GitHub地址](https://github.com/yiwise/openapidemo.git)
   
   1）机器人话术id
   
-  2) 机器人话术场景id
+  2) 机器人话术行业id
   
   3) 机器人话术录音id
 
@@ -184,80 +184,6 @@ code    | desc
 0 | 手机 
 1 | 阿里云固话 
 2 | 无主叫固话
-
-### 任务类型枚举
- 
-code    | desc 
---------- | ------- 
-1 | 定时启动任务
-2 | 手动启动任务 
-
-
-### 外呼类型枚举
- 
-code    | desc 
---------- | ------- 
-0| sim卡(默认)
-1| 固话
-2| 无主叫 
-
-### 是否发送短信枚举
- 
-code    | desc 
---------- | ------- 
-0 | 否
-1 | 是 
-
-
-
-### 任务状态枚举
- 
-code    | desc 
---------- | ------- 
-0| 未开始
-1| 进行中
-2| 已完成
-3| 可运行
-4| 用户暂停
-5| 系统暂停
-6| 已终止
-7| 排队中
-8| AI到期
-
-### 任务实例状态枚举
- 
-code    | desc 
---------- | ------- 
-0| 未开始
-1| 进行中
-2| 已完成
-3| 二次拨打调度中
-
-
-### 任务实例已完成状态枚举
-code   | desc
-----|-----
-0| 已接听
-1| 拒接
-2| 无法接通
-3| 主叫号码不可用
-4| 空号
-5| 关机
-6| 占线
-7| 停机
-8| 未接
-9| 主叫欠费
-
-### 呼叫类型枚举
-code   | desc
-----|-----
-0|免费试用
-1|任务
-2|用户单独拨打
-3|收费试用
-4|Ope后台拨打
-5|大屏试用
-100|客服人工拨打
 
 
 ## 错误码信息
