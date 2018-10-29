@@ -16,10 +16,6 @@ search: true
 
 # 简介
 
-config openapi_url https://openapi.tanyibot.com
-
-config openapi_url
-
 探意机器人API文档1
 
 这是探意机器人API文档，具体详情查看每个API接口调用说明；
