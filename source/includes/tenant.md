@@ -24,7 +24,7 @@
 
 ###请求：
 
-URL：http://robot.yiwise.cn/apiOpen/v1/company/getCompanies
+URL：https://openapi.tanyibot.com/apiOpen/v1/company/getCompanies
 
 ###请求方法：
 
@@ -74,7 +74,7 @@ GET
 
 ###请求：
 
-URL：http://robot.yiwise.cn/apiOpen/v1/company/getPhones
+URL：https://openapi.tanyibot.com/apiOpen/v1/company/getPhones
 
 ###请求方法：
 
@@ -147,7 +147,7 @@ GET
 
 ###请求：
 
-URL：http://robot.yiwise.cn/apiOpen/v1/company/getRobots
+URL：https://openapi.tanyibot.com/apiOpen/v1/company/getRobots
 
 ###请求方法：
 
