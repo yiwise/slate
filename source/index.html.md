@@ -161,7 +161,7 @@ JAVA | [GitHub地址](https://github.com/yiwise/openapidemo.git)
 
 ####1.创建任务
 
-    创建任务过程中需要传入的几个重要的值：场景id,场景录音id,机器人话术id,这三个值不能传入有误，传入出错会导致任务拨打有误
+    创建任务过程中需要传入的几个重要的值：行业id,录音id,机器人话术id,这三个值不能传入有误，传入出错会导致任务拨打有误
 ####2.任务启动和暂停
     任务创建完成之后，调用启动任务接口就可以启动任务，任务在启动时，可调用暂停任务让任务进入暂停状态（可再次运行）
 ####3.停止任务  
@@ -181,9 +181,90 @@ JAVA | [GitHub地址](https://github.com/yiwise/openapidemo.git)
  
 code    | desc 
 --------- | ------- 
-0 | 手机 
-1 | 阿里云固话 
-2 | 无主叫固话
+MOBILE | 手机 
+LANDLINE | 阿里云固话 
+UNFIXED_CALL | 无主叫固话
+VERBAL_TRICK_TRAINING_CALLER | 训练主叫账号
+VERBAL_TRICK_TRAINING_CALLED | 训练被叫账号
+VOIP_DEVICE | 网关设备 
+
+### 话术类型枚举
+
+code    | desc 
+--------- | ------- 
+TEMPLATE | 机器人话术类型
+DEMO | 展示 
+NORMAL | 普通
+
+### 话术状态枚举
+
+code    | desc 
+--------- | ------- 
+DRAFT | 编辑中
+PENDING_APPROVAL | 等待审核 
+REJECTED | 拒绝
+APPROVED | 审核通过
+
+### 任务类型枚举
+
+code    | desc 
+--------- | ------- 
+AUTO | 自动任务
+MANUAL | 手动任务 
+
+### 任务状态枚举
+
+code    | desc 
+--------- | ------- 
+NOT_STARTED | 未开始
+IN_PROCESS | 进行中 
+COMPLETED | 已完成
+RUNNABLE | 可运行
+USER_PAUSE | 用户暂停
+SYSTEM_SUSPENDED | 系统暂停
+TERMINATE | 已终止
+IN_QUEUE | 排队中
+
+### 跟进状态枚举
+
+code    | desc 
+--------- | ------- 
+AI_INITIAL_VISIT | AI初访
+PEOPLE_INITIAL_VISIT | 人工初访 
+FOLLOW_UP | 持续跟进
+
+### 通话结果枚举
+
+code    | desc 
+--------- | ------- 
+ANSWERED | 已接听
+NO_ANSWER | 呼叫号码未接听
+BUSY | 呼叫号码占线
+POWER_OFF | 呼叫号码关机
+OUT_OF_SERVICE | 呼叫号码停机
+REFUSED | 呼叫号码拒接
+VACANT_NUMBER | 呼叫的号码是空号
+CAN_NOT_CONNECT | 呼叫的号码无法接通
+EarlyMediaFROM_PHONE_ERROR | 主叫号码不可用
+SYSTEM_ERROR | 外呼失败
+
+### 意向等级枚举
+
+code    | desc 
+--------- | ------- 
+A | 较强
+B | 一般
+C | 无法判断
+D | 很少
+E | 需要再次跟进
+F | 无需再次跟进
+
+### 是否已读枚举
+
+code    | desc 
+--------- | ------- 
+NOT_READ | 未读
+HAS_READ | 已读
 
 
 ## 错误码信息
