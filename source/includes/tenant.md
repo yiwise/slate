@@ -13,7 +13,7 @@
 	"code": 200,
 	"data": {
 		"tenantId": 1,
-		"companyName": "杭州一知智能科技有限公司"
+		"tenantName": "杭州一知智能科技有限公司"
 	},
 	"requestId": "VCWAHVEJ",
 	"resultMsg": "获取成功",
@@ -24,7 +24,7 @@
 
 ###请求：
 
-URL：https://crm.tanyibot.com/apiOpen/v1/company/getCompanies
+URL：https://crm.tanyibot.com/apiOpen/v1/tenant/getCompanies
 
 ###请求方法：
 
@@ -40,7 +40,7 @@ GET
 参数名 | 类型 | 描述 
 --------- | ------- |------
  code|integer | 响应码 |
- companyName|String | 公司名称 |
+ tenantName|String | 公司名称 |
  tenantId| Long | 公司Id |
  requestId| String | 请求Id |
  resultMsg| String | 响应说明 |
@@ -74,7 +74,7 @@ GET
 
 ###请求：
 
-URL：https://crm.tanyibot.com/apiOpen/v1/company/getPhones
+URL：https://crm.tanyibot.com/apiOpen/v1/tenant/getPhones
 
 ###请求方法：
 
@@ -147,7 +147,7 @@ GET
 
 ###请求：
 
-URL：https://crm.tanyibot.com/apiOpen/v1/company/getRobots
+URL：https://crm.tanyibot.com/apiOpen/v1/tenant/getRobots
 
 ###请求方法：
 
