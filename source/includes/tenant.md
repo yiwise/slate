@@ -24,7 +24,7 @@
 
 ###请求：
 
-URL：https://openapi.tanyibot.com/apiOpen/v1/company/getCompanies
+URL：https://crm.tanyibot.com/apiOpen/v1/company/getCompanies
 
 ###请求方法：
 
@@ -74,7 +74,7 @@ GET
 
 ###请求：
 
-URL：https://openapi.tanyibot.com/apiOpen/v1/company/getPhones
+URL：https://crm.tanyibot.com/apiOpen/v1/company/getPhones
 
 ###请求方法：
 
@@ -147,7 +147,7 @@ GET
 
 ###请求：
 
-URL：https://openapi.tanyibot.com/apiOpen/v1/company/getRobots
+URL：https://crm.tanyibot.com/apiOpen/v1/company/getRobots
 
 ###请求方法：
 

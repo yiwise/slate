@@ -35,7 +35,7 @@
 
 ###请求：
 
-URL：https://openapi.tanyibot.com/apiOpen/v1/task/getTasks
+URL：https://crm.tanyibot.com/apiOpen/v1/task/getTasks
 
 ###请求方法：
 
@@ -209,7 +209,7 @@ GET
 
 ###请求：
 
-URL：https://openapi.tanyibot.com/apiOpen/v1/task/getTaskDetail
+URL：https://crm.tanyibot.com/apiOpen/v1/task/getTaskDetail
 
 ###请求方法：
 
@@ -348,7 +348,7 @@ GET
  
 ###请求：
  
- URL：https://openapi.tanyibot.com/apiOpen/v1/task/getCallRecordInfoList
+ URL：https://crm.tanyibot.com/apiOpen/v1/task/getCallRecordInfoList
  
 ###请求方法：
  
@@ -467,7 +467,7 @@ GET
  
 ###请求：
  
- URL：https://openapi.tanyibot.com/apiOpen/v1/task/phoneLogInfo
+ URL：https://crm.tanyibot.com/apiOpen/v1/task/phoneLogInfo
  
 ###请求方法：
  

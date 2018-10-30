@@ -56,7 +56,7 @@
 
 ###请求：
 
-URL：https://openapi.tanyibot.com/apiOpen/v1/task/createTask
+URL：https://crm.tanyibot.com/apiOpen/v1/task/createTask
 
 ###请求方法：
 
@@ -118,7 +118,7 @@ POST
 
 ###请求：
 
-URL：https://openapi.tanyibot.com/apiOpen/v1/task/start
+URL：https://crm.tanyibot.com/apiOpen/v1/task/start
 
 ###请求方法：
 
@@ -161,7 +161,7 @@ POST
  
 ###请求：
  
- URL：https://openapi.tanyibot.com/apiOpen/v1/task/pause
+ URL：https://crm.tanyibot.com/apiOpen/v1/task/pause
  
 ###请求方法：
  
@@ -204,7 +204,7 @@ POST
  
 ###请求：
  
- URL：https://openapi.tanyibot.com/apiOpen/v1/task/stop
+ URL：https://crm.tanyibot.com/apiOpen/v1/task/stop
  
 ###请求方法：
  
@@ -253,7 +253,7 @@ POST
   
 ###请求：
  
- URL：https://openapi.tanyibot.com/apiOpen/v1/task/delete
+ URL：https://crm.tanyibot.com/apiOpen/v1/task/delete
  
 ###请求方法：
  
@@ -310,7 +310,7 @@ POST
  
 ###请求：
  
- URL：https://openapi.tanyibot.com/apiOpen/v1/task/importTaskCustomer
+ URL：https://crm.tanyibot.com/apiOpen/v1/task/importTaskCustomer
 
 ###请求方法：
  
@@ -367,7 +367,7 @@ POST
 
 ###请求：
 
-URL：https://openapi.tanyibot.com/apiOpen/v1/task/update
+URL：https://crm.tanyibot.com/apiOpen/v1/task/update
 
 ###请求方法：
 
