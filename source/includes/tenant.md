@@ -24,7 +24,7 @@
 
 ###请求：
 
-URL：https://crm.tanyibot.com/apiOpen/v1/tenant/getCompanies
+URL：https://crm.tanyibot.com/apiOpen/v1/tenant/getTenants
 
 ###请求方法：
 
