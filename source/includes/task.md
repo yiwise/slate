@@ -56,7 +56,7 @@
 
 ###请求：
 
-URL：https://crm.tanyibot.com/apiOpen/v1/task/createTask
+URL：https://crm.tanyibot.com/apiOpen/v1/task/create
 
 ###请求方法：
 
@@ -367,7 +367,7 @@ POST
 
 ###请求：
 
-URL：https://crm.tanyibot.com/apiOpen/v1/task/update
+URL：https://crm.tanyibot.com/apiOpen/v1/task/updateTaskAiCount
 
 ###请求方法：
 

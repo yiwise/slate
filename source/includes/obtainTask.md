@@ -467,7 +467,7 @@ GET
  
 ###请求：
  
- URL：https://crm.tanyibot.com/apiOpen/v1/task/phoneLogInfo
+ URL：https://crm.tanyibot.com/apiOpen/v1/task/callDetail
  
 ###请求方法：
  
