@@ -909,7 +909,7 @@
     "errorStackTrace": null
  }
 </code></pre><h3 id='c7811523ac-4'>请求：</h3>
-<p>URL：https://crm.tanyibot.com/apiOpen/v1/task/phoneLogInfo</p>
+<p>URL：https://crm.tanyibot.com/apiOpen/v1/task/callDetail</p>
 <h3 id='261d12e31d-4'>请求方法：</h3>
 <p>GET</p>
 <h3 id='2eb6f47757-4'>请求参数:</h3>
