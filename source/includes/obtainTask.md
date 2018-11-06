@@ -336,7 +336,18 @@ GET
                        "robotCallJobName": "曹文浩123",
                        "dialogFlowName": "张三",
                        "customerPersonInfo": null,
-                       "callDetailList": null
+                       "callDetailList": [
+                           {
+                               "text":"喂，您好, （停顿2s），您好，想问下您位于江北纬七路隧道附近，均价17000的高端商业综合体，我可以给您介绍一下吗？",
+                               "type":"ROBOT",
+                               "callDetailId": 1
+                           },
+                           {
+                               "text":"嗯",
+                               "type":"PERSON",
+                               "callDetailId": 2
+                           }
+                       ]
                    }
                ]
            },
@@ -422,6 +433,7 @@ GET
  		"callRecordId": 1,
  		"customerAudioUrl": null,
  		"startTime": "2018-10-02T16:54:08",
+ 		"endTime": "2018-10-02T16:54:08",
  		"chatRound": 0,
  		"chatDuration": 0,
  		"customerPerson": {
@@ -491,6 +503,7 @@ GET
   fullAudioUrl| String | 完整音频地址 |
   customerAudioUrl| String | 客户音频地址 |
   startTime| String | 开始拨打时间 |
+  endTime| String | 结束拨打时间 |
   chatDuration| Integer  | 通话时长 |
   chatRound| Integer | 通话轮次 |
   resultStatus| String | 接听状态,  通话结果 ANSWERED(0, "已接听", null),NO_ANSWER(1, "未接", "呼叫号码未接听"),BUSY(2, "占线", "呼叫号码占线"),POWER_OFF(3, "关机", "呼叫号码关机"),OUT_OF_SERVICE(4, "被叫停机", "呼叫号码停机"),REFUSED(5, "拒接", "呼叫号码拒接"),VACANT_NUMBER(6, "空号", "呼叫的号码是空号"),CAN_NOT_CONNECT(7, "无法接通", "呼叫的号码无法接通"), // 无法接通，或没拨通，或没能获取到EarlyMediaFROM_PHONE_ERROR(8, "主叫号码不可用", "主叫号码不可用"), // 主叫号码不可用，主叫欠费SYSTEM_ERROR(9, "外呼失败", "外呼失败")|

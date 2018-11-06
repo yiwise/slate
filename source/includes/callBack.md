@@ -50,11 +50,13 @@
             "robotCallDetailList":[
                 {
                     "text":"喂，您好, （停顿2s），您好，想问下您位于江北纬七路隧道附近，均价17000的高端商业综合体，我可以给您介绍一下吗？",
-                    "type":"ROBOT"
+                    "type":"ROBOT",
+                    "callDetailId": 1
                 },
                 {
                     "text":"嗯",
-                    "type":"PERSON"
+                    "type":"PERSON",
+                    "callDetailId": 2
                 }
             ]
         }
@@ -84,6 +86,7 @@
   robotCallDetailList| List | 对话内容 |
   text| String | 对话说的内容 |
   type| String | 说话者 PERSON(人), ROBOT(机器人) |
+  callDetailId| Long | 通话详情id |
 
 
 ## 任务完成详情回调接口
