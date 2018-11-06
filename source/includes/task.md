@@ -14,7 +14,7 @@
 
 ```
 {
-	"jobPhoneNumberList": [
+	"jobPhoneNumberIdList": [
 		348,369
 	],
 	"robotCallJob": {
@@ -66,7 +66,7 @@ POST
 
 参数名 | 类型 | 是否必须 | 描述 | 实例 
 --------- | ------- |------- | ------ |----------
- jobPhoneNumberList| List| 是 |任务主叫号码列表 tenant_phone_number_id,当类型是手机号的时候他的size代表机器人的个数，当类型非手机号的时候他的size只能是1|  [1,2,3] |
+ jobPhoneNumberIdList| List| 是 |任务主叫号码列表 tenant_phone_number_id,当类型是手机号的时候他的size代表机器人的个数，当类型非手机号的时候他的size只能是1|  [1,2,3] |
  name| String| 是 |任务名称| 测试API任务 |
  mode| String| 是 | 任务类型 (AUTO, "自动任务"),(MANUAL, "手动任务"); | AUTO |
  startTime| String| 自动任务：是/手动任务：否 | 任务开始时间| "2017-11-21"  |

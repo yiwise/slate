@@ -56,10 +56,6 @@
                        "chatDuration": 93,
                        "chatRound": 16,
                        "readStatus": "NOT_READ",
-                       "customerGroupName": null,
-                       "robotCallJobName": "曹文浩123",
-                       "dialogFlowName": "张三",
-                       "customerPersonInfo": null,
                        "callDetailList": [
                            {
                                "text":"喂，您好, （停顿2s），您好，想问下您位于江北纬七路隧道附近，均价17000的高端商业综合体，我可以给您介绍一下吗？",
@@ -130,8 +126,6 @@
   startTime| String | 开始拨打时间 |
   chatDuration| Integer  | 通话时长 |
   chatRound| Integer | 通话轮次 |
-  robotCallJobName| Integer |任务名称|
-  dialogFlowName| Integer | 话术名称 |
   requestId| String | 请求Id |
   resultMsg| String | 响应说明 |
 
@@ -162,14 +156,11 @@
  			"phoneNumber": "18673125007",
  			"wechatNumber": null,
  			"source": "UPLOADED_BY_YOURSELF",
- 			"lastEmotion": "UNKNOWN",
- 			"customerLevel": "UNKNOWN",
  			"gender": "UNKNOWN",
- 			"properties": {},
+ 			"properties": {"ss":"test"},
  			"lastFollowTime": "2018-10-01 16:39:29",
  			"lastChatDuration": 0,
  			"lastStartTime": "2018-10-02 17:20:01",
- 			"attributes": [],
  			"lastIntentLevel": "E",
  			"lastDialStatus": "CAN_NOT_CONNECT",
  			"assignTime": "2018-10-01 16:39:29",
@@ -178,19 +169,20 @@
  		"resultStatus": "VACANT_NUMBER",
  		"intentLevel": "F",
  		"realIntentLevel": null,
- 		"customerConcern": ["价格","位置"],
+ 		"customerConcern": ["价格", "位置"],
  		"fullAudioUrl": "https://ai-call-platform-daily.oss-cn-hangzhou.aliyuncs.com/DialogueRecording/TenantId1/CallJobId17/YKUYXGLL_TaskId_1305098/early_media.wav",
  		"analysisBasis": "空号",
  		"callDetailList": [{
-        "text":"喂，您好, （停顿2s），您好，想问下您位于江北纬七路隧道附近，均价17000的高端商业综合体，我可以给您介绍一下吗？",
-        "type":"ROBOT",
-        "callDetailId": 1
-    },
-    {
-        "text":"嗯",
-        "type":"PERSON",
-        "callDetailId": 2
-    }],
+ 				"text": "喂，您好, （停顿2s），您好，想问下您位于江北纬七路隧道附近，均价17000的高端商业综合体，我可以给您介绍一下吗？",
+ 				"type": "ROBOT",
+ 				"callDetailId": 1
+ 			},
+ 			{
+ 				"text": "嗯",
+ 				"type": "PERSON",
+ 				"callDetailId": 2
+ 			}
+ 		],
  		"robotCallJobId": 29
  	},
  	"requestId": "PSVILAEB",

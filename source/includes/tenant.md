@@ -59,8 +59,8 @@ GET
 {
   "code": 200,
   "data": [{
-    "userPhoneId": 276,
-    "phone": "0000000000",
+    "tenantPhoneNumberId": 276,
+    "phoneNumber": "0000000000",
     "phoneName": "0000000000",
     "phoneType": "MOBILE"
   }],
@@ -90,7 +90,7 @@ GET
 --------- | ------- |------
  code|Integer | 响应码 |
  tenantPhoneNumberId|Long | 电话id |
- phone| String | 电话号码 |
+ phoneNumber| String | 电话号码 |
  phoneName| String | 电话号码名称 |
  phoneType| String | (MOBILE, "手机"),(LANDLINE, "固话"),(UNFIXED_CALL, "无主叫固话")|
  requestId| String | 请求Id |

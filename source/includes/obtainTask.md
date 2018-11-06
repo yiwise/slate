@@ -109,14 +109,15 @@ GET
 			"lastModifiedTime": "2018-10-09 15:11:20",
 			"earlyWarningAlertUsers": []
 		},
-		"jobPhoneNumberList": null,
+		"jobPhoneNumberList": [{
+          "robotDialogFlowId": 96,
+          "name": "金融理财--行业体验demo"
+        }, {
+          "robotDialogFlowId": 136,
+          "name": "测试变量"
+        }],
 		"completedTask": 3612,
-		"taskCallTotal": 166,
-		"createdByUserName": "超管",
-		"organizationName": "系统内置",
-		"dialogFlowName": "内置",
-		"smsTemplateName": null,
-		"systemPauseNextStart": null,
+		"taskCallTotal": 166
 	},
 	"requestId": "VJDMUZIC",
 	"resultMsg": "获取成功",
@@ -167,10 +168,7 @@ GET
  startTime| String | 任务开始时间 |
  nextStartTime| String | 下一次任务开始时间 |
  status| String | 任务状态, NOT_STARTED(0, "未开始"),IN_PROCESS(1, "进行中"),COMPLETED(2, "已完成"),RUNNABLE(3, "可运行"),USER_PAUSE(4, "用户暂停"),SYSTEM_SUSPENDED(5, "系统暂停"),TERMINATE(6, "已终止"),IN_QUEUE(7, "排队中")| 1 |
- createdByUserName| String  | 创建人 |
  jobPhoneNumberList| List  | 任务拨打的电话列表 |
- organizationName| String  | 创建组织 |
- dialogFlowName| String  | 话术名称 |
  requestId| String | 请求Id |
  resultMsg| String | 响应说明 |
  
