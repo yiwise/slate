@@ -89,7 +89,7 @@
 <tr>
 <td>tenantId</td>
 <td>Long</td>
-<td>通话记录id</td>
+<td>公司id</td>
 </tr>
 <tr>
 <td>robotCallJobId</td>
@@ -104,12 +104,12 @@
 <tr>
 <td>resultStatus</td>
 <td>String</td>
-<td>通话状态 ANSWERED(已接听), NO_ANSWER(占线), BUSY(占线), POWER_OFF(关机), OUT_OF_SERVICE(被叫停机), REFUSED(拒接), VACANT_NUMBER(空号), CAN_NOT_CONNECT(无法接通), FROM_PHONE_ERROR(主叫号码不可用), SYSTEM_ERROR(外呼失败)</td>
+<td>通话结果 (ANSWERED, &quot;已接听&quot;),(NO_ANSWER, &quot;未接&quot;),(BUSY, &quot;占线&quot;),(POWER_OFF, &quot;关机&quot;),(OUT_OF_SERVICE, &quot;被叫停机&quot;),(REFUSED, &quot;拒接&quot;),(VACANT_NUMBER, &quot;空号&quot;),(CAN_NOT_CONNECT, &quot;无法接通&quot;), (FROM_PHONE_ERROR, &quot;主叫号码不可用&quot;),(SYSTEM_ERROR, &quot;外呼失败&quot;)</td>
 </tr>
 <tr>
 <td>intentLevel</td>
 <td>String</td>
-<td>意向等级 A, B, C, D, E, F</td>
+<td>意向等级, (A, &quot;A级(较强)&quot;),(B, &quot;B级(一般)&quot;),(C, &quot;C级(无法判断)&quot;),(D, &quot;D级(很少)&quot;),(E, &quot;E级别(需要再次跟进)&quot;),(F, &quot;F级别(无需再次跟进)&quot;)</td>
 </tr>
 <tr>
 <td>customerConcern</td>
@@ -164,17 +164,17 @@
 <tr>
 <td>text</td>
 <td>String</td>
-<td>对话说的内容</td>
+<td>对话说的具体文字内容</td>
 </tr>
 <tr>
 <td>type</td>
 <td>String</td>
-<td>说话者 PERSON(人), ROBOT(机器人)</td>
+<td>说话者 (PERSON, &quot;人&quot;), (ROBOT, &quot;机器人&quot;)</td>
 </tr>
 <tr>
 <td>callDetailId</td>
 <td>Long</td>
-<td>通话详情id</td>
+<td>对话详情id</td>
 </tr>
 </tbody></table>
 <h2 id='0510043503'>任务完成详情回调接口</h2>
