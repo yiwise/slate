@@ -9,6 +9,7 @@ includes:
   - tenant
   - task
   - obtainTask
+  - callRecord
   - callBack
 
 search: true
