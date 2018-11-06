@@ -69,11 +69,11 @@
  --------- | ------- | ------ 
   dataType| String | 回调类型（始终为 ROBOT_CALL_RECORD ） | 
   callRecordId| Long | 通话记录id | 
-  tenantId| Long | 通话记录id | 
+  tenantId| Long | 公司id | 
   robotCallJobId| Long | 任务id |
   calledPhoneNumber| String | 电话号码 |
-  resultStatus| String | 通话状态 ANSWERED(已接听), NO_ANSWER(占线), BUSY(占线), POWER_OFF(关机), OUT_OF_SERVICE(被叫停机), REFUSED(拒接), VACANT_NUMBER(空号), CAN_NOT_CONNECT(无法接通), FROM_PHONE_ERROR(主叫号码不可用), SYSTEM_ERROR(外呼失败) | 
-  intentLevel| String | 意向等级 A, B, C, D, E, F | 
+  resultStatus| String | 通话结果 (ANSWERED, "已接听"),(NO_ANSWER, "未接"),(BUSY, "占线"),(POWER_OFF, "关机"),(OUT_OF_SERVICE, "被叫停机"),(REFUSED, "拒接"),(VACANT_NUMBER, "空号"),(CAN_NOT_CONNECT, "无法接通"), (FROM_PHONE_ERROR, "主叫号码不可用"),(SYSTEM_ERROR, "外呼失败") | 
+  intentLevel| String | 意向等级, (A, "A级(较强)"),(B, "B级(一般)"),(C, "C级(无法判断)"),(D, "D级(很少)"),(E, "E级别(需要再次跟进)"),(F, "F级别(无需再次跟进)") | 
   customerConcern| String | 用户关注点 |
   fullAudioUrl| String | 用户和AI合成的录音 |
   customerAudioUrl| String | 用户的录音 |
@@ -84,9 +84,9 @@
   chatRound| Long | 通话轮次 |
   attributes| String | 用户属性 |
   robotCallDetailList| List | 对话内容 |
-  text| String | 对话说的内容 |
-  type| String | 说话者 PERSON(人), ROBOT(机器人) |
-  callDetailId| Long | 通话详情id |
+  text| String | 对话说的具体文字内容 |
+  type| String | 说话者 (PERSON, "人"), (ROBOT, "机器人") |
+  callDetailId| Long | 对话详情id |
 
 
 ## 任务完成详情回调接口

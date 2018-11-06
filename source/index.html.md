@@ -31,7 +31,7 @@ search: true
 
 第一种方式：主动调用 这种调用方式是客户主动调用接口获取数据或实现功能；
 
-主动调用需在请求头传入APP_KEY、APP_SECRET、VERSION（当前版本的VERSION=v1）、COMPANY_SIGN（公司签名，后期提供修改）和验签用于权限校验；
+主动调用需在请求头传入APP_KEY、APP_SECRET、VERSION（当前版本的VERSION=v1）、TENANT_SIGN（公司签名，后期提供修改）和验签字段signature用于权限校验；
 
 注意：请在开发对接程序前联系探意技术支持进行注册，如果你还未签约，请先签约开通账户。
 
@@ -55,20 +55,20 @@ search: true
 ```java
   APP_KEY = "WtSMaXXXXXXXXtvy";
   APP_SECRET = "aXSFnnZbHXXXXXXXXXXXXXXXMguz1Q";    
-  COMPANY_SIGN = "yiwisexxxx";    
+  TENANT_SIGN = "yiwisexxxx";    
 ```
 
-API认证采用SHA256加密算法进行加密，使用时间戳、APP_KEY、APP_SECRET、VERSION（当前版本的VERSION=v1）和COMPANY_SIGN（公司签名，后期提供修改）共同生成一个验签字段。
+API认证采用SHA256加密算法进行加密，使用时间戳、APP_KEY、APP_SECRET、VERSION（当前版本的VERSION=v1）和 TENANT_SIGN（公司签名，后期提供修改）共同生成一个验签字段signature。
 
 目前已有完成JAVA版的样例，具体实现请下载SDK查阅。
 
 
-> 请在API样例`openapidemo`中替换为自己的APP_KEY、APP_SECRET和COMPANY_SIGN.
+> 请在API样例`openapidemo`中替换为自己的APP_KEY、APP_SECRET和 TENANT_SIGN.
 
 探意为确保您的账户和信息安全，请在开发对接程序前联系探意技术支持注册接口调用专属密钥。
 
 <aside class="notice">
-您必须替换对接密钥 <code>APP_KEY 、 APP_SECRET 和COMPANY_SIGN </code>在您的对接程序中 
+您必须替换对接密钥 <code>APP_KEY 、 APP_SECRET 和 TENANT_SIGN </code>在您的对接程序中 
 </aside>
 
 ## 统一请求格式
@@ -90,7 +90,7 @@ URL格式：
 >比如查询公司列表的url为：
   
 ```请求URL样例  
-<code>http://apiOpen/v1/tenant/getTenants </code> 表示调用company（公司列表）的get方法，并且返回json格式的字符串。
+<code>http://apiOpen/v1/tenant/getTenant </code> 表示调用公司信息的get方法，并且返回json格式的字符串。
 
 我们目前已经提供的接口，请参考API。 
 
@@ -133,7 +133,7 @@ JAVA | [GitHub地址](https://github.com/yiwise/openapidemo.git)
     
 2. Q: isv账号能否操作多个crm账号下的任务
   
-  A: 一个appKey和appSecret目前只能操作一个CRM的账户，CRM暂无子公司这个概念
+  A: 一个APP_KEY和APP_SECRET目前只能操作一个CRM的账户，CRM暂无子公司这个概念
 
 ##流程说明
 
@@ -147,25 +147,24 @@ JAVA | [GitHub地址](https://github.com/yiwise/openapidemo.git)
 
 2.公司的主叫电话号码列表
 
-3.机器人话术相关参数：
-  
-  1）机器人话术id
-  
-  2) 机器人话术行业id
-  
-  3) 机器人话术录音id
+3.机器人话术相关参数：机器人话术id
 
 ###第二部分:
 
 核心业务部分，主要是任务的创建，启动，停止等操作。
 
-####1.创建任务
-
-    创建任务过程中需要传入的几个重要的值：行业id,录音id,机器人话术id,这三个值不能传入有误，传入出错会导致任务拨打有误
-####2.任务启动和暂停
-    任务创建完成之后，调用启动任务接口就可以启动任务，任务在启动时，可调用暂停任务让任务进入暂停状态（可再次运行）
-####3.停止任务  
-    在任务进行中，每一次通话结束都会调用通话回调接口，将本次通话详情发送到指定回调地址。
+1.创建任务
+    创建任务过程中需要传入的几个重要的值：机器人话术id,这个值不能传入有误，传入出错会导致任务拨打有误
+2.任务启动
+    只有手动任务才需要手动去启动任务，自动任务是自动启动的。 
+<aside class="notice">
+任务恢复：任务在未完全暂停（子任务还没有全部运行完成），是不能恢复的
+</aside>
+  
+3.任务暂停
+    任务在运行中，可调用暂停任务让任务进入暂停状态（可再次运行），并且是在所有当前正在跑的子任务都运行完成之后才会暂停
+4.终止任务
+    任务终止，终止之后不可以恢复
 
 ###第三部分:
 
@@ -179,42 +178,22 @@ JAVA | [GitHub地址](https://github.com/yiwise/openapidemo.git)
 
 ### 电话卡类型枚举
  
-code    | desc 
+type    | desc 
 --------- | ------- 
 MOBILE | 手机 
 LANDLINE | 阿里云固话 
 UNFIXED_CALL | 无主叫固话
-VERBAL_TRICK_TRAINING_CALLER | 训练主叫账号
-VERBAL_TRICK_TRAINING_CALLED | 训练被叫账号
-VOIP_DEVICE | 网关设备 
-
-### 话术类型枚举
-
-code    | desc 
---------- | ------- 
-TEMPLATE | 机器人话术类型
-DEMO | 展示 
-NORMAL | 普通
-
-### 话术状态枚举
-
-code    | desc 
---------- | ------- 
-DRAFT | 编辑中
-PENDING_APPROVAL | 等待审核 
-REJECTED | 拒绝
-APPROVED | 审核通过
 
 ### 任务类型枚举
 
-code    | desc 
+type    | desc 
 --------- | ------- 
 AUTO | 自动任务
 MANUAL | 手动任务 
 
 ### 任务状态枚举
 
-code    | desc 
+type    | desc 
 --------- | ------- 
 NOT_STARTED | 未开始
 IN_PROCESS | 进行中 
@@ -225,17 +204,9 @@ SYSTEM_SUSPENDED | 系统暂停
 TERMINATE | 已终止
 IN_QUEUE | 排队中
 
-### 跟进状态枚举
-
-code    | desc 
---------- | ------- 
-AI_INITIAL_VISIT | AI初访
-PEOPLE_INITIAL_VISIT | 人工初访 
-FOLLOW_UP | 持续跟进
-
 ### 通话结果枚举
 
-code    | desc 
+type    | desc 
 --------- | ------- 
 ANSWERED | 已接听
 NO_ANSWER | 呼叫号码未接听
@@ -245,12 +216,12 @@ OUT_OF_SERVICE | 呼叫号码停机
 REFUSED | 呼叫号码拒接
 VACANT_NUMBER | 呼叫的号码是空号
 CAN_NOT_CONNECT | 呼叫的号码无法接通
-EarlyMediaFROM_PHONE_ERROR | 主叫号码不可用
+FROM_PHONE_ERROR | 主叫号码不可用
 SYSTEM_ERROR | 外呼失败
 
 ### 意向等级枚举
 
-code    | desc 
+type    | desc 
 --------- | ------- 
 A | 较强
 B | 一般
@@ -258,13 +229,6 @@ C | 无法判断
 D | 很少
 E | 需要再次跟进
 F | 无需再次跟进
-
-### 是否已读枚举
-
-code    | desc 
---------- | ------- 
-NOT_READ | 未读
-HAS_READ | 已读
 
 
 ## 错误码信息
@@ -283,7 +247,7 @@ HAS_READ | 已读
 ##2018年10月10日第一版本
 一、公司信息接口
 
-  1. 获取公司列表接口
+  1. 获取公司信息接口
   
   2. 获取公司的主叫电话列表接口
   
@@ -297,7 +261,7 @@ HAS_READ | 已读
   
   3. 暂停任务接口
   
-  4. 停止任务接口
+  4. 终止任务接口
   
   5. 删除任务
   

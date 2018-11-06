@@ -24,7 +24,7 @@
 
 ###请求：
 
-URL：https://crm.tanyibot.com/apiOpen/v1/tenant/getTenants
+URL：https://crm.tanyibot.com/apiOpen/v1/tenant/getTenant
 
 ###请求方法：
 
@@ -39,7 +39,7 @@ GET
 
 参数名 | 类型 | 描述 
 --------- | ------- |------
- code|integer | 响应码 |
+ code|Integer | 响应码 |
  tenantName|String | 公司名称 |
  tenantId| Long | 公司Id |
  requestId| String | 请求Id |
@@ -62,8 +62,7 @@ GET
     "userPhoneId": 276,
     "phone": "0000000000",
     "phoneName": "0000000000",
-    "phoneType": "MOBILE",
-    "concurrency": 2
+    "phoneType": "MOBILE"
   }],
   "requestId": "ILNBEQJF",
   "resultMsg": "获取成功",
@@ -74,7 +73,7 @@ GET
 
 ###请求：
 
-URL：https://crm.tanyibot.com/apiOpen/v1/tenant/getPhones
+URL：https://crm.tanyibot.com/apiOpen/v1/phone/getPhoneList
 
 ###请求方法：
 
@@ -89,12 +88,11 @@ GET
 
 参数名 | 类型 | 描述 
 --------- | ------- |------
- code|integer | 响应码 |
- userPhoneId|Integer | 电话id |
+ code|Integer | 响应码 |
+ tenantPhoneNumberId|Long | 电话id |
  phone| String | 电话号码 |
  phoneName| String | 电话号码名称 |
- phoneType| Integer | 手机(MOBILE, "手机"),阿里云固话(LANDLINE, "固话"),无主叫(UNFIXED_CALL, "无主叫固话"),训练主叫账号(VERBAL_TRICK_TRAINING_CALLER, "训练主叫账号"),训练被叫账号(VERBAL_TRICK_TRAINING_CALLED, "训练被叫账号"),网关设备(VOIP_DEVICE, "网关设备"), |
- concurrency| Integer | 已经使用并发数 |
+ phoneType| String | (MOBILE, "手机"),(LANDLINE, "固话"),(UNFIXED_CALL, "无主叫固话")|
  requestId| String | 请求Id |
  resultMsg| String | 响应说明 |
 
@@ -111,32 +109,10 @@ GET
 	"code": 200,
 	"data": [{
 		"robotDialogFlowId": 96,
-		"name": "金融理财--行业体验demo",
-		"type": "NORMAL",
-		"industry": {
-			"name": "FINANCE",
-			"desc": "金融类"
-		},
-		"subIndustry": {
-			"name": "FINICING",
-			"desc": "理财"
-		},
-		"familyNameTemplateId": null,
-		"status": "DRAFT"
+		"name": "金融理财--行业体验demo"
 	}, {
 		"robotDialogFlowId": 136,
-		"name": "测试变量",
-		"type": "NORMAL",
-		"industry": {
-			"name": "OTHER",
-			"desc": "其他产品推广"
-		},
-		"subIndustry": {
-			"name": "OTHER",
-			"desc": "其他产品推广"
-		},
-		"familyNameTemplateId": null,
-		"status": "APPROVED"
+		"name": "测试变量"
 	}],
 	"requestId": "NSLARYGU",
 	"resultMsg": "获取成功",
@@ -147,7 +123,7 @@ GET
 
 ###请求：
 
-URL：https://crm.tanyibot.com/apiOpen/v1/tenant/getRobots
+URL：https://crm.tanyibot.com/apiOpen/v1/dialogFlow/getDialogFlowList
 
 ###请求方法：
 
@@ -164,11 +140,6 @@ GET
  code|integer | 响应码 |
  robotDialogFlowId|Integer | 机器人话术id |
  name| String | 机器人话术名称 |
- type| Integer | 机器人话术类型 TEMPLATE(0, "模板"),DEMO(1, "展示"),NORMAL(2, "普通")|
- status| Integer | 状态 DRAFT(0, "编辑中"),PENDING_APPROVAL(1, "等待审核"),REJECTED(2, "拒绝"),APPROVED(3, "审核通过"); |
- industry| object | 一级行业类型 |
- subIndustry| String | 二级行业类型 |
- familyNameTemplateId| Long | 百家姓模板id |
  requestId| String | 请求Id |
  resultMsg| String | 响应说明 |
 
