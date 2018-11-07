@@ -108,10 +108,10 @@ GET
 {
 	"code": 200,
 	"data": [{
-		"robotDialogFlowId": 96,
+		"dialogFlowId": 96,
 		"name": "金融理财--行业体验demo"
 	}, {
-		"robotDialogFlowId": 136,
+		"dialogFlowId": 136,
 		"name": "测试变量"
 	}],
 	"requestId": "NSLARYGU",
@@ -138,7 +138,7 @@ GET
 参数名 | 类型 | 描述 
 --------- | ------- |------
  code|integer | 响应码 |
- robotDialogFlowId|Integer | 机器人话术id |
+ dialogFlowId|Integer | 机器人话术id |
  name| String | 机器人话术名称 |
  requestId| String | 请求Id |
  resultMsg| String | 响应说明 |
