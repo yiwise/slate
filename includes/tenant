@@ -133,10 +133,10 @@
 <pre class="highlight plaintext"><code>{
     "code": 200,
     "data": [{
-        "robotDialogFlowId": 96,
+        "dialogFlowId": 96,
         "name": "金融理财--行业体验demo"
     }, {
-        "robotDialogFlowId": 136,
+        "dialogFlowId": 136,
         "name": "测试变量"
     }],
     "requestId": "NSLARYGU",
@@ -164,7 +164,7 @@
 <td>响应码</td>
 </tr>
 <tr>
-<td>robotDialogFlowId</td>
+<td>dialogFlowId</td>
 <td>Integer</td>
 <td>机器人话术id</td>
 </tr>
