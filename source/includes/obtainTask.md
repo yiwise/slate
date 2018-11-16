@@ -313,3 +313,50 @@ GET
  requestId| String | 请求Id |
  resultMsg| String | 响应说明 |
  
+
+
+##获取任务中的变量（包括话术变量和短信变量）
+
+###功能说明：
+
+通过接口可以获取该任务中的自定义变量，包括话术变量、意向短信变量、挂机短信变量等
+
+>JSON响应实例：
+
+```
+{
+	"code": 200,
+	"data": [
+		"欠款金额",
+		"最后还款日期"
+	],
+	"requestId": "RKXNIQAF",
+	"resultMsg": "获取自定义属性成功",
+	"errorStackTrace": null
+}
+
+```
+
+###请求：
+
+URL：https://crm.tanyibot.com/apiOpen/v1/job/getJobProperties
+
+###请求方法：
+
+###请求方法：
+
+GET
+
+###请求参数:
+
+参数名 | 类型 | 是否必须 | 描述 | 实例 
+--------- | ------- |------- | ------ |----------
+ robotCallJobId| Long| 是 |任务Id| 21 |
+
+###响应：
+
+参数名 | 类型 | 描述 
+--------- | ------- |------
+ code|Integer | 响应码 |
+ requestId| String | 请求Id |
+ resultMsg| String | 响应说明 |
