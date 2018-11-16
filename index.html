@@ -309,6 +309,9 @@
                   <li>
                     <a href="#7ed6838292" class="toc-h2 toc-link" data-title="获取任务统计接口">获取任务统计接口</a>
                   </li>
+                  <li>
+                    <a href="#ce576131d5" class="toc-h2 toc-link" data-title="获取任务中的变量（包括话术变量和短信变量）">获取任务中的变量（包括话术变量和短信变量）</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -1374,7 +1377,8 @@
         "name": "test",
         "phoneNumber": "11111111111",
         "properties": {
-            "ttt": "jjj"
+            "欠款金额": "10.13",
+            "最后还款日期": "2018年10月3日"
         }
     }]
 }
@@ -2103,6 +2107,69 @@
 <td>averageDurationList</td>
 <td>List</td>
 <td>平均通话时长</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='ce576131d5'>获取任务中的变量（包括话术变量和短信变量）</h2><h3 id='7d73d51a26-4'>功能说明：</h3>
+<p>通过接口可以获取该任务中的自定义变量，包括话术变量、意向短信变量、挂机短信变量等</p>
+
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "code": 200,
+    "data": [
+        "欠款金额",
+        "最后还款日期"
+    ],
+    "requestId": "RKXNIQAF",
+    "resultMsg": "获取自定义属性成功",
+    "errorStackTrace": null
+}
+
+</code></pre><h3 id='c7811523ac-4'>请求：</h3>
+<p>URL：https://crm.tanyibot.com/apiOpen/v1/job/getJobProperties</p>
+<h3 id='261d12e31d-4'>请求方法：</h3><h3 id='261d12e31d-5'>请求方法：</h3>
+<p>GET</p>
+<h3 id='2eb6f47757-4'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>robotCallJobId</td>
+<td>Long</td>
+<td>是</td>
+<td>任务Id</td>
+<td>21</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7-4'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>Integer</td>
+<td>响应码</td>
 </tr>
 <tr>
 <td>requestId</td>
