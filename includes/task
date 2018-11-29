@@ -7,6 +7,7 @@
 <p>入参JSON实例：</p>
 </blockquote>
 <pre class="highlight plaintext"><code>{
+    "concurrencyQuota", 2,
     "jobPhoneNumberIdList": [
         348,369
     ],
