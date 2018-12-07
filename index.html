@@ -307,17 +307,6 @@
                     <a href="#4b97fb63c0" class="toc-h2 toc-link" data-title="获取任务详情接口">获取任务详情接口</a>
                   </li>
                   <li>
-                    <a href="#7ed6838292" class="toc-h2 toc-link" data-title="获取任务统计接口">获取任务统计接口</a>
-                  </li>
-                  <li>
-                    <a href="#ce576131d5" class="toc-h2 toc-link" data-title="获取任务中的变量（包括话术变量和短信变量）">获取任务中的变量（包括话术变量和短信变量）</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#ede290fd8b" class="toc-h1 toc-link" data-title="任务完成电话信息查询接口">任务完成电话信息查询接口</a>
-              <ul class="toc-list-h2">
-                  <li>
                     <a href="#872ca4f7a9" class="toc-h2 toc-link" data-title="获取已经完成任务电话号码接口">获取已经完成任务电话号码接口</a>
                   </li>
                   <li>
@@ -355,7 +344,7 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='5ea2e0cde2'>简介</h1>
-<p>探意机器人API文档1</p>
+<p>探意机器人API文档</p>
 
 <p>这是探意机器人API文档，具体详情查看每个API接口调用说明；</p>
 
@@ -365,7 +354,7 @@
 <h1 id='18d1449c7d'>开发引导</h1><h2 id='c2587a41e7'>调用说明</h2>
 <p>第一种方式：主动调用 这种调用方式是客户主动调用接口获取数据或实现功能；</p>
 
-<p>主动调用需在请求头传入APP_KEY、APP_SECRET、VERSION（当前版本的VERSION=v1）、TENANT_SIGN（公司签名，后期提供修改）和验签字段signature用于权限校验；</p>
+<p>主动调用需在请求头传入APP_KEY、APP_SECRET、VERSION（当前版本的VERSION=v1）、COMPANY_SIGN（公司签名，后期提供修改）和验签用于权限校验；</p>
 
 <p>注意：请在开发对接程序前联系探意技术支持进行注册，如果你还未签约，请先签约开通账户。</p>
 
@@ -386,20 +375,20 @@
 </blockquote>
 <pre class="highlight java tab-java"><code>  <span class="n">APP_KEY</span> <span class="o">=</span> <span class="s">"WtSMaXXXXXXXXtvy"</span><span class="o">;</span>
   <span class="n">APP_SECRET</span> <span class="o">=</span> <span class="s">"aXSFnnZbHXXXXXXXXXXXXXXXMguz1Q"</span><span class="o">;</span>    
-  <span class="n">TENANT_SIGN</span> <span class="o">=</span> <span class="s">"yiwisexxxx"</span><span class="o">;</span>    
+  <span class="n">COMPANY_SIGN</span> <span class="o">=</span> <span class="s">"yiwisexxxx"</span><span class="o">;</span>    
 </code></pre>
-<p>API认证采用SHA256加密算法进行加密，使用时间戳、APP_KEY、APP_SECRET、VERSION（当前版本的VERSION=v1）和 TENANT_SIGN（公司签名，后期提供修改）共同生成一个验签字段signature。</p>
+<p>API认证采用SHA256加密算法进行加密，使用时间戳、APP_KEY、APP_SECRET、VERSION（当前版本的VERSION=v1）和COMPANY_SIGN（公司签名，后期提供修改）共同生成一个验签字段。</p>
 
 <p>目前已有完成JAVA版的样例，具体实现请下载SDK查阅。</p>
 
 <blockquote>
-<p>请在API样例<code>openapidemo</code>中替换为自己的APP_KEY、APP_SECRET和 TENANT_SIGN.</p>
+<p>请在API样例<code>openapidemo</code>中替换为自己的APP_KEY、APP_SECRET和COMPANY_SIGN.</p>
 </blockquote>
 
 <p>探意为确保您的账户和信息安全，请在开发对接程序前联系探意技术支持注册接口调用专属密钥。</p>
 
 <aside class="notice">
-您必须替换对接密钥 <code>APP_KEY 、 APP_SECRET 和 TENANT_SIGN </code>在您的对接程序中 
+您必须替换对接密钥 <code>APP_KEY 、 APP_SECRET 和COMPANY_SIGN </code>在您的对接程序中 
 </aside>
 <h2 id='bbf1456045'>统一请求格式</h2>
 <p>URL格式：</p>
@@ -419,7 +408,7 @@
 <blockquote>
 <p>比如查询公司列表的url为：</p>
 </blockquote>
-<pre class="highlight plaintext"><code>&lt;code&gt;http://apiOpen/v1/tenant/getTenant &lt;/code&gt; 表示调用公司信息的get方法，并且返回json格式的字符串。
+<pre class="highlight plaintext"><code>&lt;code&gt;http://apiOpen/v1/company/getCompanies &lt;/code&gt; 表示调用company（公司列表）的get方法，并且返回json格式的字符串。
 
 我们目前已经提供的接口，请参考API。 
 
@@ -468,7 +457,7 @@
 <li>Q: isv账号能否操作多个crm账号下的任务</li>
 </ol>
 
-<p>A: 一个APP_KEY和APP_SECRET目前只能操作一个CRM的账户，CRM暂无子公司这个概念</p>
+<p>A: 一个appKey和appSecret目前只能操作一个CRM的账户，CRM暂无子公司这个概念</p>
 <h2 id='362ce418e7'>流程说明</h2><h3 id='c632d650f0'>第一部分:</h3>
 <p>主要是获取公司相关信息，为创建任务提供数据。</p>
 
@@ -478,22 +467,21 @@
 
 <p>2.公司的主叫电话号码列表</p>
 
-<p>3.机器人话术相关参数：机器人话术id</p>
+<p>3.机器人话术相关参数：</p>
+
+<p>1）机器人话术id</p>
+
+<p>2) 机器人话术场景id</p>
+
+<p>3) 机器人话术录音id</p>
 <h3 id='4727f1c607'>第二部分:</h3>
 <p>核心业务部分，主要是任务的创建，启动，停止等操作。</p>
-
-<p>1.创建任务
-    创建任务过程中需要传入的几个重要的值：机器人话术id,这个值不能传入有误，传入出错会导致任务拨打有误
-2.任务启动
-    只有手动任务才需要手动去启动任务，自动任务是自动启动的。 
-<aside class="notice">
-任务恢复：任务在未完全暂停（子任务还没有全部运行完成），是不能恢复的
-</aside></p>
-
-<p>3.任务暂停
-    任务在运行中，可调用暂停任务让任务进入暂停状态（可再次运行），并且是在所有当前正在跑的子任务都运行完成之后才会暂停
-4.终止任务
-    任务终止，终止之后不可以恢复</p>
+<h4 id='1'>1.创建任务</h4>
+<p>创建任务过程中需要传入的几个重要的值：场景id,场景录音id,机器人话术id,这三个值不能传入有误，传入出错会导致任务拨打有误</p>
+<h4 id='2'>2.任务启动和暂停</h4>
+<p>任务创建完成之后，调用启动任务接口就可以启动任务，任务在启动时，可调用暂停任务让任务进入暂停状态（可再次运行）</p>
+<h4 id='3'>3.停止任务</h4>
+<p>在任务进行中，每一次通话结束都会调用通话回调接口，将本次通话详情发送到指定回调地址。</p>
 <h3 id='3acb0ac2ed'>第三部分:</h3>
 <p>任务运行结束，调用任务回调接口，将本次任务信息发送到指定回调地址。</p>
 <h3 id='46482cd3b1'>第四部分:</h3>
@@ -501,157 +489,225 @@
 <h2 id='6af18eb20f'>枚举类型说明</h2><h3 id='4db9754bc6'>电话卡类型枚举</h3>
 <table><thead>
 <tr>
-<th>type</th>
+<th>code</th>
 <th>desc</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>MOBILE</td>
+<td>0</td>
 <td>手机</td>
 </tr>
 <tr>
-<td>LANDLINE</td>
+<td>1</td>
 <td>阿里云固话</td>
 </tr>
 <tr>
-<td>UNFIXED_CALL</td>
+<td>2</td>
 <td>无主叫固话</td>
 </tr>
 </tbody></table>
 <h3 id='ebc5aba134'>任务类型枚举</h3>
 <table><thead>
 <tr>
-<th>type</th>
+<th>code</th>
 <th>desc</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>AUTO</td>
-<td>自动任务</td>
+<td>1</td>
+<td>定时启动任务</td>
 </tr>
 <tr>
-<td>MANUAL</td>
-<td>手动任务</td>
+<td>2</td>
+<td>手动启动任务</td>
+</tr>
+</tbody></table>
+<h3 id='2cc460551e'>外呼类型枚举</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>desc</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>0</td>
+<td>sim卡(默认)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>固话</td>
+</tr>
+<tr>
+<td>2</td>
+<td>无主叫</td>
+</tr>
+</tbody></table>
+<h3 id='fde721579a'>是否发送短信枚举</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>desc</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>0</td>
+<td>否</td>
+</tr>
+<tr>
+<td>1</td>
+<td>是</td>
 </tr>
 </tbody></table>
 <h3 id='2ce89782c6'>任务状态枚举</h3>
 <table><thead>
 <tr>
-<th>type</th>
+<th>code</th>
 <th>desc</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>NOT_STARTED</td>
+<td>0</td>
 <td>未开始</td>
 </tr>
 <tr>
-<td>IN_PROCESS</td>
+<td>1</td>
 <td>进行中</td>
 </tr>
 <tr>
-<td>COMPLETED</td>
+<td>2</td>
 <td>已完成</td>
 </tr>
 <tr>
-<td>RUNNABLE</td>
+<td>3</td>
 <td>可运行</td>
 </tr>
 <tr>
-<td>USER_PAUSE</td>
+<td>4</td>
 <td>用户暂停</td>
 </tr>
 <tr>
-<td>SYSTEM_SUSPENDED</td>
+<td>5</td>
 <td>系统暂停</td>
 </tr>
 <tr>
-<td>TERMINATE</td>
+<td>6</td>
 <td>已终止</td>
 </tr>
 <tr>
-<td>IN_QUEUE</td>
+<td>7</td>
 <td>排队中</td>
 </tr>
+<tr>
+<td>8</td>
+<td>AI到期</td>
+</tr>
 </tbody></table>
-<h3 id='0a0285fd88'>通话结果枚举</h3>
+<h3 id='ab2a28ce5f'>任务实例状态枚举</h3>
 <table><thead>
 <tr>
-<th>type</th>
+<th>code</th>
 <th>desc</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ANSWERED</td>
+<td>0</td>
+<td>未开始</td>
+</tr>
+<tr>
+<td>1</td>
+<td>进行中</td>
+</tr>
+<tr>
+<td>2</td>
+<td>已完成</td>
+</tr>
+<tr>
+<td>3</td>
+<td>二次拨打调度中</td>
+</tr>
+</tbody></table>
+<h3 id='2056d5fc46'>任务实例已完成状态枚举</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>desc</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>0</td>
 <td>已接听</td>
 </tr>
 <tr>
-<td>NO_ANSWER</td>
-<td>呼叫号码未接听</td>
+<td>1</td>
+<td>拒接</td>
 </tr>
 <tr>
-<td>BUSY</td>
-<td>呼叫号码占线</td>
+<td>2</td>
+<td>无法接通</td>
 </tr>
 <tr>
-<td>POWER_OFF</td>
-<td>呼叫号码关机</td>
-</tr>
-<tr>
-<td>OUT_OF_SERVICE</td>
-<td>呼叫号码停机</td>
-</tr>
-<tr>
-<td>REFUSED</td>
-<td>呼叫号码拒接</td>
-</tr>
-<tr>
-<td>VACANT_NUMBER</td>
-<td>呼叫的号码是空号</td>
-</tr>
-<tr>
-<td>CAN_NOT_CONNECT</td>
-<td>呼叫的号码无法接通</td>
-</tr>
-<tr>
-<td>FROM_PHONE_ERROR</td>
+<td>3</td>
 <td>主叫号码不可用</td>
 </tr>
 <tr>
-<td>SYSTEM_ERROR</td>
-<td>外呼失败</td>
+<td>4</td>
+<td>空号</td>
+</tr>
+<tr>
+<td>5</td>
+<td>关机</td>
+</tr>
+<tr>
+<td>6</td>
+<td>占线</td>
+</tr>
+<tr>
+<td>7</td>
+<td>停机</td>
+</tr>
+<tr>
+<td>8</td>
+<td>未接</td>
+</tr>
+<tr>
+<td>9</td>
+<td>主叫欠费</td>
 </tr>
 </tbody></table>
-<h3 id='aa434bf648'>意向等级枚举</h3>
+<h3 id='f7d1eb2c90'>呼叫类型枚举</h3>
 <table><thead>
 <tr>
-<th>type</th>
+<th>code</th>
 <th>desc</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>A</td>
-<td>较强</td>
+<td>0</td>
+<td>免费试用</td>
 </tr>
 <tr>
-<td>B</td>
-<td>一般</td>
+<td>1</td>
+<td>任务</td>
 </tr>
 <tr>
-<td>C</td>
-<td>无法判断</td>
+<td>2</td>
+<td>用户单独拨打</td>
 </tr>
 <tr>
-<td>D</td>
-<td>很少</td>
+<td>3</td>
+<td>收费试用</td>
 </tr>
 <tr>
-<td>E</td>
-<td>需要再次跟进</td>
+<td>4</td>
+<td>Ope后台拨打</td>
 </tr>
 <tr>
-<td>F</td>
-<td>无需再次跟进</td>
+<td>5</td>
+<td>大屏试用</td>
+</tr>
+<tr>
+<td>100</td>
+<td>客服人工拨打</td>
 </tr>
 </tbody></table>
 <h2 id='42d5497355'>错误码信息</h2>
@@ -690,7 +746,7 @@
 <p>一、公司信息接口</p>
 
 <ol>
-<li><p>获取公司信息接口</p></li>
+<li><p>获取公司列表接口</p></li>
 <li><p>获取公司的主叫电话列表接口</p></li>
 <li><p>获取公司的机器人话术列表接口</p></li>
 </ol>
@@ -701,7 +757,7 @@
 <li><p>创建任务接口</p></li>
 <li><p>启动任务接口</p></li>
 <li><p>暂停任务接口</p></li>
-<li><p>终止任务接口</p></li>
+<li><p>停止任务接口</p></li>
 <li><p>删除任务</p></li>
 <li><p>向任务中导入客户接口</p></li>
 <li><p>修改任务AI坐席数（任务并发数）</p></li>
@@ -727,7 +783,7 @@
     "code": 200,
     "data": {
         "tenantId": 1,
-        "tenantName": "杭州一知智能科技有限公司"
+        "companyName": "杭州一知智能科技有限公司"
     },
     "requestId": "VCWAHVEJ",
     "resultMsg": "获取成功",
@@ -735,7 +791,7 @@
 }
 
 </code></pre><h3 id='c7811523ac'>请求：</h3>
-<p>URL：https://crm.tanyibot.com/apiOpen/v1/tenant/getTenant</p>
+<p>URL：http://robot.yiwise.cn/apiOpen/v1/company/getCompanies</p>
 <h3 id='261d12e31d'>请求方法：</h3>
 <p>GET</p>
 <h3 id='2eb6f47757'>请求参数:</h3>
@@ -750,11 +806,11 @@
 </thead><tbody>
 <tr>
 <td>code</td>
-<td>Integer</td>
+<td>integer</td>
 <td>响应码</td>
 </tr>
 <tr>
-<td>tenantName</td>
+<td>companyName</td>
 <td>String</td>
 <td>公司名称</td>
 </tr>
@@ -783,10 +839,11 @@
 <pre class="highlight plaintext"><code>{
   "code": 200,
   "data": [{
-    "tenantPhoneNumberId": 276,
-    "phoneNumber": "0000000000",
+    "userPhoneId": 276,
+    "phone": "0000000000",
     "phoneName": "0000000000",
-    "phoneType": "MOBILE"
+    "phoneType": "MOBILE",
+    "concurrency": 2
   }],
   "requestId": "ILNBEQJF",
   "resultMsg": "获取成功",
@@ -794,7 +851,7 @@
 }
 
 </code></pre><h3 id='c7811523ac-2'>请求：</h3>
-<p>URL：https://crm.tanyibot.com/apiOpen/v1/phone/getPhoneList</p>
+<p>URL：http://robot.yiwise.cn/apiOpen/v1/company/getPhones</p>
 <h3 id='261d12e31d-2'>请求方法：</h3>
 <p>GET</p>
 <h3 id='2eb6f47757-2'>请求参数:</h3>
@@ -809,16 +866,16 @@
 </thead><tbody>
 <tr>
 <td>code</td>
-<td>Integer</td>
+<td>integer</td>
 <td>响应码</td>
 </tr>
 <tr>
-<td>tenantPhoneNumberId</td>
-<td>Long</td>
+<td>userPhoneId</td>
+<td>Integer</td>
 <td>电话id</td>
 </tr>
 <tr>
-<td>phoneNumber</td>
+<td>phone</td>
 <td>String</td>
 <td>电话号码</td>
 </tr>
@@ -829,8 +886,13 @@
 </tr>
 <tr>
 <td>phoneType</td>
-<td>String</td>
-<td>(MOBILE, &quot;手机&quot;),(LANDLINE, &quot;固话&quot;),(UNFIXED_CALL, &quot;无主叫固话&quot;)</td>
+<td>Integer</td>
+<td>手机(MOBILE, &quot;手机&quot;),阿里云固话(LANDLINE, &quot;固话&quot;),无主叫(UNFIXED_CALL, &quot;无主叫固话&quot;),训练主叫账号(VERBAL_TRICK_TRAINING_CALLER, &quot;训练主叫账号&quot;),训练被叫账号(VERBAL_TRICK_TRAINING_CALLED, &quot;训练被叫账号&quot;),网关设备(VOIP_DEVICE, &quot;网关设备&quot;),</td>
+</tr>
+<tr>
+<td>concurrency</td>
+<td>Integer</td>
+<td>已经使用并发数</td>
 </tr>
 <tr>
 <td>requestId</td>
@@ -852,11 +914,33 @@
 <pre class="highlight plaintext"><code>{
     "code": 200,
     "data": [{
-        "dialogFlowId": 96,
-        "name": "金融理财--行业体验demo"
+        "robotDialogFlowId": 96,
+        "name": "金融理财--行业体验demo",
+        "type": "NORMAL",
+        "industry": {
+            "name": "FINANCE",
+            "desc": "金融类"
+        },
+        "subIndustry": {
+            "name": "FINICING",
+            "desc": "理财"
+        },
+        "familyNameTemplateId": null,
+        "status": "DRAFT"
     }, {
-        "dialogFlowId": 136,
-        "name": "测试变量"
+        "robotDialogFlowId": 136,
+        "name": "测试变量",
+        "type": "NORMAL",
+        "industry": {
+            "name": "OTHER",
+            "desc": "其他产品推广"
+        },
+        "subIndustry": {
+            "name": "OTHER",
+            "desc": "其他产品推广"
+        },
+        "familyNameTemplateId": null,
+        "status": "APPROVED"
     }],
     "requestId": "NSLARYGU",
     "resultMsg": "获取成功",
@@ -864,7 +948,7 @@
 }
 
 </code></pre><h3 id='c7811523ac-3'>请求：</h3>
-<p>URL：https://crm.tanyibot.com/apiOpen/v1/dialogFlow/getDialogFlowList</p>
+<p>URL：http://robot.yiwise.cn/apiOpen/v1/company/getRobots</p>
 <h3 id='261d12e31d-3'>请求方法：</h3>
 <p>GET</p>
 <h3 id='2eb6f47757-3'>请求参数:</h3>
@@ -883,7 +967,7 @@
 <td>响应码</td>
 </tr>
 <tr>
-<td>dialogFlowId</td>
+<td>robotDialogFlowId</td>
 <td>Integer</td>
 <td>机器人话术id</td>
 </tr>
@@ -891,6 +975,31 @@
 <td>name</td>
 <td>String</td>
 <td>机器人话术名称</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Integer</td>
+<td>机器人话术类型 TEMPLATE(0, &quot;模板&quot;),DEMO(1, &quot;展示&quot;),NORMAL(2, &quot;普通&quot;)</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Integer</td>
+<td>状态 DRAFT(0, &quot;编辑中&quot;),PENDING_APPROVAL(1, &quot;等待审核&quot;),REJECTED(2, &quot;拒绝&quot;),APPROVED(3, &quot;审核通过&quot;);</td>
+</tr>
+<tr>
+<td>industry</td>
+<td>object</td>
+<td>一级行业类型</td>
+</tr>
+<tr>
+<td>subIndustry</td>
+<td>String</td>
+<td>二级行业类型</td>
+</tr>
+<tr>
+<td>familyNameTemplateId</td>
+<td>Long</td>
+<td>百家姓模板id</td>
 </tr>
 <tr>
 <td>requestId</td>
@@ -912,10 +1021,10 @@
 <p>入参JSON实例：</p>
 </blockquote>
 <pre class="highlight plaintext"><code>{
-    "concurrencyQuota", 2,
-    "jobPhoneNumberIdList": [
-        348,369
-    ],
+    "jobPhoneNumberList": [{
+        "key": 348,
+        "value": "test"
+    }],
     "robotCallJob": {
         "alertUsers": [],
         "dailyEndTime": "21:00",
@@ -943,14 +1052,14 @@
 </blockquote>
 <pre class="highlight plaintext"><code>{
     "code": 200,
-    "data": {robotCallJobId:139},
+    "data": 139,
     "requestId": "RKXNIQAF",
     "resultMsg": "修改成功",
     "errorStackTrace": null
 }
 
 </code></pre><h3 id='c7811523ac'>请求：</h3>
-<p>URL：https://crm.tanyibot.com/apiOpen/v1/job/create</p>
+<p>URL：http://robot.yiwise.cn/apiOpen/v1/task/createTask</p>
 <h3 id='261d12e31d'>请求方法：</h3>
 <p>POST</p>
 <h3 id='2eb6f47757'>请求参数:</h3>
@@ -964,18 +1073,11 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>concurrencyQuota</td>
-<td>Integer</td>
-<td>是</td>
-<td>并发数（线路类型为手机号的时候可不传）</td>
-<td>10</td>
-</tr>
-<tr>
-<td>jobPhoneNumberIdList</td>
+<td>jobPhoneNumberList</td>
 <td>List</td>
 <td>是</td>
-<td>任务主叫号码列表 tenant_phone_number_id,当类型是手机号的时候他的size代表机器人的个数，当类型非手机号的时候他的size只能是1</td>
-<td>[1,2,3]</td>
+<td>任务主叫号码列表 key为tenant_phone_number_id， val是线路号码</td>
+<td>[{&quot;key&quot;: 348,&quot;value&quot;: &quot;test&quot;}]</td>
 </tr>
 <tr>
 <td>name</td>
@@ -986,44 +1088,44 @@
 </tr>
 <tr>
 <td>mode</td>
-<td>String</td>
+<td>Integer</td>
 <td>是</td>
-<td>任务类型 (AUTO, &quot;自动任务&quot;),(MANUAL, &quot;手动任务&quot;);</td>
+<td>任务类型 AUTO(0, &quot;自动任务&quot;),MANUAL(1, &quot;手动任务&quot;);</td>
 <td>AUTO</td>
 </tr>
 <tr>
 <td>startTime</td>
 <td>String</td>
-<td>自动任务：是/手动任务：否</td>
+<td>是</td>
 <td>任务开始时间</td>
-<td>&quot;2017-11-21&quot;</td>
+<td>&quot;2017-11-21 04:32:00&quot;</td>
 </tr>
 <tr>
 <td>dailyStartTime</td>
 <td>String</td>
 <td>是</td>
-<td>可拨打开始时间，不可以早于9点</td>
-<td>09:00</td>
+<td>可拨打开始时间</td>
+<td>08:00</td>
 </tr>
 <tr>
 <td>dailyEndTime</td>
 <td>String</td>
 <td>是</td>
-<td>可拨打结束时间，不可以晚于20点</td>
-<td>20:00</td>
+<td>可拨打结束时间</td>
+<td>22:00</td>
 </tr>
 <tr>
 <td>inactiveStartTime</td>
 <td>String</td>
-<td>否</td>
-<td>午间暂时拨打开始时间</td>
+<td>是</td>
+<td>暂时停止开始时间</td>
 <td>12:00</td>
 </tr>
 <tr>
 <td>inactiveEndTime</td>
 <td>String</td>
-<td>否</td>
-<td>午间暂时拨打结束时间</td>
+<td>是</td>
+<td>暂时停止结束时间</td>
 <td>13:00</td>
 </tr>
 <tr>
@@ -1051,8 +1153,15 @@
 <td>phoneType</td>
 <td>String</td>
 <td>是</td>
-<td>号码类型 (MOBILE, &quot;手机号码&quot;),(LANDLINE, &quot;固话&quot;),(UNFIXED_CALL, &quot;无主叫&quot;)</td>
+<td>号码类型 MOBILE(0, &quot;M&quot;, &quot;手机号码&quot;),LANDLINE(1, &quot;L&quot;, &quot;固话&quot;),UNFIXED_CALL(2, &quot;U&quot;, &quot;无主叫&quot;),VERBAL_TRICK_TRAINING_CALLER(3, &quot;VR&quot;, &quot;训练主叫账号&quot;),VERBAL_TRICK_TRAINING_CALLED(4, &quot;VD&quot;, &quot;训练被叫账号&quot;),VOIP_DEVICE(5, &quot;D&quot;, &quot;网关设备&quot;);</td>
 <td>UNFIXED_CALL</td>
+</tr>
+<tr>
+<td>robotCount</td>
+<td>String</td>
+<td>是</td>
+<td>AI数量</td>
+<td>10</td>
 </tr>
 <tr>
 <td>smsAlertLevel</td>
@@ -1063,9 +1172,9 @@
 </tr>
 <tr>
 <td>smsTemplateId</td>
-<td>Long</td>
+<td>String</td>
 <td>否</td>
-<td>短信模板id</td>
+<td>短信模板地址</td>
 <td></td>
 </tr>
 <tr>
@@ -1079,7 +1188,7 @@
 <td>wechatSendMethod</td>
 <td>String</td>
 <td>否</td>
-<td>微信推送方式（SENDTOALL，全推送），（SENDTOONE，单推送），（SENDTONONE 不推送）</td>
+<td>微信推送方式（SENDTOALL 全推送/SENDTOONE 单推送/SENDTONONE 不推送）</td>
 <td>SENDTOALL</td>
 </tr>
 <tr>
@@ -1104,7 +1213,7 @@
 <td>响应码</td>
 </tr>
 <tr>
-<td>robotCallJobId</td>
+<td>data</td>
 <td>Long</td>
 <td>刚刚创建的任务ID</td>
 </tr>
@@ -1134,7 +1243,7 @@
 }
 
 </code></pre><h3 id='c7811523ac-2'>请求：</h3>
-<p>URL：https://crm.tanyibot.com/apiOpen/v1/job/start</p>
+<p>URL：http://robot.yiwise.cn/apiOpen/v1/task/start</p>
 <h3 id='261d12e31d-2'>请求方法：</h3>
 <p>POST</p>
 <h3 id='2eb6f47757-2'>请求参数:</h3>
@@ -1149,7 +1258,7 @@
 </thead><tbody>
 <tr>
 <td>robotCallJobId</td>
-<td>Long</td>
+<td>Integer</td>
 <td>是</td>
 <td>任务Id</td>
 <td>1</td>
@@ -1165,7 +1274,7 @@
 </thead><tbody>
 <tr>
 <td>code</td>
-<td>Integer</td>
+<td>integer</td>
 <td>响应码</td>
 </tr>
 <tr>
@@ -1194,7 +1303,7 @@
 }
 
 </code></pre><h3 id='c7811523ac-3'>请求：</h3>
-<p>URL：https://crm.tanyibot.com/apiOpen/v1/job/pause</p>
+<p>URL：http://robot.yiwise.cn/apiOpen/v1/task/pause</p>
 <h3 id='261d12e31d-3'>请求方法：</h3>
 <p>POST</p>
 <h3 id='2eb6f47757-3'>请求参数:</h3>
@@ -1225,7 +1334,7 @@
 </thead><tbody>
 <tr>
 <td>code</td>
-<td>Integer</td>
+<td>integer</td>
 <td>响应码</td>
 </tr>
 <tr>
@@ -1254,7 +1363,7 @@
  }
 
 </code></pre><h3 id='c7811523ac-4'>请求：</h3>
-<p>URL：https://crm.tanyibot.com/apiOpen/v1/job/stop</p>
+<p>URL：http://robot.yiwise.cn/apiOpen/v1/task/stop</p>
 <h3 id='261d12e31d-4'>请求方法：</h3>
 <p>POST</p>
 <h3 id='2eb6f47757-4'>请求参数:</h3>
@@ -1285,7 +1394,7 @@
 </thead><tbody>
 <tr>
 <td>code</td>
-<td>Integer</td>
+<td>integer</td>
 <td>响应码</td>
 </tr>
 <tr>
@@ -1321,7 +1430,7 @@
 }
 
 </code></pre><h3 id='c7811523ac-5'>请求：</h3>
-<p>URL：https://crm.tanyibot.com/apiOpen/v1/job/delete</p>
+<p>URL：http://robot.yiwise.cn/apiOpen/v1/task/delete</p>
 <h3 id='261d12e31d-5'>请求方法：</h3>
 <p>POST</p>
 <h3 id='2eb6f47757-5'>请求参数:</h3>
@@ -1336,7 +1445,7 @@
 </thead><tbody>
 <tr>
 <td>robotCallJobId</td>
-<td>Long</td>
+<td>long</td>
 <td>是</td>
 <td>删除任务</td>
 <td>1</td>
@@ -1367,7 +1476,7 @@
 </tr>
 </tbody></table>
 <h2 id='723af6367b'>向任务中导入客户接口</h2><h3 id='7d73d51a26-6'>功能说明：</h3>
-<p>通过此接口可以向指定的任务导入客户信息，用于拨打电话。（单次导入客户数量不能大于100）</p>
+<p>通过此接口可以向指定的任务导入客户信息，用于拨打电话</p>
 
 <blockquote>
 <p>入参JSON实例:</p>
@@ -1378,8 +1487,7 @@
         "name": "test",
         "phoneNumber": "11111111111",
         "properties": {
-            "欠款金额": "10.13",
-            "最后还款日期": "2018年10月3日"
+            "ttt": "jjj"
         }
     }]
 }
@@ -1397,7 +1505,7 @@
  }
 
 </code></pre><h3 id='c7811523ac-6'>请求：</h3>
-<p>URL：https://crm.tanyibot.com/apiOpen/v1/job/importCustomer</p>
+<p>URL：http://robot.yiwise.cn/apiOpen/v1/task/importTaskCustomer</p>
 <h3 id='261d12e31d-6'>请求方法：</h3>
 <p>POST</p>
 <h3 id='2eb6f47757-6'>请求参数:</h3>
@@ -1412,7 +1520,7 @@
 </thead><tbody>
 <tr>
 <td>robotCallJobId</td>
-<td>Long</td>
+<td>Integer</td>
 <td>是</td>
 <td>任务Id</td>
 <td>1</td>
@@ -1449,7 +1557,7 @@
 </thead><tbody>
 <tr>
 <td>code</td>
-<td>Integer</td>
+<td>integer</td>
 <td>响应码</td>
 </tr>
 <tr>
@@ -1482,12 +1590,12 @@
     "code": 200,
     "data": null,
     "requestId": "RKXNIQAF",
-    "resultMsg": "导入成功",
+    "resultMsg": "修改成功",
     "errorStackTrace": null
 }
 
 </code></pre><h3 id='c7811523ac-7'>请求：</h3>
-<p>URL：https://crm.tanyibot.com/apiOpen/v1/job/updateAiCount</p>
+<p>URL：http://robot.yiwise.cn/apiOpen/v1/task/update</p>
 <h3 id='261d12e31d-7'>请求方法：</h3>
 <p>POST</p>
 <h3 id='2eb6f47757-7'>请求参数:</h3>
@@ -1502,7 +1610,7 @@
 </thead><tbody>
 <tr>
 <td>robotCallJobId</td>
-<td>Long</td>
+<td>Integer</td>
 <td>是</td>
 <td>任务Id</td>
 <td>1</td>
@@ -1525,7 +1633,7 @@
 </thead><tbody>
 <tr>
 <td>code</td>
-<td>Integer</td>
+<td>integer</td>
 <td>响应码</td>
 </tr>
 <tr>
@@ -1568,7 +1676,7 @@
   "errorStackTrace": null
 }
 </code></pre><h3 id='c7811523ac'>请求：</h3>
-<p>URL：https://crm.tanyibot.com/apiOpen/v1/job/getJobs</p>
+<p>URL：http://robot.yiwise.cn/apiOpen/v1/task/getTasks</p>
 <h3 id='261d12e31d'>请求方法：</h3>
 <p>GET</p>
 <h3 id='2eb6f47757'>请求参数:</h3>
@@ -1590,9 +1698,9 @@
 </tr>
 <tr>
 <td>status</td>
-<td>String</td>
+<td>Integer</td>
 <td>否</td>
-<td>任务状态,(NOT_STARTED, &quot;未开始&quot;),(IN_PROCESS, &quot;进行中&quot;),(COMPLETED, &quot;已完成&quot;),(RUNNABLE, &quot;可运行&quot;),(USER_PAUSE, &quot;用户暂停&quot;),(SYSTEM_SUSPENDED, &quot;系统暂停&quot;),(TERMINATE, &quot;已终止&quot;),(IN_QUEUE, &quot;排队中&quot;);</td>
+<td>任务状态,NOT_STARTED(0, &quot;未开始&quot;),IN_PROCESS(1, &quot;进行中&quot;),COMPLETED(2, &quot;已完成&quot;),RUNNABLE(3, &quot;可运行&quot;),USER_PAUSE(4, &quot;用户暂停&quot;),SYSTEM_SUSPENDED(5, &quot;系统暂停&quot;),TERMINATE(6, &quot;已终止&quot;),IN_QUEUE(7, &quot;排队中&quot;);</td>
 <td>1</td>
 </tr>
 <tr>
@@ -1606,7 +1714,7 @@
 <td>pageSize</td>
 <td>Integer</td>
 <td>否</td>
-<td>页面大小,选填,默认20,最大值100</td>
+<td>页面大小,选填,默认20</td>
 <td>10</td>
 </tr>
 </tbody></table>
@@ -1680,7 +1788,7 @@
 </tr>
 <tr>
 <td>status</td>
-<td>String</td>
+<td>Integer</td>
 <td>任务状态, NOT_STARTED(0, &quot;未开始&quot;),IN_PROCESS(1, &quot;进行中&quot;),COMPLETED(2, &quot;已完成&quot;),RUNNABLE(3, &quot;可运行&quot;),USER_PAUSE(4, &quot;用户暂停&quot;),SYSTEM_SUSPENDED(5, &quot;系统暂停&quot;),TERMINATE(6, &quot;已终止&quot;),IN_QUEUE(7, &quot;排队中&quot;);</td>
 </tr>
 <tr>
@@ -1728,186 +1836,15 @@
             "lastModifiedTime": "2018-10-09 15:11:20",
             "earlyWarningAlertUsers": []
         },
-        "jobPhoneNumberList": [{
-          "robotDialogFlowId": 96,
-          "name": "金融理财--行业体验demo"
-        }, {
-          "robotDialogFlowId": 136,
-          "name": "测试变量"
-        }],
+        "jobPhoneNumberList": null,
         "completedTask": 3612,
-        "taskCallTotal": 166
-    },
-    "requestId": "VJDMUZIC",
-    "resultMsg": "获取成功",
-    "errorStackTrace": null
-}
-
-</code></pre><h3 id='c7811523ac-2'>请求：</h3>
-<p>URL：https://crm.tanyibot.com/apiOpen/v1/job/getJobDetail</p>
-<h3 id='261d12e31d-2'>请求方法：</h3>
-<p>GET</p>
-<h3 id='2eb6f47757-2'>请求参数:</h3>
-<table><thead>
-<tr>
-<th>参数名</th>
-<th>类型</th>
-<th>是否必须</th>
-<th>描述</th>
-<th>实例</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>robotCallJobId</td>
-<td>Long</td>
-<td>是</td>
-<td>任务Id</td>
-<td>21</td>
-</tr>
-</tbody></table>
-<h3 id='d981aa6fd7-2'>响应：</h3>
-<table><thead>
-<tr>
-<th>参数名</th>
-<th>类型</th>
-<th>描述</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>code</td>
-<td>integer</td>
-<td>响应码</td>
-</tr>
-<tr>
-<td>robotCallJobId</td>
-<td>Long</td>
-<td>任务id</td>
-</tr>
-<tr>
-<td>dialogFlowId</td>
-<td>Long</td>
-<td>话术id</td>
-</tr>
-<tr>
-<td>name</td>
-<td>String</td>
-<td>任务名称</td>
-</tr>
-<tr>
-<td>mode</td>
-<td>String</td>
-<td>任务类型 (AUTO, &quot;自动任务&quot;),(MANUAL, &quot;手动任务&quot;)</td>
-</tr>
-<tr>
-<td>phoneType</td>
-<td>String</td>
-<td>电话类型 (MOBILE, &quot;手机&quot;),(LANDLINE, &quot;固话&quot;),(UNFIXED_CALL, &quot;无主叫固话&quot;)</td>
-</tr>
-<tr>
-<td>robotCount</td>
-<td>Integer</td>
-<td>任务拨打的号码总数</td>
-</tr>
-<tr>
-<td>smsTemplateId</td>
-<td>Long</td>
-<td>短信模版id</td>
-</tr>
-<tr>
-<td>dailyStartTime</td>
-<td>String</td>
-<td>可拨打开始时间</td>
-</tr>
-<tr>
-<td>dailyEndTime</td>
-<td>String</td>
-<td>可拨打结束时间</td>
-</tr>
-<tr>
-<td>inactiveStartTime</td>
-<td>String</td>
-<td>暂时停止开始时间</td>
-</tr>
-<tr>
-<td>inactiveEndTime</td>
-<td>String</td>
-<td>暂时停止结束时间</td>
-</tr>
-<tr>
-<td>description</td>
-<td>String</td>
-<td>任务注释</td>
-</tr>
-<tr>
-<td>wechatAlertLevel</td>
-<td>String</td>
-<td>微信提示等级</td>
-</tr>
-<tr>
-<td>smsAlertLevel</td>
-<td>String</td>
-<td>短信提示等级</td>
-</tr>
-<tr>
-<td>alertUsers</td>
-<td>String</td>
-<td>提示人员</td>
-</tr>
-<tr>
-<td>earlyWarningAlertUsers</td>
-<td>String</td>
-<td>预警提示人员</td>
-</tr>
-<tr>
-<td>creationTime</td>
-<td>String</td>
-<td>任务创建时间</td>
-</tr>
-<tr>
-<td>lastModifiedTime</td>
-<td>String</td>
-<td>任务修改时间</td>
-</tr>
-<tr>
-<td>startTime</td>
-<td>String</td>
-<td>任务开始时间</td>
-</tr>
-<tr>
-<td>nextStartTime</td>
-<td>String</td>
-<td>下一次任务开始时间</td>
-</tr>
-<tr>
-<td>status</td>
-<td>String</td>
-<td>任务状态, NOT_STARTED(0, &quot;未开始&quot;),IN_PROCESS(1, &quot;进行中&quot;),COMPLETED(2, &quot;已完成&quot;),RUNNABLE(3, &quot;可运行&quot;),USER_PAUSE(4, &quot;用户暂停&quot;),SYSTEM_SUSPENDED(5, &quot;系统暂停&quot;),TERMINATE(6, &quot;已终止&quot;),IN_QUEUE(7, &quot;排队中&quot;)</td>
-</tr>
-<tr>
-<td>jobPhoneNumberList</td>
-<td>List</td>
-<td>任务拨打的电话列表</td>
-</tr>
-<tr>
-<td>requestId</td>
-<td>String</td>
-<td>请求Id</td>
-</tr>
-<tr>
-<td>resultMsg</td>
-<td>String</td>
-<td>响应说明</td>
-</tr>
-</tbody></table>
-<h2 id='7ed6838292'>获取任务统计接口</h2><h3 id='7d73d51a26-3'>功能说明：</h3>
-<p>通过此接口可以获取指定任务的统计详细信息</p>
-
-<blockquote>
-<p>JSON响应实例：</p>
-</blockquote>
-<pre class="highlight plaintext"><code>{
-    "code": 200,
-    "data": {
+        "taskCallTotal": 166,
+        "createdByUserName": "超管",
+        "organizationName": "系统内置",
+        "dialogFlowName": "内置",
+        "smsTemplateName": null,
+        "systemPauseNextStart": null,
+        "callJobStatsInfo": {
             "taskProgress": 2175.9,
             "answeredRate": 9.47,
             "intentLevel": {
@@ -1988,17 +1925,18 @@
                     "val": 26786
                 }]
             }
+        }
     },
     "requestId": "VJDMUZIC",
     "resultMsg": "获取成功",
     "errorStackTrace": null
 }
 
-</code></pre><h3 id='c7811523ac-3'>请求：</h3>
-<p>URL：https://crm.tanyibot.com/apiOpen/v1/job/getJobStats</p>
-<h3 id='261d12e31d-3'>请求方法：</h3>
+</code></pre><h3 id='c7811523ac-2'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/apiOpen/v1/task/getTaskDetail</p>
+<h3 id='261d12e31d-2'>请求方法：</h3>
 <p>GET</p>
-<h3 id='2eb6f47757-3'>请求参数:</h3>
+<h3 id='2eb6f47757-2'>请求参数:</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -2010,13 +1948,13 @@
 </thead><tbody>
 <tr>
 <td>robotCallJobId</td>
-<td>Long</td>
+<td>Integer</td>
 <td>是</td>
 <td>任务Id</td>
 <td>21</td>
 </tr>
 </tbody></table>
-<h3 id='d981aa6fd7-3'>响应：</h3>
+<h3 id='d981aa6fd7-2'>响应：</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -2026,8 +1964,133 @@
 </thead><tbody>
 <tr>
 <td>code</td>
-<td>Integer</td>
+<td>integer</td>
 <td>响应码</td>
+</tr>
+<tr>
+<td>robotCallJobId</td>
+<td>Long</td>
+<td>任务id</td>
+</tr>
+<tr>
+<td>dialogFlowId</td>
+<td>Long</td>
+<td>话术id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>任务名称</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>String</td>
+<td>任务类型 AUTO(0, &quot;自动任务&quot;),MANUAL(1, &quot;手动任务&quot;)</td>
+</tr>
+<tr>
+<td>phoneType</td>
+<td>String</td>
+<td>电话类型 MOBILE(0, &quot;M&quot;, &quot;手机号码&quot;),LANDLINE(1, &quot;L&quot;, &quot;固话&quot;),UNFIXED_CALL(2, &quot;U&quot;, &quot;无主叫&quot;),VERBAL_TRICK_TRAINING_CALLER(3, &quot;VR&quot;, &quot;训练主叫账号&quot;),VERBAL_TRICK_TRAINING_CALLED(4, &quot;VD&quot;, &quot;训练被叫账号&quot;),VOIP_DEVICE(5, &quot;D&quot;, &quot;网关设备&quot;)</td>
+</tr>
+<tr>
+<td>robotCount</td>
+<td>Integer</td>
+<td>任务拨打的号码总数</td>
+</tr>
+<tr>
+<td>smsTemplateId</td>
+<td>Long</td>
+<td>短信模版id</td>
+</tr>
+<tr>
+<td>dailyStartTime</td>
+<td>String</td>
+<td>可拨打开始时间</td>
+</tr>
+<tr>
+<td>dailyEndTime</td>
+<td>String</td>
+<td>可拨打结束时间</td>
+</tr>
+<tr>
+<td>inactiveStartTime</td>
+<td>String</td>
+<td>暂时停止开始时间</td>
+</tr>
+<tr>
+<td>inactiveEndTime</td>
+<td>String</td>
+<td>暂时停止结束时间</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>任务注释</td>
+</tr>
+<tr>
+<td>wechatAlertLevel</td>
+<td>String</td>
+<td>微信提示等级</td>
+</tr>
+<tr>
+<td>smsAlertLevel</td>
+<td>String</td>
+<td>短信提示等级</td>
+</tr>
+<tr>
+<td>alertUsers</td>
+<td>String</td>
+<td>提示人员</td>
+</tr>
+<tr>
+<td>earlyWarningAlertUsers</td>
+<td>String</td>
+<td>预警提示人员</td>
+</tr>
+<tr>
+<td>creationTime</td>
+<td>String</td>
+<td>任务创建时间</td>
+</tr>
+<tr>
+<td>lastModifiedTime</td>
+<td>String</td>
+<td>任务修改时间</td>
+</tr>
+<tr>
+<td>startTime</td>
+<td>String</td>
+<td>任务开始时间</td>
+</tr>
+<tr>
+<td>nextStartTime</td>
+<td>String</td>
+<td>下一次任务开始时间</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Integer</td>
+<td>任务状态, NOT_STARTED(0, &quot;未开始&quot;),IN_PROCESS(1, &quot;进行中&quot;),COMPLETED(2, &quot;已完成&quot;),RUNNABLE(3, &quot;可运行&quot;),USER_PAUSE(4, &quot;用户暂停&quot;),SYSTEM_SUSPENDED(5, &quot;系统暂停&quot;),TERMINATE(6, &quot;已终止&quot;),IN_QUEUE(7, &quot;排队中&quot;);</td>
+</tr>
+<tr>
+<td>createdByUserName</td>
+<td>String</td>
+<td>创建人</td>
+</tr>
+<tr>
+<td>jobPhoneNumberList</td>
+<td>List</td>
+<td>任务拨打的电话列表</td>
+</tr>
+<tr>
+<td>organizationName</td>
+<td>String</td>
+<td>创建组织</td>
+</tr>
+<tr>
+<td>dialogFlowName</td>
+<td>String</td>
+<td>话术名称</td>
 </tr>
 <tr>
 <td>taskProgress</td>
@@ -2120,70 +2183,7 @@
 <td>响应说明</td>
 </tr>
 </tbody></table>
-<h2 id='ce576131d5'>获取任务中的变量（包括话术变量和短信变量）</h2><h3 id='7d73d51a26-4'>功能说明：</h3>
-<p>通过接口可以获取该任务中的自定义变量，包括话术变量、意向短信变量、挂机短信变量等</p>
-
-<blockquote>
-<p>JSON响应实例：</p>
-</blockquote>
-<pre class="highlight plaintext"><code>{
-    "code": 200,
-    "data": [
-        "欠款金额",
-        "最后还款日期"
-    ],
-    "requestId": "RKXNIQAF",
-    "resultMsg": "获取自定义属性成功",
-    "errorStackTrace": null
-}
-
-</code></pre><h3 id='c7811523ac-4'>请求：</h3>
-<p>URL：https://crm.tanyibot.com/apiOpen/v1/job/getJobProperties</p>
-<h3 id='261d12e31d-4'>请求方法：</h3><h3 id='261d12e31d-5'>请求方法：</h3>
-<p>GET</p>
-<h3 id='2eb6f47757-4'>请求参数:</h3>
-<table><thead>
-<tr>
-<th>参数名</th>
-<th>类型</th>
-<th>是否必须</th>
-<th>描述</th>
-<th>实例</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>robotCallJobId</td>
-<td>Long</td>
-<td>是</td>
-<td>任务Id</td>
-<td>21</td>
-</tr>
-</tbody></table>
-<h3 id='d981aa6fd7-4'>响应：</h3>
-<table><thead>
-<tr>
-<th>参数名</th>
-<th>类型</th>
-<th>描述</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>code</td>
-<td>Integer</td>
-<td>响应码</td>
-</tr>
-<tr>
-<td>requestId</td>
-<td>String</td>
-<td>请求Id</td>
-</tr>
-<tr>
-<td>resultMsg</td>
-<td>String</td>
-<td>响应说明</td>
-</tr>
-</tbody></table>
-<h1 id='ede290fd8b'>任务完成电话信息查询接口</h1><h2 id='872ca4f7a9'>获取已经完成任务电话号码接口</h2><h3 id='7d73d51a26'>功能说明：</h3>
+<h2 id='872ca4f7a9'>获取已经完成任务电话号码接口</h2><h3 id='7d73d51a26-3'>功能说明：</h3>
 <p>通过此接口可以获取指定任务中所有已经完成的电话号码</p>
 
 <blockquote>
@@ -2194,10 +2194,14 @@
     "customerGroupId": 1,
     "robotCallJobId": 1,
     "dialogFlowId": 2,
+    "followStatus": "AI_INITIAL_VISIT",
+    "latestCreationTime": "2018-07-25",
     "resultStatuses": ["ANSWERED"],
     "searchWords": "测试",
     "intentLevels": ["A"],
+    "getTrainTaskList": true,
     "pageSize": 20,
+    "earliestCreationTime": "2018-07-25",
     "pageNum": 1
 }
 
@@ -2226,7 +2230,6 @@
                       "intentLevel": "A",
                       "realIntentLevel": null,
                       "customerConcern": [
-                        "价格","位置"
                        ],
                        "fullAudioUrl": "https://ai-call-platform.oss-cn-hangzhou.aliyuncs.com/DialogueRecording/TenantId1/CallJobId50/OUZAXBCB__TaskId_4/ai_user.wav",
                        "customerAudioUrl": "https://ai-call-platform.oss-cn-hangzhou.aliyuncs.com/DialogueRecording/TenantId1/CallJobId50/OUZAXBCB__TaskId_4/user.wav",
@@ -2234,19 +2237,13 @@
                        "startTime": "2018-08-04 11:57:33",
                        "chatDuration": 93,
                        "chatRound": 16,
+                       "manualMarked": false,
                        "readStatus": "NOT_READ",
-                       "callDetailList": [
-                           {
-                               "text":"喂，您好, （停顿2s），您好，想问下您位于江北纬七路隧道附近，均价17000的高端商业综合体，我可以给您介绍一下吗？",
-                               "type":"ROBOT",
-                               "callDetailId": 1
-                           },
-                           {
-                               "text":"嗯",
-                               "type":"PERSON",
-                               "callDetailId": 2
-                           }
-                       ]
+                       "customerGroupName": null,
+                       "robotCallJobName": "曹文浩123",
+                       "dialogFlowName": "张三",
+                       "customerPersonInfo": null,
+                       "callDetailList": null
                    }
                ]
            },
@@ -2254,11 +2251,11 @@
            "resultMsg": "获取成功",
            "errorStackTrace": null
        }
-</code></pre><h3 id='c7811523ac'>请求：</h3>
-<p>URL：https://crm.tanyibot.com/apiOpen/v1/callRecord/getCallRecordInfoList</p>
-<h3 id='261d12e31d'>请求方法：</h3>
+</code></pre><h3 id='c7811523ac-3'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/apiOpen/v1/task/getCallRecordInfoList</p>
+<h3 id='261d12e31d-3'>请求方法：</h3>
 <p>POST</p>
-<h3 id='2eb6f47757'>请求参数:</h3>
+<h3 id='2eb6f47757-3'>请求参数:</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -2270,45 +2267,73 @@
 </thead><tbody>
 <tr>
 <td>customerGroupId</td>
-<td>Long</td>
+<td>Integer</td>
 <td>否</td>
 <td>分组ID</td>
 <td>100</td>
 </tr>
 <tr>
 <td>robotCallJobId</td>
-<td>Long</td>
+<td>Integer</td>
 <td>是</td>
 <td>任务id</td>
 <td>1</td>
 </tr>
 <tr>
 <td>dialogFlowId</td>
-<td>Long</td>
+<td>Integer</td>
 <td>否</td>
 <td>话术id</td>
 <td>1</td>
 </tr>
 <tr>
+<td>followStatus</td>
+<td>String</td>
+<td>否</td>
+<td>跟进状态 AI_INITIAL_VISIT(0, &quot;AI初访&quot;),PEOPLE_INITIAL_VISIT(1, &quot;人工初访&quot;),FOLLOW_UP(2, &quot;持续跟进&quot;);</td>
+<td>1</td>
+</tr>
+<tr>
+<td>earliestCreationTime</td>
+<td>Integer</td>
+<td>否</td>
+<td>最早创建时间，日期标准格式，请不要包含时间。可以为空</td>
+<td>&quot;2018-07-25&quot;</td>
+</tr>
+<tr>
+<td>latestCreationTime</td>
+<td>Integer</td>
+<td>否</td>
+<td>最晚创建时间，日期标准格式，请不要包含时间。可以为空</td>
+<td>&quot;2018-07-25&quot;</td>
+</tr>
+<tr>
 <td>resultStatuses</td>
 <td>List</td>
 <td>否</td>
-<td>通话结果 (ANSWERED, &quot;已接听&quot;),(NO_ANSWER, &quot;未接&quot;),(BUSY, &quot;占线&quot;),(POWER_OFF, &quot;关机&quot;),(OUT_OF_SERVICE, &quot;被叫停机&quot;),(REFUSED, &quot;拒接&quot;),(VACANT_NUMBER, &quot;空号&quot;),(CAN_NOT_CONNECT, &quot;无法接通&quot;), (FROM_PHONE_ERROR, &quot;主叫号码不可用&quot;),(SYSTEM_ERROR, &quot;外呼失败&quot;)</td>
+<td>通话结果 ANSWERED(0, &quot;已接听&quot;, null),NO_ANSWER(1, &quot;未接&quot;, &quot;呼叫号码未接听&quot;),BUSY(2, &quot;占线&quot;, &quot;呼叫号码占线&quot;),POWER_OFF(3, &quot;关机&quot;, &quot;呼叫号码关机&quot;),OUT_OF_SERVICE(4, &quot;被叫停机&quot;, &quot;呼叫号码停机&quot;),REFUSED(5, &quot;拒接&quot;, &quot;呼叫号码拒接&quot;),VACANT_NUMBER(6, &quot;空号&quot;, &quot;呼叫的号码是空号&quot;),CAN_NOT_CONNECT(7, &quot;无法接通&quot;, &quot;呼叫的号码无法接通&quot;),                 // 无法接通，或没拨通，或没能获取到EarlyMediaFROM_PHONE_ERROR(8, &quot;主叫号码不可用&quot;, &quot;主叫号码不可用&quot;),              // 主叫号码不可用，主叫欠费SYSTEM_ERROR(9, &quot;外呼失败&quot;, &quot;外呼失败&quot;)</td>
 <td>[&quot;ANSWERED&quot;, &quot;REFUSED&quot;]</td>
 </tr>
 <tr>
 <td>intentLevels</td>
 <td>List</td>
 <td>否</td>
-<td>客户关注点 (A, &quot;A级(较强)&quot;),(B, &quot;B级(一般)&quot;),(C, &quot;C级(无法判断)&quot;),(D, &quot;D级(很少)&quot;),(E, &quot;E级别(需要再次跟进)&quot;),(F, &quot;F级别(无需再次跟进)&quot;)</td>
+<td>客户关注点 A(0, &quot;A级(较强)&quot;),B(1, &quot;B级(一般)&quot;),C(2, &quot;C级(无法判断)&quot;),D(3, &quot;D级(很少)&quot;),E(4, &quot;E级别(需要再次跟进)&quot;),F(5, &quot;F级别(无需再次跟进)&quot;)</td>
 <td>[&quot;B&quot;, &quot;C&quot;]</td>
 </tr>
 <tr>
 <td>searchWords</td>
-<td>String</td>
+<td>Integer</td>
 <td>否</td>
-<td>关键字搜索,支持电话号码、通话记录id、客户姓名</td>
+<td>关键字搜索</td>
 <td>0</td>
+</tr>
+<tr>
+<td>getTrainTaskList</td>
+<td>Integer</td>
+<td>否</td>
+<td>为true表示获取话术训练列表</td>
+<td>true</td>
 </tr>
 <tr>
 <td>pageNum</td>
@@ -2321,11 +2346,11 @@
 <td>pageSize</td>
 <td>Integer</td>
 <td>否</td>
-<td>显示数量/页（默认为20），最大不能超过100</td>
+<td>显示数量/页（默认为20）</td>
 <td>10</td>
 </tr>
 </tbody></table>
-<h3 id='d981aa6fd7'>响应：</h3>
+<h3 id='d981aa6fd7-3'>响应：</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -2360,28 +2385,28 @@
 </tr>
 <tr>
 <td>callRecordId</td>
-<td>Long</td>
+<td>Integer</td>
 <td>通话ID</td>
 </tr>
 <tr>
 <td>robotCallJobId</td>
-<td>Long</td>
-<td>任务id</td>
+<td>Integer</td>
+<td>任务实例id（每个被叫电话为一个实例）</td>
 </tr>
 <tr>
 <td>dialogFlowId</td>
-<td>Long</td>
+<td>Integer</td>
 <td>话术id</td>
 </tr>
 <tr>
 <td>robotCallTaskId</td>
-<td>Long</td>
-<td>子任务id（每个被叫电话为一个实例）</td>
+<td>Integer</td>
+<td>任务id</td>
 </tr>
 <tr>
 <td>customerPersonId</td>
-<td>Long</td>
-<td>接收电话客户id</td>
+<td>Integer</td>
+<td>接受电话客户id</td>
 </tr>
 <tr>
 <td>calledPhoneNumber</td>
@@ -2390,28 +2415,28 @@
 </tr>
 <tr>
 <td>phoneNumberId</td>
-<td>Long</td>
+<td>Integer</td>
 <td>电话线路id</td>
 </tr>
 <tr>
 <td>resultStatus</td>
 <td>String</td>
-<td>通话结果 (ANSWERED, &quot;已接听&quot;),(NO_ANSWER, &quot;未接&quot;),(BUSY, &quot;占线&quot;),(POWER_OFF, &quot;关机&quot;),(OUT_OF_SERVICE, &quot;被叫停机&quot;),(REFUSED, &quot;拒接&quot;),(VACANT_NUMBER, &quot;空号&quot;),(CAN_NOT_CONNECT, &quot;无法接通&quot;), (FROM_PHONE_ERROR, &quot;主叫号码不可用&quot;),(SYSTEM_ERROR, &quot;外呼失败&quot;)</td>
+<td>接听状态,  通话结果 ANSWERED(0, &quot;已接听&quot;, null),NO_ANSWER(1, &quot;未接&quot;, &quot;呼叫号码未接听&quot;),BUSY(2, &quot;占线&quot;, &quot;呼叫号码占线&quot;),POWER_OFF(3, &quot;关机&quot;, &quot;呼叫号码关机&quot;),OUT_OF_SERVICE(4, &quot;被叫停机&quot;, &quot;呼叫号码停机&quot;),REFUSED(5, &quot;拒接&quot;, &quot;呼叫号码拒接&quot;),VACANT_NUMBER(6, &quot;空号&quot;, &quot;呼叫的号码是空号&quot;),CAN_NOT_CONNECT(7, &quot;无法接通&quot;, &quot;呼叫的号码无法接通&quot;), // 无法接通，或没拨通，或没能获取到EarlyMediaFROM_PHONE_ERROR(8, &quot;主叫号码不可用&quot;, &quot;主叫号码不可用&quot;), // 主叫号码不可用，主叫欠费SYSTEM_ERROR(9, &quot;外呼失败&quot;, &quot;外呼失败&quot;)</td>
 </tr>
 <tr>
 <td>intentLevel</td>
 <td>String</td>
-<td>意向等级, (A, &quot;A级(较强)&quot;),(B, &quot;B级(一般)&quot;),(C, &quot;C级(无法判断)&quot;),(D, &quot;D级(很少)&quot;),(E, &quot;E级别(需要再次跟进)&quot;),(F, &quot;F级别(无需再次跟进)&quot;)</td>
+<td>意向等级, A(0, &quot;A级(较强)&quot;),B(1, &quot;B级(一般)&quot;),C(2, &quot;C级(无法判断)&quot;),D(3, &quot;D级(很少)&quot;),E(4, &quot;E级别(需要再次跟进)&quot;),F(5, &quot;F级别(无需再次跟进)&quot;)</td>
 </tr>
 <tr>
 <td>realIntentLevel</td>
 <td>String</td>
-<td>真实意向等级</td>
+<td>真是意向等级,</td>
 </tr>
 <tr>
 <td>customerConcern</td>
 <td>List</td>
-<td>客户关注点</td>
+<td>客户关注点,</td>
 </tr>
 <tr>
 <td>fullAudioUrl</td>
@@ -2444,6 +2469,31 @@
 <td>通话轮次</td>
 </tr>
 <tr>
+<td>manualMarked</td>
+<td>Integer</td>
+<td>是否人工标识</td>
+</tr>
+<tr>
+<td>readStatus</td>
+<td>String</td>
+<td>是否已读 NOT_READ(0, &quot;未读&quot;),HAS_READ(1, &quot;已读&quot;)</td>
+</tr>
+<tr>
+<td>customerGroupName</td>
+<td>String</td>
+<td>分组名称</td>
+</tr>
+<tr>
+<td>robotCallJobName</td>
+<td>Integer</td>
+<td>任务名称</td>
+</tr>
+<tr>
+<td>dialogFlowName</td>
+<td>Integer</td>
+<td>话术名称</td>
+</tr>
+<tr>
 <td>requestId</td>
 <td>String</td>
 <td>请求Id</td>
@@ -2454,7 +2504,7 @@
 <td>响应说明</td>
 </tr>
 </tbody></table>
-<h2 id='6229f5f8cf'>获取一个通话的详情接口</h2><h3 id='7d73d51a26-2'>功能说明：</h3>
+<h2 id='6229f5f8cf'>获取一个通话的详情接口</h2><h3 id='7d73d51a26-4'>功能说明：</h3>
 <p>通过此接口可以获取指定通话的详细信息</p>
 
 <blockquote>
@@ -2466,7 +2516,6 @@
         "callRecordId": 1,
         "customerAudioUrl": null,
         "startTime": "2018-10-02T16:54:08",
-        "endTime": "2018-10-02T16:54:08",
         "chatRound": 0,
         "chatDuration": 0,
         "customerPerson": {
@@ -2478,11 +2527,16 @@
             "phoneNumber": "18673125007",
             "wechatNumber": null,
             "source": "UPLOADED_BY_YOURSELF",
+            "lastEmotion": "UNKNOWN",
+            "customerLevel": "UNKNOWN",
             "gender": "UNKNOWN",
-            "properties": {"ss":"test"},
+            "followUserId": 154,
+            "followStatus": "FOLLOW_UP",
+            "properties": {},
             "lastFollowTime": "2018-10-01 16:39:29",
             "lastChatDuration": 0,
             "lastStartTime": "2018-10-02 17:20:01",
+            "attributes": [],
             "lastIntentLevel": "E",
             "lastDialStatus": "CAN_NOT_CONNECT",
             "assignTime": "2018-10-01 16:39:29",
@@ -2491,31 +2545,23 @@
         "resultStatus": "VACANT_NUMBER",
         "intentLevel": "F",
         "realIntentLevel": null,
-        "customerConcern": ["价格", "位置"],
+        "customerConcern": [],
         "fullAudioUrl": "https://ai-call-platform-daily.oss-cn-hangzhou.aliyuncs.com/DialogueRecording/TenantId1/CallJobId17/YKUYXGLL_TaskId_1305098/early_media.wav",
         "analysisBasis": "空号",
-        "callDetailList": [{
-                "text": "喂，您好, （停顿2s），您好，想问下您位于江北纬七路隧道附近，均价17000的高端商业综合体，我可以给您介绍一下吗？",
-                "type": "ROBOT",
-                "callDetailId": 1
-            },
-            {
-                "text": "嗯",
-                "type": "PERSON",
-                "callDetailId": 2
-            }
-        ],
-        "robotCallJobId": 29
+        "callDetailList": [],
+        "manualMarked": false,
+        "robotCallJobId": 29,
+        "attributes": []
     },
     "requestId": "PSVILAEB",
     "resultMsg": "执行成功",
     "errorStackTrace": null
  }
-</code></pre><h3 id='c7811523ac-2'>请求：</h3>
-<p>URL：https://crm.tanyibot.com/apiOpen/v1/callRecord/callDetail</p>
-<h3 id='261d12e31d-2'>请求方法：</h3>
+</code></pre><h3 id='c7811523ac-4'>请求：</h3>
+<p>URL：http://robot.yiwise.cn/apiOpen/v1/task/phoneLogInfo</p>
+<h3 id='261d12e31d-4'>请求方法：</h3>
 <p>GET</p>
-<h3 id='2eb6f47757-2'>请求参数:</h3>
+<h3 id='2eb6f47757-4'>请求参数:</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -2533,7 +2579,7 @@
 <td>1</td>
 </tr>
 </tbody></table>
-<h3 id='d981aa6fd7-2'>响应：</h3>
+<h3 id='d981aa6fd7-4'>响应：</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -2577,11 +2623,6 @@
 <td>开始拨打时间</td>
 </tr>
 <tr>
-<td>endTime</td>
-<td>String</td>
-<td>结束拨打时间</td>
-</tr>
-<tr>
 <td>chatDuration</td>
 <td>Integer</td>
 <td>通话时长</td>
@@ -2594,12 +2635,12 @@
 <tr>
 <td>resultStatus</td>
 <td>String</td>
-<td>通话结果 (ANSWERED, &quot;已接听&quot;),(NO_ANSWER, &quot;未接&quot;),(BUSY, &quot;占线&quot;),(POWER_OFF, &quot;关机&quot;),(OUT_OF_SERVICE, &quot;被叫停机&quot;),(REFUSED, &quot;拒接&quot;),(VACANT_NUMBER, &quot;空号&quot;),(CAN_NOT_CONNECT, &quot;无法接通&quot;), (FROM_PHONE_ERROR, &quot;主叫号码不可用&quot;),(SYSTEM_ERROR, &quot;外呼失败&quot;)</td>
+<td>接听状态,  通话结果 ANSWERED(0, &quot;已接听&quot;, null),NO_ANSWER(1, &quot;未接&quot;, &quot;呼叫号码未接听&quot;),BUSY(2, &quot;占线&quot;, &quot;呼叫号码占线&quot;),POWER_OFF(3, &quot;关机&quot;, &quot;呼叫号码关机&quot;),OUT_OF_SERVICE(4, &quot;被叫停机&quot;, &quot;呼叫号码停机&quot;),REFUSED(5, &quot;拒接&quot;, &quot;呼叫号码拒接&quot;),VACANT_NUMBER(6, &quot;空号&quot;, &quot;呼叫的号码是空号&quot;),CAN_NOT_CONNECT(7, &quot;无法接通&quot;, &quot;呼叫的号码无法接通&quot;), // 无法接通，或没拨通，或没能获取到EarlyMediaFROM_PHONE_ERROR(8, &quot;主叫号码不可用&quot;, &quot;主叫号码不可用&quot;), // 主叫号码不可用，主叫欠费SYSTEM_ERROR(9, &quot;外呼失败&quot;, &quot;外呼失败&quot;)</td>
 </tr>
 <tr>
 <td>intentLevel</td>
 <td>String</td>
-<td>意向等级, (A, &quot;A级(较强)&quot;),(B, &quot;B级(一般)&quot;),(C, &quot;C级(无法判断)&quot;),(D, &quot;D级(很少)&quot;),(E, &quot;E级别(需要再次跟进)&quot;),(F, &quot;F级别(无需再次跟进)&quot;)</td>
+<td>意向等级, A(0, &quot;A级(较强)&quot;),B(1, &quot;B级(一般)&quot;),C(2, &quot;C级(无法判断)&quot;),D(3, &quot;D级(很少)&quot;),E(4, &quot;E级别(需要再次跟进)&quot;),F(5, &quot;F级别(无需再次跟进)&quot;)</td>
 </tr>
 <tr>
 <td>realIntentLevel</td>
@@ -2620,6 +2661,11 @@
 <td>attributes</td>
 <td>List</td>
 <td>参数</td>
+</tr>
+<tr>
+<td>manualMarked</td>
+<td>Integer</td>
+<td>是否人工标识</td>
 </tr>
 <tr>
 <td>requestId</td>
@@ -2691,13 +2737,11 @@
             "robotCallDetailList":[
                 {
                     "text":"喂，您好, （停顿2s），您好，想问下您位于江北纬七路隧道附近，均价17000的高端商业综合体，我可以给您介绍一下吗？",
-                    "type":"ROBOT",
-                    "callDetailId": 1
+                    "type":"ROBOT"
                 },
                 {
                     "text":"嗯",
-                    "type":"PERSON",
-                    "callDetailId": 2
+                    "type":"PERSON"
                 }
             ]
         }
@@ -2723,7 +2767,7 @@
 <tr>
 <td>tenantId</td>
 <td>Long</td>
-<td>公司id</td>
+<td>通话记录id</td>
 </tr>
 <tr>
 <td>robotCallJobId</td>
@@ -2738,12 +2782,12 @@
 <tr>
 <td>resultStatus</td>
 <td>String</td>
-<td>通话结果 (ANSWERED, &quot;已接听&quot;),(NO_ANSWER, &quot;未接&quot;),(BUSY, &quot;占线&quot;),(POWER_OFF, &quot;关机&quot;),(OUT_OF_SERVICE, &quot;被叫停机&quot;),(REFUSED, &quot;拒接&quot;),(VACANT_NUMBER, &quot;空号&quot;),(CAN_NOT_CONNECT, &quot;无法接通&quot;), (FROM_PHONE_ERROR, &quot;主叫号码不可用&quot;),(SYSTEM_ERROR, &quot;外呼失败&quot;)</td>
+<td>通话状态 ANSWERED(已接听), NO_ANSWER(占线), BUSY(占线), POWER_OFF(关机), OUT_OF_SERVICE(被叫停机), REFUSED(拒接), VACANT_NUMBER(空号), CAN_NOT_CONNECT(无法接通), FROM_PHONE_ERROR(主叫号码不可用), SYSTEM_ERROR(外呼失败)</td>
 </tr>
 <tr>
 <td>intentLevel</td>
 <td>String</td>
-<td>意向等级, (A, &quot;A级(较强)&quot;),(B, &quot;B级(一般)&quot;),(C, &quot;C级(无法判断)&quot;),(D, &quot;D级(很少)&quot;),(E, &quot;E级别(需要再次跟进)&quot;),(F, &quot;F级别(无需再次跟进)&quot;)</td>
+<td>意向等级 A, B, C, D, E, F</td>
 </tr>
 <tr>
 <td>customerConcern</td>
@@ -2798,17 +2842,12 @@
 <tr>
 <td>text</td>
 <td>String</td>
-<td>对话说的具体文字内容</td>
+<td>对话说的内容</td>
 </tr>
 <tr>
 <td>type</td>
 <td>String</td>
-<td>说话者 (PERSON, &quot;人&quot;), (ROBOT, &quot;机器人&quot;)</td>
-</tr>
-<tr>
-<td>callDetailId</td>
-<td>Long</td>
-<td>对话详情id</td>
+<td>说话者 PERSON(人), ROBOT(机器人)</td>
 </tr>
 </tbody></table>
 <h2 id='0510043503'>任务完成详情回调接口</h2>
