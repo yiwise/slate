@@ -24,7 +24,7 @@
 
 ###请求：
 
-URL：https://crm.tanyibot.com/apiOpen/v1/tenant/getTenant
+URL：https://openapi.tanyibot.com/apiOpen/v1/tenant/getTenant
 
 ###请求方法：
 
@@ -73,7 +73,7 @@ GET
 
 ###请求：
 
-URL：https://crm.tanyibot.com/apiOpen/v1/phone/getPhoneList
+URL：https://openapi.tanyibot.com/apiOpen/v1/phone/getPhoneList
 
 ###请求方法：
 
@@ -123,7 +123,7 @@ GET
 
 ###请求：
 
-URL：https://crm.tanyibot.com/apiOpen/v1/dialogFlow/getDialogFlowList
+URL：https://openapi.tanyibot.com/apiOpen/v1/dialogFlow/getDialogFlowList
 
 ###请求方法：
 

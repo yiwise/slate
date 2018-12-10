@@ -79,7 +79,7 @@
  
 ###请求：
  
- URL：https://crm.tanyibot.com/apiOpen/v1/callRecord/getCallRecordInfoList
+ URL：https://openapi.tanyibot.com/apiOpen/v1/callRecord/getCallRecordInfoList
  
 ###请求方法：
  
@@ -193,7 +193,7 @@
  
 ###请求：
  
- URL：https://crm.tanyibot.com/apiOpen/v1/callRecord/callDetail
+ URL：https://openapi.tanyibot.com/apiOpen/v1/callRecord/callDetail
  
 ###请求方法：
  
