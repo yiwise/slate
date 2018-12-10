@@ -110,12 +110,13 @@ GET
 			"earlyWarningAlertUsers": []
 		},
 		"jobPhoneNumberList": [{
-          "robotDialogFlowId": 96,
-          "name": "金融理财--行业体验demo"
-        }, {
-          "robotDialogFlowId": 136,
-          "name": "测试变量"
-        }],
+       "tenantPhoneNumberId": 675,
+       "phoneNumber": "13576084683",
+       "phoneName": "",
+       "enabledStatus": 1,
+       "phoneType": "LANDLINE",
+       "concurrencyQuota": 5
+     }],
 		"completedTask": 3612,
 		"taskCallTotal": 166
 	},
