@@ -27,7 +27,7 @@
   "errorStackTrace": null
 }
 </code></pre><h3 id='c7811523ac'>请求：</h3>
-<p>URL：https://crm.tanyibot.com/apiOpen/v1/job/getJobs</p>
+<p>URL：https://openapi.tanyibot.com/apiOpen/v1/job/getJobs</p>
 <h3 id='261d12e31d'>请求方法：</h3>
 <p>GET</p>
 <h3 id='2eb6f47757'>请求参数:</h3>
@@ -187,14 +187,15 @@
             "lastModifiedTime": "2018-10-09 15:11:20",
             "earlyWarningAlertUsers": []
         },
-        "jobPhoneNumberList": [{
-       "tenantPhoneNumberId": 675,
-       "phoneNumber": "13576084683",
-       "phoneName": "",
-       "enabledStatus": 1,
-       "phoneType": "LANDLINE",
-       "concurrencyQuota": 5
-     }],
+        "dialogFlowName":"金融行业体验demo-优化版",
+    "jobPhoneNumberList": [{
+        "tenantPhoneNumberId": 675,
+        "phoneNumber": "13576084683",
+        "phoneName": "",
+        "enabledStatus": 1,
+        "phoneType": "LANDLINE",
+        "concurrencyQuota": 5
+      }],
         "completedTask": 3612,
         "taskCallTotal": 166
     },
@@ -204,7 +205,7 @@
 }
 
 </code></pre><h3 id='c7811523ac-2'>请求：</h3>
-<p>URL：https://crm.tanyibot.com/apiOpen/v1/job/getJobDetail</p>
+<p>URL：https://openapi.tanyibot.com/apiOpen/v1/job/getJobDetail</p>
 <h3 id='261d12e31d-2'>请求方法：</h3>
 <p>GET</p>
 <h3 id='2eb6f47757-2'>请求参数:</h3>
@@ -349,6 +350,11 @@
 <td>任务拨打的电话列表</td>
 </tr>
 <tr>
+<td>dialogFlowName</td>
+<td>String</td>
+<td>话术名称</td>
+</tr>
+<tr>
 <td>requestId</td>
 <td>String</td>
 <td>请求Id</td>
@@ -455,7 +461,7 @@
 }
 
 </code></pre><h3 id='c7811523ac-3'>请求：</h3>
-<p>URL：https://crm.tanyibot.com/apiOpen/v1/job/getJobStats</p>
+<p>URL：https://openapi.tanyibot.com/apiOpen/v1/job/getJobStats</p>
 <h3 id='261d12e31d-3'>请求方法：</h3>
 <p>GET</p>
 <h3 id='2eb6f47757-3'>请求参数:</h3>
@@ -598,7 +604,7 @@
 }
 
 </code></pre><h3 id='c7811523ac-4'>请求：</h3>
-<p>URL：https://crm.tanyibot.com/apiOpen/v1/job/getJobProperties</p>
+<p>URL：https://openapi.tanyibot.com/apiOpen/v1/job/getJobProperties</p>
 <h3 id='261d12e31d-4'>请求方法：</h3><h3 id='261d12e31d-5'>请求方法：</h3>
 <p>GET</p>
 <h3 id='2eb6f47757-4'>请求参数:</h3>
