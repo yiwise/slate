@@ -8,7 +8,7 @@
     "code": 200,
     "data": {
         "tenantId": 1,
-        "companyName": "杭州一知智能科技有限公司"
+        "tenantName": "杭州一知智能科技有限公司"
     },
     "requestId": "VCWAHVEJ",
     "resultMsg": "获取成功",
@@ -16,7 +16,7 @@
 }
 
 </code></pre><h3 id='c7811523ac'>请求：</h3>
-<p>URL：http://robot.yiwise.cn/apiOpen/v1/company/getCompanies</p>
+<p>URL：https://crm.tanyibot.com/apiOpen/v1/tenant/getTenant</p>
 <h3 id='261d12e31d'>请求方法：</h3>
 <p>GET</p>
 <h3 id='2eb6f47757'>请求参数:</h3>
@@ -31,11 +31,11 @@
 </thead><tbody>
 <tr>
 <td>code</td>
-<td>integer</td>
+<td>Integer</td>
 <td>响应码</td>
 </tr>
 <tr>
-<td>companyName</td>
+<td>tenantName</td>
 <td>String</td>
 <td>公司名称</td>
 </tr>
@@ -64,11 +64,10 @@
 <pre class="highlight plaintext"><code>{
   "code": 200,
   "data": [{
-    "userPhoneId": 276,
-    "phone": "0000000000",
+    "tenantPhoneNumberId": 276,
+    "phoneNumber": "0000000000",
     "phoneName": "0000000000",
-    "phoneType": "MOBILE",
-    "concurrency": 2
+    "phoneType": "MOBILE"
   }],
   "requestId": "ILNBEQJF",
   "resultMsg": "获取成功",
@@ -76,7 +75,7 @@
 }
 
 </code></pre><h3 id='c7811523ac-2'>请求：</h3>
-<p>URL：http://robot.yiwise.cn/apiOpen/v1/company/getPhones</p>
+<p>URL：https://crm.tanyibot.com/apiOpen/v1/phone/getPhoneList</p>
 <h3 id='261d12e31d-2'>请求方法：</h3>
 <p>GET</p>
 <h3 id='2eb6f47757-2'>请求参数:</h3>
@@ -91,16 +90,16 @@
 </thead><tbody>
 <tr>
 <td>code</td>
-<td>integer</td>
+<td>Integer</td>
 <td>响应码</td>
 </tr>
 <tr>
-<td>userPhoneId</td>
-<td>Integer</td>
+<td>tenantPhoneNumberId</td>
+<td>Long</td>
 <td>电话id</td>
 </tr>
 <tr>
-<td>phone</td>
+<td>phoneNumber</td>
 <td>String</td>
 <td>电话号码</td>
 </tr>
@@ -111,13 +110,8 @@
 </tr>
 <tr>
 <td>phoneType</td>
-<td>Integer</td>
-<td>手机(MOBILE, &quot;手机&quot;),阿里云固话(LANDLINE, &quot;固话&quot;),无主叫(UNFIXED_CALL, &quot;无主叫固话&quot;),训练主叫账号(VERBAL_TRICK_TRAINING_CALLER, &quot;训练主叫账号&quot;),训练被叫账号(VERBAL_TRICK_TRAINING_CALLED, &quot;训练被叫账号&quot;),网关设备(VOIP_DEVICE, &quot;网关设备&quot;),</td>
-</tr>
-<tr>
-<td>concurrency</td>
-<td>Integer</td>
-<td>已经使用并发数</td>
+<td>String</td>
+<td>(MOBILE, &quot;手机&quot;),(LANDLINE, &quot;固话&quot;),(UNFIXED_CALL, &quot;无主叫固话&quot;)</td>
 </tr>
 <tr>
 <td>requestId</td>
@@ -139,33 +133,11 @@
 <pre class="highlight plaintext"><code>{
     "code": 200,
     "data": [{
-        "robotDialogFlowId": 96,
-        "name": "金融理财--行业体验demo",
-        "type": "NORMAL",
-        "industry": {
-            "name": "FINANCE",
-            "desc": "金融类"
-        },
-        "subIndustry": {
-            "name": "FINICING",
-            "desc": "理财"
-        },
-        "familyNameTemplateId": null,
-        "status": "DRAFT"
+        "dialogFlowId": 96,
+        "name": "金融理财--行业体验demo"
     }, {
-        "robotDialogFlowId": 136,
-        "name": "测试变量",
-        "type": "NORMAL",
-        "industry": {
-            "name": "OTHER",
-            "desc": "其他产品推广"
-        },
-        "subIndustry": {
-            "name": "OTHER",
-            "desc": "其他产品推广"
-        },
-        "familyNameTemplateId": null,
-        "status": "APPROVED"
+        "dialogFlowId": 136,
+        "name": "测试变量"
     }],
     "requestId": "NSLARYGU",
     "resultMsg": "获取成功",
@@ -173,7 +145,7 @@
 }
 
 </code></pre><h3 id='c7811523ac-3'>请求：</h3>
-<p>URL：http://robot.yiwise.cn/apiOpen/v1/company/getRobots</p>
+<p>URL：https://crm.tanyibot.com/apiOpen/v1/dialogFlow/getDialogFlowList</p>
 <h3 id='261d12e31d-3'>请求方法：</h3>
 <p>GET</p>
 <h3 id='2eb6f47757-3'>请求参数:</h3>
@@ -192,7 +164,7 @@
 <td>响应码</td>
 </tr>
 <tr>
-<td>robotDialogFlowId</td>
+<td>dialogFlowId</td>
 <td>Integer</td>
 <td>机器人话术id</td>
 </tr>
@@ -200,31 +172,6 @@
 <td>name</td>
 <td>String</td>
 <td>机器人话术名称</td>
-</tr>
-<tr>
-<td>type</td>
-<td>Integer</td>
-<td>机器人话术类型 TEMPLATE(0, &quot;模板&quot;),DEMO(1, &quot;展示&quot;),NORMAL(2, &quot;普通&quot;)</td>
-</tr>
-<tr>
-<td>status</td>
-<td>Integer</td>
-<td>状态 DRAFT(0, &quot;编辑中&quot;),PENDING_APPROVAL(1, &quot;等待审核&quot;),REJECTED(2, &quot;拒绝&quot;),APPROVED(3, &quot;审核通过&quot;);</td>
-</tr>
-<tr>
-<td>industry</td>
-<td>object</td>
-<td>一级行业类型</td>
-</tr>
-<tr>
-<td>subIndustry</td>
-<td>String</td>
-<td>二级行业类型</td>
-</tr>
-<tr>
-<td>familyNameTemplateId</td>
-<td>Long</td>
-<td>百家姓模板id</td>
 </tr>
 <tr>
 <td>requestId</td>
