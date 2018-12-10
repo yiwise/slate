@@ -88,6 +88,7 @@ GET
 			"robotCallJobId": 1,
 			"tenantId": 1,
 			"dialogFlowId": 1,
+		  "dialogFlowName":"金融行业体验demo-优化版",
 			"name": "dialog测试",
 			"mode": "MANUAL",
 			"robotCount": 12,
@@ -109,7 +110,6 @@ GET
 			"lastModifiedTime": "2018-10-09 15:11:20",
 			"earlyWarningAlertUsers": []
 		},
-		"dialogFlowName":"金融行业体验demo-优化版",
     "jobPhoneNumberList": [{
         "tenantPhoneNumberId": 675,
         "phoneNumber": "13576084683",
