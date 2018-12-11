@@ -35,7 +35,7 @@
 
 ###请求：
 
-URL：https://crm.tanyibot.com/apiOpen/v1/job/getJobs
+URL：https://openapi.tanyibot.com/apiOpen/v1/job/getJobs
 
 ###请求方法：
 
@@ -88,6 +88,7 @@ GET
 			"robotCallJobId": 1,
 			"tenantId": 1,
 			"dialogFlowId": 1,
+		  "dialogFlowName":"金融行业体验demo-优化版",
 			"name": "dialog测试",
 			"mode": "MANUAL",
 			"robotCount": 12,
@@ -109,13 +110,14 @@ GET
 			"lastModifiedTime": "2018-10-09 15:11:20",
 			"earlyWarningAlertUsers": []
 		},
-		"jobPhoneNumberList": [{
-          "robotDialogFlowId": 96,
-          "name": "金融理财--行业体验demo"
-        }, {
-          "robotDialogFlowId": 136,
-          "name": "测试变量"
-        }],
+    "jobPhoneNumberList": [{
+        "tenantPhoneNumberId": 675,
+        "phoneNumber": "13576084683",
+        "phoneName": "",
+        "enabledStatus": 1,
+        "phoneType": "LANDLINE",
+        "concurrencyQuota": 5
+      }],
 		"completedTask": 3612,
 		"taskCallTotal": 166
 	},
@@ -128,7 +130,7 @@ GET
 
 ###请求：
 
-URL：https://crm.tanyibot.com/apiOpen/v1/job/getJobDetail
+URL：https://openapi.tanyibot.com/apiOpen/v1/job/getJobDetail
 
 ###请求方法：
 
@@ -169,6 +171,7 @@ GET
  nextStartTime| String | 下一次任务开始时间 |
  status| String | 任务状态, NOT_STARTED(0, "未开始"),IN_PROCESS(1, "进行中"),COMPLETED(2, "已完成"),RUNNABLE(3, "可运行"),USER_PAUSE(4, "用户暂停"),SYSTEM_SUSPENDED(5, "系统暂停"),TERMINATE(6, "已终止"),IN_QUEUE(7, "排队中")| 1 |
  jobPhoneNumberList| List  | 任务拨打的电话列表 |
+ dialogFlowName| String  | 话术名称 |
  requestId| String | 请求Id |
  resultMsg| String | 响应说明 |
  
@@ -275,7 +278,7 @@ GET
 
 ###请求：
 
-URL：https://crm.tanyibot.com/apiOpen/v1/job/getJobStats
+URL：https://openapi.tanyibot.com/apiOpen/v1/job/getJobStats
 
 ###请求方法：
 
@@ -339,7 +342,7 @@ GET
 
 ###请求：
 
-URL：https://crm.tanyibot.com/apiOpen/v1/job/getJobProperties
+URL：https://openapi.tanyibot.com/apiOpen/v1/job/getJobProperties
 
 ###请求方法：
 
