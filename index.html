@@ -912,6 +912,7 @@
 <p>入参JSON实例：</p>
 </blockquote>
 <pre class="highlight plaintext"><code>{
+    "concurrencyQuota", 2,
     "jobPhoneNumberIdList": [
         348,369
     ],
@@ -962,6 +963,13 @@
 <th>实例</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>concurrencyQuota</td>
+<td>Integer</td>
+<td>是</td>
+<td>并发数（线路类型为手机号的时候可不传）</td>
+<td>10</td>
+</tr>
 <tr>
 <td>jobPhoneNumberIdList</td>
 <td>List</td>
@@ -1045,13 +1053,6 @@
 <td>是</td>
 <td>号码类型 (MOBILE, &quot;手机号码&quot;),(LANDLINE, &quot;固话&quot;),(UNFIXED_CALL, &quot;无主叫&quot;)</td>
 <td>UNFIXED_CALL</td>
-</tr>
-<tr>
-<td>robotCount</td>
-<td>String</td>
-<td>是</td>
-<td>AI数量</td>
-<td>10</td>
 </tr>
 <tr>
 <td>smsAlertLevel</td>
