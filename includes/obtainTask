@@ -17,7 +17,7 @@
       "status": "TERMINATE",
       "completedTask": 2157,
       "taskCallTotal": 166,
-      "creationTime": "2018-09-26 18:07",
+      "createTime": "2018-09-26 18:07",
       "createdByUserName": null,
       "organizationName": null
     }]
@@ -123,7 +123,7 @@
 <td>任务总数</td>
 </tr>
 <tr>
-<td>creationTime</td>
+<td>createTime</td>
 <td>String</td>
 <td>创建时间</td>
 </tr>
@@ -184,8 +184,8 @@
             "status": "TERMINATE",
             "startTime": null,
             "nextStartTime": "00:00:00",
-            "creationTime": "2018-10-09 15:08:54",
-            "lastModifiedTime": "2018-10-09 15:11:20",
+            "createTime": "2018-10-09 15:08:54",
+            "updateTime": "2018-10-09 15:11:20",
             "earlyWarningAlertUsers": []
         },
     "jobPhoneNumberList": [{
@@ -320,12 +320,12 @@
 <td>预警提示人员</td>
 </tr>
 <tr>
-<td>creationTime</td>
+<td>createTime</td>
 <td>String</td>
 <td>任务创建时间</td>
 </tr>
 <tr>
-<td>lastModifiedTime</td>
+<td>updateTime</td>
 <td>String</td>
 <td>任务修改时间</td>
 </tr>
