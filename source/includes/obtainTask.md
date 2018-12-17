@@ -22,7 +22,7 @@
       "status": "TERMINATE",
       "completedTask": 2157,
       "taskCallTotal": 166,
-      "creationTime": "2018-09-26 18:07",
+      "createTime": "2018-09-26 18:07",
       "createdByUserName": null,
       "organizationName": null
     }]
@@ -65,7 +65,7 @@ GET
  name| String | 任务名称 |
  completedTask| Integer | 完成的任务 |
  taskCallTotal| Integer | 任务总数 |
- creationTime| String | 创建时间 |
+ createTime| String | 创建时间 |
  createdByUserName| String | 创建人 |
  organizationName| String | 组织 |
  status| String | 任务状态, NOT_STARTED(0, "未开始"),IN_PROCESS(1, "进行中"),COMPLETED(2, "已完成"),RUNNABLE(3, "可运行"),USER_PAUSE(4, "用户暂停"),SYSTEM_SUSPENDED(5, "系统暂停"),TERMINATE(6, "已终止"),IN_QUEUE(7, "排队中");| 1 |
@@ -106,8 +106,8 @@ GET
 			"status": "TERMINATE",
 			"startTime": null,
 			"nextStartTime": "00:00:00",
-			"creationTime": "2018-10-09 15:08:54",
-			"lastModifiedTime": "2018-10-09 15:11:20",
+			"createTime": "2018-10-09 15:08:54",
+			"updateTime": "2018-10-09 15:11:20",
 			"earlyWarningAlertUsers": []
 		},
     "jobPhoneNumberList": [{
@@ -165,8 +165,8 @@ GET
  smsAlertLevel| String  | 短信提示等级 |
  alertUsers| String  | 提示人员 |
  earlyWarningAlertUsers| String  | 预警提示人员 |
- creationTime| String | 任务创建时间 |
- lastModifiedTime| String | 任务修改时间 |
+ createTime| String | 任务创建时间 |
+ updateTime| String | 任务修改时间 |
  startTime| String | 任务开始时间 |
  nextStartTime| String | 下一次任务开始时间 |
  status| String | 任务状态, NOT_STARTED(0, "未开始"),IN_PROCESS(1, "进行中"),COMPLETED(2, "已完成"),RUNNABLE(3, "可运行"),USER_PAUSE(4, "用户暂停"),SYSTEM_SUSPENDED(5, "系统暂停"),TERMINATE(6, "已终止"),IN_QUEUE(7, "排队中")| 1 |
