@@ -18,8 +18,7 @@
         "description": "gthjoitjdjfdk",
         "dialogFlowId": 2,
         "earlyWarningAlertUsers": [],
-        "inactiveEndTime": "13:00",
-        "inactiveStartTime": "12:00",
+        "inactiveTimeList": [{"startTime":"12:00", "endTime":"13:00"}],
         "mode": "AUTO",
         "name": "测试名称3333",
         "phoneType": "LANDLINE",
@@ -108,18 +107,11 @@
 <td>20:00</td>
 </tr>
 <tr>
-<td>inactiveStartTime</td>
-<td>String</td>
+<td>inactiveTimeList</td>
+<td>List</td>
 <td>否</td>
-<td>午间暂时拨打开始时间</td>
-<td>12:00</td>
-</tr>
-<tr>
-<td>inactiveEndTime</td>
-<td>String</td>
-<td>否</td>
-<td>午间暂时拨打结束时间</td>
-<td>13:00</td>
+<td>不可拨打时间段列表,最大三个不可拨打时段</td>
+<td>[{&quot;startTime&quot;:&quot;12:00&quot;, &quot;endTime&quot;:&quot;13:00&quot;}]</td>
 </tr>
 <tr>
 <td>dialogFlowId</td>

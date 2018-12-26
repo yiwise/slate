@@ -174,8 +174,7 @@
             "phoneType": "LANDLINE",
             "dailyStartTime": "15:08:31",
             "dailyEndTime": "15:08:36",
-            "inactiveStartTime": "00:00:00",
-            "inactiveEndTime": "00:00:00",
+            "inactiveTimeList": [{"startTime":"12:00", "endTime":"13:00"}],
             "description": null,
             "wechatAlertLevel": [],
             "smsAlertLevel": [],
@@ -285,14 +284,9 @@
 <td>可拨打结束时间</td>
 </tr>
 <tr>
-<td>inactiveStartTime</td>
-<td>String</td>
-<td>暂时停止开始时间</td>
-</tr>
-<tr>
-<td>inactiveEndTime</td>
-<td>String</td>
-<td>暂时停止结束时间</td>
+<td>inactiveTimeList</td>
+<td>List</td>
+<td>不可拨打时间段列表</td>
 </tr>
 <tr>
 <td>description</td>
