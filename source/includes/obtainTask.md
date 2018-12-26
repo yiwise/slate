@@ -96,8 +96,7 @@ GET
 			"phoneType": "LANDLINE",
 			"dailyStartTime": "15:08:31",
 			"dailyEndTime": "15:08:36",
-			"inactiveStartTime": "00:00:00",
-			"inactiveEndTime": "00:00:00",
+			"inactiveTimeList": [{"startTime":"12:00", "endTime":"13:00"}],
 			"description": null,
 			"wechatAlertLevel": [],
 			"smsAlertLevel": [],
@@ -158,8 +157,7 @@ GET
  smsTemplateId| Long | 短信模版id |
  dailyStartTime| String | 可拨打开始时间 |
  dailyEndTime| String | 可拨打结束时间 |
- inactiveStartTime| String | 暂时停止开始时间 |
- inactiveEndTime| String | 暂时停止结束时间 |
+ inactiveTimeList| List| 不可拨打时间段列表|
  description| String  | 任务注释 |
  wechatAlertLevel| String  | 微信提示等级 |
  smsAlertLevel| String  | 短信提示等级 |

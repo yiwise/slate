@@ -25,8 +25,7 @@
 		"description": "gthjoitjdjfdk",
 		"dialogFlowId": 2,
 		"earlyWarningAlertUsers": [],
-		"inactiveEndTime": "13:00",
-		"inactiveStartTime": "12:00",
+		"inactiveTimeList": [{"startTime":"12:00", "endTime":"13:00"}],
 		"mode": "AUTO",
 		"name": "测试名称3333",
 		"phoneType": "LANDLINE",
@@ -74,8 +73,7 @@ POST
  startTime| String| 自动任务：是/手动任务：否 | 任务开始时间| "2017-11-21"  |
  dailyStartTime| String| 是 | 可拨打开始时间，不可以早于9点| 09:00 |
  dailyEndTime| String| 是 | 可拨打结束时间，不可以晚于20点| 20:00 |
- inactiveStartTime| String| 否 | 午间暂时拨打开始时间| 12:00 |
- inactiveEndTime| String| 否 | 午间暂时拨打结束时间| 13:00 |
+ inactiveTimeList| List| 否 | 不可拨打时间段列表,最大三个不可拨打时段| [{"startTime":"12:00", "endTime":"13:00"}] |
  dialogFlowId| String| 是 | 话术id| 139|
  alertUsers| String| 否 | 提醒的用户的id列表| [1,2]|
  earlyWarningAlertUsers| String| 否 | 行业预警消息推送人| [1,2]|
