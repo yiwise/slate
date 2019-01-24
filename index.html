@@ -345,6 +345,17 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#727a7b8d8f" class="toc-h1 toc-link" data-title="意向标签组接口">意向标签组接口</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#a7bde703a4" class="toc-h2 toc-link" data-title="获取已使用的意向标签组列表接口">获取已使用的意向标签组列表接口</a>
+                  </li>
+                  <li>
+                    <a href="#fcf2f38ba4" class="toc-h2 toc-link" data-title="获取意向标签内容">获取意向标签内容</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='#'>Sign Up for a Developer Key</a></li>
@@ -2845,6 +2856,147 @@
 <td>status</td>
 <td>String</td>
 <td>任务状态 ( 始终为 COMPLETED)</td>
+</tr>
+</tbody></table>
+<h1 id='727a7b8d8f'>意向标签组接口</h1><h2 id='a7bde703a4'>获取已使用的意向标签组列表接口</h2><h3 id='7d73d51a26'>功能说明：</h3>
+<p>通过此接口可以获取已使用的所有意向标签组</p>
+
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "code": 200,
+    "data": [
+      {
+        "intentLevelTagId": 0,
+        "name": "内置意向分类标签"
+      }, {
+        "intentLevelTagId": 1,
+      "name": "自定义标签分组"
+      }
+    ],
+    "requestId": "VCWAHVEJ",
+    "resultMsg": "获取成功",
+    "errorStackTrace": null
+}
+
+</code></pre><h3 id='c7811523ac'>请求：</h3>
+<p>URL：https://openapi.tanyibot.com/apiOpen/v1/intentLevelTag/getUsedIntentLevelTagList</p>
+<h3 id='261d12e31d'>请求方法：</h3>
+<p>GET</p>
+<h3 id='2eb6f47757'>请求参数:</h3>
+<p>无</p>
+<h3 id='d981aa6fd7'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>intentLevelTagId</td>
+<td>Long</td>
+<td>意向标签分组Id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>意向标签分组名称</td>
+</tr>
+</tbody></table>
+<h2 id='fcf2f38ba4'>获取意向标签内容</h2><h3 id='7d73d51a26-2'>功能说明：</h3>
+<p>通过接口可以获取指定意向标签分组的内容</p>
+
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+  "code": 200,
+  "data": {
+    "intentLevelTagId": 0,
+    "name": "内置意向分类标签",
+    "details": [
+      {
+        "code": 0,
+        "name": "A类"
+      },
+      {
+       "code": 1,
+        "name": "B类"
+      },
+      {
+        "code": 2,
+        "name": "C类"
+      },
+      {
+        "code": 3,
+        "name": "D类"
+      },
+      {
+        "code": 4,
+        "name": "E类"
+      },
+      {
+        "code": 5,
+        "name": "F类"
+      }
+    ]
+  },
+  "requestId": "ILNBEQJF",
+  "resultMsg": "获取成功",
+  "errorStackTrace": null
+}
+
+</code></pre><h3 id='c7811523ac-2'>请求：</h3>
+<p>URL：https://openapi.tanyibot.com/apiOpen/v1/intentLevelTag/getIntentLevelTag</p>
+<h3 id='261d12e31d-2'>请求方法：</h3>
+<p>GET</p>
+<h3 id='2eb6f47757-2'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>intentLevelTagId</td>
+<td>Long</td>
+<td>是</td>
+<td>标签分组Id</td>
+<td>0</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7-2'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>intentLevelTagId</td>
+<td>Long</td>
+<td>意向标签分组Id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>意向标签分组名称</td>
+</tr>
+<tr>
+<td>code</td>
+<td>Integer</td>
+<td>意向等级</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>意向名称</td>
 </tr>
 </tbody></table>
 
