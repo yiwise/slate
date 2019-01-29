@@ -45,7 +45,10 @@
                       "phoneNumberId": 0,
                       "resultStatus": "ANSWERED",
                       "intentLevel": "A",
+                      "intentLevelName": "很好",
                       "realIntentLevel": null,
+                      "realIntentLevelName":"很好",
+                      "intentLevelTagId": 0,
                       "customerConcern": [
                         "价格","位置"
                        ],
@@ -118,7 +121,10 @@
   phoneNumberId| Long |电话线路id|
   resultStatus| String | 通话结果 (ANSWERED, "已接听"),(NO_ANSWER, "未接"),(BUSY, "占线"),(POWER_OFF, "关机"),(OUT_OF_SERVICE, "被叫停机"),(REFUSED, "拒接"),(VACANT_NUMBER, "空号"),(CAN_NOT_CONNECT, "无法接通"), (FROM_PHONE_ERROR, "主叫号码不可用"),(SYSTEM_ERROR, "外呼失败")|
   intentLevel| String | 意向等级, (A, "A级(较强)"),(B, "B级(一般)"),(C, "C级(无法判断)"),(D, "D级(很少)"),(E, "E级别(需要再次跟进)"),(F, "F级别(无需再次跟进)") |
+  intentLevelName | String | 意向标签名称 |
   realIntentLevel| String | 真实意向等级 |
+  realIntentLevelName| String | 真实意向标签名称 |
+  intentLevelTagId | Long | 意向分类标签id |
   customerConcern| List | 客户关注点  |
   fullAudioUrl| String | 完整音频地址 |
   customerAudioUrl| String | 客户音频地址 |
@@ -168,7 +174,10 @@
  		},
  		"resultStatus": "VACANT_NUMBER",
  		"intentLevel": "F",
+ 		"intentLevelName":"一般",
  		"realIntentLevel": null,
+ 		"realIntentLevelName":"一般",
+ 		"intentLevelTagId":0,
  		"customerConcern": ["价格", "位置"],
  		"fullAudioUrl": "https://ai-call-platform-daily.oss-cn-hangzhou.aliyuncs.com/DialogueRecording/TenantId1/CallJobId17/YKUYXGLL_TaskId_1305098/early_media.wav",
  		"analysisBasis": "空号",
@@ -222,7 +231,10 @@
   chatRound| Integer | 通话轮次 |
   resultStatus| String | 通话结果 (ANSWERED, "已接听"),(NO_ANSWER, "未接"),(BUSY, "占线"),(POWER_OFF, "关机"),(OUT_OF_SERVICE, "被叫停机"),(REFUSED, "拒接"),(VACANT_NUMBER, "空号"),(CAN_NOT_CONNECT, "无法接通"), (FROM_PHONE_ERROR, "主叫号码不可用"),(SYSTEM_ERROR, "外呼失败")|
   intentLevel| String | 意向等级, (A, "A级(较强)"),(B, "B级(一般)"),(C, "C级(无法判断)"),(D, "D级(很少)"),(E, "E级别(需要再次跟进)"),(F, "F级别(无需再次跟进)") |
-  realIntentLevel| String | 真是意向等级,  |
+  intentLevelName| String | 意向标签名称 |
+  realIntentLevel| String | 真实意向等级,  |
+  realIntentLevelName | String | 真实意向标签名称 |
+  intentLevelTagId | Long | 意向分类标签id |
   customerConcern| List | 客户关注点,  |
   analysisBasis| String | 说明 |
   attributes| List | 参数 |
