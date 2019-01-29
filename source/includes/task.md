@@ -35,7 +35,10 @@
 		"startTime": "2017-11-21 04:32:00",
 		"tenantId": 1,
 		"wechatAlertLevel": [],
-		"wechatSendMethod": "SENDTOALL"
+		"wechatSendMethod": "SENDTOALL",
+		"wechatAlertLevelCode": [],
+		"smsAlertLevelCode": [],
+		"wechatConditionAlertLevelCode": []
 	}
 }
 ```
@@ -83,6 +86,9 @@ POST
  wechatAlertLevel| String| 否 | 微信推送提醒意向等级| ["A","B"]|
  wechatSendMethod| String| 否 | 微信推送方式（SENDTOALL，全推送），（SENDTOONE，单推送），（SENDTONONE 不推送）| SENDTOALL|
  description| String| 否 | 备注| 测试|
+ wechatAlertLevelCode | Integer | 否 | 微信推送提醒意向等级编码 | [0, 1] |
+ smsAlertLevelCode | Integer | 否| 短信推送提醒意向等级编码| [0, 1]|
+ wechatConditionAlertLevelCode | Integer | 否| 微信条件推送提醒意向等级编码|[0, 1] |
 
 
 
