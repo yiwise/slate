@@ -99,7 +99,11 @@ GET
 			"inactiveTimeList": [{"startTime":"12:00", "endTime":"13:00"}],
 			"description": null,
 			"wechatAlertLevel": [],
+			"wechatAlertLevelCode":[],
 			"smsAlertLevel": [],
+			"smsAlertLevelCode":[],
+			"wechatConditionAlertLevel":[],
+			"wechatConditionAlertLevelCode":[],
 			"alertUsers": [],
 			"wechatSendMethod": "SENDTOALL",
 			"status": "TERMINATE",
@@ -160,7 +164,11 @@ GET
  inactiveTimeList| List| 不可拨打时间段列表|
  description| String  | 任务注释 |
  wechatAlertLevel| String  | 微信提示等级 |
+ wechatAlertLevelCode | Integer | 微信提示等级code |
  smsAlertLevel| String  | 短信提示等级 |
+ smsAlertLevelCode | Integer | 短信提示登记code |
+ wechatConditionAlertLevel | String | 微信条件提示等级|
+ wechatConditionAlertLevelCode | Integer | 微信条件提示等级Code|
  alertUsers| String  | 提示人员 |
  earlyWarningAlertUsers| String  | 预警提示人员 |
  createTime| String | 任务创建时间 |
@@ -264,7 +272,32 @@ GET
 				}, {
 					"date": "2018-10-09",
 					"val": 26786
-				}]
+				}],
+				"intentLevelTagDetailList":[
+          {
+              "code":0,
+              "intentLevelTagDetailId":825,
+              "intentLevelTagId":121,
+              "name":"较差"
+          },
+          {
+              "code":1,
+              "intentLevelTagDetailId":826,
+              "intentLevelTagId":121,
+              "name":"一般"
+          },
+          {
+              "code":2,
+              "intentLevelTagDetailId":827,
+              "intentLevelTagId":121,
+              "name":"好"
+          },
+          {
+              "code":3,
+              "intentLevelTagDetailId":828,
+              "intentLevelTagId":121,
+              "name":"很好"
+          }]
 			}
 	},
 	"requestId": "VJDMUZIC",
@@ -313,6 +346,11 @@ GET
  averageDurationList| List | 平均通话时长 |
  requestId| String | 请求Id |
  resultMsg| String | 响应说明 |
+ intentLevelTagDetailList | List | 意向分类详情列表|
+ code | Integer| 意向分类详情编码|
+ intentLevelTagDetailId |Long |意向分类详情id |
+ intentLevelTagId | Long| 意向分类id |
+ name | String| 意向分类详情名称 |
  
 
 
