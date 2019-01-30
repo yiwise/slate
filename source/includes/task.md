@@ -78,6 +78,7 @@ POST
  dailyEndTime| String| 是 | 可拨打结束时间，不可以晚于20点| 20:00 |
  inactiveTimeList| List| 否 | 不可拨打时间段列表,最大三个不可拨打时段| [{"startTime":"12:00", "endTime":"13:00"}] |
  dialogFlowId| String| 是 | 话术id| 139|
+ csStaffGroupId| Long| 是 | 坐席组id，通过话术API中获取人工介入标识。如果存在人工介入标识，需要传入坐席组Id| 139|
  alertUsers| String| 否 | 提醒的用户的id列表| [1,2]|
  earlyWarningAlertUsers| String| 否 | 行业预警消息推送人| [1,2]|
  phoneType| String| 是 | 号码类型 (MOBILE, "手机号码"),(LANDLINE, "固话"),(UNFIXED_CALL, "无主叫")| UNFIXED_CALL|
