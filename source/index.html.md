@@ -7,6 +7,8 @@ toc_footers:
 
 includes:
   - tenant
+  - csRobot
+  - dialogFlow
   - intentLevelTag
   - task
   - obtainTask
