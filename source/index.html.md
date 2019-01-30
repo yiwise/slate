@@ -7,11 +7,11 @@ toc_footers:
 
 includes:
   - tenant
+  - intentLevelTag
   - task
   - obtainTask
   - callRecord
   - callBack
-  - intentLevelTag
 
 search: true
 ---
