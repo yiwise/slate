@@ -177,7 +177,11 @@
             "inactiveTimeList": [{"startTime":"12:00", "endTime":"13:00"}],
             "description": null,
             "wechatAlertLevel": [],
+            "wechatAlertLevelCode":[],
             "smsAlertLevel": [],
+            "smsAlertLevelCode":[],
+            "wechatConditionAlertLevel":[],
+            "wechatConditionAlertLevelCode":[],
             "alertUsers": [],
             "wechatSendMethod": "SENDTOALL",
             "status": "TERMINATE",
@@ -299,9 +303,29 @@
 <td>微信提示等级</td>
 </tr>
 <tr>
+<td>wechatAlertLevelCode</td>
+<td>Integer</td>
+<td>微信提示等级code</td>
+</tr>
+<tr>
 <td>smsAlertLevel</td>
 <td>String</td>
 <td>短信提示等级</td>
+</tr>
+<tr>
+<td>smsAlertLevelCode</td>
+<td>Integer</td>
+<td>短信提示登记code</td>
+</tr>
+<tr>
+<td>wechatConditionAlertLevel</td>
+<td>String</td>
+<td>微信条件提示等级</td>
+</tr>
+<tr>
+<td>wechatConditionAlertLevelCode</td>
+<td>Integer</td>
+<td>微信条件提示等级Code</td>
 </tr>
 <tr>
 <td>alertUsers</td>
@@ -446,7 +470,32 @@
                 }, {
                     "date": "2018-10-09",
                     "val": 26786
-                }]
+                }],
+                "intentLevelTagDetailList":[
+          {
+              "code":0,
+              "intentLevelTagDetailId":825,
+              "intentLevelTagId":121,
+              "name":"较差"
+          },
+          {
+              "code":1,
+              "intentLevelTagDetailId":826,
+              "intentLevelTagId":121,
+              "name":"一般"
+          },
+          {
+              "code":2,
+              "intentLevelTagDetailId":827,
+              "intentLevelTagId":121,
+              "name":"好"
+          },
+          {
+              "code":3,
+              "intentLevelTagDetailId":828,
+              "intentLevelTagId":121,
+              "name":"很好"
+          }]
             }
     },
     "requestId": "VJDMUZIC",
@@ -578,6 +627,31 @@
 <td>resultMsg</td>
 <td>String</td>
 <td>响应说明</td>
+</tr>
+<tr>
+<td>intentLevelTagDetailList</td>
+<td>List</td>
+<td>意向分类详情列表</td>
+</tr>
+<tr>
+<td>code</td>
+<td>Integer</td>
+<td>意向分类详情编码</td>
+</tr>
+<tr>
+<td>intentLevelTagDetailId</td>
+<td>Long</td>
+<td>意向分类详情id</td>
+</tr>
+<tr>
+<td>intentLevelTagId</td>
+<td>Long</td>
+<td>意向分类id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>意向分类详情名称</td>
 </tr>
 </tbody></table>
 <h2 id='ce576131d5'>获取任务中的变量（包括话术变量和短信变量）</h2><h3 id='7d73d51a26-4'>功能说明：</h3>

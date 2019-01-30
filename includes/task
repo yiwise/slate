@@ -1,5 +1,5 @@
 <h1 id='9d439be6a3'>任务操作接口</h1><h2 id='7073b68833'>创建任务接口</h2><h3 id='7d73d51a26'>功能说明：</h3>
-<p>通过此接口可以创建新的任务</p>
+<p>通过此接口可以创建新的任务 </p>
 <h3 id='2e118f3054'>更新说明：</h3>
 <p>创建任务,支持使用多个无主叫固话,只需设置总并发数,由系统自动分配每个线路的并发。</p>
 
@@ -28,7 +28,10 @@
         "startTime": "2017-11-21 04:32:00",
         "tenantId": 1,
         "wechatAlertLevel": [],
-        "wechatSendMethod": "SENDTOALL"
+        "wechatSendMethod": "SENDTOALL",
+        "wechatAlertLevelCode": [],
+        "smsAlertLevelCode": [],
+        "wechatConditionAlertLevelCode": []
     }
 }
 </code></pre>
@@ -175,6 +178,27 @@
 <td>否</td>
 <td>备注</td>
 <td>测试</td>
+</tr>
+<tr>
+<td>wechatAlertLevelCode</td>
+<td>Integer</td>
+<td>否</td>
+<td>微信推送提醒意向等级编码</td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>smsAlertLevelCode</td>
+<td>Integer</td>
+<td>否</td>
+<td>短信推送提醒意向等级编码</td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>wechatConditionAlertLevelCode</td>
+<td>Integer</td>
+<td>否</td>
+<td>微信条件推送提醒意向等级编码</td>
+<td>[0, 1]</td>
 </tr>
 </tbody></table>
 <h3 id='d981aa6fd7'>响应：</h3>

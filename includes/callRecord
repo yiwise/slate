@@ -39,7 +39,10 @@
                       "phoneNumberId": 0,
                       "resultStatus": "ANSWERED",
                       "intentLevel": "A",
+                      "intentLevelName": "很好",
                       "realIntentLevel": null,
+                      "realIntentLevelName":"很好",
+                      "intentLevelTagId": 0,
                       "customerConcern": [
                         "价格","位置"
                        ],
@@ -219,9 +222,24 @@
 <td>意向等级, (A, &quot;A级(较强)&quot;),(B, &quot;B级(一般)&quot;),(C, &quot;C级(无法判断)&quot;),(D, &quot;D级(很少)&quot;),(E, &quot;E级别(需要再次跟进)&quot;),(F, &quot;F级别(无需再次跟进)&quot;)</td>
 </tr>
 <tr>
+<td>intentLevelName</td>
+<td>String</td>
+<td>意向标签名称</td>
+</tr>
+<tr>
 <td>realIntentLevel</td>
 <td>String</td>
 <td>真实意向等级</td>
+</tr>
+<tr>
+<td>realIntentLevelName</td>
+<td>String</td>
+<td>真实意向标签名称</td>
+</tr>
+<tr>
+<td>intentLevelTagId</td>
+<td>Long</td>
+<td>意向分类标签id</td>
 </tr>
 <tr>
 <td>customerConcern</td>
@@ -305,7 +323,10 @@
         },
         "resultStatus": "VACANT_NUMBER",
         "intentLevel": "F",
+        "intentLevelName":"一般",
         "realIntentLevel": null,
+        "realIntentLevelName":"一般",
+        "intentLevelTagId":0,
         "customerConcern": ["价格", "位置"],
         "fullAudioUrl": "https://ai-call-platform-daily.oss-cn-hangzhou.aliyuncs.com/DialogueRecording/TenantId1/CallJobId17/YKUYXGLL_TaskId_1305098/early_media.wav",
         "analysisBasis": "空号",
@@ -417,9 +438,24 @@
 <td>意向等级, (A, &quot;A级(较强)&quot;),(B, &quot;B级(一般)&quot;),(C, &quot;C级(无法判断)&quot;),(D, &quot;D级(很少)&quot;),(E, &quot;E级别(需要再次跟进)&quot;),(F, &quot;F级别(无需再次跟进)&quot;)</td>
 </tr>
 <tr>
+<td>intentLevelName</td>
+<td>String</td>
+<td>意向标签名称</td>
+</tr>
+<tr>
 <td>realIntentLevel</td>
 <td>String</td>
-<td>真是意向等级,</td>
+<td>真实意向等级,</td>
+</tr>
+<tr>
+<td>realIntentLevelName</td>
+<td>String</td>
+<td>真实意向标签名称</td>
+</tr>
+<tr>
+<td>intentLevelTagId</td>
+<td>Long</td>
+<td>意向分类标签id</td>
 </tr>
 <tr>
 <td>customerConcern</td>
