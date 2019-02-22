@@ -124,6 +124,13 @@
 <td>139</td>
 </tr>
 <tr>
+<td>csStaffGroupId</td>
+<td>Long</td>
+<td>是</td>
+<td>坐席组id，通过话术API中获取人工介入标识。如果存在人工介入标识，需要传入坐席组Id</td>
+<td>139</td>
+</tr>
+<tr>
 <td>alertUsers</td>
 <td>String</td>
 <td>否</td>

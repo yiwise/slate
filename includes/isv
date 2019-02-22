@@ -1,0 +1,76 @@
+<h1 id='isv'>isv对象操作</h1><h2 id='isv-2'>修改ISV对象的公司签名和回调地址</h2><h3 id='7d73d51a26'>功能说明：</h3>
+<p>通过此接口可以修改ISV对象的公司签名和回调地址</p>
+
+<blockquote>
+<p>入参JSON实例</p>
+</blockquote>
+<pre class="highlight plaintext"><code>
+{
+    "tenantSign": "yiwise",
+    "callbackUrl": "http:999999999"
+}
+
+</code></pre>
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code> {
+    "code":200,
+    "data":null,
+    "requestId":"FVKXTCDG",
+    "resultMsg":"修改成功",
+    "errorStackTrace":null
+ }
+</code></pre><h3 id='c7811523ac'>请求：</h3>
+<p>URL：https://openapi.tanyibot.com/apiOpen/v1/isv/updateIsvInfo</p>
+<h3 id='261d12e31d'>请求方法：</h3>
+<p>POST</p>
+<h3 id='2eb6f47757'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tenantSign</td>
+<td>String</td>
+<td>是</td>
+<td>客户签名</td>
+<td>yiwise</td>
+</tr>
+<tr>
+<td>callbackUrl</td>
+<td>String</td>
+<td>否</td>
+<td>回调URL</td>
+<td>http://www.baidu.com</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>

@@ -1,0 +1,139 @@
+<h1 id='bda2edd407'>话术接口</h1><h2 id='a6c51200d8'>获取话术列表接口</h2><h3 id='7d73d51a26'>功能说明：</h3>
+<p>通过此接口可以获取用户所有的话术信息</p>
+
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "code": 200,
+    "data": [
+        {
+        "dialogFlowId": 1,
+        "name": "话术标题"
+        }
+    ],
+    "requestId": "VCWAHVEJ",
+    "resultMsg": "获取成功",
+    "errorStackTrace": null
+}
+
+</code></pre><h3 id='c7811523ac'>请求：</h3>
+<p>URL：https://openapi.tanyibot.com/apiOpen/v1/dialogFlow/getDialogFlowList</p>
+<h3 id='261d12e31d'>请求方法：</h3>
+<p>GET</p>
+<h3 id='2eb6f47757'>请求参数:</h3>
+<p>无</p>
+<h3 id='d981aa6fd7'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>Integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>dialogFlowId</td>
+<td>Long</td>
+<td>话术Id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>话术名称</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='3638079c5a'>获取话术中存在人工介入和转人工等标识</h2><h3 id='7d73d51a26-2'>功能说明：</h3>
+<p>通过接口可以获取指定话术的标识</p>
+
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code> {
+     "code": 200,
+     "data": {
+         "dialogFlowId": 358,
+         "placeholderExist": true,
+         "jumpToHumanServiceExist": false,
+         "humanInterventionExist": false
+     },
+     "requestId": "QKFCMKOY",
+     "resultMsg": "获取成功",
+     "errorStackTrace": null
+ }
+
+</code></pre><h3 id='c7811523ac-2'>请求：</h3>
+<p>URL：https://openapi.tanyibot.com/apiOpen/v1/dialogFlow/getDialogFlowCallJobRelatedInfo</p>
+<h3 id='261d12e31d-2'>请求方法：</h3>
+<p>GET</p>
+<h3 id='2eb6f47757-2'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>dialogFlowId</td>
+<td>Long</td>
+<td>是</td>
+<td>话术ID</td>
+<td>0</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7-2'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>Integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>placeholderExist</td>
+<td>boolean</td>
+<td>是否有变量名</td>
+</tr>
+<tr>
+<td>jumpToHumanServiceExist</td>
+<td>boolean</td>
+<td>是否转人工标识</td>
+</tr>
+<tr>
+<td>humanInterventionExist</td>
+<td>boolean</td>
+<td>是否有人工介入标识</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
