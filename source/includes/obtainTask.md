@@ -121,6 +121,10 @@ GET
         "phoneType": "LANDLINE",
         "concurrencyQuota": 5
       }],
+    "transferPhoneNumber": [
+        "1523654789",
+        "1758426896"
+    ],
 		"completedTask": 3612,
 		"taskCallTotal": 166
 	},
@@ -177,6 +181,7 @@ GET
  nextStartTime| String | 下一次任务开始时间 |
  status| String | 任务状态, NOT_STARTED(0, "未开始"),IN_PROCESS(1, "进行中"),COMPLETED(2, "已完成"),RUNNABLE(3, "可运行"),USER_PAUSE(4, "用户暂停"),SYSTEM_SUSPENDED(5, "系统暂停"),TERMINATE(6, "已终止"),IN_QUEUE(7, "排队中")| 1 |
  jobPhoneNumberList| List  | 任务拨打的电话列表 |
+ transferPhoneNumber| List| 转人工号码 |
  dialogFlowName| String  | 话术名称 |
  requestId| String | 请求Id |
  resultMsg| String | 响应说明 |
