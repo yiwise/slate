@@ -18,6 +18,10 @@
 	"jobPhoneNumberIdList": [
 		348,369
 	],
+	"transferPhoneNumber": [
+	  "1523654789",
+	  "1758426896"
+	],
 	"robotCallJob": {
 		"alertUsers": [],
 		"dailyEndTime": "21:00",
@@ -71,6 +75,7 @@ POST
 --------- | ------- |------- | ------ |----------
  concurrencyQuota| Integer| 是 | 并发数（线路类型为手机号的时候可不传）| 10|
  jobPhoneNumberIdList| List| 是 |任务主叫号码列表 tenant_phone_number_id,当类型是手机号的时候他的size代表机器人的个数，当类型非手机号的时候他的size只能是1|  [1,2,3] |
+ transferPhoneNumber| List| 选择转人工话术时必填 |转人工号码,触发转人工时轮训号码列表| ["1523654789","1758426896"] |
  name| String| 是 |任务名称| 测试API任务 |
  mode| String| 是 | 任务类型 (AUTO, "自动任务"),(MANUAL, "手动任务"); | AUTO |
  startTime| String| 自动任务：是/手动任务：否 | 任务开始时间| "2017-11-21"  |
@@ -78,6 +83,7 @@ POST
  dailyEndTime| String| 是 | 可拨打结束时间，不可以晚于20点| 20:00 |
  inactiveTimeList| List| 否 | 不可拨打时间段列表,最大三个不可拨打时段| [{"startTime":"12:00", "endTime":"13:00"}] |
  dialogFlowId| String| 是 | 话术id| 139|
+ csStaffGroupId| Long| 是 | 坐席组id，通过话术API中获取人工介入标识。如果存在人工介入标识，需要传入坐席组Id| 139|
  alertUsers| String| 否 | 提醒的用户的id列表| [1,2]|
  earlyWarningAlertUsers| String| 否 | 行业预警消息推送人| [1,2]|
  phoneType| String| 是 | 号码类型 (MOBILE, "手机号码"),(LANDLINE, "固话"),(UNFIXED_CALL, "无主叫")| UNFIXED_CALL|
