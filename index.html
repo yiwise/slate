@@ -1429,6 +1429,10 @@
     "jobPhoneNumberIdList": [
         348,369
     ],
+    "transferPhoneNumber": [
+      "1523654789",
+      "1758426896"
+    ],
     "robotCallJob": {
         "alertUsers": [],
         "dailyEndTime": "21:00",
@@ -1491,6 +1495,13 @@
 <td>是</td>
 <td>任务主叫号码列表 tenant_phone_number_id,当类型是手机号的时候他的size代表机器人的个数，当类型非手机号的时候他的size只能是1</td>
 <td>[1,2,3]</td>
+</tr>
+<tr>
+<td>transferPhoneNumber</td>
+<td>List</td>
+<td>选择转人工话术时必填</td>
+<td>转人工号码,触发转人工时轮训号码列表</td>
+<td>[&quot;1523654789&quot;,&quot;1758426896&quot;]</td>
 </tr>
 <tr>
 <td>name</td>
@@ -2276,6 +2287,10 @@
         "phoneType": "LANDLINE",
         "concurrencyQuota": 5
       }],
+    "transferPhoneNumber": [
+        "1523654789",
+        "1758426896"
+    ],
         "completedTask": 3612,
         "taskCallTotal": 166
     },
@@ -2443,6 +2458,11 @@
 <td>jobPhoneNumberList</td>
 <td>List</td>
 <td>任务拨打的电话列表</td>
+</tr>
+<tr>
+<td>transferPhoneNumber</td>
+<td>List</td>
+<td>转人工号码</td>
 </tr>
 <tr>
 <td>dialogFlowName</td>
@@ -3335,7 +3355,7 @@
             "chatDuration":37,
             "chatRound":0,
             "attributes":["有钱"],
-            "robotCallDetailList":[
+            "callDetailList":[
                 {
                     "text":"喂，您好, （停顿2s），您好，想问下您位于江北纬七路隧道附近，均价17000的高端商业综合体，我可以给您介绍一下吗？",
                     "type":"ROBOT",
@@ -3438,7 +3458,7 @@
 <td>用户属性</td>
 </tr>
 <tr>
-<td>robotCallDetailList</td>
+<td>callDetailList</td>
 <td>List</td>
 <td>对话内容</td>
 </tr>
