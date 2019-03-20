@@ -74,7 +74,7 @@ POST
 参数名 | 类型 | 是否必须 | 描述 | 实例 
 --------- | ------- |------- | ------ |----------
  concurrencyQuota| Integer| 是 | 并发数（线路类型为手机号的时候可不传）| 10|
- jobPhoneNumberIdList| List| 是 |任务主叫号码列表 tenant_phone_number_id,当类型是手机号的时候他的size代表机器人的个数，当类型非手机号的时候他的size只能是1|  [1,2,3] |
+ jobPhoneNumberIdList| List| 是 |任务主叫号码列表 tenant_phone_number_id,当类型是手机号的时候他的size代表机器人的个数，当类型非手机号的时候他的size只能是1, 如果外呼方式选择的是外呼策略组，则里面内容为外呼策略组的id（size只能为1）|  [1,2,3] |
  transferPhoneNumber| List| 选择转人工话术时必填 |转人工号码,触发转人工时轮训号码列表| ["1523654789","1758426896"] |
  name| String| 是 |任务名称| 测试API任务 |
  mode| String| 是 | 任务类型 (AUTO, "自动任务"),(MANUAL, "手动任务"); | AUTO |
@@ -86,7 +86,7 @@ POST
  csStaffGroupId| Long| 是 | 坐席组id，通过话术API中获取人工介入标识。如果存在人工介入标识，需要传入坐席组Id| 139|
  alertUsers| String| 否 | 提醒的用户的id列表| [1,2]|
  earlyWarningAlertUsers| String| 否 | 行业预警消息推送人| [1,2]|
- phoneType| String| 是 | 号码类型 (MOBILE, "手机号码"),(LANDLINE, "固话"),(UNFIXED_CALL, "无主叫")| UNFIXED_CALL|
+ phoneType| String| 是 | 号码类型 (MOBILE, "手机号码"),(LANDLINE, "固话"),(UNFIXED_CALL, "无主叫"), (CALL_POLICY_GROUP, "外呼策略组")| UNFIXED_CALL|
  smsAlertLevel| String| 否 | 短信推送提醒意向等级| ["A","B"]|
  smsTemplateId| Long| 否 | 短信模板id| |
  wechatAlertLevel| String| 否 | 微信推送提醒意向等级| ["A","B"]|
