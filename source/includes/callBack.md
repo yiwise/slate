@@ -33,6 +33,7 @@
             "callRecordId":119,
             "tenantId":1,
             "robotCallJobId":43,
+            "dialogFlowId":12,
             "calledPhoneNumber":"17751279857",
             "resultStatus":"ANSWERED",
             "intentLevel":"A",
@@ -70,6 +71,7 @@
   dataType| String | 回调类型（始终为 ROBOT_CALL_RECORD ） | 
   callRecordId| Long | 通话记录id | 
   tenantId| Long | 公司id | 
+  dialogFlowId| Long | 话术id |
   robotCallJobId| Long | 任务id |
   calledPhoneNumber| String | 电话号码 |
   resultStatus| String | 通话结果 (ANSWERED, "已接听"),(NO_ANSWER, "未接"),(BUSY, "占线"),(POWER_OFF, "关机"),(OUT_OF_SERVICE, "被叫停机"),(REFUSED, "拒接"),(VACANT_NUMBER, "空号"),(CAN_NOT_CONNECT, "无法接通"), (FROM_PHONE_ERROR, "主叫号码不可用"),(SYSTEM_ERROR, "外呼失败") | 
