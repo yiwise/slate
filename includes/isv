@@ -74,3 +74,165 @@
 <td>响应说明</td>
 </tr>
 </tbody></table>
+
+<p>##修改ISV对象的公司签名和回调地址</p>
+<h2 id='isv-3'>生成isv账号</h2><h3 id='7d73d51a26-2'>功能说明：</h3>
+<p>通过此接口可生成子账号的ISV账号</p>
+
+<blockquote>
+<p>入参JSON实例</p>
+</blockquote>
+<pre class="highlight plaintext"><code>
+{
+    "tenantSign": "yiwise",
+    "phoneNumber": "16600000001"
+}
+
+</code></pre>
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code> {
+    "code":200,
+    "data":null,
+    "requestId":"FVKXTCDG",
+    "resultMsg":"修改成功",
+    "errorStackTrace":null
+ }
+</code></pre><h3 id='c7811523ac-2'>请求：</h3>
+<p>URL：https://openapi.tanyibot.com/apiOpen/v1/isv/genSubAccountIsv</p>
+<h3 id='261d12e31d-2'>请求方法：</h3>
+<p>POST</p>
+<h3 id='2eb6f47757-2'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tenantSign</td>
+<td>String</td>
+<td>是</td>
+<td>客户签名</td>
+<td>yiwise</td>
+</tr>
+<tr>
+<td>phoneNumber</td>
+<td>String</td>
+<td>是</td>
+<td>子账号手机号</td>
+<td>16600000001</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7-2'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+<tr>
+<td>tenantSign</td>
+<td>String</td>
+<td>客户签名</td>
+</tr>
+<tr>
+<td>appKey</td>
+<td>String</td>
+<td>key</td>
+</tr>
+<tr>
+<td>appSecret</td>
+<td>String</td>
+<td>秘钥</td>
+</tr>
+</tbody></table>
+<h2 id='isv-4'>获取isv列表</h2><h3 id='7d73d51a26-3'>功能说明：</h3>
+<p>通过此接口获取ISV账号列表</p>
+
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code> {
+    "code": 200,
+    "data": [
+        {
+            "tenantSign": "yiwise",
+            "appKey": "666",
+            "appSecret": "666",
+            "callbackUrl": "http://"
+        },
+        {
+            "tenantSign": "yiwise-sub1",
+            "appKey": "111",
+            "appSecret": "111",
+            "callbackUrl": null
+        }
+    ],
+    "requestId": "MHXFZZRC",
+    "resultMsg": "获取成功成功",
+    "errorStackTrace": null
+}
+</code></pre><h3 id='c7811523ac-3'>请求：</h3>
+<p>URL：https://openapi.tanyibot.com/apiOpen/v1/isv/getIsvList</p>
+<h3 id='261d12e31d-3'>请求方法：</h3>
+<p>GET</p>
+<h3 id='2eb6f47757-3'>请求参数:</h3><h3 id='d981aa6fd7-3'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+<tr>
+<td>tenantSign</td>
+<td>String</td>
+<td>客户签名</td>
+</tr>
+<tr>
+<td>appKey</td>
+<td>String</td>
+<td>key</td>
+</tr>
+<tr>
+<td>appSecret</td>
+<td>String</td>
+<td>秘钥</td>
+</tr>
+</tbody></table>

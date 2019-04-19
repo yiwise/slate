@@ -253,6 +253,9 @@
             <a href="#f628cebc7d" class="toc-h1 toc-link" data-title="最近更新日志">最近更新日志</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#2019-4-3" class="toc-h2 toc-link" data-title="2019年4月3日">2019年4月3日</a>
+                  </li>
+                  <li>
                     <a href="#2018-10-10" class="toc-h2 toc-link" data-title="2018年10月10日第一版本">2018年10月10日第一版本</a>
                   </li>
               </ul>
@@ -262,6 +265,12 @@
               <ul class="toc-list-h2">
                   <li>
                     <a href="#isv-2" class="toc-h2 toc-link" data-title="修改ISV对象的公司签名和回调地址">修改ISV对象的公司签名和回调地址</a>
+                  </li>
+                  <li>
+                    <a href="#isv-3" class="toc-h2 toc-link" data-title="生成isv账号">生成isv账号</a>
+                  </li>
+                  <li>
+                    <a href="#isv-4" class="toc-h2 toc-link" data-title="获取isv列表">获取isv列表</a>
                   </li>
               </ul>
           </li>
@@ -724,7 +733,9 @@
 <td>未知错误</td>
 </tr>
 </tbody></table>
-<h1 id='f628cebc7d'>最近更新日志</h1><h2 id='2018-10-10'>2018年10月10日第一版本</h2>
+<h1 id='f628cebc7d'>最近更新日志</h1><h2 id='2019-4-3'>2019年4月3日</h2>
+<p>一、增加子账号关联isv账号，在CRM系统中创建子账号后，并且可以给子账号分配并发数。调用 isv对象操作 -&gt;【生成isv账号】接口产生isv账号。</p>
+<h2 id='2018-10-10'>2018年10月10日第一版本</h2>
 <p>一、公司信息接口</p>
 
 <ol>
@@ -829,6 +840,168 @@
 <td>resultMsg</td>
 <td>String</td>
 <td>响应说明</td>
+</tr>
+</tbody></table>
+
+<p>##修改ISV对象的公司签名和回调地址</p>
+<h2 id='isv-3'>生成isv账号</h2><h3 id='7d73d51a26-2'>功能说明：</h3>
+<p>通过此接口可生成子账号的ISV账号</p>
+
+<blockquote>
+<p>入参JSON实例</p>
+</blockquote>
+<pre class="highlight plaintext"><code>
+{
+    "tenantSign": "yiwise",
+    "phoneNumber": "16600000001"
+}
+
+</code></pre>
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code> {
+    "code":200,
+    "data":null,
+    "requestId":"FVKXTCDG",
+    "resultMsg":"修改成功",
+    "errorStackTrace":null
+ }
+</code></pre><h3 id='c7811523ac-2'>请求：</h3>
+<p>URL：https://openapi.tanyibot.com/apiOpen/v1/isv/genSubAccountIsv</p>
+<h3 id='261d12e31d-2'>请求方法：</h3>
+<p>POST</p>
+<h3 id='2eb6f47757-2'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tenantSign</td>
+<td>String</td>
+<td>是</td>
+<td>客户签名</td>
+<td>yiwise</td>
+</tr>
+<tr>
+<td>phoneNumber</td>
+<td>String</td>
+<td>是</td>
+<td>子账号手机号</td>
+<td>16600000001</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7-2'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+<tr>
+<td>tenantSign</td>
+<td>String</td>
+<td>客户签名</td>
+</tr>
+<tr>
+<td>appKey</td>
+<td>String</td>
+<td>key</td>
+</tr>
+<tr>
+<td>appSecret</td>
+<td>String</td>
+<td>秘钥</td>
+</tr>
+</tbody></table>
+<h2 id='isv-4'>获取isv列表</h2><h3 id='7d73d51a26-3'>功能说明：</h3>
+<p>通过此接口获取ISV账号列表</p>
+
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code> {
+    "code": 200,
+    "data": [
+        {
+            "tenantSign": "yiwise",
+            "appKey": "666",
+            "appSecret": "666",
+            "callbackUrl": "http://"
+        },
+        {
+            "tenantSign": "yiwise-sub1",
+            "appKey": "111",
+            "appSecret": "111",
+            "callbackUrl": null
+        }
+    ],
+    "requestId": "MHXFZZRC",
+    "resultMsg": "获取成功成功",
+    "errorStackTrace": null
+}
+</code></pre><h3 id='c7811523ac-3'>请求：</h3>
+<p>URL：https://openapi.tanyibot.com/apiOpen/v1/isv/getIsvList</p>
+<h3 id='261d12e31d-3'>请求方法：</h3>
+<p>GET</p>
+<h3 id='2eb6f47757-3'>请求参数:</h3><h3 id='d981aa6fd7-3'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+<tr>
+<td>tenantSign</td>
+<td>String</td>
+<td>客户签名</td>
+</tr>
+<tr>
+<td>appKey</td>
+<td>String</td>
+<td>key</td>
+</tr>
+<tr>
+<td>appSecret</td>
+<td>String</td>
+<td>秘钥</td>
 </tr>
 </tbody></table>
 <h1 id='2612df31ea'>公司信息接口</h1><h2 id='2a87ad0cc9'>获取公司列表接口</h2><h3 id='7d73d51a26'>功能说明：</h3>
@@ -1493,7 +1666,7 @@
 <td>jobPhoneNumberIdList</td>
 <td>List</td>
 <td>是</td>
-<td>任务主叫号码列表 tenant_phone_number_id,当类型是手机号的时候他的size代表机器人的个数，当类型非手机号的时候他的size只能是1</td>
+<td>任务主叫号码列表 tenant_phone_number_id,当类型是手机号的时候他的size代表机器人的个数，当类型非手机号的时候他的size只能是1, 如果外呼方式选择的是外呼策略组，则里面内容为外呼策略组的id（size只能为1）</td>
 <td>[1,2,3]</td>
 </tr>
 <tr>
@@ -1577,7 +1750,7 @@
 <td>phoneType</td>
 <td>String</td>
 <td>是</td>
-<td>号码类型 (MOBILE, &quot;手机号码&quot;),(LANDLINE, &quot;固话&quot;),(UNFIXED_CALL, &quot;无主叫&quot;)</td>
+<td>号码类型 (MOBILE, &quot;手机号码&quot;),(LANDLINE, &quot;固话&quot;),(UNFIXED_CALL, &quot;无主叫&quot;), (CALL_POLICY_GROUP, &quot;外呼策略组&quot;)</td>
 <td>UNFIXED_CALL</td>
 </tr>
 <tr>
@@ -3356,6 +3529,9 @@
             "chatDuration":37,
             "chatRound":0,
             "attributes":["有钱"],
+            "properties": {
+                "生日": "2019年10月1日"
+            },
             "callDetailList":[
                 {
                     "text":"喂，您好, （停顿2s），您好，想问下您位于江北纬七路隧道附近，均价17000的高端商业综合体，我可以给您介绍一下吗？",
@@ -3462,6 +3638,11 @@
 <td>attributes</td>
 <td>String</td>
 <td>用户属性</td>
+</tr>
+<tr>
+<td>properties</td>
+<td>String</td>
+<td>自定义字段</td>
 </tr>
 <tr>
 <td>callDetailList</td>
