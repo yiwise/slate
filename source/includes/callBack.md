@@ -19,6 +19,7 @@
  --------- | ------- | ------ 
   ROBOT_CALL_RECORD| String | 单通通话记录 |
   ROBOT_CALL_JOB| String | 任务结果信息 | 
+  ROBOT_CALL_SMS| String | 短信回调 |
  
 ## 通话记录回调接口
 
@@ -113,3 +114,62 @@
   robotCallJobId| Long | 任务id | 
   tenantId| Long | 公司id |
   status| String | 任务状态 ( 始终为 COMPLETED) |
+  
+
+## 通话记录短信回调接口
+ 当一次通话完成后，探意机器人会自动调用回调程序向用户配置的回调地址发送本次需要发送的短信信息。
+ 
+ > 入参JSON实例:
+ ```
+ 	{
+	    "dataType":"ROBOT_CALL_SMS",
+	    "data":{
+	        "tenantId":916,
+	        "companyName":"ZX001",
+	        "customerPersonId":7180758,
+	        "customerPersonName":"漂亮小姐姐",
+	        "phoneNumber":"18326042077",
+	        "callRecordId":53780,
+	        "robotCallRobotId":2454,
+	        "robotCallRobotName":"wokrtest04240009",
+	        "msgList":[
+	            {
+	                "smsTemplateId":152,
+	                "text":"${姓名} 你好，很高兴认识你",
+	                "type":"NOTICE",
+	                "smsSignatureId":109,
+	                "smsSignatureName":"一知智能T1",
+	                "smsTemplateName":"lalala",
+	                "msg":"【一知智能T1】漂亮小姐姐 你好，很高兴认识你",
+	                "varMap":{
+	                    "姓名":"漂亮小姐姐",
+	                    "联系电话":"18326042077"
+	                }
+	            }
+	        ]
+	    }
+	}
+ ```
+ 
+### 请求参数:
+ 
+参数名 | 类型  | 描述  
+ --------- | ------- | ------ 
+  dataType| String | 回调类型（始终为 ROBOT_CALL_SMS ） | 
+  tenantId| Long | 公司Id |
+  companyName | String | 公司名称 |
+  customerPersonId | Long | 用户id |
+  customerPersonName | String | 用户名称|
+  phoneNumber | String | 手机号 |
+  callRecordId | Long | 通话id |
+  robotCallRobotId | Long | 任务id |
+  robotCallRobotName | String | 任务名称 |
+  msgList | JSONArray | 短信列表 |
+  smsTemplateId | Long | 短信模板Id |
+  smsTemplateName | String | 短信模板名称 |
+  smsSignatureId | Long |短信签名Id |
+  smsSignatureName | String | 短信签名名称 |
+  text | String | 模板内容 |
+  msg | String | 完整的短信内容 |
+  varMap | JSONObject | 短信中的变量map ,里面是 "变量名" : "变量值" 的键值对|
+  
