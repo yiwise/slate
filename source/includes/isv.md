@@ -44,6 +44,7 @@
  --------- | ------- |------- | ------ |----------
   tenantSign| String| 是 |客户签名| yiwise |
   callbackUrl| String| 否 | 回调URL| http://www.baidu.com |
+  smsCallbackUrl | String | 否 | 短信回调地址|
   
   
 ###响应：
@@ -150,7 +151,7 @@
  
 ###请求方法：
  
- GET
+ POST
  
  
 ###请求参数:
