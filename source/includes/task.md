@@ -1,20 +1,20 @@
-#任务操作接口
+# 任务操作接口
 
-##创建任务接口
+## 创建任务接口
 
-###功能说明：
+### 功能说明：
 
 通过此接口可以创建新的任务 
 
-###更新说明：
+### 更新说明：
 
 创建任务,支持使用多个无主叫固话,只需设置总并发数,由系统自动分配每个线路的并发。
 
->入参JSON实例：
+> JSON 入参实例：
 
-```
+```json
 {
-	"concurrencyQuota", 2,
+	"concurrencyQuota": 2,
 	"jobPhoneNumberIdList": [
 		348,369
 	],
@@ -47,12 +47,12 @@
 }
 ```
 
->JSON响应实例：
+> JSON 响应实例：
 
-```
+```json
 {
 	"code": 200,
-	"data": {robotCallJobId:139},
+	"data": {"robotCallJobId":139},
 	"requestId": "RKXNIQAF",
 	"resultMsg": "修改成功",
 	"errorStackTrace": null
@@ -60,16 +60,16 @@
 
 ```
 
-###请求：
+### 请求：
 
 URL：https://openapi.tanyibot.com/apiOpen/v1/job/create
 
-###请求方法：
+### 请求方法：
 
 POST
 
 
-###请求参数:
+### 请求参数:
 
 参数名 | 类型 | 是否必须 | 描述 | 实例 
 --------- | ------- |------- | ------ |----------
@@ -96,9 +96,7 @@ POST
  smsAlertLevelCode | Integer | 否| 短信推送提醒意向等级编码| [0, 1]|
  wechatConditionAlertLevelCode | Integer | 否| 微信条件推送提醒意向等级编码|[0, 1] |
 
-
-
-###响应：
+### 响应：
 
 参数名 | 类型 | 描述 
 --------- | ------- |------
@@ -107,15 +105,15 @@ POST
  requestId| String | 请求Id |
  resultMsg| String | 响应说明 |
 
-##启动任务接口
+## 启动任务接口
 
-###功能说明：
+### 功能说明：
 
 通过此接口可以启动指定的任务
 
->JSON响应实例：
+> JSON 响应实例：
 
-```
+```json
 {
 	"code": 200,
 	"data": null,
@@ -126,23 +124,21 @@ POST
 
 ```
 
-###请求：
+### 请求：
 
 URL：https://openapi.tanyibot.com/apiOpen/v1/job/start
 
-###请求方法：
+### 请求方法：
 
 POST
 
-
-###请求参数:
+### 请求参数:
 
 参数名 | 类型 | 是否必须 | 描述 | 实例 
 --------- | ------- |------- | ------ |----------
  robotCallJobId| Long| 是 | 任务Id| 1 |
 
-
-###响应：
+### 响应：
 
 参数名 | 类型 | 描述 
 --------- | ------- |------
@@ -150,15 +146,15 @@ POST
  requestId| String | 请求Id |
  resultMsg| String | 响应说明 |
  
-##暂停任务接口
+## 暂停任务接口
  
-###功能说明：
+### 功能说明：
  
- 通过此接口可以暂停指定的任务
+通过此接口可以暂停指定的任务
  
- >JSON响应实例：
+> JSON 响应实例：
  
- ```
+```json
 {
 	"code": 200,
 	"data": null,
@@ -169,66 +165,64 @@ POST
  
  ```
  
-###请求：
+### 请求：
  
- URL：https://openapi.tanyibot.com/apiOpen/v1/job/pause
+URL：https://openapi.tanyibot.com/apiOpen/v1/job/pause
  
-###请求方法：
+### 请求方法：
  
- POST
+POST
+ 
+### 请求参数:
+ 
+参数名 | 类型 | 是否必须 | 描述 | 实例 
+--------- | ------- |------- | ------ |----------
+robotCallJobId| Integer| 是 | 任务Id| 1 |
  
  
-###请求参数:
+### 响应：
  
- 参数名 | 类型 | 是否必须 | 描述 | 实例 
- --------- | ------- |------- | ------ |----------
-  robotCallJobId| Integer| 是 | 任务Id| 1 |
- 
- 
-###响应：
- 
- 参数名 | 类型 | 描述 
- --------- | ------- |------
-  code|Integer | 响应码 |
- requestId| String | 请求Id |
-  resultMsg| String | 响应说明 |
+参数名 | 类型 | 描述 
+--------- | ------- |------
+code|Integer | 响应码 |
+requestId| String | 请求Id |
+resultMsg| String | 响应说明 |
 
-##停止任务接口
+## 停止任务接口
  
-###功能说明：
+### 功能说明：
  
- 通过此接口可以停止  指定的任务
+通过此接口可以停止  指定的任务
  
- >JSON响应实例：
+> JSON 响应实例：
  
- ```
- {
- 	"code": 200,
- 	"data": null,
- 	"requestId": "RKXNIQAF",
- 	"resultMsg": "修改成功",
- 	"errorStackTrace": null
- }
+```json
+{
+	"code": 200,
+	"data": null,
+	"requestId": "RKXNIQAF",
+	"resultMsg": "修改成功",
+	"errorStackTrace": null
+}
+```
  
- ```
+### 请求：
  
-###请求：
+URL：https://openapi.tanyibot.com/apiOpen/v1/job/stop
  
- URL：https://openapi.tanyibot.com/apiOpen/v1/job/stop
- 
-###请求方法：
+### 请求方法：
  
  POST
  
  
-###请求参数:
+### 请求参数:
  
  参数名 | 类型 | 是否必须 | 描述 | 实例 
  --------- | ------- |------- | ------ |----------
   robotCallJobId| Integer| 是 | 任务Id| 1 |
  
  
-###响应：
+### 响应：
  
  参数名 | 类型 | 描述 
  --------- | ------- |------
@@ -236,19 +230,20 @@ POST
  requestId| String | 请求Id |
   resultMsg| String | 响应说明 |
   
-##删除任务
+## 删除任务
   
-###功能说明：
+### 功能说明：
   
 通过调用此接口可以删除任务信息
->入参JSON实例
 
-```
+> JSON 入参实例
+
+```json
 {
   "robotCallJobId": "1"
 }
 ```
->JSON响应实例：
+> JSON 响应实例：
 
 ```
 {
@@ -261,21 +256,20 @@ POST
 
 ```
   
-###请求：
+### 请求：
  
- URL：https://openapi.tanyibot.com/apiOpen/v1/job/delete
+URL：https://openapi.tanyibot.com/apiOpen/v1/job/delete
  
-###请求方法：
+### 请求方法：
  
- POST
+POST
  
- 
-###请求参数:
+### 请求参数:
  
  参数名 | 类型 | 是否必须 | 描述 | 实例 
  --------- | ------- |------- | ------ |----------
   robotCallJobId| Long| 是 | 删除任务| 1 |  
-###响应：
+### 响应：
  
  参数名 | 类型 | 描述 |
  --------- | ------- |------
@@ -283,15 +277,15 @@ POST
  requestId| String | 请求Id |
   resultMsg| String | 响应说明 |
 
-##向任务中导入客户接口
+## 向任务中导入客户接口
  
-###功能说明：
+### 功能说明：
  
- 通过此接口可以向指定的任务导入客户信息，用于拨打电话。（单次导入客户数量不能大于100）
+通过此接口可以向指定的任务导入客户信息，用于拨打电话。（单次导入客户数量不能大于100）
  
- >入参JSON实例:
+> JSON 入参实例:
  
-  ```
+```json
 {
 	"robotCallJobId": 28,
 	"customerPersons": [{
@@ -304,9 +298,9 @@ POST
 	}]
 }
   
-  ```
+```
   
- >JSON响应实例：
+> JSON 响应实例：
  
  ```
  {

@@ -1,14 +1,14 @@
-#任务信息查询接口
+# 任务信息查询接口
 
-##获取任务列表接口
+## 获取任务列表接口
 
-###功能说明：
+### 功能说明：
 
 通过此接口可以获取指定公司的任务列表
 
->JSON响应实例：
+> JSON 响应实例：
 
-```
+```json
 {
   "code": 200,
   "data": {
@@ -33,15 +33,15 @@
 }
 ```
 
-###请求：
+### 请求：
 
 URL：https://openapi.tanyibot.com/apiOpen/v1/job/getJobs
 
-###请求方法：
+### 请求方法：
 
 GET
 
-###请求参数:
+### 请求参数:
 
 参数名 | 类型 | 是否必须 | 描述 | 实例 
 --------- | ------- |------- | ------ |----------
@@ -52,7 +52,7 @@ GET
 
 
 
-###响应：
+### 响应：
 
 参数名 | 类型 | 描述 
 --------- | ------- |------
@@ -72,15 +72,15 @@ GET
  requestId| String | 请求Id |
  resultMsg| String | 响应说明 |
 
-##获取任务详情接口
+## 获取任务详情接口
 
-###功能说明：
+### 功能说明：
 
 通过此接口可以获取指定任务的详细信息
 
->JSON响应实例：
+> JSON 响应实例：
 
-```
+```json
 {
 	"code": 200,
 	"data": {
@@ -135,23 +135,23 @@ GET
 
 ```
 
-###请求：
+### 请求：
 
 URL：https://openapi.tanyibot.com/apiOpen/v1/job/getJobDetail
 
-###请求方法：
+### 请求方法：
 
 GET
 
 
-###请求参数:
+### 请求参数:
 
 参数名 | 类型 | 是否必须 | 描述 | 实例 
 --------- | ------- |------- | ------ |----------
  robotCallJobId| Long| 是 |任务Id| 21 |
  
 
-###响应：
+### 响应：
 
 参数名 | 类型 | 描述 
 --------- | ------- |------
@@ -160,7 +160,7 @@ GET
  dialogFlowId| Long | 话术id |
  name| String | 任务名称 |
  mode| String | 任务类型 (AUTO, "自动任务"),(MANUAL, "手动任务")|
- phoneType| String | 电话类型 (MOBILE, "手机"),(LANDLINE, "固话"),(UNFIXED_CALL, "无主叫固话")|
+ phoneType| String | 线路类型 (MOBILE, "手机"),(LANDLINE, "固话"),(UNFIXED_CALL, "无主叫固话"),(CALL_POLICY_GROUP，"外呼策略组")|
  robotCount| Integer | 任务拨打的号码总数 |
  smsTemplateId| Long | 短信模版id |
  dailyStartTime| String | 可拨打开始时间 |
@@ -180,22 +180,23 @@ GET
  startTime| String | 任务开始时间 |
  nextStartTime| String | 下一次任务开始时间 |
  status| String | 任务状态, NOT_STARTED(0, "未开始"),IN_PROCESS(1, "进行中"),COMPLETED(2, "已完成"),RUNNABLE(3, "可运行"),USER_PAUSE(4, "用户暂停"),SYSTEM_SUSPENDED(5, "系统暂停"),TERMINATE(6, "已终止"),IN_QUEUE(7, "排队中")| 1 |
- jobPhoneNumberList| List  | 任务拨打的电话列表 |
+ jobPhoneNumberList| List  | 任务主叫线路列表 |
+ policyGroupPhoneNumberList| List  | 外呼策略组包含的线路信息 |
  transferPhoneNumber| List| 转人工号码 |
  dialogFlowName| String  | 话术名称 |
  requestId| String | 请求Id |
  resultMsg| String | 响应说明 |
  
 
-##获取任务统计接口
+## 获取任务统计接口
 
-###功能说明：
+### 功能说明：
 
 通过此接口可以获取指定任务的统计详细信息
 
->JSON响应实例：
+> JSON 响应实例：
 
-```
+```json
 {
 	"code": 200,
 	"data": {
@@ -312,23 +313,23 @@ GET
 
 ```
 
-###请求：
+### 请求：
 
 URL：https://openapi.tanyibot.com/apiOpen/v1/job/getJobStats
 
-###请求方法：
+### 请求方法：
 
 GET
 
 
-###请求参数:
+### 请求参数:
 
 参数名 | 类型 | 是否必须 | 描述 | 实例 
 --------- | ------- |------- | ------ |----------
  robotCallJobId| Long| 是 |任务Id| 21 |
  
 
-###响应：
+### 响应：
 
 参数名 | 类型 | 描述 
 --------- | ------- |------
@@ -359,15 +360,15 @@ GET
  
 
 
-##获取任务中的变量（包括话术变量和短信变量）
+## 获取任务中的变量（包括话术变量和短信变量）
 
-###功能说明：
+### 功能说明：
 
 通过接口可以获取该任务中的自定义变量，包括话术变量、意向短信变量、挂机短信变量等
 
->JSON响应实例：
+> JSON 响应实例：
 
-```
+```json
 {
 	"code": 200,
 	"data": [
@@ -381,23 +382,23 @@ GET
 
 ```
 
-###请求：
+### 请求：
 
 URL：https://openapi.tanyibot.com/apiOpen/v1/job/getJobProperties
 
-###请求方法：
+### 请求方法：
 
-###请求方法：
+### 请求方法：
 
 GET
 
-###请求参数:
+### 请求参数:
 
 参数名 | 类型 | 是否必须 | 描述 | 实例 
 --------- | ------- |------- | ------ |----------
  robotCallJobId| Long| 是 |任务Id| 21 |
 
-###响应：
+### 响应：
 
 参数名 | 类型 | 描述 
 --------- | ------- |------
