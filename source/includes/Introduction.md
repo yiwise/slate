@@ -6,13 +6,13 @@
 
 这种调用方式是客户主动调用接口获取数据或实现功能；
 
-主动调用需在请求头传入 appKey、appSecret、version（当前版本的VERSION=v1）、tenantSign（公司签名，后期提供修改）时间戳 timestamp 和验签字段 signature 用于权限校验；
+主动调用需在请求头传入 appKey、appSecret、tenantSign（公司签名，后期提供修改）、时间戳 timestamp 和验签字段 signature 用于权限校验；
 
 如下图所示：
 
 ![](../images/headers.png)
 
-注意：请在开发对接程序前联系探意技术支持进行注册，如果你还未签约，请先签约开通账户。
+注意：请在开发对接程序前联系探意技术支持进行注册，如果您还未签约，请先签约开通账户。
 
 ### 方法回调 
 
@@ -20,11 +20,11 @@
 
 注意：请在开发前自主配置好回调地址。
 
-探意机器人API是使用HTTP并遵循REST原则设计的Web服务接口；
+探意机器人 API 是使用 HTTP 并遵循 RESTful 原则设计的 Web 服务接口；
 
-您可以使用几乎任何客户端和任何编程语言与REST API进行交互。
+您可以使用几乎任何客户端和任何编程语言与 RESTful API 进行交互。
 
-通过发送简单的HTTP请求就可以轻松接入使用。
+通过发送简单的 HTTP 请求就可以轻松接入使用。
 
 ## 权限认证
 
@@ -41,7 +41,7 @@ API认证采用SHA256加密算法进行加密，使用时间戳、APP_KEY、APP_
 目前已有完成JAVA版的样例，具体实现请下载SDK查阅。
 
 
-> 请在API样例`openapidemo`中替换为自己的APP_KEY、APP_SECRET和 TENANT_SIGN.
+> 请在API样例 `openapidemo` 中替换为自己的APP_KEY、APP_SECRET和 TENANT_SIGN.
 
 探意为确保您的账户和信息安全，请在开发对接程序前联系探意技术支持注册接口调用专属密钥。
 
@@ -51,36 +51,39 @@ API认证采用SHA256加密算法进行加密，使用时间戳、APP_KEY、APP_
 
 ## 统一请求格式
 
-URL格式：
+### 请求方式(Method)
 
-<code>/{version}/{resource}/{function}</code>
+GET/POST
 
-说明： 
+### 编码
 
-{version}api版本号
+UTF-8
 
-{resource}为资源名，通常对应一类API
+### URL格式
 
-{function}为该资源提供的操作方法
+`/{version}/{resource}/{function}`
 
-请求响应的结果为json格式
+### 变量说明
+
++ {version} api版本号
+
++ {resource} 资源名，通常对应一类API
+
++ {function} 该资源提供的操作方法
+
+### 响应
+
+请求响应的结果为 JSON 格式。
+
+HTTP 头信息:
+
+`Accept:application/json;charset=utf-8`
 
 > 比如查询公司列表的 URL 为：`http://apiOpen/v1/tenant/getTenant`
   
 > 表示调用公司信息的get方法，并且返回json格式的字符串。
 
 > 我们目前已经提供的接口，请参考API。
-
-
-HTTP头信息:
-
-<code>Accept:application/json;charset=utf-8</code>
-
-说明：
-
-请求方式(Method)：统一用GET/POST方式，编码：UTF-8
-
->
 
 ## JAVA SDK DEMO 下载
 
@@ -98,7 +101,7 @@ JAVA | [GitHub地址](https://github.com/yiwise/openapidemo.git)
 
  ![](../images/OMS3.png)
 
-##常见问题解答
+## 常见问题解答
 
 1. Q: 定时任务和手动任务的异同
 
