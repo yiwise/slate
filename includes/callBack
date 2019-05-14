@@ -27,6 +27,11 @@
 <td>String</td>
 <td>任务结果信息</td>
 </tr>
+<tr>
+<td>ROBOT_CALL_SMS</td>
+<td>String</td>
+<td>短信回调</td>
+</tr>
 </tbody></table>
 <h2 id='3e45815d37'>通话记录回调接口</h2>
 <p>当一次通话完成后，探意机器人会自动调用回调程序向用户配置的回调地址发送本次通话详情。</p>
@@ -232,5 +237,135 @@
 <td>status</td>
 <td>String</td>
 <td>任务状态 ( 始终为 COMPLETED)</td>
+</tr>
+</tbody></table>
+<h2 id='72bdd04c62'>通话记录短信回调接口</h2>
+<p>当一次通话完成后，探意机器人会自动调用回调程序向用户配置的回调地址发送本次需要发送的短信信息。</p>
+
+<blockquote>
+<p>入参JSON实例:
+ <code>
+    {
+        &quot;dataType&quot;:&quot;ROBOT_CALL_SMS&quot;,
+        &quot;data&quot;:{
+            &quot;tenantId&quot;:916,
+            &quot;companyName&quot;:&quot;ZX001&quot;,
+            &quot;customerPersonId&quot;:7180758,
+            &quot;customerPersonName&quot;:&quot;漂亮小姐姐&quot;,
+            &quot;phoneNumber&quot;:&quot;18326042077&quot;,
+            &quot;callRecordId&quot;:53780,
+            &quot;robotCallRobotId&quot;:2454,
+            &quot;robotCallRobotName&quot;:&quot;wokrtest04240009&quot;,
+            &quot;msgList&quot;:[
+                {
+                    &quot;smsTemplateId&quot;:152,
+                    &quot;text&quot;:&quot;${姓名} 你好，很高兴认识你&quot;,
+                    &quot;type&quot;:&quot;NOTICE&quot;,
+                    &quot;smsSignatureId&quot;:109,
+                    &quot;smsSignatureName&quot;:&quot;一知智能T1&quot;,
+                    &quot;smsTemplateName&quot;:&quot;lalala&quot;,
+                    &quot;msg&quot;:&quot;【一知智能T1】漂亮小姐姐 你好，很高兴认识你&quot;,
+                    &quot;varMap&quot;:{
+                        &quot;姓名&quot;:&quot;漂亮小姐姐&quot;,
+                        &quot;联系电话&quot;:&quot;18326042077&quot;
+                    }
+                }
+            ]
+        }
+    }
+</code></p>
+</blockquote>
+<h3 id='2eb6f47757-3'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>dataType</td>
+<td>String</td>
+<td>回调类型（始终为 ROBOT_CALL_SMS ）</td>
+</tr>
+<tr>
+<td>tenantId</td>
+<td>Long</td>
+<td>公司Id</td>
+</tr>
+<tr>
+<td>companyName</td>
+<td>String</td>
+<td>公司名称</td>
+</tr>
+<tr>
+<td>customerPersonId</td>
+<td>Long</td>
+<td>用户id</td>
+</tr>
+<tr>
+<td>customerPersonName</td>
+<td>String</td>
+<td>用户名称</td>
+</tr>
+<tr>
+<td>phoneNumber</td>
+<td>String</td>
+<td>手机号</td>
+</tr>
+<tr>
+<td>callRecordId</td>
+<td>Long</td>
+<td>通话id</td>
+</tr>
+<tr>
+<td>robotCallRobotId</td>
+<td>Long</td>
+<td>任务id</td>
+</tr>
+<tr>
+<td>robotCallRobotName</td>
+<td>String</td>
+<td>任务名称</td>
+</tr>
+<tr>
+<td>msgList</td>
+<td>JSONArray</td>
+<td>短信列表</td>
+</tr>
+<tr>
+<td>smsTemplateId</td>
+<td>Long</td>
+<td>短信模板Id</td>
+</tr>
+<tr>
+<td>smsTemplateName</td>
+<td>String</td>
+<td>短信模板名称</td>
+</tr>
+<tr>
+<td>smsSignatureId</td>
+<td>Long</td>
+<td>短信签名Id</td>
+</tr>
+<tr>
+<td>smsSignatureName</td>
+<td>String</td>
+<td>短信签名名称</td>
+</tr>
+<tr>
+<td>text</td>
+<td>String</td>
+<td>模板内容</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>完整的短信内容</td>
+</tr>
+<tr>
+<td>varMap</td>
+<td>JSONObject</td>
+<td>短信中的变量map ,里面是 &quot;变量名&quot; : &quot;变量值&quot; 的键值对</td>
 </tr>
 </tbody></table>

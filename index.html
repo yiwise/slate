@@ -233,7 +233,7 @@
                     <a href="#java-sdk-demo" class="toc-h2 toc-link" data-title="JAVA SDK DEMO 下载">JAVA SDK DEMO 下载</a>
                   </li>
                   <li>
-                    <a href="#e352b2a3cc" class="toc-h2 toc-link" data-title="最佳实践流程图:">最佳实践流程图:</a>
+                    <a href="#071216b59a" class="toc-h2 toc-link" data-title="最佳实践流程图">最佳实践流程图</a>
                   </li>
                   <li>
                     <a href="#966dc24d9e" class="toc-h2 toc-link" data-title="常见问题解答">常见问题解答</a>
@@ -252,6 +252,12 @@
           <li>
             <a href="#f628cebc7d" class="toc-h1 toc-link" data-title="最近更新日志">最近更新日志</a>
               <ul class="toc-list-h2">
+                  <li>
+                    <a href="#2019-5-14" class="toc-h2 toc-link" data-title="2019年5月14日">2019年5月14日</a>
+                  </li>
+                  <li>
+                    <a href="#2019-4-25" class="toc-h2 toc-link" data-title="2019年4月25日">2019年4月25日</a>
+                  </li>
                   <li>
                     <a href="#2019-4-3" class="toc-h2 toc-link" data-title="2019年4月3日">2019年4月3日</a>
                   </li>
@@ -390,6 +396,26 @@
                   <li>
                     <a href="#0510043503" class="toc-h2 toc-link" data-title="任务完成详情回调接口">任务完成详情回调接口</a>
                   </li>
+                  <li>
+                    <a href="#72bdd04c62" class="toc-h2 toc-link" data-title="通话记录短信回调接口">通话记录短信回调接口</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#3792684a7b" class="toc-h1 toc-link" data-title="外呼策略组接口">外呼策略组接口</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#b89da2193a" class="toc-h2 toc-link" data-title="获取外呼策略组选择接口">获取外呼策略组选择接口</a>
+                  </li>
+                  <li>
+                    <a href="#6cdc4be77a" class="toc-h2 toc-link" data-title="获取外呼策略组列表接口">获取外呼策略组列表接口</a>
+                  </li>
+                  <li>
+                    <a href="#b452e55ab8" class="toc-h2 toc-link" data-title="创建外呼策略组接口">创建外呼策略组接口</a>
+                  </li>
+                  <li>
+                    <a href="#e974b2e1c2" class="toc-h2 toc-link" data-title="更新外呼策略组接口">更新外呼策略组接口</a>
+                  </li>
               </ul>
           </li>
       </ul>
@@ -408,25 +434,27 @@
 
 <p>如果有问题，欢迎联系我们客服，技术支持</p>
 
-<p>公司官网地址 ：http://www.yiwise.com/</p>
-<h1 id='18d1449c7d'>开发引导</h1><h2 id='c2587a41e7'>调用说明</h2>
-<p>第一种方式：主动调用 这种调用方式是客户主动调用接口获取数据或实现功能；</p>
+<p>公司官网地址 ：<a href="http://www.yiwise.com/">http://www.yiwise.com/</a></p>
+<h1 id='18d1449c7d'>开发引导</h1><h2 id='c2587a41e7'>调用说明</h2><h3 id='250205d9fe'>主动调用</h3>
+<p>这种调用方式是客户主动调用接口获取数据或实现功能；</p>
 
-<p>主动调用需在请求头传入APP_KEY、APP_SECRET、VERSION（当前版本的VERSION=v1）、TENANT_SIGN（公司签名，后期提供修改）和验签字段signature用于权限校验；</p>
+<p>主动调用需在请求头传入 appKey、appSecret、tenantSign（公司签名，后期提供修改）、时间戳 timestamp 和验签字段 signature 用于权限校验；</p>
 
-<p>注意：请在开发对接程序前联系探意技术支持进行注册，如果你还未签约，请先签约开通账户。</p>
+<p>如下图所示：</p>
 
-<p>第二种方式：方法回调 这种调用方式是当达到预设条件如：任务完成或通话结束时，由探意主动向指定地址发送信息；</p>
+<p><img src="images/headers.png" alt="Headers" /></p>
+
+<p>注意：请在开发对接程序前联系探意技术支持进行注册，如果您还未签约，请先签约开通账户。</p>
+<h3 id='24bd0b4580'>方法回调</h3>
+<p>这种调用方式是当达到预设条件如：任务完成或通话结束时，由探意主动向指定地址发送信息；</p>
 
 <p>注意：请在开发前自主配置好回调地址。</p>
 
-<p>探意机器人API是使用HTTP并遵循REST原则设计的Web服务接口；</p>
+<p>探意机器人 API 是使用 HTTP 并遵循 RESTful 原则设计的 Web 服务接口；</p>
 
-<p>您可以使用几乎任何客户端和任何编程语言与REST API进行交互。</p>
+<p>您可以使用几乎任何客户端和任何编程语言与 RESTful API 进行交互。</p>
 
-<p>通过发送简单的HTTP请求就可以轻松接入使用。</p>
-
-<p>调用方式分为两种：主动调用和方法回调。</p>
+<p>通过发送简单的 HTTP 请求就可以轻松接入使用。</p>
 <h2 id='352e86fb3a'>权限认证</h2>
 <blockquote>
 <p>认证密钥样例</p>
@@ -440,46 +468,39 @@
 <p>目前已有完成JAVA版的样例，具体实现请下载SDK查阅。</p>
 
 <blockquote>
-<p>请在API样例<code>openapidemo</code>中替换为自己的APP_KEY、APP_SECRET和 TENANT_SIGN.</p>
+<p>请在API样例 <code>openapidemo</code> 中替换为自己的APP_KEY、APP_SECRET和 TENANT_SIGN.</p>
 </blockquote>
 
 <p>探意为确保您的账户和信息安全，请在开发对接程序前联系探意技术支持注册接口调用专属密钥。</p>
 
 <aside class="notice">
-您必须替换对接密钥 <code>APP_KEY 、 APP_SECRET 和 TENANT_SIGN </code>在您的对接程序中 
+您必须在您的对接程序中替换对接密钥 <code>APP_KEY 、 APP_SECRET 和 TENANT_SIGN </code> 
 </aside>
-<h2 id='bbf1456045'>统一请求格式</h2>
-<p>URL格式：</p>
-
+<h2 id='bbf1456045'>统一请求格式</h2><h3 id='method'>请求方式(Method)</h3>
+<p>GET/POST</p>
+<h3 id='c94faa718a'>编码</h3>
+<p>UTF-8</p>
+<h3 id='url'>URL格式</h3>
 <p><code>/{version}/{resource}/{function}</code></p>
+<h3 id='e27de64f12'>变量说明</h3>
+<ul>
+<li><p>{version} api版本号</p></li>
+<li><p>{resource} 资源名，通常对应一类API</p></li>
+<li><p>{function} 该资源提供的操作方法</p></li>
+</ul>
+<h3 id='f4eca6a6b0'>响应</h3>
+<p>请求响应的结果为 JSON 格式。</p>
 
-<p>说明： </p>
-
-<p>{version}api版本号</p>
-
-<p>{resource}为资源名，通常对应一类API</p>
-
-<p>{function}为该资源提供的操作方法</p>
-
-<p>请求响应的结果为json格式</p>
-
-<blockquote>
-<p>比如查询公司列表的url为：</p>
-</blockquote>
-<pre class="highlight plaintext"><code>&lt;code&gt;http://apiOpen/v1/tenant/getTenant &lt;/code&gt; 表示调用公司信息的get方法，并且返回json格式的字符串。
-
-我们目前已经提供的接口，请参考API。 
-
-</code></pre>
-<p>HTTP头信息:</p>
+<p>HTTP 头信息:</p>
 
 <p><code>Accept:application/json;charset=utf-8</code></p>
 
-<p>说明：</p>
-
-<p>请求方式(Method)：统一用GET/POST方式，编码：UTF-8</p>
-
 <blockquote>
+<p>比如查询公司列表的 URL 为：<code>http://apiOpen/v1/tenant/getTenant</code></p>
+
+<p>表示调用公司信息的get方法，并且返回json格式的字符串。</p>
+
+<p>我们目前已经提供的接口，请参考API。</p>
 </blockquote>
 <h2 id='java-sdk-demo'>JAVA SDK DEMO 下载</h2>
 <p>本页面提供Java的SDK下载。</p>
@@ -499,7 +520,7 @@
 <td><a href="https://github.com/yiwise/openapidemo.git">GitHub地址</a></td>
 </tr>
 </tbody></table>
-<h2 id='e352b2a3cc'>最佳实践流程图:</h2>
+<h2 id='071216b59a'>最佳实践流程图</h2>
 <p><img src="images/OMS3.png" alt="Oms3" /></p>
 <h2 id='966dc24d9e'>常见问题解答</h2>
 <ol>
@@ -717,12 +738,12 @@
 <td>校验数据错误</td>
 </tr>
 <tr>
-<td>404</td>
-<td>资源未找到</td>
-</tr>
-<tr>
 <td>403</td>
 <td>权限不足</td>
+</tr>
+<tr>
+<td>404</td>
+<td>资源未找到</td>
 </tr>
 <tr>
 <td>412</td>
@@ -733,8 +754,19 @@
 <td>未知错误</td>
 </tr>
 </tbody></table>
-<h1 id='f628cebc7d'>最近更新日志</h1><h2 id='2019-4-3'>2019年4月3日</h2>
-<p>一、增加子账号关联isv账号，在CRM系统中创建子账号后，并且可以给子账号分配并发数。调用 isv对象操作 -&gt;【生成isv账号】接口产生isv账号。</p>
+<h1 id='f628cebc7d'>最近更新日志</h1><h2 id='2019-5-14'>2019年5月14日</h2>
+<ul>
+<li>新增外呼策略组接口</li>
+<li>新增请求调用示例截图，完善调用说明</li>
+</ul>
+<h2 id='2019-4-25'>2019年4月25日</h2>
+<ul>
+<li>增加短信回调（需提供短信回调地址）</li>
+</ul>
+<h2 id='2019-4-3'>2019年4月3日</h2>
+<ul>
+<li>增加子账号关联isv账号，在CRM系统中创建子账号后，并且可以给子账号分配并发数。调用 isv对象操作 -&gt;【生成isv账号】接口产生isv账号。</li>
+</ul>
 <h2 id='2018-10-10'>2018年10月10日第一版本</h2>
 <p>一、公司信息接口</p>
 
@@ -817,6 +849,13 @@
 <td>回调URL</td>
 <td>http://www.baidu.com</td>
 </tr>
+<tr>
+<td>smsCallbackUrl</td>
+<td>String</td>
+<td>否</td>
+<td>短信回调地址</td>
+<td></td>
+</tr>
 </tbody></table>
 <h3 id='d981aa6fd7'>响应：</h3>
 <table><thead>
@@ -842,8 +881,6 @@
 <td>响应说明</td>
 </tr>
 </tbody></table>
-
-<p>##修改ISV对象的公司签名和回调地址</p>
 <h2 id='isv-3'>生成isv账号</h2><h3 id='7d73d51a26-2'>功能说明：</h3>
 <p>通过此接口可生成子账号的ISV账号</p>
 
@@ -964,7 +1001,7 @@
 </code></pre><h3 id='c7811523ac-3'>请求：</h3>
 <p>URL：https://openapi.tanyibot.com/apiOpen/v1/isv/getIsvList</p>
 <h3 id='261d12e31d-3'>请求方法：</h3>
-<p>GET</p>
+<p>POST</p>
 <h3 id='2eb6f47757-3'>请求参数:</h3><h3 id='d981aa6fd7-3'>响应：</h3>
 <table><thead>
 <tr>
@@ -1595,53 +1632,53 @@
 <p>创建任务,支持使用多个无主叫固话,只需设置总并发数,由系统自动分配每个线路的并发。</p>
 
 <blockquote>
-<p>入参JSON实例：</p>
+<p>JSON 入参实例：</p>
 </blockquote>
-<pre class="highlight plaintext"><code>{
-    "concurrencyQuota", 2,
-    "jobPhoneNumberIdList": [
-        348,369
-    ],
-    "transferPhoneNumber": [
-      "1523654789",
-      "1758426896"
-    ],
-    "robotCallJob": {
-        "alertUsers": [],
-        "dailyEndTime": "21:00",
-        "dailyStartTime": "09:00",
-        "description": "gthjoitjdjfdk",
-        "dialogFlowId": 2,
-        "earlyWarningAlertUsers": [],
-        "inactiveTimeList": [{"startTime":"12:00", "endTime":"13:00"}],
-        "mode": "AUTO",
-        "name": "测试名称3333",
-        "phoneType": "LANDLINE",
-        "robotCount": 10,
-        "smsAlertLevel": ["A"],
-        "smsTemplateId": 1,
-        "startTime": "2017-11-21 04:32:00",
-        "tenantId": 1,
-        "wechatAlertLevel": [],
-        "wechatSendMethod": "SENDTOALL",
-        "wechatAlertLevelCode": [],
-        "smsAlertLevelCode": [],
-        "wechatConditionAlertLevelCode": []
-    }
-}
-</code></pre>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"concurrencyQuota"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"jobPhoneNumberIdList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">348</span><span class="p">,</span><span class="mi">369</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"transferPhoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"1523654789"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"1758426896"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"robotCallJob"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"alertUsers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"dailyEndTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"dailyStartTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gthjoitjdjfdk"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"dialogFlowId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"earlyWarningAlertUsers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"inactiveTimeList"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">"startTime"</span><span class="p">:</span><span class="s2">"12:00"</span><span class="p">,</span><span class="w"> </span><span class="s2">"endTime"</span><span class="p">:</span><span class="s2">"13:00"</span><span class="p">}],</span><span class="w">
+        </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUTO"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"测试名称3333"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phoneType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LANDLINE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"robotCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"smsAlertLevel"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"A"</span><span class="p">],</span><span class="w">
+        </span><span class="s2">"smsTemplateId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"startTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-21 04:32:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tenantId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"wechatAlertLevel"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"wechatSendMethod"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SENDTOALL"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"wechatAlertLevelCode"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"smsAlertLevelCode"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"wechatConditionAlertLevelCode"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <blockquote>
-<p>JSON响应实例：</p>
+<p>JSON 响应实例：</p>
 </blockquote>
-<pre class="highlight plaintext"><code>{
-    "code": 200,
-    "data": {robotCallJobId:139},
-    "requestId": "RKXNIQAF",
-    "resultMsg": "修改成功",
-    "errorStackTrace": null
-}
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"robotCallJobId"</span><span class="p">:</span><span class="mi">139</span><span class="p">},</span><span class="w">
+    </span><span class="s2">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RKXNIQAF"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resultMsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"修改成功"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"errorStackTrace"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-</code></pre><h3 id='c7811523ac'>请求：</h3>
+</span></code></pre><h3 id='c7811523ac'>请求：</h3>
 <p>URL：https://openapi.tanyibot.com/apiOpen/v1/job/create</p>
 <h3 id='261d12e31d'>请求方法：</h3>
 <p>POST</p>
@@ -1666,7 +1703,7 @@
 <td>jobPhoneNumberIdList</td>
 <td>List</td>
 <td>是</td>
-<td>任务主叫号码列表 tenant_phone_number_id,当类型是手机号的时候他的size代表机器人的个数，当类型非手机号的时候他的size只能是1, 如果外呼方式选择的是外呼策略组，则里面内容为外呼策略组的id（size只能为1）</td>
+<td>任务主叫号码列表 tenant_phone_number_id,当类型是手机号的时候他的size代表机器人的个数，当类型非手机号的时候他的size只能是1；如果外呼方式选择的是外呼策略组，则里面内容为外呼策略组的id（size只能为1）</td>
 <td>[1,2,3]</td>
 </tr>
 <tr>
@@ -1843,17 +1880,17 @@
 <p>通过此接口可以启动指定的任务</p>
 
 <blockquote>
-<p>JSON响应实例：</p>
+<p>JSON 响应实例：</p>
 </blockquote>
-<pre class="highlight plaintext"><code>{
-    "code": 200,
-    "data": null,
-    "requestId": "RKXNIQAF",
-    "resultMsg": "修改成功",
-    "errorStackTrace": null
-}
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RKXNIQAF"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resultMsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"修改成功"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"errorStackTrace"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-</code></pre><h3 id='c7811523ac-2'>请求：</h3>
+</span></code></pre><h3 id='c7811523ac-2'>请求：</h3>
 <p>URL：https://openapi.tanyibot.com/apiOpen/v1/job/start</p>
 <h3 id='261d12e31d-2'>请求方法：</h3>
 <p>POST</p>
@@ -1903,17 +1940,17 @@
 <p>通过此接口可以暂停指定的任务</p>
 
 <blockquote>
-<p>JSON响应实例：</p>
+<p>JSON 响应实例：</p>
 </blockquote>
-<pre class="highlight plaintext"><code>{
-    "code": 200,
-    "data": null,
-    "requestId": "RKXNIQAF",
-    "resultMsg": "修改成功",
-    "errorStackTrace": null
-}
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RKXNIQAF"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resultMsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"修改成功"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"errorStackTrace"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-</code></pre><h3 id='c7811523ac-3'>请求：</h3>
+</span></code></pre><h3 id='c7811523ac-3'>请求：</h3>
 <p>URL：https://openapi.tanyibot.com/apiOpen/v1/job/pause</p>
 <h3 id='261d12e31d-3'>请求方法：</h3>
 <p>POST</p>
@@ -1963,17 +2000,16 @@
 <p>通过此接口可以停止  指定的任务</p>
 
 <blockquote>
-<p>JSON响应实例：</p>
+<p>JSON 响应实例：</p>
 </blockquote>
-<pre class="highlight plaintext"><code> {
-    "code": 200,
-    "data": null,
-    "requestId": "RKXNIQAF",
-    "resultMsg": "修改成功",
-    "errorStackTrace": null
- }
-
-</code></pre><h3 id='c7811523ac-4'>请求：</h3>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RKXNIQAF"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resultMsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"修改成功"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"errorStackTrace"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='c7811523ac-4'>请求：</h3>
 <p>URL：https://openapi.tanyibot.com/apiOpen/v1/job/stop</p>
 <h3 id='261d12e31d-4'>请求方法：</h3>
 <p>POST</p>
@@ -2023,14 +2059,14 @@
 <p>通过调用此接口可以删除任务信息</p>
 
 <blockquote>
-<p>入参JSON实例</p>
+<p>JSON 入参实例</p>
 </blockquote>
-<pre class="highlight plaintext"><code>{
-  "robotCallJobId": "1"
-}
-</code></pre>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"robotCallJobId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <blockquote>
-<p>JSON响应实例：</p>
+<p>JSON 响应实例：</p>
 </blockquote>
 <pre class="highlight plaintext"><code>{
     "code": 200,
@@ -2090,23 +2126,23 @@
 <p>通过此接口可以向指定的任务导入客户信息，用于拨打电话。（单次导入客户数量不能大于100）</p>
 
 <blockquote>
-<p>入参JSON实例:</p>
+<p>JSON 入参实例:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>{
-    "robotCallJobId": 28,
-    "customerPersons": [{
-        "name": "test",
-        "phoneNumber": "11111111111",
-        "properties": {
-            "欠款金额": "10.13",
-            "最后还款日期": "2018年10月3日"
-        }
-    }]
-}
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"robotCallJobId"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"customerPersons"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11111111111"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"欠款金额"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.13"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"最后还款日期"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018年10月3日"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-</code></pre>
+</span></code></pre>
 <blockquote>
-<p>JSON响应实例：</p>
+<p>JSON 响应实例：</p>
 </blockquote>
 <pre class="highlight plaintext"><code> {
     "code": 200,
@@ -2263,31 +2299,31 @@
 <p>通过此接口可以获取指定公司的任务列表</p>
 
 <blockquote>
-<p>JSON响应实例：</p>
+<p>JSON 响应实例：</p>
 </blockquote>
-<pre class="highlight plaintext"><code>{
-  "code": 200,
-  "data": {
-    "number": 1,
-    "pageSize": 20,
-    "totalElements": 1,
-    "pages": 1,
-    "content": [{
-      "robotCallJobId": 1,
-      "name": "dialog测试",
-      "status": "TERMINATE",
-      "completedTask": 2157,
-      "taskCallTotal": 166,
-      "createTime": "2018-09-26 18:07",
-      "createdByUserName": null,
-      "organizationName": null
-    }]
-  },
-  "requestId": "OTMAGZFW",
-  "resultMsg": "创建成功",
-  "errorStackTrace": null
-}
-</code></pre><h3 id='c7811523ac'>请求：</h3>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"totalElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="s2">"robotCallJobId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dialog测试"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TERMINATE"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"completedTask"</span><span class="p">:</span><span class="w"> </span><span class="mi">2157</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"taskCallTotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">166</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"createTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-26 18:07"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"createdByUserName"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"organizationName"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OTMAGZFW"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"resultMsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"创建成功"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"errorStackTrace"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='c7811523ac'>请求：</h3>
 <p>URL：https://openapi.tanyibot.com/apiOpen/v1/job/getJobs</p>
 <h3 id='261d12e31d'>请求方法：</h3>
 <p>GET</p>
@@ -2418,61 +2454,61 @@
 <p>通过此接口可以获取指定任务的详细信息</p>
 
 <blockquote>
-<p>JSON响应实例：</p>
+<p>JSON 响应实例：</p>
 </blockquote>
-<pre class="highlight plaintext"><code>{
-    "code": 200,
-    "data": {
-        "robotCallJob": {
-            "robotCallJobId": 1,
-            "tenantId": 1,
-            "dialogFlowId": 1,
-          "dialogFlowName":"金融行业体验demo-优化版",
-            "name": "dialog测试",
-            "mode": "MANUAL",
-            "robotCount": 12,
-            "smsTemplateId": null,
-            "phoneType": "LANDLINE",
-            "dailyStartTime": "15:08:31",
-            "dailyEndTime": "15:08:36",
-            "inactiveTimeList": [{"startTime":"12:00", "endTime":"13:00"}],
-            "description": null,
-            "wechatAlertLevel": [],
-            "wechatAlertLevelCode":[],
-            "smsAlertLevel": [],
-            "smsAlertLevelCode":[],
-            "wechatConditionAlertLevel":[],
-            "wechatConditionAlertLevelCode":[],
-            "alertUsers": [],
-            "wechatSendMethod": "SENDTOALL",
-            "status": "TERMINATE",
-            "startTime": null,
-            "nextStartTime": "00:00:00",
-            "createTime": "2018-10-09 15:08:54",
-            "updateTime": "2018-10-09 15:11:20",
-            "earlyWarningAlertUsers": []
-        },
-    "jobPhoneNumberList": [{
-        "tenantPhoneNumberId": 675,
-        "phoneNumber": "13576084683",
-        "phoneName": "",
-        "enabledStatus": 1,
-        "phoneType": "LANDLINE",
-        "concurrencyQuota": 5
-      }],
-    "transferPhoneNumber": [
-        "1523654789",
-        "1758426896"
-    ],
-        "completedTask": 3612,
-        "taskCallTotal": 166
-    },
-    "requestId": "VJDMUZIC",
-    "resultMsg": "获取成功",
-    "errorStackTrace": null
-}
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"robotCallJob"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"robotCallJobId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tenantId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"dialogFlowId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"dialogFlowName"</span><span class="p">:</span><span class="s2">"金融行业体验demo-优化版"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dialog测试"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MANUAL"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"robotCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"smsTemplateId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"phoneType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LANDLINE"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"dailyStartTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15:08:31"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"dailyEndTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15:08:36"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"inactiveTimeList"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">"startTime"</span><span class="p">:</span><span class="s2">"12:00"</span><span class="p">,</span><span class="w"> </span><span class="s2">"endTime"</span><span class="p">:</span><span class="s2">"13:00"</span><span class="p">}],</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"wechatAlertLevel"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"wechatAlertLevelCode"</span><span class="p">:[],</span><span class="w">
+            </span><span class="s2">"smsAlertLevel"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"smsAlertLevelCode"</span><span class="p">:[],</span><span class="w">
+            </span><span class="s2">"wechatConditionAlertLevel"</span><span class="p">:[],</span><span class="w">
+            </span><span class="s2">"wechatConditionAlertLevelCode"</span><span class="p">:[],</span><span class="w">
+            </span><span class="s2">"alertUsers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"wechatSendMethod"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SENDTOALL"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TERMINATE"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"startTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"nextStartTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"createTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-09 15:08:54"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-09 15:11:20"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"earlyWarningAlertUsers"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"jobPhoneNumberList"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="s2">"tenantPhoneNumberId"</span><span class="p">:</span><span class="w"> </span><span class="mi">675</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13576084683"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phoneName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"enabledStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phoneType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LANDLINE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"concurrencyQuota"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+      </span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"transferPhoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"1523654789"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"1758426896"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"completedTask"</span><span class="p">:</span><span class="w"> </span><span class="mi">3612</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"taskCallTotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">166</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VJDMUZIC"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resultMsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"获取成功"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"errorStackTrace"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-</code></pre><h3 id='c7811523ac-2'>请求：</h3>
+</span></code></pre><h3 id='c7811523ac-2'>请求：</h3>
 <p>URL：https://openapi.tanyibot.com/apiOpen/v1/job/getJobDetail</p>
 <h3 id='261d12e31d-2'>请求方法：</h3>
 <p>GET</p>
@@ -2530,7 +2566,7 @@
 <tr>
 <td>phoneType</td>
 <td>String</td>
-<td>电话类型 (MOBILE, &quot;手机&quot;),(LANDLINE, &quot;固话&quot;),(UNFIXED_CALL, &quot;无主叫固话&quot;)</td>
+<td>线路类型 (MOBILE, &quot;手机&quot;),(LANDLINE, &quot;固话&quot;),(UNFIXED_CALL, &quot;无主叫固话&quot;),(CALL_POLICY_GROUP，&quot;外呼策略组&quot;)</td>
 </tr>
 <tr>
 <td>robotCount</td>
@@ -2630,7 +2666,12 @@
 <tr>
 <td>jobPhoneNumberList</td>
 <td>List</td>
-<td>任务拨打的电话列表</td>
+<td>任务主叫线路列表</td>
+</tr>
+<tr>
+<td>policyGroupPhoneNumberList</td>
+<td>List</td>
+<td>外呼策略组包含的线路信息</td>
 </tr>
 <tr>
 <td>transferPhoneNumber</td>
@@ -2657,123 +2698,123 @@
 <p>通过此接口可以获取指定任务的统计详细信息</p>
 
 <blockquote>
-<p>JSON响应实例：</p>
+<p>JSON 响应实例：</p>
 </blockquote>
-<pre class="highlight plaintext"><code>{
-    "code": 200,
-    "data": {
-            "taskProgress": 2175.9,
-            "answeredRate": 9.47,
-            "intentLevel": {
-                "A": 568,
-                "B": 555,
-                "C": 606,
-                "D": 598,
-                "E": 560,
-                "F": 569
-            },
-            "taskCallTotal": 3612,
-            "answeredTask": 342,
-            "chatDurationTotal": 89659,
-            "completedTask": 0,
-            "customerConcern": ["安全", "地理位置", "健身", "价格", "交通"],
-            "dialResult": {
-                "ANSWERED": 342,
-                "NO_ANSWER": 348,
-                "BUSY": 353,
-                "POWER_OFF": 344,
-                "OUT_OF_SERVICE": 341,
-                "REFUSED": 366,
-                "VACANT_NUMBER": 338,
-                "CAN_NOT_CONNECT": 334,
-                "FROM_PHONE_ERROR": 346,
-                "SYSTEM_ERROR": 344
-            },
-            "chatRound": {
-                "LESS_3": 9,
-                "F3_T6": 1,
-                "F6_T10": 4,
-                "F10_MORE": 336
-            },
-            "chatDuration": {
-                "LESS_10S": 14,
-                "F10S_T1MIN": 28,
-                "F1MIN_T2MIN": 35,
-                "F2MIN_T3MIN": 43,
-                "F3MIN_TMORE": 230
-            },
-            "callJobStatsBrokenLine": {
-                "taskCallCompletedList": [{
-                    "date": "2018-09-27",
-                    "val": 1000
-                }, {
-                    "date": "2018-10-09",
-                    "val": 1455
-                }],
-                "answeredTaskList": [{
-                    "date": "2018-09-27",
-                    "val": 119
-                }, {
-                    "date": "2018-10-09",
-                    "val": 134
-                }],
-                "answeredTaskRateList": [{
-                    "date": "2018-09-27",
-                    "val": 11.90
-                }, {
-                    "date": "2018-10-09",
-                    "val": 9.21
-                }],
-                "chatDurationTotalList": [{
-                    "date": "2018-09-25",
-                    "val": 22547
-                }, {
-                    "date": "2018-09-27",
-                    "val": 31218
-                }, {
-                    "date": "2018-10-09",
-                    "val": 35894
-                }],
-                "averageDurationList": [{
-                    "date": "2018-09-27",
-                    "val": 26233
-                }, {
-                    "date": "2018-10-09",
-                    "val": 26786
-                }],
-                "intentLevelTagDetailList":[
-          {
-              "code":0,
-              "intentLevelTagDetailId":825,
-              "intentLevelTagId":121,
-              "name":"较差"
-          },
-          {
-              "code":1,
-              "intentLevelTagDetailId":826,
-              "intentLevelTagId":121,
-              "name":"一般"
-          },
-          {
-              "code":2,
-              "intentLevelTagDetailId":827,
-              "intentLevelTagId":121,
-              "name":"好"
-          },
-          {
-              "code":3,
-              "intentLevelTagDetailId":828,
-              "intentLevelTagId":121,
-              "name":"很好"
-          }]
-            }
-    },
-    "requestId": "VJDMUZIC",
-    "resultMsg": "获取成功",
-    "errorStackTrace": null
-}
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"taskProgress"</span><span class="p">:</span><span class="w"> </span><span class="mf">2175.9</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"answeredRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">9.47</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"intentLevel"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"A"</span><span class="p">:</span><span class="w"> </span><span class="mi">568</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"B"</span><span class="p">:</span><span class="w"> </span><span class="mi">555</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"C"</span><span class="p">:</span><span class="w"> </span><span class="mi">606</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"D"</span><span class="p">:</span><span class="w"> </span><span class="mi">598</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"E"</span><span class="p">:</span><span class="w"> </span><span class="mi">560</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"F"</span><span class="p">:</span><span class="w"> </span><span class="mi">569</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"taskCallTotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">3612</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"answeredTask"</span><span class="p">:</span><span class="w"> </span><span class="mi">342</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"chatDurationTotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">89659</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"completedTask"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"customerConcern"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"安全"</span><span class="p">,</span><span class="w"> </span><span class="s2">"地理位置"</span><span class="p">,</span><span class="w"> </span><span class="s2">"健身"</span><span class="p">,</span><span class="w"> </span><span class="s2">"价格"</span><span class="p">,</span><span class="w"> </span><span class="s2">"交通"</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"dialResult"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"ANSWERED"</span><span class="p">:</span><span class="w"> </span><span class="mi">342</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"NO_ANSWER"</span><span class="p">:</span><span class="w"> </span><span class="mi">348</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"BUSY"</span><span class="p">:</span><span class="w"> </span><span class="mi">353</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"POWER_OFF"</span><span class="p">:</span><span class="w"> </span><span class="mi">344</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"OUT_OF_SERVICE"</span><span class="p">:</span><span class="w"> </span><span class="mi">341</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"REFUSED"</span><span class="p">:</span><span class="w"> </span><span class="mi">366</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"VACANT_NUMBER"</span><span class="p">:</span><span class="w"> </span><span class="mi">338</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"CAN_NOT_CONNECT"</span><span class="p">:</span><span class="w"> </span><span class="mi">334</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"FROM_PHONE_ERROR"</span><span class="p">:</span><span class="w"> </span><span class="mi">346</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"SYSTEM_ERROR"</span><span class="p">:</span><span class="w"> </span><span class="mi">344</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"chatRound"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"LESS_3"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"F3_T6"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"F6_T10"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"F10_MORE"</span><span class="p">:</span><span class="w"> </span><span class="mi">336</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"chatDuration"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"LESS_10S"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"F10S_T1MIN"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"F1MIN_T2MIN"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"F2MIN_T3MIN"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"F3MIN_TMORE"</span><span class="p">:</span><span class="w"> </span><span class="mi">230</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"callJobStatsBrokenLine"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"taskCallCompletedList"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-27"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"val"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="w">
+                </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-09"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"val"</span><span class="p">:</span><span class="w"> </span><span class="mi">1455</span><span class="w">
+                </span><span class="p">}],</span><span class="w">
+                </span><span class="s2">"answeredTaskList"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-27"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"val"</span><span class="p">:</span><span class="w"> </span><span class="mi">119</span><span class="w">
+                </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-09"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"val"</span><span class="p">:</span><span class="w"> </span><span class="mi">134</span><span class="w">
+                </span><span class="p">}],</span><span class="w">
+                </span><span class="s2">"answeredTaskRateList"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-27"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"val"</span><span class="p">:</span><span class="w"> </span><span class="mf">11.90</span><span class="w">
+                </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-09"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"val"</span><span class="p">:</span><span class="w"> </span><span class="mf">9.21</span><span class="w">
+                </span><span class="p">}],</span><span class="w">
+                </span><span class="s2">"chatDurationTotalList"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-25"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"val"</span><span class="p">:</span><span class="w"> </span><span class="mi">22547</span><span class="w">
+                </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-27"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"val"</span><span class="p">:</span><span class="w"> </span><span class="mi">31218</span><span class="w">
+                </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-09"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"val"</span><span class="p">:</span><span class="w"> </span><span class="mi">35894</span><span class="w">
+                </span><span class="p">}],</span><span class="w">
+                </span><span class="s2">"averageDurationList"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-27"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"val"</span><span class="p">:</span><span class="w"> </span><span class="mi">26233</span><span class="w">
+                </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-09"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"val"</span><span class="p">:</span><span class="w"> </span><span class="mi">26786</span><span class="w">
+                </span><span class="p">}],</span><span class="w">
+                </span><span class="s2">"intentLevelTagDetailList"</span><span class="p">:[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"code"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"intentLevelTagDetailId"</span><span class="p">:</span><span class="mi">825</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"intentLevelTagId"</span><span class="p">:</span><span class="mi">121</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"较差"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"code"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"intentLevelTagDetailId"</span><span class="p">:</span><span class="mi">826</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"intentLevelTagId"</span><span class="p">:</span><span class="mi">121</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"一般"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"code"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"intentLevelTagDetailId"</span><span class="p">:</span><span class="mi">827</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"intentLevelTagId"</span><span class="p">:</span><span class="mi">121</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"好"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"code"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"intentLevelTagDetailId"</span><span class="p">:</span><span class="mi">828</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"intentLevelTagId"</span><span class="p">:</span><span class="mi">121</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"很好"</span><span class="w">
+          </span><span class="p">}]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VJDMUZIC"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resultMsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"获取成功"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"errorStackTrace"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-</code></pre><h3 id='c7811523ac-3'>请求：</h3>
+</span></code></pre><h3 id='c7811523ac-3'>请求：</h3>
 <p>URL：https://openapi.tanyibot.com/apiOpen/v1/job/getJobStats</p>
 <h3 id='261d12e31d-3'>请求方法：</h3>
 <p>GET</p>
@@ -2928,20 +2969,20 @@
 <p>通过接口可以获取该任务中的自定义变量，包括话术变量、意向短信变量、挂机短信变量等</p>
 
 <blockquote>
-<p>JSON响应实例：</p>
+<p>JSON 响应实例：</p>
 </blockquote>
-<pre class="highlight plaintext"><code>{
-    "code": 200,
-    "data": [
-        "欠款金额",
-        "最后还款日期"
-    ],
-    "requestId": "RKXNIQAF",
-    "resultMsg": "获取自定义属性成功",
-    "errorStackTrace": null
-}
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"欠款金额"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"最后还款日期"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RKXNIQAF"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resultMsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"获取自定义属性成功"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"errorStackTrace"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-</code></pre><h3 id='c7811523ac-4'>请求：</h3>
+</span></code></pre><h3 id='c7811523ac-4'>请求：</h3>
 <p>URL：https://openapi.tanyibot.com/apiOpen/v1/job/getJobProperties</p>
 <h3 id='261d12e31d-4'>请求方法：</h3><h3 id='261d12e31d-5'>请求方法：</h3>
 <p>GET</p>
@@ -3501,6 +3542,11 @@
 <td>String</td>
 <td>任务结果信息</td>
 </tr>
+<tr>
+<td>ROBOT_CALL_SMS</td>
+<td>String</td>
+<td>短信回调</td>
+</tr>
 </tbody></table>
 <h2 id='3e45815d37'>通话记录回调接口</h2>
 <p>当一次通话完成后，探意机器人会自动调用回调程序向用户配置的回调地址发送本次通话详情。</p>
@@ -3706,6 +3752,656 @@
 <td>status</td>
 <td>String</td>
 <td>任务状态 ( 始终为 COMPLETED)</td>
+</tr>
+</tbody></table>
+<h2 id='72bdd04c62'>通话记录短信回调接口</h2>
+<p>当一次通话完成后，探意机器人会自动调用回调程序向用户配置的回调地址发送本次需要发送的短信信息。</p>
+
+<blockquote>
+<p>入参JSON实例:
+ <code>
+    {
+        &quot;dataType&quot;:&quot;ROBOT_CALL_SMS&quot;,
+        &quot;data&quot;:{
+            &quot;tenantId&quot;:916,
+            &quot;companyName&quot;:&quot;ZX001&quot;,
+            &quot;customerPersonId&quot;:7180758,
+            &quot;customerPersonName&quot;:&quot;漂亮小姐姐&quot;,
+            &quot;phoneNumber&quot;:&quot;18326042077&quot;,
+            &quot;callRecordId&quot;:53780,
+            &quot;robotCallRobotId&quot;:2454,
+            &quot;robotCallRobotName&quot;:&quot;wokrtest04240009&quot;,
+            &quot;msgList&quot;:[
+                {
+                    &quot;smsTemplateId&quot;:152,
+                    &quot;text&quot;:&quot;${姓名} 你好，很高兴认识你&quot;,
+                    &quot;type&quot;:&quot;NOTICE&quot;,
+                    &quot;smsSignatureId&quot;:109,
+                    &quot;smsSignatureName&quot;:&quot;一知智能T1&quot;,
+                    &quot;smsTemplateName&quot;:&quot;lalala&quot;,
+                    &quot;msg&quot;:&quot;【一知智能T1】漂亮小姐姐 你好，很高兴认识你&quot;,
+                    &quot;varMap&quot;:{
+                        &quot;姓名&quot;:&quot;漂亮小姐姐&quot;,
+                        &quot;联系电话&quot;:&quot;18326042077&quot;
+                    }
+                }
+            ]
+        }
+    }
+</code></p>
+</blockquote>
+<h3 id='2eb6f47757-3'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>dataType</td>
+<td>String</td>
+<td>回调类型（始终为 ROBOT_CALL_SMS ）</td>
+</tr>
+<tr>
+<td>tenantId</td>
+<td>Long</td>
+<td>公司Id</td>
+</tr>
+<tr>
+<td>companyName</td>
+<td>String</td>
+<td>公司名称</td>
+</tr>
+<tr>
+<td>customerPersonId</td>
+<td>Long</td>
+<td>用户id</td>
+</tr>
+<tr>
+<td>customerPersonName</td>
+<td>String</td>
+<td>用户名称</td>
+</tr>
+<tr>
+<td>phoneNumber</td>
+<td>String</td>
+<td>手机号</td>
+</tr>
+<tr>
+<td>callRecordId</td>
+<td>Long</td>
+<td>通话id</td>
+</tr>
+<tr>
+<td>robotCallRobotId</td>
+<td>Long</td>
+<td>任务id</td>
+</tr>
+<tr>
+<td>robotCallRobotName</td>
+<td>String</td>
+<td>任务名称</td>
+</tr>
+<tr>
+<td>msgList</td>
+<td>JSONArray</td>
+<td>短信列表</td>
+</tr>
+<tr>
+<td>smsTemplateId</td>
+<td>Long</td>
+<td>短信模板Id</td>
+</tr>
+<tr>
+<td>smsTemplateName</td>
+<td>String</td>
+<td>短信模板名称</td>
+</tr>
+<tr>
+<td>smsSignatureId</td>
+<td>Long</td>
+<td>短信签名Id</td>
+</tr>
+<tr>
+<td>smsSignatureName</td>
+<td>String</td>
+<td>短信签名名称</td>
+</tr>
+<tr>
+<td>text</td>
+<td>String</td>
+<td>模板内容</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>完整的短信内容</td>
+</tr>
+<tr>
+<td>varMap</td>
+<td>JSONObject</td>
+<td>短信中的变量map ,里面是 &quot;变量名&quot; : &quot;变量值&quot; 的键值对</td>
+</tr>
+</tbody></table>
+<h1 id='3792684a7b'>外呼策略组接口</h1><h2 id='b89da2193a'>获取外呼策略组选择接口</h2><h3 id='7d73d51a26'>功能说明：</h3>
+<p>通过此接口可以获取外呼策略组id和名称对应的键值对列表</p>
+
+<blockquote>
+<p>JSON 响应实例：</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"callPolicyGroupId"</span><span class="p">:</span><span class="mi">18</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tenantId"</span><span class="p">:</span><span class="mi">123</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"杭州线路集合"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"requestId"</span><span class="p">:</span><span class="s2">"xxxxxx"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resultMsg"</span><span class="p">:</span><span class="s2">"执行成功"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"errorStackTrace"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre><h3 id='c7811523ac'>请求：</h3>
+<p>URL：https://openapi.tanyibot.com/apiOpen/v1/policyGroup/getIdAndNamePairList</p>
+<h3 id='261d12e31d'>请求方法：</h3>
+<p>GET</p>
+<h3 id='9b19f8c9cc'>请求参数：</h3>
+<p>无</p>
+<h3 id='d981aa6fd7'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>code</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>callPolicyGroupId</td>
+<td>String</td>
+<td>外呼策略组id</td>
+</tr>
+<tr>
+<td>tenantId</td>
+<td>Long</td>
+<td>公司Id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>外呼策略组名称</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='6cdc4be77a'>获取外呼策略组列表接口</h2><h3 id='7d73d51a26-2'>功能说明：</h3>
+<p>通过此接口可以获取用户所有的外呼策略组信息</p>
+
+<blockquote>
+<p>JSON 响应实例：</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"createUserId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updateUserId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"createTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-08 18:36:36"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-08 18:41:31"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"callPolicyGroupId"</span><span class="p">:</span><span class="w"> </span><span class="mi">62</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tenantId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"openapi-test1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"remark"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"phoneType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT_MOBILE"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"dispatchType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOCATION_MATCH_FIRST"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"detailList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"createUserId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"updateUserId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"createTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-08 18:41:31"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"updateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-08 18:41:31"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"callPolicyGroupDetailId"</span><span class="p">:</span><span class="w"> </span><span class="mi">378</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"callPolicyGroupId"</span><span class="p">:</span><span class="w"> </span><span class="mi">62</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"tenantId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"phoneNumberId"</span><span class="p">:</span><span class="w"> </span><span class="mi">433</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"tenantPhoneNumberId"</span><span class="p">:</span><span class="w"> </span><span class="mi">743</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"sort"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"phoneNumberInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"createTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"updateTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"tenantPhoneNumberId"</span><span class="p">:</span><span class="w"> </span><span class="mi">743</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"localBillRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">230</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"otherBillRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"tenantId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"concurrency"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"phoneNumberId"</span><span class="p">:</span><span class="w"> </span><span class="mi">433</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"phoneType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LANDLINE"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"accountFare"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"enabledStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"monthlyBillRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"callInLocalBillRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"callInOtherBillRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"callInBillMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MONTHLY"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"lastHeartBeatTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"concurrenceLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"phoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"phoneName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"</span><span class="se">\n</span><span class="s2">再等一会in"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"sipAccount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"******"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"province"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"ownerName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"杭州一知智能科技有限公司"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"locationDisplayType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEFAULT"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"ownerTenantId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="s2">"lineStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IDLE"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"isLineAvailable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"hint"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"occupiedJobList"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IMNBPIIF"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resultMsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"执行成功"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"errorStackTrace"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='c7811523ac-2'>请求：</h3>
+<p>URL：https://openapi.tanyibot.com/apiOpen/v1/policyGroup/list</p>
+<h3 id='261d12e31d-2'>请求方法：</h3>
+<p>GET</p>
+<h3 id='2eb6f47757'>请求参数:</h3>
+<p>无</p>
+<h3 id='d981aa6fd7-2'>响应：</h3>
+<table><thead>
+<tr>
+<th style="text-align: center">参数名</th>
+<th style="text-align: center">类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center">code</td>
+<td style="text-align: center">Integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td style="text-align: center">callPolicyGroupId</td>
+<td style="text-align: center">Long</td>
+<td>外呼策略组ID</td>
+</tr>
+<tr>
+<td style="text-align: center">tenantId</td>
+<td style="text-align: center">Long</td>
+<td>公司ID</td>
+</tr>
+<tr>
+<td style="text-align: center">name</td>
+<td style="text-align: center">String</td>
+<td>外呼策略组名称</td>
+</tr>
+<tr>
+<td style="text-align: center">remark</td>
+<td style="text-align: center">String</td>
+<td>备注</td>
+</tr>
+<tr>
+<td style="text-align: center">phoneType</td>
+<td style="text-align: center">String</td>
+<td>外呼策略组类型</td>
+</tr>
+<tr>
+<td style="text-align: center">dispatchType</td>
+<td style="text-align: center">String</td>
+<td>优先级策略，(SORT_FIRST, &quot;排序优先级优先&quot;),(LOCATION_MATCH_FIRST, &quot;归属地匹配优先&quot;)</td>
+</tr>
+<tr>
+<td style="text-align: center">callPolicyGroupDetailId</td>
+<td style="text-align: center">Long</td>
+<td>外呼策略组详情ID（一条详情记录对应一条线路）</td>
+</tr>
+<tr>
+<td style="text-align: center">phoneNumberId</td>
+<td style="text-align: center">Long</td>
+<td>线路ID（代表实际的线路）</td>
+</tr>
+<tr>
+<td style="text-align: center">tenantPhoneNumberId</td>
+<td style="text-align: center">Long</td>
+<td>用户线路ID（代表绑给用户的虚拟线路）</td>
+</tr>
+<tr>
+<td style="text-align: center">sort</td>
+<td style="text-align: center">Integer</td>
+<td>优先级（越小越高）</td>
+</tr>
+<tr>
+<td style="text-align: center">localBillRate</td>
+<td style="text-align: center">Long</td>
+<td>本地外呼费率，单位（厘）</td>
+</tr>
+<tr>
+<td style="text-align: center">otherBillRate</td>
+<td style="text-align: center">Long</td>
+<td>外地外呼费率，单位（厘）</td>
+</tr>
+<tr>
+<td style="text-align: center">concurrency</td>
+<td style="text-align: center">Integer</td>
+<td>线路当前的并发量</td>
+</tr>
+<tr>
+<td style="text-align: center">phoneType</td>
+<td style="text-align: center">String</td>
+<td>电话类型 (MOBILE，&quot;手机&quot;),(LANDLINE，&quot;固话&quot;),(UNFIXED_CALL，&quot;无主叫&quot;),(VOIP_DEVICE，&quot;网关设备&quot;), (CS_SEAT，&quot;人工外呼&quot;),(MESSAGE，&quot;短信&quot;),(CALL_POLICY_GROUP，&quot;外呼策略组&quot;)</td>
+</tr>
+<tr>
+<td style="text-align: center">accountFare</td>
+<td style="text-align: center">Long</td>
+<td>账户余额，单位（厘）</td>
+</tr>
+<tr>
+<td style="text-align: center">enabledStatus</td>
+<td style="text-align: center">Integer</td>
+<td>是否启用，1为启用，0为禁用</td>
+</tr>
+<tr>
+<td style="text-align: center">monthlyBillRate</td>
+<td style="text-align: center">Long</td>
+<td>呼入月租费率，单位（厘）</td>
+</tr>
+<tr>
+<td style="text-align: center">callInLocalBillRate</td>
+<td style="text-align: center">Long</td>
+<td>呼入本地通话费用，单位（厘）</td>
+</tr>
+<tr>
+<td style="text-align: center">callInOtherBillRate</td>
+<td style="text-align: center">Long</td>
+<td>呼入外地通话费用，单位（厘）</td>
+</tr>
+<tr>
+<td style="text-align: center">callInBillMode</td>
+<td style="text-align: center">String</td>
+<td>呼入计费方式 (MONTHLY，&quot;按月租计费&quot;),(CHAT_TIME，&quot;按通话时长(分钟)计费&quot;)</td>
+</tr>
+<tr>
+<td style="text-align: center">lastHeartBeatTime</td>
+<td style="text-align: center">LocalDateTime</td>
+<td>最后外呼时间</td>
+</tr>
+<tr>
+<td style="text-align: center">concurrenceLimit</td>
+<td style="text-align: center">Integer</td>
+<td>并发数限制</td>
+</tr>
+<tr>
+<td style="text-align: center">phoneNumber</td>
+<td style="text-align: center">String</td>
+<td>电话号码</td>
+</tr>
+<tr>
+<td style="text-align: center">phoneName</td>
+<td style="text-align: center">String</td>
+<td>线路名称</td>
+</tr>
+<tr>
+<td style="text-align: center">remark</td>
+<td style="text-align: center">String</td>
+<td>备注</td>
+</tr>
+<tr>
+<td style="text-align: center">sipAccount</td>
+<td style="text-align: center">String</td>
+<td>SIP账号</td>
+</tr>
+<tr>
+<td style="text-align: center">province</td>
+<td style="text-align: center">String</td>
+<td>省份</td>
+</tr>
+<tr>
+<td style="text-align: center">city</td>
+<td style="text-align: center">String</td>
+<td>城市</td>
+</tr>
+<tr>
+<td style="text-align: center">ownerName</td>
+<td style="text-align: center">String</td>
+<td>归属公司名称</td>
+</tr>
+<tr>
+<td style="text-align: center">locationDisplayType</td>
+<td style="text-align: center">String</td>
+<td>线路归属地显示方式（DEFAULT，&quot;默认显示配置归属地&quot;）,（RANDOM，&quot;全国随机显示&quot;）,（NO_DISPLAY，&quot;不显示&quot;）</td>
+</tr>
+<tr>
+<td style="text-align: center">ownerTenantId</td>
+<td style="text-align: center">Long</td>
+<td>归属公司ID</td>
+</tr>
+<tr>
+<td style="text-align: center">requestId</td>
+<td style="text-align: center">String</td>
+<td>请求Id</td>
+</tr>
+<tr>
+<td style="text-align: center">resultMsg</td>
+<td style="text-align: center">String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='b452e55ab8'>创建外呼策略组接口</h2><h3 id='7d73d51a26-3'>功能说明：</h3>
+<p>创建新的外呼策略组</p>
+
+<blockquote>
+<p>JSON 入参实例：</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"openapi-test"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"remark"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dispatchType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOCATION_MATCH_FIRST"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"detailList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"tenantPhoneNumberId"</span><span class="p">:</span><span class="w"> </span><span class="mi">743</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>JSON 响应实例：</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RKXNIQAF"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resultMsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"创建成功"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"errorStackTrace"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='c7811523ac-3'>请求：</h3>
+<p>URL：https://openapi.tanyibot.com/apiOpen/v1/policyGroup/create</p>
+<h3 id='261d12e31d-3'>请求方法：</h3>
+<p>POST</p>
+<h3 id='2eb6f47757-2'>请求参数:</h3>
+<table><thead>
+<tr>
+<th style="text-align: center">参数名</th>
+<th style="text-align: center">类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center">name</td>
+<td style="text-align: center">String</td>
+<td>是</td>
+<td>外呼策略组名称</td>
+<td>&quot;openapi-test1&quot;</td>
+</tr>
+<tr>
+<td style="text-align: center">remark</td>
+<td style="text-align: center">String</td>
+<td>否</td>
+<td>备注</td>
+<td>&quot;hangzhou-2019&quot;</td>
+</tr>
+<tr>
+<td style="text-align: center">dispatchType</td>
+<td style="text-align: center">String</td>
+<td>是</td>
+<td>优先级策略，(SORT_FIRST, &quot;排序优先级优先&quot;),(LOCATION_MATCH_FIRST, &quot;归属地匹配优先&quot;);</td>
+<td>&quot;LOCATION_MATCH_FIRST&quot;</td>
+</tr>
+<tr>
+<td style="text-align: center">tenantPhoneNumberId</td>
+<td style="text-align: center">Long</td>
+<td>是</td>
+<td>用户线路ID</td>
+<td>743</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7-3'>响应：</h3>
+<table><thead>
+<tr>
+<th style="text-align: center">参数名</th>
+<th style="text-align: center">类型</th>
+<th style="text-align: center">描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center">code</td>
+<td style="text-align: center">Integer</td>
+<td style="text-align: center">响应码</td>
+</tr>
+<tr>
+<td style="text-align: center">requestId</td>
+<td style="text-align: center">String</td>
+<td style="text-align: center">请求Id</td>
+</tr>
+<tr>
+<td style="text-align: center">resultMsg</td>
+<td style="text-align: center">String</td>
+<td style="text-align: center">响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='e974b2e1c2'>更新外呼策略组接口</h2><h3 id='7d73d51a26-4'>功能说明：</h3>
+<p>更新新的外呼策略组</p>
+
+<blockquote>
+<p>JSON 入参实例：</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"callPolicyGroupId"</span><span class="p">:</span><span class="w"> </span><span class="mi">62</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"openapi-test1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"remark"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dispatchType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOCATION_MATCH_FIRST"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"detailList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"tenantPhoneNumberId"</span><span class="p">:</span><span class="w"> </span><span class="mi">743</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>JSON 响应实例：</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RKXNIQAF"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resultMsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"更新成功"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"errorStackTrace"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='c7811523ac-4'>请求：</h3>
+<p>URL：https://openapi.tanyibot.com/apiOpen/v1/policyGroup/update</p>
+<h3 id='261d12e31d-4'>请求方法：</h3>
+<p>POST</p>
+<h3 id='2eb6f47757-3'>请求参数:</h3>
+<table><thead>
+<tr>
+<th style="text-align: center">参数名</th>
+<th style="text-align: center">类型</th>
+<th style="text-align: center">是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center">callPolicyGroupId</td>
+<td style="text-align: center">Long</td>
+<td style="text-align: center">是</td>
+<td>外呼策略组ID</td>
+<td>62</td>
+</tr>
+<tr>
+<td style="text-align: center">name</td>
+<td style="text-align: center">String</td>
+<td style="text-align: center">否</td>
+<td>外呼策略组名称</td>
+<td>&quot;openapi-test1&quot;</td>
+</tr>
+<tr>
+<td style="text-align: center">remark</td>
+<td style="text-align: center">String</td>
+<td style="text-align: center">否</td>
+<td>备注</td>
+<td>&quot;hangzhou-2019&quot;</td>
+</tr>
+<tr>
+<td style="text-align: center">dispatchType</td>
+<td style="text-align: center">String</td>
+<td style="text-align: center">否</td>
+<td>优先级策略，(SORT_FIRST, &quot;排序优先级优先&quot;),(LOCATION_MATCH_FIRST, &quot;归属地匹配优先&quot;);</td>
+<td>&quot;LOCATION_MATCH_FIRST&quot;</td>
+</tr>
+<tr>
+<td style="text-align: center">tenantPhoneNumberId</td>
+<td style="text-align: center">Long</td>
+<td style="text-align: center">是</td>
+<td>用户线路ID</td>
+<td>743</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7-4'>响应：</h3>
+<table><thead>
+<tr>
+<th style="text-align: center">参数名</th>
+<th style="text-align: center">类型</th>
+<th style="text-align: center">描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center">code</td>
+<td style="text-align: center">Integer</td>
+<td style="text-align: center">响应码</td>
+</tr>
+<tr>
+<td style="text-align: center">requestId</td>
+<td style="text-align: center">String</td>
+<td style="text-align: center">请求Id</td>
+</tr>
+<tr>
+<td style="text-align: center">resultMsg</td>
+<td style="text-align: center">String</td>
+<td style="text-align: center">响应说明</td>
 </tr>
 </tbody></table>
 

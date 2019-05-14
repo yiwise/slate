@@ -1,0 +1,319 @@
+<h1 id='18d1449c7d'>开发引导</h1><h2 id='c2587a41e7'>调用说明</h2><h3 id='250205d9fe'>主动调用</h3>
+<p>这种调用方式是客户主动调用接口获取数据或实现功能；</p>
+
+<p>主动调用需在请求头传入 appKey、appSecret、tenantSign（公司签名，后期提供修改）、时间戳 timestamp 和验签字段 signature 用于权限校验；</p>
+
+<p>如下图所示：</p>
+
+<p><img src="/images/headers.png" alt="Headers" /></p>
+
+<p>注意：请在开发对接程序前联系探意技术支持进行注册，如果您还未签约，请先签约开通账户。</p>
+<h3 id='24bd0b4580'>方法回调</h3>
+<p>这种调用方式是当达到预设条件如：任务完成或通话结束时，由探意主动向指定地址发送信息；</p>
+
+<p>注意：请在开发前自主配置好回调地址。</p>
+
+<p>探意机器人 API 是使用 HTTP 并遵循 RESTful 原则设计的 Web 服务接口；</p>
+
+<p>您可以使用几乎任何客户端和任何编程语言与 RESTful API 进行交互。</p>
+
+<p>通过发送简单的 HTTP 请求就可以轻松接入使用。</p>
+<h2 id='352e86fb3a'>权限认证</h2>
+<blockquote>
+<p>认证密钥样例</p>
+</blockquote>
+<pre class="highlight java tab-java"><code>  <span class="n">APP_KEY</span> <span class="o">=</span> <span class="s">"WtSMaXXXXXXXXtvy"</span><span class="o">;</span>
+  <span class="n">APP_SECRET</span> <span class="o">=</span> <span class="s">"aXSFnnZbHXXXXXXXXXXXXXXXMguz1Q"</span><span class="o">;</span>    
+  <span class="n">TENANT_SIGN</span> <span class="o">=</span> <span class="s">"yiwisexxxx"</span><span class="o">;</span>    
+</code></pre>
+<p>API认证采用SHA256加密算法进行加密，使用时间戳、APP_KEY、APP_SECRET、VERSION（当前版本的VERSION=v1）和 TENANT_SIGN（公司签名，后期提供修改）共同生成一个验签字段signature。</p>
+
+<p>目前已有完成JAVA版的样例，具体实现请下载SDK查阅。</p>
+
+<blockquote>
+<p>请在API样例 <code>openapidemo</code> 中替换为自己的APP_KEY、APP_SECRET和 TENANT_SIGN.</p>
+</blockquote>
+
+<p>探意为确保您的账户和信息安全，请在开发对接程序前联系探意技术支持注册接口调用专属密钥。</p>
+
+<aside class="notice">
+您必须在您的对接程序中替换对接密钥 <code>APP_KEY 、 APP_SECRET 和 TENANT_SIGN </code> 
+</aside>
+<h2 id='bbf1456045'>统一请求格式</h2><h3 id='method'>请求方式(Method)</h3>
+<p>GET/POST</p>
+<h3 id='c94faa718a'>编码</h3>
+<p>UTF-8</p>
+<h3 id='url'>URL格式</h3>
+<p><code>/{version}/{resource}/{function}</code></p>
+<h3 id='e27de64f12'>变量说明</h3>
+<ul>
+<li><p>{version} api版本号</p></li>
+<li><p>{resource} 资源名，通常对应一类API</p></li>
+<li><p>{function} 该资源提供的操作方法</p></li>
+</ul>
+<h3 id='f4eca6a6b0'>响应</h3>
+<p>请求响应的结果为 JSON 格式。</p>
+
+<p>HTTP 头信息:</p>
+
+<p><code>Accept:application/json;charset=utf-8</code></p>
+
+<blockquote>
+<p>比如查询公司列表的 URL 为：<code>http://apiOpen/v1/tenant/getTenant</code></p>
+
+<p>表示调用公司信息的get方法，并且返回json格式的字符串。</p>
+
+<p>我们目前已经提供的接口，请参考API。</p>
+</blockquote>
+<h2 id='java-sdk-demo'>JAVA SDK DEMO 下载</h2>
+<p>本页面提供Java的SDK下载。</p>
+
+<p>SDK包内有部分使用说明，各接口的详细使用说明请浏览各API详情页。</p>
+
+<p>如探意未提供您使用语言的SDK，您可以根据API文档开发接口</p>
+
+<table><thead>
+<tr>
+<th>语言</th>
+<th>GitHub地址</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>JAVA</td>
+<td><a href="https://github.com/yiwise/openapidemo.git">GitHub地址</a></td>
+</tr>
+</tbody></table>
+<h2 id='071216b59a'>最佳实践流程图</h2>
+<p><img src="/images/OMS3.png" alt="Oms3" /></p>
+<h2 id='966dc24d9e'>常见问题解答</h2>
+<ol>
+<li>Q: 定时任务和手动任务的异同</li>
+</ol>
+
+<p>A: 异步，定时任务在设定好启动时间和结束时间时会在到达指定时间时自动启动
+    手动任务则需要导入客户之后手动启动任务；</p>
+
+<p>同步，任务到达12-14点或指定暂停时间会自动暂停，并且会占用AI并发量。</p>
+
+<ol>
+<li>Q: isv账号能否操作多个crm账号下的任务</li>
+</ol>
+
+<p>A: 一个APP_KEY和APP_SECRET目前只能操作一个CRM的账户，CRM暂无子公司这个概念</p>
+<h2 id='362ce418e7'>流程说明</h2><h3 id='c632d650f0'>第一部分:</h3>
+<p>主要是获取公司相关信息，为创建任务提供数据。</p>
+
+<p>这里一共三个接口分别查询到：</p>
+
+<p>1.公司Id</p>
+
+<p>2.公司的主叫电话号码列表</p>
+
+<p>3.机器人话术相关参数：机器人话术id</p>
+<h3 id='4727f1c607'>第二部分:</h3>
+<p>核心业务部分，主要是任务的创建，启动，停止等操作。</p>
+
+<p>1.创建任务
+    创建任务过程中需要传入的几个重要的值：机器人话术id,这个值不能传入有误，传入出错会导致任务拨打有误
+2.任务启动
+    只有手动任务才需要手动去启动任务，自动任务是自动启动的。 
+<aside class="notice">
+任务恢复：任务在未完全暂停（子任务还没有全部运行完成），是不能恢复的
+</aside></p>
+
+<p>3.任务暂停
+    任务在运行中，可调用暂停任务让任务进入暂停状态（可再次运行），并且是在所有当前正在跑的子任务都运行完成之后才会暂停
+4.终止任务
+    任务终止，终止之后不可以恢复</p>
+<h3 id='3acb0ac2ed'>第三部分:</h3>
+<p>任务运行结束，调用任务回调接口，将本次任务信息发送到指定回调地址。</p>
+<h3 id='46482cd3b1'>第四部分:</h3>
+<p>主要是查询任务相关信息。</p>
+<h2 id='6af18eb20f'>枚举类型说明</h2><h3 id='4db9754bc6'>电话卡类型枚举</h3>
+<table><thead>
+<tr>
+<th>type</th>
+<th>desc</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>MOBILE</td>
+<td>手机</td>
+</tr>
+<tr>
+<td>LANDLINE</td>
+<td>阿里云固话</td>
+</tr>
+<tr>
+<td>UNFIXED_CALL</td>
+<td>无主叫固话</td>
+</tr>
+</tbody></table>
+<h3 id='ebc5aba134'>任务类型枚举</h3>
+<table><thead>
+<tr>
+<th>type</th>
+<th>desc</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AUTO</td>
+<td>自动任务</td>
+</tr>
+<tr>
+<td>MANUAL</td>
+<td>手动任务</td>
+</tr>
+</tbody></table>
+<h3 id='2ce89782c6'>任务状态枚举</h3>
+<table><thead>
+<tr>
+<th>type</th>
+<th>desc</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>NOT_STARTED</td>
+<td>未开始</td>
+</tr>
+<tr>
+<td>IN_PROCESS</td>
+<td>进行中</td>
+</tr>
+<tr>
+<td>COMPLETED</td>
+<td>已完成</td>
+</tr>
+<tr>
+<td>RUNNABLE</td>
+<td>可运行</td>
+</tr>
+<tr>
+<td>USER_PAUSE</td>
+<td>用户暂停</td>
+</tr>
+<tr>
+<td>SYSTEM_SUSPENDED</td>
+<td>系统暂停</td>
+</tr>
+<tr>
+<td>TERMINATE</td>
+<td>已终止</td>
+</tr>
+<tr>
+<td>IN_QUEUE</td>
+<td>排队中</td>
+</tr>
+</tbody></table>
+<h3 id='0a0285fd88'>通话结果枚举</h3>
+<table><thead>
+<tr>
+<th>type</th>
+<th>desc</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ANSWERED</td>
+<td>已接听</td>
+</tr>
+<tr>
+<td>NO_ANSWER</td>
+<td>呼叫号码未接听</td>
+</tr>
+<tr>
+<td>BUSY</td>
+<td>呼叫号码占线</td>
+</tr>
+<tr>
+<td>POWER_OFF</td>
+<td>呼叫号码关机</td>
+</tr>
+<tr>
+<td>OUT_OF_SERVICE</td>
+<td>呼叫号码停机</td>
+</tr>
+<tr>
+<td>REFUSED</td>
+<td>呼叫号码拒接</td>
+</tr>
+<tr>
+<td>VACANT_NUMBER</td>
+<td>呼叫的号码是空号</td>
+</tr>
+<tr>
+<td>CAN_NOT_CONNECT</td>
+<td>呼叫的号码无法接通</td>
+</tr>
+<tr>
+<td>FROM_PHONE_ERROR</td>
+<td>主叫号码不可用</td>
+</tr>
+<tr>
+<td>SYSTEM_ERROR</td>
+<td>外呼失败</td>
+</tr>
+</tbody></table>
+<h3 id='aa434bf648'>意向等级枚举</h3>
+<table><thead>
+<tr>
+<th>type</th>
+<th>desc</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>A</td>
+<td>较强</td>
+</tr>
+<tr>
+<td>B</td>
+<td>一般</td>
+</tr>
+<tr>
+<td>C</td>
+<td>无法判断</td>
+</tr>
+<tr>
+<td>D</td>
+<td>很少</td>
+</tr>
+<tr>
+<td>E</td>
+<td>需要再次跟进</td>
+</tr>
+<tr>
+<td>F</td>
+<td>无需再次跟进</td>
+</tr>
+</tbody></table>
+<h2 id='42d5497355'>错误码信息</h2>
+<table><thead>
+<tr>
+<th>错误码</th>
+<th>错误信息</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>执行成功</td>
+</tr>
+<tr>
+<td>401</td>
+<td>校验数据错误</td>
+</tr>
+<tr>
+<td>403</td>
+<td>权限不足</td>
+</tr>
+<tr>
+<td>404</td>
+<td>资源未找到</td>
+</tr>
+<tr>
+<td>412</td>
+<td>参数错误</td>
+</tr>
+<tr>
+<td>500</td>
+<td>未知错误</td>
+</tr>
+</tbody></table>
