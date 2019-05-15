@@ -55,8 +55,6 @@
   requestId| String | 请求Id |
   resultMsg| String | 响应说明 |
   
-  ##修改ISV对象的公司签名和回调地址
-  
 ##生成isv账号
  
 ###功能说明：

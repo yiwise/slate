@@ -13,11 +13,11 @@ includes:
   - csRobot
   - dialogFlow
   - intentLevelTag
+  - callPolicyGroup
   - task
   - obtainTask
   - callRecord
   - callBack
-  - callPolicyGroup
 
 search: true
 ---
