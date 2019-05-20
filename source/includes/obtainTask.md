@@ -45,10 +45,10 @@ GET
 
 参数名 | 类型 | 是否必须 | 描述 | 实例 
 --------- | ------- |------- | ------ |----------
- name| String| 否 |任务名称| 测试 |
- status| String| 否 | 任务状态,(NOT_STARTED, "未开始"),(IN_PROCESS, "进行中"),(COMPLETED, "已完成"),(RUNNABLE, "可运行"),(USER_PAUSE, "用户暂停"),(SYSTEM_SUSPENDED, "系统暂停"),(TERMINATE, "已终止"),(IN_QUEUE, "排队中");| 1 |
- pageNum| Integer| 否 | 第几页,默认1| 1 |
- pageSize| Integer| 否 | 页面大小,选填,默认20,最大值100| 10 |
+ name| String| 否 |任务名称| 测试 
+ status| String| 否 | 任务状态,(NOT_STARTED, "未开始"),(IN_PROCESS, "进行中"),(COMPLETED, "已完成"),(RUNNABLE, "可运行"),(USER_PAUSE, "用户暂停"),(SYSTEM_SUSPENDED, "系统暂停"),(TERMINATE, "已终止"),(IN_QUEUE, "排队中"),(SYSTEM_HANG_UP,"系统挂起"),(WAITING_FOR_REDIAL,"等待重呼"),(ACCOUNT_DISABLE,"账户禁用"),(MAINTAIN,"系统维护"); | 1 
+ pageNum| Integer| 否 | 第几页,默认1| 1 
+ pageSize| Integer| 否 | 页面大小,选填,默认20,最大值100| 10 
 
 
 
@@ -56,21 +56,21 @@ GET
 
 参数名 | 类型 | 描述 
 --------- | ------- |------
- code|integer | 响应码 |
- number| Integer | 第几页 |
- pageSize| Integer | 每页页面条数 |
- totalElements| Integer | 数据总条数 |
- pages| Integer | 页面总数 |
- robotCallJobId| Long | 任务id |
- name| String | 任务名称 |
- completedTask| Integer | 完成的任务 |
- taskCallTotal| Integer | 任务总数 |
- createTime| String | 创建时间 |
- createdByUserName| String | 创建人 |
- organizationName| String | 组织 |
- status| String | 任务状态, NOT_STARTED(0, "未开始"),IN_PROCESS(1, "进行中"),COMPLETED(2, "已完成"),RUNNABLE(3, "可运行"),USER_PAUSE(4, "用户暂停"),SYSTEM_SUSPENDED(5, "系统暂停"),TERMINATE(6, "已终止"),IN_QUEUE(7, "排队中");| 1 |
- requestId| String | 请求Id |
- resultMsg| String | 响应说明 |
+ code|integer | 响应码 
+ number| Integer | 第几页 
+ pageSize| Integer | 每页页面条数 
+ totalElements| Integer | 数据总条数 
+ pages| Integer | 页面总数 
+ robotCallJobId| Long | 任务id 
+ name| String | 任务名称 
+ completedTask| Integer | 完成的任务 
+ taskCallTotal| Integer | 任务总数 
+ createTime| String | 创建时间 
+ createdByUserName| String | 创建人 
+ organizationName| String | 组织 
+ status| String | 任务状态, NOT_STARTED(0, "未开始"),IN_PROCESS(1, "进行中"),COMPLETED(2, "已完成"),RUNNABLE(3, "可运行"),USER_PAUSE(4, "用户暂停"),SYSTEM_SUSPENDED(5, "系统暂停"),TERMINATE(6, "已终止"),IN_QUEUE(7, "排队中"),SYSTEM_HANG_UP(10, "系统挂起"), WAITING_FOR_REDIAL(11, "等待重呼"), ACCOUNT_DISABLE(12, "账户禁用"), MAINTAIN(13, "系统维护"); 
+ requestId| String | 请求Id 
+ resultMsg| String | 响应说明 
 
 ## 获取任务详情接口
 
@@ -149,44 +149,44 @@ GET
 参数名 | 类型 | 是否必须 | 描述 | 实例 
 --------- | ------- |------- | ------ |----------
  robotCallJobId| Long| 是 |任务Id| 21 |
- 
+
 
 ### 响应：
 
 参数名 | 类型 | 描述 
 --------- | ------- |------
- code|integer | 响应码 |
- robotCallJobId| Long | 任务id |
- dialogFlowId| Long | 话术id |
- name| String | 任务名称 |
- mode| String | 任务类型 (AUTO, "自动任务"),(MANUAL, "手动任务")|
- phoneType| String | 线路类型 (MOBILE, "手机"),(LANDLINE, "固话"),(UNFIXED_CALL, "无主叫固话"),(CALL_POLICY_GROUP，"外呼策略组")|
- robotCount| Integer | 任务拨打的号码总数 |
- smsTemplateId| Long | 短信模版id |
- dailyStartTime| String | 可拨打开始时间 |
- dailyEndTime| String | 可拨打结束时间 |
- inactiveTimeList| List| 不可拨打时间段列表|
- description| String  | 任务注释 |
- wechatAlertLevel| String  | 微信提示等级 |
- wechatAlertLevelCode | Integer | 微信提示等级code |
- smsAlertLevel| String  | 短信提示等级 |
- smsAlertLevelCode | Integer | 短信提示登记code |
- wechatConditionAlertLevel | String | 微信条件提示等级|
- wechatConditionAlertLevelCode | Integer | 微信条件提示等级Code|
- alertUsers| String  | 提示人员 |
- earlyWarningAlertUsers| String  | 预警提示人员 |
- createTime| String | 任务创建时间 |
- updateTime| String | 任务修改时间 |
- startTime| String | 任务开始时间 |
- nextStartTime| String | 下一次任务开始时间 |
- status| String | 任务状态, NOT_STARTED(0, "未开始"),IN_PROCESS(1, "进行中"),COMPLETED(2, "已完成"),RUNNABLE(3, "可运行"),USER_PAUSE(4, "用户暂停"),SYSTEM_SUSPENDED(5, "系统暂停"),TERMINATE(6, "已终止"),IN_QUEUE(7, "排队中")| 1 |
- jobPhoneNumberList| List  | 任务主叫线路列表 |
- policyGroupPhoneNumberList| List  | 外呼策略组包含的线路信息 |
- transferPhoneNumber| List| 转人工号码 |
- dialogFlowName| String  | 话术名称 |
- requestId| String | 请求Id |
- resultMsg| String | 响应说明 |
- 
+ code|integer | 响应码 
+ robotCallJobId| Long | 任务id 
+ dialogFlowId| Long | 话术id 
+ name| String | 任务名称 
+ mode| String | 任务类型 (AUTO, "自动任务"),(MANUAL, "手动任务")
+ phoneType| String | 线路类型 (MOBILE, "手机"),(LANDLINE, "固话"),(UNFIXED_CALL, "无主叫固话"),(CALL_POLICY_GROUP，"外呼策略组")
+ robotCount| Integer | 任务占用的坐席数量 
+ smsTemplateId| Long | 短信模版id 
+ dailyStartTime| String | 可拨打开始时间 
+ dailyEndTime| String | 可拨打结束时间 
+ inactiveTimeList| List| 不可拨打时间段列表
+ description| String  | 任务注释 
+ wechatAlertLevel| String  | 微信提示等级 
+ wechatAlertLevelCode | Integer | 微信提示等级code 
+ smsAlertLevel| String  | 短信提示等级 
+ smsAlertLevelCode | Integer | 短信提示登记code 
+ wechatConditionAlertLevel | String | 微信条件提示等级
+ wechatConditionAlertLevelCode | Integer | 微信条件提示等级Code
+ alertUsers| String  | 提示人员 
+ earlyWarningAlertUsers| String  | 预警提示人员 
+ createTime| String | 任务创建时间 
+ updateTime| String | 任务修改时间 
+ startTime| String | 任务开始时间 
+ nextStartTime| String | 下一次任务开始时间 
+ status| String | 任务状态, NOT_STARTED(0, "未开始"),IN_PROCESS(1, "进行中"),COMPLETED(2, "已完成"),RUNNABLE(3, "可运行"),USER_PAUSE(4, "用户暂停"),SYSTEM_SUSPENDED(5, "系统暂停"),TERMINATE(6, "已终止"),IN_QUEUE(7, "排队中"),SYSTEM_HANG_UP(10, "系统挂起"), WAITING_FOR_REDIAL(11, "等待重呼"), ACCOUNT_DISABLE(12, "账户禁用"), MAINTAIN(13, "系统维护"); 
+ jobPhoneNumberList| List  | 任务主叫线路列表 
+ policyGroupPhoneNumberList| List  | 外呼策略组包含的线路信息 
+ transferPhoneNumber| List| 转人工号码 
+ dialogFlowName| String  | 话术名称 
+ requestId| String | 请求Id 
+ resultMsg| String | 响应说明 
+
 
 ## 获取任务统计接口
 
@@ -327,7 +327,7 @@ GET
 参数名 | 类型 | 是否必须 | 描述 | 实例 
 --------- | ------- |------- | ------ |----------
  robotCallJobId| Long| 是 |任务Id| 21 |
- 
+
 
 ### 响应：
 
@@ -357,7 +357,7 @@ GET
  intentLevelTagDetailId |Long |意向分类详情id |
  intentLevelTagId | Long| 意向分类id |
  name | String| 意向分类详情名称 |
- 
+
 
 
 ## 获取任务中的变量（包括话术变量和短信变量）

@@ -145,15 +145,15 @@ POST
  code|Integer | 响应码 |
  requestId| String | 请求Id |
  resultMsg| String | 响应说明 |
- 
+
 ## 暂停任务接口
- 
+
 ### 功能说明：
- 
+
 通过此接口可以暂停指定的任务
- 
+
 > JSON 响应实例：
- 
+
 ```json
 {
 	"code": 200,
@@ -163,25 +163,25 @@ POST
 	"errorStackTrace": null
 }
  
- ```
- 
+```
+
 ### 请求：
- 
+
 URL：https://openapi.tanyibot.com/apiOpen/v1/job/pause
- 
+
 ### 请求方法：
- 
+
 POST
- 
+
 ### 请求参数:
- 
+
 参数名 | 类型 | 是否必须 | 描述 | 实例 
 --------- | ------- |------- | ------ |----------
 robotCallJobId| Integer| 是 | 任务Id| 1 |
- 
- 
+
+
 ### 响应：
- 
+
 参数名 | 类型 | 描述 
 --------- | ------- |------
 code|Integer | 响应码 |
@@ -189,13 +189,13 @@ requestId| String | 请求Id |
 resultMsg| String | 响应说明 |
 
 ## 停止任务接口
- 
+
 ### 功能说明：
- 
+
 通过此接口可以停止  指定的任务
- 
+
 > JSON 响应实例：
- 
+
 ```json
 {
 	"code": 200,
@@ -205,35 +205,35 @@ resultMsg| String | 响应说明 |
 	"errorStackTrace": null
 }
 ```
- 
+
 ### 请求：
- 
+
 URL：https://openapi.tanyibot.com/apiOpen/v1/job/stop
- 
+
 ### 请求方法：
- 
+
  POST
- 
- 
+
+
 ### 请求参数:
- 
+
  参数名 | 类型 | 是否必须 | 描述 | 实例 
  --------- | ------- |------- | ------ |----------
   robotCallJobId| Integer| 是 | 任务Id| 1 |
- 
- 
+
+
 ### 响应：
- 
+
  参数名 | 类型 | 描述 
  --------- | ------- |------
   code|Integer | 响应码 |
  requestId| String | 请求Id |
   resultMsg| String | 响应说明 |
-  
+
 ## 删除任务
-  
+
 ### 功能说明：
-  
+
 通过调用此接口可以删除任务信息
 
 > JSON 入参实例
@@ -255,22 +255,22 @@ URL：https://openapi.tanyibot.com/apiOpen/v1/job/stop
 }
 
 ```
-  
+
 ### 请求：
- 
+
 URL：https://openapi.tanyibot.com/apiOpen/v1/job/delete
- 
+
 ### 请求方法：
- 
+
 POST
- 
+
 ### 请求参数:
- 
+
  参数名 | 类型 | 是否必须 | 描述 | 实例 
  --------- | ------- |------- | ------ |----------
   robotCallJobId| Long| 是 | 删除任务| 1 |  
 ### 响应：
- 
+
  参数名 | 类型 | 描述 |
  --------- | ------- |------
   code|Integer | 响应码 |
@@ -278,13 +278,13 @@ POST
   resultMsg| String | 响应说明 |
 
 ## 向任务中导入客户接口
- 
+
 ### 功能说明：
- 
+
 通过此接口可以向指定的任务导入客户信息，用于拨打电话。（单次导入客户数量不能大于100）
- 
+
 > JSON 入参实例:
- 
+
 ```json
 {
 	"robotCallJobId": 28,
@@ -299,9 +299,9 @@ POST
 }
   
 ```
-  
+
 > JSON 响应实例：
- 
+
  ```
  {
  	"code": 200,
@@ -312,18 +312,18 @@ POST
  }
  
  ```
- 
+
 ###请求：
- 
+
  URL：https://openapi.tanyibot.com/apiOpen/v1/job/importCustomer
 
 ###请求方法：
- 
+
  POST
- 
- 
+
+
 ###请求参数:
- 
+
  参数名 | 类型 | 是否必须 | 描述 | 实例 
  --------- | ------- |------- | ------ |----------
   robotCallJobId| Long| 是 | 任务Id| 1 |
@@ -332,9 +332,9 @@ POST
   properties| Map<String,String>| 否 | 话术中自定义的语句内容| 请看json入参 |
 
  
- 
+
 ###响应：
- 
+
  参数名 | 类型 | 描述 
  --------- | ------- |------
   code|Integer | 响应码 |
@@ -394,5 +394,5 @@ POST
  code|Integer | 响应码 |
  requestId| String | 请求Id |
  resultMsg| String | 响应说明 |
- 
+
   
