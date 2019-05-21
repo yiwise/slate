@@ -253,6 +253,9 @@
             <a href="#f628cebc7d" class="toc-h1 toc-link" data-title="最近更新日志">最近更新日志</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#2019-5-20" class="toc-h2 toc-link" data-title="2019年5月20日">2019年5月20日</a>
+                  </li>
+                  <li>
                     <a href="#2019-5-14" class="toc-h2 toc-link" data-title="2019年5月14日">2019年5月14日</a>
                   </li>
                   <li>
@@ -392,6 +395,15 @@
                   </li>
                   <li>
                     <a href="#6229f5f8cf" class="toc-h2 toc-link" data-title="获取一个通话的详情接口">获取一个通话的详情接口</a>
+                  </li>
+                  <li>
+                    <a href="#e5aa350603" class="toc-h2 toc-link" data-title="获取未完成任务电话号码接口">获取未完成任务电话号码接口</a>
+                  </li>
+                  <li>
+                    <a href="#6a611857e8" class="toc-h2 toc-link" data-title="从未呼客户列表中删除单个客户">从未呼客户列表中删除单个客户</a>
+                  </li>
+                  <li>
+                    <a href="#b9473dcb26" class="toc-h2 toc-link" data-title="从未呼客户列表中批量删除待呼客户名单">从未呼客户列表中批量删除待呼客户名单</a>
                   </li>
               </ul>
           </li>
@@ -754,7 +766,15 @@
 <td>未知错误</td>
 </tr>
 </tbody></table>
-<h1 id='f628cebc7d'>最近更新日志</h1><h2 id='2019-5-14'>2019年5月14日</h2>
+<h1 id='f628cebc7d'>最近更新日志</h1><h2 id='2019-5-20'>2019年5月20日</h2>
+<ul>
+<li>获取任务列表接口，获取任务详情接口增加“系统挂起”等状态</li>
+<li>获取已经完成任务电话号码接口增加“挂断状态”字段</li>
+<li>新增未呼客户列表查询接口</li>
+<li>新增未呼客户列表“单个删除”以及“批量删除”操作接口</li>
+<li>更新获取任务详情接口返回值robotCount注释为：任务占用的坐席数量</li>
+</ul>
+<h2 id='2019-5-14'>2019年5月14日</h2>
 <ul>
 <li>新增外呼策略组接口</li>
 <li>新增请求调用示例截图，完善调用说明</li>
@@ -2868,7 +2888,7 @@
 <td>status</td>
 <td>String</td>
 <td>否</td>
-<td>任务状态,(NOT_STARTED, &quot;未开始&quot;),(IN_PROCESS, &quot;进行中&quot;),(COMPLETED, &quot;已完成&quot;),(RUNNABLE, &quot;可运行&quot;),(USER_PAUSE, &quot;用户暂停&quot;),(SYSTEM_SUSPENDED, &quot;系统暂停&quot;),(TERMINATE, &quot;已终止&quot;),(IN_QUEUE, &quot;排队中&quot;);</td>
+<td>任务状态,(NOT_STARTED, &quot;未开始&quot;),(IN_PROCESS, &quot;进行中&quot;),(COMPLETED, &quot;已完成&quot;),(RUNNABLE, &quot;可运行&quot;),(USER_PAUSE, &quot;用户暂停&quot;),(SYSTEM_SUSPENDED, &quot;系统暂停&quot;),(TERMINATE, &quot;已终止&quot;),(IN_QUEUE, &quot;排队中&quot;),(SYSTEM_HANG_UP,&quot;系统挂起&quot;),(WAITING_FOR_REDIAL,&quot;等待重呼&quot;),(ACCOUNT_DISABLE,&quot;账户禁用&quot;),(MAINTAIN,&quot;系统维护&quot;);</td>
 <td>1</td>
 </tr>
 <tr>
@@ -2957,7 +2977,7 @@
 <tr>
 <td>status</td>
 <td>String</td>
-<td>任务状态, NOT_STARTED(0, &quot;未开始&quot;),IN_PROCESS(1, &quot;进行中&quot;),COMPLETED(2, &quot;已完成&quot;),RUNNABLE(3, &quot;可运行&quot;),USER_PAUSE(4, &quot;用户暂停&quot;),SYSTEM_SUSPENDED(5, &quot;系统暂停&quot;),TERMINATE(6, &quot;已终止&quot;),IN_QUEUE(7, &quot;排队中&quot;);</td>
+<td>任务状态, NOT_STARTED(0, &quot;未开始&quot;),IN_PROCESS(1, &quot;进行中&quot;),COMPLETED(2, &quot;已完成&quot;),RUNNABLE(3, &quot;可运行&quot;),USER_PAUSE(4, &quot;用户暂停&quot;),SYSTEM_SUSPENDED(5, &quot;系统暂停&quot;),TERMINATE(6, &quot;已终止&quot;),IN_QUEUE(7, &quot;排队中&quot;),SYSTEM_HANG_UP(10, &quot;系统挂起&quot;), WAITING_FOR_REDIAL(11, &quot;等待重呼&quot;), ACCOUNT_DISABLE(12, &quot;账户禁用&quot;), MAINTAIN(13, &quot;系统维护&quot;);</td>
 </tr>
 <tr>
 <td>requestId</td>
@@ -3091,7 +3111,7 @@
 <tr>
 <td>robotCount</td>
 <td>Integer</td>
-<td>任务拨打的号码总数</td>
+<td>任务占用的坐席数量</td>
 </tr>
 <tr>
 <td>smsTemplateId</td>
@@ -3181,7 +3201,7 @@
 <tr>
 <td>status</td>
 <td>String</td>
-<td>任务状态, NOT_STARTED(0, &quot;未开始&quot;),IN_PROCESS(1, &quot;进行中&quot;),COMPLETED(2, &quot;已完成&quot;),RUNNABLE(3, &quot;可运行&quot;),USER_PAUSE(4, &quot;用户暂停&quot;),SYSTEM_SUSPENDED(5, &quot;系统暂停&quot;),TERMINATE(6, &quot;已终止&quot;),IN_QUEUE(7, &quot;排队中&quot;)</td>
+<td>任务状态, NOT_STARTED(0, &quot;未开始&quot;),IN_PROCESS(1, &quot;进行中&quot;),COMPLETED(2, &quot;已完成&quot;),RUNNABLE(3, &quot;可运行&quot;),USER_PAUSE(4, &quot;用户暂停&quot;),SYSTEM_SUSPENDED(5, &quot;系统暂停&quot;),TERMINATE(6, &quot;已终止&quot;),IN_QUEUE(7, &quot;排队中&quot;),SYSTEM_HANG_UP(10, &quot;系统挂起&quot;), WAITING_FOR_REDIAL(11, &quot;等待重呼&quot;), ACCOUNT_DISABLE(12, &quot;账户禁用&quot;), MAINTAIN(13, &quot;系统维护&quot;);</td>
 </tr>
 <tr>
 <td>jobPhoneNumberList</td>
@@ -3563,7 +3583,8 @@
     "searchWords": "测试",
     "intentLevels": ["A"],
     "pageSize": 20,
-    "pageNum": 1
+    "pageNum": 1,
+    "hangupBy":"REMOTE_HANGUP"
 }
 
 </code></pre>
@@ -3579,6 +3600,7 @@
                "pages": 1,
                "content": [
                    {
+                       "hangupBy": "REMOTE_HANGUP",
                        "callRecordId": 47,
                        "tenantId": 1,
                       "robotCallJobId": 50,
@@ -3636,6 +3658,13 @@
 <th>实例</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>hangupBy</td>
+<td>String</td>
+<td>否</td>
+<td>挂机状态</td>
+<td>REMOTE_HANGUP</td>
+</tr>
 <tr>
 <td>customerGroupId</td>
 <td>Long</td>
@@ -3705,6 +3734,11 @@
 <td>code</td>
 <td>integer</td>
 <td>响应码</td>
+</tr>
+<tr>
+<td>hangupBy</td>
+<td>String</td>
+<td>挂机状态</td>
 </tr>
 <tr>
 <td>number</td>
@@ -4021,6 +4055,329 @@
 <td>attributes</td>
 <td>List</td>
 <td>参数</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='e5aa350603'>获取未完成任务电话号码接口</h2><h3 id='7d73d51a26-3'>功能说明：</h3>
+<p>通过此接口可以获取指定任务中所有未完成呼叫任务的电话号码</p>
+
+<blockquote>
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code> {
+          "code": 200,
+          "data": {
+              "number": 1,
+              "pageSize": 20,
+              "totalElements": 1,
+              "pages": 1,
+              "content": [
+                  {
+                      "robotCallTaskId": 3033235,
+                      "customerPersonId": 7170228,
+                      "customerPersonName": "不要拨打",
+                      "calledPhoneNumber": "156****7777",
+                      "customerPersonGroupName": "",
+                      "status": "NOT_STARTED",
+                      "inWhiteList": false,
+                      "properties": {
+                          "尾号数_单个": "1"
+                      },
+                      "inShareWhiteList": null
+                  }
+              ]
+          },
+          "requestId": "PDRAROJB",
+          "resultMsg": "执行成功",
+          "errorStackTrace": null
+      }
+</code></pre></blockquote>
+<h3 id='c7811523ac-3'>请求：</h3>
+<p>URL：https://openapi.tanyibot.com/apiOpen/v1/callRecord/toBeCalledList</p>
+<h3 id='261d12e31d-3'>请求方法：</h3>
+<p>get</p>
+<h3 id='2eb6f47757-3'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pageNum</td>
+<td>Integer</td>
+<td>否</td>
+<td>第几页，默认第一页</td>
+<td>1</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>Integer</td>
+<td>否</td>
+<td>页面大小，默认20条</td>
+<td>20</td>
+</tr>
+<tr>
+<td>robotCallJobId</td>
+<td>Integer</td>
+<td>是</td>
+<td>任务id,必填</td>
+<td>1</td>
+</tr>
+<tr>
+<td>calledPhoneNumber</td>
+<td>String</td>
+<td>否</td>
+<td>联系方式</td>
+<td>13266666666</td>
+</tr>
+<tr>
+<td>taskStatus</td>
+<td>String</td>
+<td>否</td>
+<td>呼叫状态,(NOT_STARTED,&quot;未开始&quot;),(IN_PROCESS,&quot;进行中&quot;),(COMPLETED,&quot;已完成&quot;),(RETRY,&quot;重试拨打&quot;),(AUTO_RETRY,&quot;自动重拨&quot;),(IN_CACHE,&quot;缓存中&quot;);</td>
+<td>NOT_STARTED</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7-3'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Integer</td>
+<td>第几页</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>Integer</td>
+<td>每页页面条数</td>
+</tr>
+<tr>
+<td>totalElements</td>
+<td>Integer</td>
+<td>数据总条数</td>
+</tr>
+<tr>
+<td>pages</td>
+<td>Integer</td>
+<td>页面总数</td>
+</tr>
+<tr>
+<td>robotCallTaskId</td>
+<td>Long</td>
+<td>任务id</td>
+</tr>
+<tr>
+<td>customerPersonId</td>
+<td>Long</td>
+<td>客户id</td>
+</tr>
+<tr>
+<td>customerPersonName</td>
+<td>String</td>
+<td>客户名称</td>
+</tr>
+<tr>
+<td>calledPhoneNumber</td>
+<td>String</td>
+<td>联系电话</td>
+</tr>
+<tr>
+<td>customerPersonGroupName</td>
+<td>String</td>
+<td>客户所在组名称</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>呼叫状态，NOT_STARTED(0, &quot;未开始&quot;), IN_PROCESS(1, &quot;进行中&quot;), COMPLETED(2, &quot;已完成&quot;), RETRY(3, &quot;重试拨打&quot;), AUTO_RETRY(4, &quot;自动重拨&quot;), IN_CACHE(5, &quot;缓存中&quot;);</td>
+</tr>
+<tr>
+<td>inWhiteList</td>
+<td>Boolean</td>
+<td>是否白名单，true代表在，false不在</td>
+</tr>
+<tr>
+<td>inShareWhiteList</td>
+<td>Boolean</td>
+<td>是否在共享白名单，true代表在，false代表不在</td>
+</tr>
+<tr>
+<td>properties</td>
+<td>Map<String, String></td>
+<td>自定义变量</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='6a611857e8'>从未呼客户列表中删除单个客户</h2><h3 id='7d73d51a26-4'>功能说明：</h3>
+<p>通过此接口可以从未呼客户列表中删除单个客户</p>
+
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+          "code": 200,
+          "data": null,
+          "requestId": "WUEAPMJO",
+          "resultMsg": "删除成功",
+          "errorStackTrace": null
+      }
+</code></pre><h3 id='c7811523ac-4'>请求：</h3>
+<p>URL：https://openapi.tanyibot.com/apiOpen/v1/callRecord/deleteRobotCallTask</p>
+<h3 id='261d12e31d-4'>请求方法：</h3>
+<p>post</p>
+<h3 id='2eb6f47757-4'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>robotCallTaskId</td>
+<td>Long</td>
+<td>是</td>
+<td>需要删除的呼叫任务Id</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7-4'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Long</td>
+<td>记录id</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>String</td>
+<td>请求Id</td>
+</tr>
+<tr>
+<td>resultMsg</td>
+<td>String</td>
+<td>响应说明</td>
+</tr>
+</tbody></table>
+<h2 id='b9473dcb26'>从未呼客户列表中批量删除待呼客户名单</h2><h3 id='7d73d51a26-5'>功能说明：</h3>
+<p>通过此接口可以从未呼客户列表中批量删除待呼客户名单</p>
+
+<blockquote>
+<p>JSON响应实例：</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+          "code": 200,
+          "data": null,
+          "requestId": "WUEAPMJO",
+          "resultMsg": "删除成功",
+          "errorStackTrace": null
+      }
+</code></pre><h3 id='c7811523ac-5'>请求：</h3>
+<p>URL：https://openapi.tanyibot.com/apiOpen/v1/callRecord/deleteRobotCallTaskList</p>
+<h3 id='261d12e31d-5'>请求方法：</h3>
+<p>GET</p>
+<h3 id='2eb6f47757-5'>请求参数:</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>robotCallJobId</td>
+<td>Integer</td>
+<td>是</td>
+<td>任务id</td>
+<td>1</td>
+</tr>
+<tr>
+<td>robotCallTaskIds</td>
+<td>List</td>
+<td>否</td>
+<td>删除子任务id 此字段不为空时下面筛选条件无效</td>
+<td>3033729,3033719</td>
+</tr>
+<tr>
+<td>calledPhoneNumber</td>
+<td>String</td>
+<td>否</td>
+<td>联系方式</td>
+<td>13266666666</td>
+</tr>
+<tr>
+<td>taskStatus</td>
+<td>String</td>
+<td>否</td>
+<td>呼叫状态,(NOT_STARTED,&quot;未开始&quot;),(IN_PROCESS,&quot;进行中&quot;),(COMPLETED,&quot;已完成&quot;),(RETRY,&quot;重试拨打&quot;),(AUTO_RETRY,&quot;自动重拨&quot;),(IN_CACHE,&quot;缓存中&quot;);</td>
+<td>IN_PROCESS</td>
+</tr>
+</tbody></table>
+<h3 id='d981aa6fd7-5'>响应：</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>响应码</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Long</td>
+<td>记录id</td>
 </tr>
 <tr>
 <td>requestId</td>

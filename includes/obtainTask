@@ -51,7 +51,7 @@
 <td>status</td>
 <td>String</td>
 <td>否</td>
-<td>任务状态,(NOT_STARTED, &quot;未开始&quot;),(IN_PROCESS, &quot;进行中&quot;),(COMPLETED, &quot;已完成&quot;),(RUNNABLE, &quot;可运行&quot;),(USER_PAUSE, &quot;用户暂停&quot;),(SYSTEM_SUSPENDED, &quot;系统暂停&quot;),(TERMINATE, &quot;已终止&quot;),(IN_QUEUE, &quot;排队中&quot;);</td>
+<td>任务状态,(NOT_STARTED, &quot;未开始&quot;),(IN_PROCESS, &quot;进行中&quot;),(COMPLETED, &quot;已完成&quot;),(RUNNABLE, &quot;可运行&quot;),(USER_PAUSE, &quot;用户暂停&quot;),(SYSTEM_SUSPENDED, &quot;系统暂停&quot;),(TERMINATE, &quot;已终止&quot;),(IN_QUEUE, &quot;排队中&quot;),(SYSTEM_HANG_UP,&quot;系统挂起&quot;),(WAITING_FOR_REDIAL,&quot;等待重呼&quot;),(ACCOUNT_DISABLE,&quot;账户禁用&quot;),(MAINTAIN,&quot;系统维护&quot;);</td>
 <td>1</td>
 </tr>
 <tr>
@@ -140,7 +140,7 @@
 <tr>
 <td>status</td>
 <td>String</td>
-<td>任务状态, NOT_STARTED(0, &quot;未开始&quot;),IN_PROCESS(1, &quot;进行中&quot;),COMPLETED(2, &quot;已完成&quot;),RUNNABLE(3, &quot;可运行&quot;),USER_PAUSE(4, &quot;用户暂停&quot;),SYSTEM_SUSPENDED(5, &quot;系统暂停&quot;),TERMINATE(6, &quot;已终止&quot;),IN_QUEUE(7, &quot;排队中&quot;);</td>
+<td>任务状态, NOT_STARTED(0, &quot;未开始&quot;),IN_PROCESS(1, &quot;进行中&quot;),COMPLETED(2, &quot;已完成&quot;),RUNNABLE(3, &quot;可运行&quot;),USER_PAUSE(4, &quot;用户暂停&quot;),SYSTEM_SUSPENDED(5, &quot;系统暂停&quot;),TERMINATE(6, &quot;已终止&quot;),IN_QUEUE(7, &quot;排队中&quot;),SYSTEM_HANG_UP(10, &quot;系统挂起&quot;), WAITING_FOR_REDIAL(11, &quot;等待重呼&quot;), ACCOUNT_DISABLE(12, &quot;账户禁用&quot;), MAINTAIN(13, &quot;系统维护&quot;);</td>
 </tr>
 <tr>
 <td>requestId</td>
@@ -274,7 +274,7 @@
 <tr>
 <td>robotCount</td>
 <td>Integer</td>
-<td>任务拨打的号码总数</td>
+<td>任务占用的坐席数量</td>
 </tr>
 <tr>
 <td>smsTemplateId</td>
@@ -364,7 +364,7 @@
 <tr>
 <td>status</td>
 <td>String</td>
-<td>任务状态, NOT_STARTED(0, &quot;未开始&quot;),IN_PROCESS(1, &quot;进行中&quot;),COMPLETED(2, &quot;已完成&quot;),RUNNABLE(3, &quot;可运行&quot;),USER_PAUSE(4, &quot;用户暂停&quot;),SYSTEM_SUSPENDED(5, &quot;系统暂停&quot;),TERMINATE(6, &quot;已终止&quot;),IN_QUEUE(7, &quot;排队中&quot;)</td>
+<td>任务状态, NOT_STARTED(0, &quot;未开始&quot;),IN_PROCESS(1, &quot;进行中&quot;),COMPLETED(2, &quot;已完成&quot;),RUNNABLE(3, &quot;可运行&quot;),USER_PAUSE(4, &quot;用户暂停&quot;),SYSTEM_SUSPENDED(5, &quot;系统暂停&quot;),TERMINATE(6, &quot;已终止&quot;),IN_QUEUE(7, &quot;排队中&quot;),SYSTEM_HANG_UP(10, &quot;系统挂起&quot;), WAITING_FOR_REDIAL(11, &quot;等待重呼&quot;), ACCOUNT_DISABLE(12, &quot;账户禁用&quot;), MAINTAIN(13, &quot;系统维护&quot;);</td>
 </tr>
 <tr>
 <td>jobPhoneNumberList</td>
