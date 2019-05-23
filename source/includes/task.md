@@ -326,10 +326,10 @@ POST
 
  参数名 | 类型 | 是否必须 | 描述 | 实例 
  --------- | ------- |------- | ------ |----------
-  robotCallJobId| Long| 是 | 任务Id| 1 |
-  name| String| 是 | 客户名称| 张三 |
-  phoneNumber| String| 是 | 客户电话| 13998987676 |
-  properties| Map<String,String>| 否 | 话术中自定义的语句内容| 请看json入参 |
+  robotCallJobId| Long| 是 | 任务Id| 1 
+  name| String| 否 | 客户名称| 张三 
+  phoneNumber| String| 是 | 客户电话| 13998987676 
+  properties| Map<String,String>| 否 | 话术中自定义的语句内容| 请看json入参 
 
  
 
