@@ -548,7 +548,7 @@
 <tr>
 <td>name</td>
 <td>String</td>
-<td>是</td>
+<td>否</td>
 <td>客户名称</td>
 <td>张三</td>
 </tr>
