@@ -42,7 +42,10 @@
 		"wechatSendMethod": "SENDTOALL",
 		"wechatAlertLevelCode": [],
 		"smsAlertLevelCode": [],
-		"wechatConditionAlertLevelCode": []
+		"wechatConditionAlertLevelCode": [],
+        "redialCondition":["CALL_LOSS","NO_ANSWER","BUSY","REFUSED","POWER_OFF","OUT_OF_SERVICE","CAN_NOT_CONNECT","FROM_PHONE_ERROR","SYSTEM_ERROR"],
+        "redialInterval":6,
+        "redialTimes":1,
 	}
 }
 ```
@@ -73,28 +76,31 @@ POST
 
 参数名 | 类型 | 是否必须 | 描述 | 实例 
 --------- | ------- |------- | ------ |----------
- concurrencyQuota| Integer| 是 | 并发数（线路类型为手机号的时候可不传）| 10|
- jobPhoneNumberIdList| List| 是 |任务主叫号码列表 tenant_phone_number_id,当类型是手机号的时候他的size代表机器人的个数，当类型非手机号的时候他的size只能是1；如果外呼方式选择的是外呼策略组，则里面内容为外呼策略组的id（size只能为1）|  [1,2,3] |
- transferPhoneNumber| List| 选择转人工话术时必填 |转人工号码,触发转人工时轮训号码列表| ["1523654789","1758426896"] |
- name| String| 是 |任务名称| 测试API任务 |
- mode| String| 是 | 任务类型 (AUTO, "自动任务"),(MANUAL, "手动任务"); | AUTO |
- startTime| String| 自动任务：是/手动任务：否 | 任务开始时间| "2017-11-21"  |
- dailyStartTime| String| 是 | 可拨打开始时间，不可以早于9点| 09:00 |
- dailyEndTime| String| 是 | 可拨打结束时间，不可以晚于20点| 20:00 |
- inactiveTimeList| List| 否 | 不可拨打时间段列表,最大三个不可拨打时段| [{"startTime":"12:00", "endTime":"13:00"}] |
- dialogFlowId| String| 是 | 话术id| 139|
- csStaffGroupId| Long| 是 | 坐席组id，通过话术API中获取人工介入标识。如果存在人工介入标识，需要传入坐席组Id| 139|
- alertUsers| String| 否 | 提醒的用户的id列表| [1,2]|
- earlyWarningAlertUsers| String| 否 | 行业预警消息推送人| [1,2]|
- phoneType| String| 是 | 号码类型 (MOBILE, "手机号码"),(LANDLINE, "固话"),(UNFIXED_CALL, "无主叫"), (CALL_POLICY_GROUP, "外呼策略组")| UNFIXED_CALL|
- smsAlertLevel| String| 否 | 短信推送提醒意向等级| ["A","B"]|
- smsTemplateId| Long| 否 | 短信模板id| |
- wechatAlertLevel| String| 否 | 微信推送提醒意向等级| ["A","B"]|
- wechatSendMethod| String| 否 | 微信推送方式（SENDTOALL，全推送），（SENDTOONE，单推送），（SENDTONONE 不推送）| SENDTOALL|
- description| String| 否 | 备注| 测试|
- wechatAlertLevelCode | Integer | 否 | 微信推送提醒意向等级编码 | [0, 1] |
- smsAlertLevelCode | Integer | 否| 短信推送提醒意向等级编码| [0, 1]|
- wechatConditionAlertLevelCode | Integer | 否| 微信条件推送提醒意向等级编码|[0, 1] |
+ concurrencyQuota| Integer| 是 | 并发数（线路类型为手机号的时候可不传）| 10
+ jobPhoneNumberIdList| List| 是 |任务主叫号码列表 tenant_phone_number_id,当类型是手机号的时候他的size代表机器人的个数，当类型非手机号的时候他的size只能是1；如果外呼方式选择的是外呼策略组，则里面内容为外呼策略组的id（size只能为1）|  [1,2,3] 
+ transferPhoneNumber| List| 选择转人工话术时必填 |转人工号码,触发转人工时轮训号码列表| ["1523654789","1758426896"] 
+ name| String| 是 |任务名称| 测试API任务 
+ mode| String| 是 | 任务类型 (AUTO, "自动任务"),(MANUAL, "手动任务"); | AUTO 
+ startTime| String| 自动任务：是/手动任务：否 | 任务开始时间| "2017-11-21"  
+ dailyStartTime| String| 是 | 可拨打开始时间，不可以早于9点| 09:00 
+ dailyEndTime| String| 是 | 可拨打结束时间，不可以晚于20点| 20:00 
+ inactiveTimeList| List| 否 | 不可拨打时间段列表,最大三个不可拨打时段| [{"startTime":"12:00", "endTime":"13:00"}] 
+ dialogFlowId| String| 是 | 话术id| 139
+ csStaffGroupId| Long| 是 | 坐席组id，通过话术API中获取人工介入标识。如果存在人工介入标识，需要传入坐席组Id| 139
+ alertUsers| String| 否 | 提醒的用户的id列表| [1,2]
+ earlyWarningAlertUsers| String| 否 | 行业预警消息推送人| [1,2]
+ phoneType| String| 是 | 号码类型 (MOBILE, "手机号码"),(LANDLINE, "固话"),(UNFIXED_CALL, "无主叫"), (CALL_POLICY_GROUP, "外呼策略组")| UNFIXED_CALL
+ smsAlertLevel| String| 否 | 短信推送提醒意向等级| ["A","B"]
+ smsTemplateId| Long| 否 | 短信模板id| 
+ wechatAlertLevel| String| 否 | 微信推送提醒意向等级| ["A","B"]
+ wechatSendMethod| String| 否 | 微信推送方式（SENDTOALL，全推送），（SENDTOONE，单推送），（SENDTONONE 不推送）| SENDTOALL
+ description| String| 否 | 备注| 测试
+ wechatAlertLevelCode | Integer | 否 | 微信推送提醒意向等级编码 | [0, 1] 
+ smsAlertLevelCode | Integer | 否| 短信推送提醒意向等级编码| [0, 1]
+ wechatConditionAlertLevelCode | Integer | 否| 微信条件推送提醒意向等级编码|[0, 1] 
+ redialCondition | Set | 选择自动重拨时必填 | 重拨条件(CALL_LOSS,"呼损客户"),(NO_ANSWER,"无应答"),(BUSY,"忙线中"),(REFUSED,"拒接"),(POWER_OFF,"关机"),(OUT_OF_SERVICE,"停机"),(CAN_NOT_CONNECT,“无法接通“),(FROM_PHONE_ERROR,"主叫欠费"),(SYSTEM_ERROR,"外呼失败") |["CALL_LOSS"] 
+ redialInterval | Integer | 选择自动重拨时必填 | 重拨间隔(分钟，取值范围6分钟~24 x 60分钟) |6 
+ redialTimes | Integer | 选择自动重拨时必填 | 重拨次数(取值范围1~10） |6 
 
 ### 响应：
 
