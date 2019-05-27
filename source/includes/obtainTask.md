@@ -111,7 +111,10 @@ GET
 			"nextStartTime": "00:00:00",
 			"createTime": "2018-10-09 15:08:54",
 			"updateTime": "2018-10-09 15:11:20",
-			"earlyWarningAlertUsers": []
+			"earlyWarningAlertUsers": [],
+            "redialCondition":["CALL_LOSS", "FROM_PHONE_ERROR", "POWER_OFF", "OUT_OF_SERVICE", "REFUSED", "CAN_NOT_CONNECT"],
+            "redialInterval":6,
+            "redialTimes":1
 		},
     "jobPhoneNumberList": [{
         "tenantPhoneNumberId": 675,
@@ -186,6 +189,9 @@ GET
  dialogFlowName| String  | 话术名称 
  requestId| String | 请求Id 
  resultMsg| String | 响应说明 
+ redialCondition | List | 设置的自动重拨的状态集，(CALL_LOSS,"呼损客户"),(NO_ANSWER,"无应答"),(BUSY,"忙线中"),(REFUSED,"拒接"),(POWER_OFF,"关机"),(OUT_OF_SERVICE,"停机"),(CAN_NOT_CONNECT,“无法接通“),(FROM_PHONE_ERROR,"主叫欠费"),(SYSTEM_ERROR,"外呼失败") 
+ redialInterval | Integer | 重拨间隔(分钟) 
+ redialTimes | Integer | 重拨次数 
 
 
 ## 获取任务统计接口
