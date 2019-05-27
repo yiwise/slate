@@ -35,7 +35,10 @@
         </span><span class="s2">"wechatSendMethod"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SENDTOALL"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"wechatAlertLevelCode"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
         </span><span class="s2">"smsAlertLevelCode"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-        </span><span class="s2">"wechatConditionAlertLevelCode"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+        </span><span class="s2">"wechatConditionAlertLevelCode"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"redialCondition"</span><span class="p">:[</span><span class="s2">"CALL_LOSS"</span><span class="p">,</span><span class="s2">"NO_ANSWER"</span><span class="p">,</span><span class="s2">"BUSY"</span><span class="p">,</span><span class="s2">"REFUSED"</span><span class="p">,</span><span class="s2">"POWER_OFF"</span><span class="p">,</span><span class="s2">"OUT_OF_SERVICE"</span><span class="p">,</span><span class="s2">"CAN_NOT_CONNECT"</span><span class="p">,</span><span class="s2">"FROM_PHONE_ERROR"</span><span class="p">,</span><span class="s2">"SYSTEM_ERROR"</span><span class="p">],</span><span class="w">
+        </span><span class="s2">"redialInterval"</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"redialTimes"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -217,6 +220,27 @@
 <td>否</td>
 <td>微信条件推送提醒意向等级编码</td>
 <td>[0, 1]</td>
+</tr>
+<tr>
+<td>redialCondition</td>
+<td>Set</td>
+<td>选择自动重拨时必填</td>
+<td>重拨条件(CALL_LOSS,&quot;呼损客户&quot;),(NO_ANSWER,&quot;无应答&quot;),(BUSY,&quot;忙线中&quot;),(REFUSED,&quot;拒接&quot;),(POWER_OFF,&quot;关机&quot;),(OUT_OF_SERVICE,&quot;停机&quot;),(CAN_NOT_CONNECT,“无法接通“),(FROM_PHONE_ERROR,&quot;主叫欠费&quot;),(SYSTEM_ERROR,&quot;外呼失败&quot;)</td>
+<td>[&quot;CALL_LOSS&quot;]</td>
+</tr>
+<tr>
+<td>redialInterval</td>
+<td>Integer</td>
+<td>选择自动重拨时必填</td>
+<td>重拨间隔(分钟，取值范围6分钟~24 x 60分钟)</td>
+<td>6</td>
+</tr>
+<tr>
+<td>redialTimes</td>
+<td>Integer</td>
+<td>选择自动重拨时必填</td>
+<td>重拨次数(取值范围1~10）</td>
+<td>6</td>
 </tr>
 </tbody></table>
 <h3 id='d981aa6fd7'>响应：</h3>

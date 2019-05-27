@@ -253,6 +253,9 @@
             <a href="#f628cebc7d" class="toc-h1 toc-link" data-title="最近更新日志">最近更新日志</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#2019-5-28" class="toc-h2 toc-link" data-title="2019年5月28日">2019年5月28日</a>
+                  </li>
+                  <li>
                     <a href="#2019-5-20" class="toc-h2 toc-link" data-title="2019年5月20日">2019年5月20日</a>
                   </li>
                   <li>
@@ -766,7 +769,11 @@
 <td>未知错误</td>
 </tr>
 </tbody></table>
-<h1 id='f628cebc7d'>最近更新日志</h1><h2 id='2019-5-20'>2019年5月20日</h2>
+<h1 id='f628cebc7d'>最近更新日志</h1><h2 id='2019-5-28'>2019年5月28日</h2>
+<ul>
+<li>创建任务接口添加自动重拨设置</li>
+</ul>
+<h2 id='2019-5-20'>2019年5月20日</h2>
 <ul>
 <li>获取任务列表接口，获取任务详情接口增加“系统挂起”等状态</li>
 <li>获取已经完成任务电话号码接口增加“挂断状态”字段</li>
@@ -2203,7 +2210,10 @@
         </span><span class="s2">"wechatSendMethod"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SENDTOALL"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"wechatAlertLevelCode"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
         </span><span class="s2">"smsAlertLevelCode"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-        </span><span class="s2">"wechatConditionAlertLevelCode"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+        </span><span class="s2">"wechatConditionAlertLevelCode"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"redialCondition"</span><span class="p">:[</span><span class="s2">"CALL_LOSS"</span><span class="p">,</span><span class="s2">"NO_ANSWER"</span><span class="p">,</span><span class="s2">"BUSY"</span><span class="p">,</span><span class="s2">"REFUSED"</span><span class="p">,</span><span class="s2">"POWER_OFF"</span><span class="p">,</span><span class="s2">"OUT_OF_SERVICE"</span><span class="p">,</span><span class="s2">"CAN_NOT_CONNECT"</span><span class="p">,</span><span class="s2">"FROM_PHONE_ERROR"</span><span class="p">,</span><span class="s2">"SYSTEM_ERROR"</span><span class="p">],</span><span class="w">
+        </span><span class="s2">"redialInterval"</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"redialTimes"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -2385,6 +2395,27 @@
 <td>否</td>
 <td>微信条件推送提醒意向等级编码</td>
 <td>[0, 1]</td>
+</tr>
+<tr>
+<td>redialCondition</td>
+<td>Set</td>
+<td>选择自动重拨时必填</td>
+<td>重拨条件(CALL_LOSS,&quot;呼损客户&quot;),(NO_ANSWER,&quot;无应答&quot;),(BUSY,&quot;忙线中&quot;),(REFUSED,&quot;拒接&quot;),(POWER_OFF,&quot;关机&quot;),(OUT_OF_SERVICE,&quot;停机&quot;),(CAN_NOT_CONNECT,“无法接通“),(FROM_PHONE_ERROR,&quot;主叫欠费&quot;),(SYSTEM_ERROR,&quot;外呼失败&quot;)</td>
+<td>[&quot;CALL_LOSS&quot;]</td>
+</tr>
+<tr>
+<td>redialInterval</td>
+<td>Integer</td>
+<td>选择自动重拨时必填</td>
+<td>重拨间隔(分钟，取值范围6分钟~24 x 60分钟)</td>
+<td>6</td>
+</tr>
+<tr>
+<td>redialTimes</td>
+<td>Integer</td>
+<td>选择自动重拨时必填</td>
+<td>重拨次数(取值范围1~10）</td>
+<td>6</td>
 </tr>
 </tbody></table>
 <h3 id='d981aa6fd7'>响应：</h3>
