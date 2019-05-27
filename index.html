@@ -771,7 +771,7 @@
 </tbody></table>
 <h1 id='f628cebc7d'>最近更新日志</h1><h2 id='2019-5-28'>2019年5月28日</h2>
 <ul>
-<li>创建任务接口添加自动重拨设置</li>
+<li>创建任务接口添加自动重拨设置，获取任务详情接口返回自动重拨相关的设置</li>
 </ul>
 <h2 id='2019-5-20'>2019年5月20日</h2>
 <ul>
@@ -3057,7 +3057,10 @@
             </span><span class="s2">"nextStartTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:00"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"createTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-09 15:08:54"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"updateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-09 15:11:20"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"earlyWarningAlertUsers"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="s2">"earlyWarningAlertUsers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"redialCondition"</span><span class="p">:[</span><span class="s2">"CALL_LOSS"</span><span class="p">,</span><span class="w"> </span><span class="s2">"FROM_PHONE_ERROR"</span><span class="p">,</span><span class="w"> </span><span class="s2">"POWER_OFF"</span><span class="p">,</span><span class="w"> </span><span class="s2">"OUT_OF_SERVICE"</span><span class="p">,</span><span class="w"> </span><span class="s2">"REFUSED"</span><span class="p">,</span><span class="w"> </span><span class="s2">"CAN_NOT_CONNECT"</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"redialInterval"</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"redialTimes"</span><span class="p">:</span><span class="mi">1</span><span class="w">
         </span><span class="p">},</span><span class="w">
     </span><span class="s2">"jobPhoneNumberList"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
         </span><span class="s2">"tenantPhoneNumberId"</span><span class="p">:</span><span class="w"> </span><span class="mi">675</span><span class="p">,</span><span class="w">
@@ -3263,6 +3266,21 @@
 <td>resultMsg</td>
 <td>String</td>
 <td>响应说明</td>
+</tr>
+<tr>
+<td>redialCondition</td>
+<td>List</td>
+<td>设置的自动重拨的状态集，(CALL_LOSS,&quot;呼损客户&quot;),(NO_ANSWER,&quot;无应答&quot;),(BUSY,&quot;忙线中&quot;),(REFUSED,&quot;拒接&quot;),(POWER_OFF,&quot;关机&quot;),(OUT_OF_SERVICE,&quot;停机&quot;),(CAN_NOT_CONNECT,“无法接通“),(FROM_PHONE_ERROR,&quot;主叫欠费&quot;),(SYSTEM_ERROR,&quot;外呼失败&quot;)</td>
+</tr>
+<tr>
+<td>redialInterval</td>
+<td>Integer</td>
+<td>重拨间隔(分钟)</td>
+</tr>
+<tr>
+<td>redialTimes</td>
+<td>Integer</td>
+<td>重拨次数</td>
 </tr>
 </tbody></table>
 <h2 id='7ed6838292'>获取任务统计接口</h2><h3 id='7d73d51a26-3'>功能说明：</h3>
