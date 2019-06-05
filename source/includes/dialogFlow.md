@@ -14,7 +14,10 @@
 	"data": [
 		{
 		"dialogFlowId": 1,
-		"name": "话术标题"
+		"name": "话术标题",
+		"intentLevelTagId":0,
+		"status":"APPROVED",
+		"createTime":"2019-04-24 20:28:17"
 		}
 	],
 	"requestId": "VCWAHVEJ",
@@ -44,6 +47,9 @@ GET
  code|Integer | 响应码 |
  dialogFlowId |Long | 话术Id |
  name | String | 话术名称 |
+ intentLevelTagId | Long | 意向标签分组id |
+ status | String | 话术状态(DRAFT 草稿 PENDING_APPROVAL 等待审核 REJECTED 拒绝 APPROVED 审核通过) |
+ createTime | String | 创建时间 |
  requestId| String | 请求Id |
  resultMsg| String | 响应说明 |
 
