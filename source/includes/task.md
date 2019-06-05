@@ -753,7 +753,7 @@ PATCH
 
 ###请求：
 
-URL：https://openapi.tanyibot.com/apiOpen/v1/job/updateAiCount
+URL：https://openapi.tanyibot.com/apiOpen/v1/job/reAddCustomerToJob
 
 ###请求方法：
 
