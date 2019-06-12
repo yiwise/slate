@@ -272,6 +272,7 @@ GET
 | local                   | Boolean   | 是否本地                                                     |
 | answeredCall            | Long      | 拨通数                                                       |
 | chatTimeList            | Long      | 通话时长，单位为秒                                           |
+| billChatTimeList        | Long      | 通话计费时长，单位为分钟                                         |
 | callCostList            | Long      | 话费，单位分                                                 |
 | phoneNumber             | String    | 线路号码                                                     |
 | phoneType               | String    | 线路类型，LANDLINE(1, "L", "固话"),UNFIXED_CALL(2, "U", "无主叫"),MOBILE(0, "M", "手机号码"),CRM_VERBAL_TRICK_TRAINING_CALLER(3, "CVR", "CRM训练主叫账号"),CRM_VERBAL_TRICK_TRAINING_CALLED(4, "CVD", "CRM训练被叫账号"),VOIP_DEVICE(5, "D", "网关设备"),CS_SEAT(11, "CS_SEAT","人工外呼"),MESSAGE(12,"MES","短信"),CALL_POLICY_GROUP(13, "CALL_POLICY_GROUP", "外呼策略组") |
