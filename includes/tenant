@@ -380,6 +380,11 @@
 <td>通话时长，单位为秒</td>
 </tr>
 <tr>
+<td>billChatTimeList</td>
+<td>Long</td>
+<td>通话计费时长，单位为分钟</td>
+</tr>
+<tr>
 <td>callCostList</td>
 <td>Long</td>
 <td>话费，单位分</td>

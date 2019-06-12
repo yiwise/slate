@@ -796,6 +796,7 @@
 <h1 id='f628cebc7d'>最近更新日志</h1><h2 id='2019-6-5'>2019年6月5日</h2>
 <ul>
 <li>新增获取话术主流程word文档接口</li>
+<li>获取话术列表接口增加话术状态和创建时间字段</li>
 </ul>
 <h2 id='2019-6-4'>2019年6月4日</h2>
 <ul>
@@ -1487,6 +1488,11 @@
 <td>通话时长，单位为秒</td>
 </tr>
 <tr>
+<td>billChatTimeList</td>
+<td>Long</td>
+<td>通话计费时长，单位为分钟</td>
+</tr>
+<tr>
 <td>callCostList</td>
 <td>Long</td>
 <td>话费，单位分</td>
@@ -1677,7 +1683,10 @@
     "data": [
         {
         "dialogFlowId": 1,
-        "name": "话术标题"
+        "name": "话术标题",
+        "intentLevelTagId":0,
+        "status":"APPROVED",
+        "createTime":"2019-04-24 20:28:17"
         }
     ],
     "requestId": "VCWAHVEJ",
@@ -1713,6 +1722,21 @@
 <td>name</td>
 <td>String</td>
 <td>话术名称</td>
+</tr>
+<tr>
+<td>intentLevelTagId</td>
+<td>Long</td>
+<td>意向标签分组id</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>话术状态(DRAFT 草稿 PENDING_APPROVAL 等待审核 REJECTED 拒绝 APPROVED 审核通过)</td>
+</tr>
+<tr>
+<td>createTime</td>
+<td>String</td>
+<td>创建时间</td>
 </tr>
 <tr>
 <td>requestId</td>
@@ -3932,7 +3956,7 @@
       }
 
 </code></pre><h3 id='c7811523ac-11'>请求：</h3>
-<p>URL：https://openapi.tanyibot.com/apiOpen/v1/job/updateAiCount</p>
+<p>URL：https://openapi.tanyibot.com/apiOpen/v1/job/reAddCustomerToJob</p>
 <h3 id='261d12e31d-11'>请求方法：</h3>
 <p>POST</p>
 <h3 id='2eb6f47757-11'>请求参数:</h3>

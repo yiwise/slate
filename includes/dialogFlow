@@ -9,7 +9,10 @@
     "data": [
         {
         "dialogFlowId": 1,
-        "name": "话术标题"
+        "name": "话术标题",
+        "intentLevelTagId":0,
+        "status":"APPROVED",
+        "createTime":"2019-04-24 20:28:17"
         }
     ],
     "requestId": "VCWAHVEJ",
@@ -45,6 +48,21 @@
 <td>name</td>
 <td>String</td>
 <td>话术名称</td>
+</tr>
+<tr>
+<td>intentLevelTagId</td>
+<td>Long</td>
+<td>意向标签分组id</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>话术状态(DRAFT 草稿 PENDING_APPROVAL 等待审核 REJECTED 拒绝 APPROVED 审核通过)</td>
+</tr>
+<tr>
+<td>createTime</td>
+<td>String</td>
+<td>创建时间</td>
 </tr>
 <tr>
 <td>requestId</td>
