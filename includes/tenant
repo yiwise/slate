@@ -210,6 +210,16 @@
 <td>机器人话术名称</td>
 </tr>
 <tr>
+<td>industry</td>
+<td>String</td>
+<td>一级行业类型（枚举在枚举说明中）</td>
+</tr>
+<tr>
+<td>subIndustry</td>
+<td>String</td>
+<td>二级行业类型（枚举在枚举说明中）</td>
+</tr>
+<tr>
 <td>requestId</td>
 <td>String</td>
 <td>请求Id</td>
