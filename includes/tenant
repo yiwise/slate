@@ -68,8 +68,8 @@
     "phoneNumber": "0000000000",
     "phoneName": "0000000000",
     "phoneType": "MOBILE",
-    "localBillRate": 0.06,
-    "otherBillRate": 0.06,
+    "localBillRate": 60,
+    "otherBillRate": 60,
     "callOutIndustry": "FINANCE",
     "areaCode": "0571",
     "province": "浙江",
@@ -122,12 +122,12 @@
 <tr>
 <td>localBillRate</td>
 <td>String</td>
-<td>本地话费</td>
+<td>本地话费（单位：厘）</td>
 </tr>
 <tr>
 <td>otherBillRate</td>
 <td>String</td>
-<td>外地话费</td>
+<td>外地话费（单位：厘）</td>
 </tr>
 <tr>
 <td>callOutIndustry</td>
