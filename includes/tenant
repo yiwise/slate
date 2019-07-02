@@ -67,7 +67,13 @@
     "tenantPhoneNumberId": 276,
     "phoneNumber": "0000000000",
     "phoneName": "0000000000",
-    "phoneType": "MOBILE"
+    "phoneType": "MOBILE",
+    "localBillRate": 0.06,
+    "otherBillRate": 0.06,
+    "callOutIndustry": "FINANCE",
+    "areaCode": "0571",
+    "province": "浙江",
+    "city": "杭州",
   }],
   "requestId": "ILNBEQJF",
   "resultMsg": "获取成功",
@@ -112,6 +118,36 @@
 <td>phoneType</td>
 <td>String</td>
 <td>(MOBILE, &quot;手机&quot;),(LANDLINE, &quot;固话&quot;),(UNFIXED_CALL, &quot;无主叫固话&quot;)</td>
+</tr>
+<tr>
+<td>localBillRate</td>
+<td>String</td>
+<td>本地话费</td>
+</tr>
+<tr>
+<td>otherBillRate</td>
+<td>String</td>
+<td>外地话费</td>
+</tr>
+<tr>
+<td>callOutIndustry</td>
+<td>String</td>
+<td>(FINANCE, &quot;金融&quot;),(OTHER, &quot;其他&quot;)</td>
+</tr>
+<tr>
+<td>areaCode</td>
+<td>String</td>
+<td>归属地区号</td>
+</tr>
+<tr>
+<td>province</td>
+<td>String</td>
+<td>归属地省</td>
+</tr>
+<tr>
+<td>city</td>
+<td>String</td>
+<td>归属地市</td>
 </tr>
 <tr>
 <td>requestId</td>
