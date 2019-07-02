@@ -61,7 +61,13 @@ GET
     "tenantPhoneNumberId": 276,
     "phoneNumber": "0000000000",
     "phoneName": "0000000000",
-    "phoneType": "MOBILE"
+    "phoneType": "MOBILE",
+    "localBillRate": 0.06,
+    "otherBillRate": 0.06,
+    "callOutIndustry": "FINANCE",
+    "areaCode": "0571",
+    "province": "浙江",
+    "city": "杭州",
   }],
   "requestId": "ILNBEQJF",
   "resultMsg": "获取成功",
@@ -92,6 +98,12 @@ GET
  phoneNumber| String | 电话号码 |
  phoneName| String | 电话号码名称 |
  phoneType| String | (MOBILE, "手机"),(LANDLINE, "固话"),(UNFIXED_CALL, "无主叫固话")|
+ localBillRate| String | 本地话费|
+ otherBillRate| String | 外地话费|
+ callOutIndustry| String | (FINANCE, "金融"),(OTHER, "其他")|
+ areaCode| String | 归属地区号|
+ province| String | 归属地省|
+ city| String | 归属地市|
  requestId| String | 请求Id |
  resultMsg| String | 响应说明 |
 
