@@ -62,8 +62,8 @@ GET
     "phoneNumber": "0000000000",
     "phoneName": "0000000000",
     "phoneType": "MOBILE",
-    "localBillRate": 0.06,
-    "otherBillRate": 0.06,
+    "localBillRate": 60,
+    "otherBillRate": 60,
     "callOutIndustry": "FINANCE",
     "areaCode": "0571",
     "province": "浙江",
@@ -98,8 +98,8 @@ GET
  phoneNumber| String | 电话号码 |
  phoneName| String | 电话号码名称 |
  phoneType| String | (MOBILE, "手机"),(LANDLINE, "固话"),(UNFIXED_CALL, "无主叫固话")|
- localBillRate| String | 本地话费|
- otherBillRate| String | 外地话费|
+ localBillRate| String | 本地话费（单位：厘）|
+ otherBillRate| String | 外地话费（单位：厘）|
  callOutIndustry| String | (FINANCE, "金融"),(OTHER, "其他")|
  areaCode| String | 归属地区号|
  province| String | 归属地省|
