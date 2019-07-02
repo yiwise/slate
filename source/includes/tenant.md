@@ -151,6 +151,8 @@ GET
  code|integer | 响应码 |
  dialogFlowId|Integer | 机器人话术id |
  name| String | 机器人话术名称 |
+ industry| String | 一级行业类型（枚举在枚举说明中） |
+ subIndustry| String | 二级行业类型（枚举在枚举说明中） |
  requestId| String | 请求Id |
  resultMsg| String | 响应说明 |
 
