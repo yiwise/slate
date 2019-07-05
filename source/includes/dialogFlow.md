@@ -1,59 +1,5 @@
 # 话术接口
 
-##获取话术列表接口
-
-###功能说明：
-
-通过此接口可以获取用户所有的话术信息
-
->JSON响应实例：
-
-```
-{
-	"code": 200,
-	"data": [
-		{
-		"dialogFlowId": 1,
-		"name": "话术标题",
-		"intentLevelTagId":0,
-		"status":"APPROVED",
-		"createTime":"2019-04-24 20:28:17"
-		}
-	],
-	"requestId": "VCWAHVEJ",
-	"resultMsg": "获取成功",
-	"errorStackTrace": null
-}
-
-```
-
-###请求：
-
-URL：https://openapi.tanyibot.com/apiOpen/v1/dialogFlow/getDialogFlowList
-
-###请求方法：
-
-GET
-
-
-###请求参数:
-
-无
-
-###响应：
-
-参数名 | 类型 | 描述 
---------- | ------- |------
- code|Integer | 响应码 |
- dialogFlowId |Long | 话术Id |
- name | String | 话术名称 |
- intentLevelTagId | Long | 意向标签分组id |
- status | String | 话术状态(DRAFT 草稿 PENDING_APPROVAL 等待审核 REJECTED 拒绝 APPROVED 审核通过) |
- createTime | String | 创建时间 |
- requestId| String | 请求Id |
- resultMsg| String | 响应说明 |
-
-
 ##获取话术中存在人工介入和转人工等标识
 
 ###功能说明：

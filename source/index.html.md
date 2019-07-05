@@ -10,6 +10,7 @@ includes:
   - version
   - isv
   - tenant
+  - cost
   - csRobot
   - dialogFlow
   - intentLevelTag
