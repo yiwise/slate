@@ -89,6 +89,7 @@ POST
  csStaffGroupId| Long| 是 | 坐席组id，通过话术API中获取人工介入标识。如果存在人工介入标识，需要传入坐席组Id| 139
  alertUsers| String| 否 | 提醒的用户的id列表| [1,2]
  earlyWarningAlertUsers| String| 否 | 行业预警消息推送人| [1,2]
+ robotCount| Integer| 是 | 机器人数| 10
  phoneType| String| 是 | 号码类型 (MOBILE, "手机号码"),(LANDLINE, "固话"),(UNFIXED_CALL, "无主叫"), (CALL_POLICY_GROUP, "外呼策略组")| UNFIXED_CALL
  smsAlertLevel| String| 否 | 短信推送提醒意向等级| ["A","B"]
  smsTemplateId| Long| 否 | 短信模板id| 
