@@ -159,6 +159,13 @@
 <td>[1,2]</td>
 </tr>
 <tr>
+<td>robotCount</td>
+<td>Integer</td>
+<td>是</td>
+<td>机器人数</td>
+<td>10</td>
+</tr>
+<tr>
 <td>phoneType</td>
 <td>String</td>
 <td>是</td>
