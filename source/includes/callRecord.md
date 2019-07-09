@@ -16,18 +16,18 @@
  	"resultStatuses": ["ANSWERED"],
  	"intentLevels": ["A"],
  	"hangupBy":"REMOTE_HANGUP",
-  "realIntent": true,
-  "calledPhoneNumber":"15364736473",
-  "callRecordId": 145213,
-  "customerPersonName": "张三",
-  "customerConcern":["公司位置","交通"],
-  "readStatus": "NOT_READ",
-  "chatDurationMin": 1,
-  "chatDurationMax": 3,
-  "lastCallRecord": true,
-  "redialTimes": 2,
-  "pageSize": 20,
-  "pageNum": 1
+ 	"realIntent": true,
+ 	"calledPhoneNumber":"15364736473",
+ 	"callRecordId": 145213,
+ 	"customerPersonName": "张三",
+ 	"customerConcern":["公司位置","交通"],
+ 	"readStatus": "NOT_READ",
+ 	"chatDurationMin": 1,
+ 	"chatDurationMax": 3,
+ 	"lastCallRecord": true,
+ 	"redialTimes": 2,
+ 	"pageSize": 20,
+ 	"pageNum": 1
 }
  
  ```
@@ -152,7 +152,7 @@
   startTime| String | 开始拨打时间 
   chatDuration| Integer  | 通话时长 
   chatRound| Integer | 通话轮次 
-  redialTimes| Integer | 自动重播自出
+  redialTimes| Integer | 自动重播次数
   requestId| String | 请求Id 
   resultMsg| String | 响应说明 
 
