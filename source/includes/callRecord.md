@@ -11,15 +11,23 @@
  ```
  
 {
- 	"customerGroupId": 1,
  	"robotCallJobId": 1,
  	"dialogFlowId": 2,
  	"resultStatuses": ["ANSWERED"],
- 	"searchWords": "测试",
  	"intentLevels": ["A"],
- 	"pageSize": 20,
- 	"pageNum": 1,
- 	"hangupBy":"REMOTE_HANGUP"
+ 	"hangupBy":"REMOTE_HANGUP",
+  "realIntent": true,
+  "calledPhoneNumber":"15364736473",
+  "callRecordId": 145213,
+  "customerPersonName": "张三",
+  "customerConcern":["公司位置","交通"],
+  "readStatus": "NOT_READ",
+  "chatDurationMin": 1,
+  "chatDurationMax": 3,
+  "lastCallRecord": true,
+  "redialTimes": 2,
+  "pageSize": 20,
+  "pageNum": 1
 }
  
  ```
@@ -101,7 +109,16 @@
   dialogFlowId| Long| 否 |话术id| 1 
   resultStatuses| List| 否 |通话结果 (ANSWERED, "已接听"),(NO_ANSWER, "未接"),(BUSY, "占线"),(POWER_OFF, "关机"),(OUT_OF_SERVICE, "被叫停机"),(REFUSED, "拒接"),(VACANT_NUMBER, "空号"),(CAN_NOT_CONNECT, "无法接通"), (FROM_PHONE_ERROR, "主叫号码不可用"),(SYSTEM_ERROR, "外呼失败")| ["ANSWERED", "REFUSED"] 
   intentLevels| List| 否 |客户关注点 (A, "A级(较强)"),(B, "B级(一般)"),(C, "C级(无法判断)"),(D, "D级(很少)"),(E, "E级别(需要再次跟进)"),(F, "F级别(无需再次跟进)")| ["B", "C"] 
-  searchWords| String| 否 |关键字搜索,支持电话号码、通话记录id、客户姓名| 0 
+  calledPhoneNumber| String| 否 |被叫电话号码| 15364736473 
+  callRecordId| Long| 否 |通话记录id| 145213 
+  customerPersonName| String| 否 |客户姓名| 张三 
+  realIntent| boolean| 否 |是否人工标注意向| true 
+  customerConcern| List| 否 |客户关注点| ["公司位置","交通"] 
+  readStatus| String| 否 |查看状态| 未读 NOT_READ 已读 HAS_READ 
+  chatDurationMin| Long| 否 |最小通话时长| 1 
+  chatDurationMax| Long| 否 |最大通话时长| 3 
+  lastCallRecord| boolean| 否 |是否去重查询| 如此处为true 条件只有 robotCallJobId resultStatuses intentLevels chatDurationMin chatDurationMax redialTimes 有效
+  redialTimes| Long| 否 |自动重播次数| 3 此条件只在lastCallRecord为true时生效
   pageNum| Integer| 否 |第几页(默认为1)| 1 
   pageSize| Integer| 否 |显示数量/页（默认为20），最大不能超过100| 10 
 
@@ -135,6 +152,7 @@
   startTime| String | 开始拨打时间 
   chatDuration| Integer  | 通话时长 
   chatRound| Integer | 通话轮次 
+  redialTimes| Integer | 自动重播自出
   requestId| String | 请求Id 
   resultMsg| String | 响应说明 
 
@@ -195,7 +213,8 @@
  				"callDetailId": 2
  			}
  		],
- 		"robotCallJobId": 29
+ 		"robotCallJobId": 29,
+    "redialTimes": 0
  	},
  	"requestId": "PSVILAEB",
  	"resultMsg": "执行成功",
