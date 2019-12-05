@@ -99,7 +99,7 @@ JAVA | [GitHub地址](https://github.com/yiwise/openapidemo.git)
 
 ## 最佳实践流程图
 
- ![](../images/OMS3.png)
+ ![](../images/best.png)
 
 ## 常见问题解答
 
