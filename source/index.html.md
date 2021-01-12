@@ -19,6 +19,8 @@ includes:
   - obtainTask
   - callRecord
   - callBack
+  - chat
+  - knowledge
 
 search: true
 ---
